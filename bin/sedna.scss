@@ -29,6 +29,7 @@
     @include SnFreeze();
     @include SnTab();
     @include SnTag();
+    @include SnHidden();
     @include SnTooltip();
     @include SnCollapse();
     @include SnDivider();

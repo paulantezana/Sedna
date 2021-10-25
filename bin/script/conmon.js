@@ -33,3 +33,5 @@ export const SnUniqueId = (length = 6) => {
     }
     return id;
 };
+
+window.classPrefix = 'Sn';

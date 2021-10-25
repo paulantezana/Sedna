@@ -2,7 +2,7 @@ export let SnFreeze = {
     scope: undefined,
     unFreeze(selector) {
         let parentSelector = document.querySelector(selector) || document;
-        let element = parentSelector.querySelector(".SnFreeze-wrapper");
+        let element = parentSelector.querySelector(`.${window.classPrefix}Freeze-wrapper`);
         if (element) {
             element.classList.add("is-unfreezing");
             setTimeout(() => {
@@ -28,7 +28,7 @@ export let SnFreeze = {
     render(){
         if(this.scope === undefined){
             this.scope = document.createElement('div');
-            this.scope.classList.add('SnFreeze-wrapper');
+            this.scope.classList.add(`${window.classPrefix}SnFreeze-wrapper`);
             document.body.appendChild(this.scope);
         }
     }

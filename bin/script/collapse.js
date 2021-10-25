@@ -8,7 +8,7 @@ export let SnCollapse = {
                 dataCollapses[i].addEventListener('click', (e) => {
                     let collapseName = dataCollapses[i].dataset.collapsetrigger;
                     let collapse = document.querySelector(`[data-collapse="${collapseName}"]`);
-                    collapse.classList.toggle('SnCollapse-expanded');
+                    collapse.classList.toggle(`${window.classPrefix}Collapse-expanded`);
                 });
                 this.storage.push(dataCollapses[i]);
             }
@@ -16,11 +16,11 @@ export let SnCollapse = {
     },
     open(collapseName){
         let collapse = document.querySelector(`[data-collapse="${collapseName}"]`);
-        collapse.classList.add('SnCollapse-expanded');
+        collapse.classList.add(`${window.classPrefix}Collapse-expanded`);
     },
     close(collapseName){
         let collapse = document.querySelector(`[data-collapse="${collapseName}"]`);
-        collapse.classList.remove('SnCollapse-expanded');
+        collapse.classList.remove(`${window.classPrefix}Collapse-expanded`);
     },
     reload(){
         this.init();

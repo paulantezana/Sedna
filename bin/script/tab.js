@@ -1,15 +1,15 @@
 export const SnTab = {
     storage: [],
     init() {
-        let tabs = document.querySelectorAll('.SnTab');
+        let tabs = document.querySelectorAll(`.${window.classPrefix}Tab`);
         for (let i = 0; i < tabs.length; i++) {
             let exist = this.storage.find(item => item === tabs[i]);
             if(!exist){
-                let snTabHeader = tabs[i].querySelector('.SnTab-header');
+                let snTabHeader = tabs[i].querySelector(`.${window.classPrefix}Tab-header`);
                 if(!snTabHeader){
                     continue;
                 }
-                let snTabContents = tabs[i].querySelectorAll('.SnTab-content');
+                let snTabContents = tabs[i].querySelectorAll(`.${window.classPrefix}Tab-content`);
                 let snTabTitles = snTabHeader.children;
                 
                 for (let t = 0; t < snTabTitles.length; t++) {

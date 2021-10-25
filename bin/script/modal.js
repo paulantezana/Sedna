@@ -54,7 +54,7 @@ export let SnModal = {
     render(){
         if(this.scope === undefined){
             this.scope = document.createElement('div');
-            this.scope.classList.add('SnModal-gScope');
+            this.scope.classList.add(`${window.classPrefix}Modal-gScope`);
             document.body.appendChild(this.scope);
         }
     },
@@ -69,7 +69,7 @@ export let SnModal = {
             modal.classList.add('visible')
 
             // Modal prevent events
-            let modalContent = modal.querySelector('.SnModal');
+            let modalContent = modal.querySelector(`.${window.classPrefix}Modal`);
             if (modalContent) {
                 modalContent.addEventListener('click', (event) => {
                     event.stopPropagation()
@@ -126,27 +126,27 @@ export let SnModal = {
     }) {
         this.render();
 
-        let uniqueIdName = 'Sn' + SnUniqueId();
+        let uniqueIdName = window.classPrefix + SnUniqueId();
         let divEl = document.createElement('div');
 
         let cancelTemp = confirm
-            ? `<div class="SnBtn ${cancelType}" id="cancel${uniqueIdName}">${cancelText}</div>`
+            ? `<div class="${window.classPrefix}Btn ${cancelType}" id="cancel${uniqueIdName}">${cancelText}</div>`
             : '';
         
-        let inputHtml = input === true ? `<div class="SnModal-confirmInput"><input type="text" class="SnForm-control" id="input${uniqueIdName}" value="${inputValue}"></div>`: '';
+        let inputHtml = input === true ? `<div class="${window.classPrefix}Modal-confirmInput"><input type="text" class="${window.classPrefix}Form-control" id="input${uniqueIdName}" value="${inputValue}"></div>`: '';
 
         // let showIcon = confirm()
         divEl.innerHTML = `
-            <div class="SnModal-wrapper" data-modal="${uniqueIdName}" >
-                <div class="SnModal confirm">
-                    <div class="SnModal-body confirm">
-                        <div class="SnModal-confirmIcon ${type}">${SnIcon[type]}</div>
-                        <div class="SnModal-confirmTile">${title}</div>
-                        <div class="SnModal-confirmContent">${content}</div>
+            <div class="${window.classPrefix}Modal-wrapper" data-modal="${uniqueIdName}" >
+                <div class="${window.classPrefix}Modal confirm">
+                    <div class="${window.classPrefix}Modal-body confirm">
+                        <div class="${window.classPrefix}Modal-confirmIcon ${type}">${SnIcon[type]}</div>
+                        <div class="${window.classPrefix}Modal-confirmTile">${title}</div>
+                        <div class="${window.classPrefix}Modal-confirmContent">${content}</div>
                         ${inputHtml}
-                        <div class="SnModal-confirmBtns">
+                        <div class="${window.classPrefix}Modal-confirmBtns">
                             ${cancelTemp}
-                            <div class="SnBtn ${okType}" id="ok${uniqueIdName}">${okText}</div>
+                            <div class="${window.classPrefix}Btn ${okType}" id="ok${uniqueIdName}">${okText}</div>
                         </div>
                     </div>
                 </div>

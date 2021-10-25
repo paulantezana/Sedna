@@ -19,8 +19,8 @@ export let SnMessage = {
         }
         this.render();
         let messageEl = document.createElement('div');
-        messageEl.classList.add('SnMessage', addClass);
-        messageEl.innerHTML = `<span class="SnMessage-icon">${SnIcon[type]}</span>${message}`;
+        messageEl.classList.add(`${window.classPrefix}Message`, addClass);
+        messageEl.innerHTML = `<span class="${window.classPrefix}Message-icon">${SnIcon[type]}</span>${message}`;
 
         this.scope.prepend(messageEl);
         setTimeout(
@@ -38,7 +38,7 @@ export let SnMessage = {
     render(){
         if(this.scope === undefined){
             this.scope = document.createElement('div');
-            this.scope.classList.add('SnMessage-gScope');
+            this.scope.classList.add(`${window.classPrefix}Message-gScope`);
             document.body.appendChild(this.scope);
         }
     }

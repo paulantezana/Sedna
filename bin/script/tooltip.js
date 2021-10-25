@@ -6,7 +6,7 @@ export let SnTooltip = function(options) {
         if (!e.target.hasAttribute('data-tooltip')) return;
 
         let tooltip = document.createElement("div");
-        tooltip.className = "SnTooltip";
+        tooltip.className = `.${window.classPrefix}TabTooltip`;
         tooltip.innerHTML = e.target.getAttribute('data-tooltip');
 
         document.body.appendChild(tooltip);
@@ -21,7 +21,7 @@ export let SnTooltip = function(options) {
     document.body.addEventListener("mouseout", function(e) {
         if (e.target.hasAttribute('data-tooltip')) {
             setTimeout(function() {
-                document.body.removeChild(document.querySelector(".SnTooltip"));
+                document.body.removeChild(document.querySelector(`.${window.classPrefix}Tooltip`));
             }, delay);
         }
     });
