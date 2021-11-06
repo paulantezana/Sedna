@@ -3,8 +3,8 @@
 }
 
 @mixin FormControl {
-    border: 1px solid var(--snColorBorder);
-    background: var(--snColorBg);
+    border: 1px solid var(--snControlColorBorder);
+    background: var(--snControlColorBg);
     box-shadow: none;
     padding: 6px 11px;
     font-size: 14px;
