@@ -41,6 +41,7 @@
           left: 13px;
         }
       }
+      &:not(.disabled),
       &:not([disabled]) {
         pointer-events: none;
       }
@@ -205,6 +206,10 @@
         
       // }
     }
+    &.disabled:active
+    &.disabled:focus,
+    &.disabled:hover,
+    &.disabled,
     &[disabled]:active,
     &[disabled]:focus,
     &[disabled]:hover,

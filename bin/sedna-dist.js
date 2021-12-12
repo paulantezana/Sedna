@@ -6,7 +6,6 @@ import { SnMenu, SnActiveMenu } from './script/menu';
 import { SnMessage } from './script/message';
 import { SnModal } from './script/modal';
 import { SnTab } from './script/tab';
-import { SnTooltip } from './script/tooltip';
 import { SnTree } from './script/tree';
 
 window.SnCollapse = SnCollapse;
@@ -18,7 +17,6 @@ window.SnActiveMenu = SnActiveMenu;
 window.SnMessage = SnMessage;
 window.SnModal = SnModal;
 window.SnTab = SnTab;
-window.SnTooltip = SnTooltip;
 window.SnTree = SnTree;
 
 // Init Components
@@ -27,6 +25,5 @@ document.addEventListener("DOMContentLoaded", () => {
     SnModal.init();
     SnTab.init();
     SnCollapse.init();
-    SnTooltip({});
     SnIcon.render();
 });
