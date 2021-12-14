@@ -19,18 +19,54 @@ block main
                         .SnTab-title Title 2
                         .SnTab-title Title 3
                         .SnTab-title Title 4
-                    .SnTab-content
-                        p Shabby chic ennui cred godard, forage roof party scenester health goth typewriter pitchfork. Stumptown whatever fap, austin heirloom asymmetrical lo-fi ethical seitan. Post-ironic hella listicle brunch meggings artisan. YOLO tattooed blue bottle, fanny pack gluten-free put a bird on it migas forage trust fund.
-
-                    .SnTab-content
-                        p Shabby chic cred godard, forage roof party scenester health goth typewriter pitchfork. Stumptown whatever fap, austin heirloom asymmetrical lo-fi ethical seitan. Post-ironic hella listicle brunch meggings artisan. YOLO tattooed blue bottle, fanny pack gluten-free put a bird on it migas forage trust fund.
-
-                    .SnTab-content
-                        img(src="http://lorempixel.com/500/300" alt="")
-
-                    .SnTab-content
-                        p Meggings distillery pop-up artisan, hashtag 90's echo park kickstarter gluten-free. Pinterest gentrify squid vinyl chicharrones meh venmo. Beard aesthetic whatever bicycle rights artisan gastropub. Fingerstache bicycle rights you probably haven't heard of them, schlitz franzen semiotics microdosing.
-
+                    .SnTab-body
+                        .SnTab-content
+                            p Shabby chic ennui cred godard, forage roof party scenester health goth typewriter pitchfork. Stumptown whatever fap, austin heirloom asymmetrical lo-fi ethical seitan. Post-ironic hella listicle brunch meggings artisan. YOLO tattooed blue bottle, fanny pack gluten-free put a bird on it migas forage trust fund.
+                        .SnTab-content
+                            p Shabby chic cred godard, forage roof party scenester health goth typewriter pitchfork. Stumptown whatever fap, austin heirloom asymmetrical lo-fi ethical seitan. Post-ironic hella listicle brunch meggings artisan. YOLO tattooed blue bottle, fanny pack gluten-free put a bird on it migas forage trust fund.
+                        .SnTab-content
+                            img(src="http://lorempixel.com/500/300" alt="")
+                        .SnTab-content
+                            p Meggings distillery pop-up artisan, hashtag 90's echo park kickstarter gluten-free. Pinterest gentrify squid vinyl chicharrones meh venmo. Beard aesthetic whatever bicycle rights artisan gastropub. Fingerstache bicycle rights you probably haven't heard of them, schlitz franzen semiotics microdosing.
+        +codeBox(
+            'Tab in tab', 
+            'Default activate first tab.',
+            '<div class="SnTab">\n    <div class="SnTab-header">\n        <div class="SnTab-title is-active">Title 1</div>\n        <div class="SnTab-title">Title 2</div>\n    </div>\n    <div class="SnTab-body">\n        <div class="SnTab-content is-active">\n            <p>Content Title 1 ...</p>\n            <div class="SnTab">\n                <div class="SnTab-header">\n                    <div class="SnTab-title is-active">Title 1</div>\n                    <div class="SnTab-title">Title 2</div>\n                    <div class="SnTab-title">Title 3</div>\n                </div>\n                <div class="SnTab-body">\n                    <div class="SnTab-content is-active">\n                        <p>Content 1...</p>\n                    </div>\n                    <div class="SnTab-content">\n                        <p>Content 2...</p>\n                    </div>\n                    <div class="SnTab-content">\n                        <p>Content 3...</p>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class="SnTab-content">\n            <p>Content Title 2 ...</p>\n            <div class="SnTab">\n                <div class="SnTab-header">\n                    <div class="SnTab-title is-active">Title 1</div>\n                    <div class="SnTab-title">Title 2</div>\n                    <div class="SnTab-title">Title 3</div>\n                </div>\n                <div class="SnTab-body">\n                    <div class="SnTab-content is-active">\n                        <p>Content 1...</p>\n                    </div>\n                    <div class="SnTab-content">\n                        <p>Content 2...</p>\n                    </div>\n                    <div class="SnTab-content">\n                        <p>Content 3...</p>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>'
+        )
+            div
+                .SnTab
+                    .SnTab-header
+                        .SnTab-title Title 1
+                        .SnTab-title Title 2
+                    .SnTab-body
+                        .SnTab-content
+                            p Content Title 1 ...
+                            .SnTab
+                                .SnTab-header
+                                    .SnTab-title Title 1
+                                    .SnTab-title Title 2
+                                    .SnTab-title Title 3
+                                .SnTab-body
+                                    .SnTab-content
+                                        p Content 1...
+                                    .SnTab-content
+                                        p Content 2...
+                                    .SnTab-content
+                                        p Content 3...
+                        .SnTab-content
+                            p Content Title 2 ...
+                            .SnTab
+                                .SnTab-header
+                                    .SnTab-title Title 1
+                                    .SnTab-title Title 2
+                                    .SnTab-title Title 3
+                                .SnTab-body
+                                    .SnTab-content
+                                        p Content 1...
+                                    .SnTab-content
+                                        p Content 2...
+                                    .SnTab-content
+                                        p Content 3...
     h2 API
     .SnTable-wrapper
         table.SnTable.DocApiTable

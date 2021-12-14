@@ -5,11 +5,17 @@ export const SnTab = {
         for (let i = 0; i < tabs.length; i++) {
             let exist = this.storage.find(item => item === tabs[i]);
             if(!exist){
-                let snTabHeader = tabs[i].querySelector(`.${window.classPrefix}Tab-header`);
+                let snTabHeader = tabs[i].firstElementChild;
                 if(!snTabHeader){
                     continue;
                 }
-                let snTabContents = tabs[i].querySelectorAll(`.${window.classPrefix}Tab-content`);
+
+                let snTabBody = tabs[i].lastElementChild;
+                if(!snTabBody){
+                    continue;
+                }
+
+                let snTabContents = snTabBody.children;
                 let snTabTitles = snTabHeader.children;
                 
                 for (let t = 0; t < snTabTitles.length; t++) {
