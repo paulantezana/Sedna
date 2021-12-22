@@ -104,10 +104,8 @@
     }
     &-confirmInput,
     &-confirmContent{
-      color: var(--snColorTextAlt);
       margin-top: 8px;
       margin-left: 38px;
-      font-size: .9em;
     }
     &-confirmBtns{
       display: flex;
@@ -115,7 +113,7 @@
       align-items: center;
       margin-top: 24px;
       & > * {
-        margin-right: 8px;
+        margin-left: 8px;
       }
     }
   }

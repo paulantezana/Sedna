@@ -89,7 +89,7 @@ block main
                             title: 'Are you sure delete this task?',
                             content: 'Some descriptions',
                             okText: 'Yes',
-                            okType: 'error',
+                            okClassNames: 'error',
                             cancelText: 'No',
                             onOk() {
                                 SnMessage.info({
@@ -110,7 +110,7 @@ block main
                             input: true,
                             inputValue: 'Cancel by mistake',
                             okText: 'Yes',
-                            okType: 'error',
+                            okClassNames: 'error',
                             cancelText: 'No',
                             onOk(message) {
                                 SnMessage.info({
@@ -145,7 +145,7 @@ block main
                             title: 'Are you sure delete this task?',
                             content: 'Some descriptions',
                             okText: 'Yes',
-                            okType: 'error',
+                            okClassNames: 'error',
                             cancelText: 'No',
                             onOk() {
                                 SnMessage.info({
@@ -165,7 +165,7 @@ block main
                             input: true,
                             inputValue: 'Cancel by mistake',
                             okText: 'Yes',
-                            okType: 'error',
+                            okClassNames: 'error',
                             cancelText: 'No',
                             onOk(message) {
                                 SnMessage.info({
@@ -296,7 +296,7 @@ block main
                     td string
                     td OK
                 tr
-                    td okType
+                    td okClassNames
                     td Set ok button type
                     td string
                     td primary

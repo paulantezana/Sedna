@@ -117,8 +117,8 @@ export let SnModal = {
         content = '',
         input = false,
         inputValue = '',
-        okType = 'primary',
-        cancelType = '',
+        okClassNames = 'primary',
+        cancelClassNames = '',
         cancelText = 'Cancelar',
         okText = 'OK',
         onOk = () => { },
@@ -130,12 +130,11 @@ export let SnModal = {
         let divEl = document.createElement('div');
 
         let cancelTemp = confirm
-            ? `<div class="${window.classPrefix}Btn ${cancelType}" id="cancel${uniqueIdName}">${cancelText}</div>`
+            ? `<button class="${window.classPrefix}Btn ${cancelClassNames}" id="cancel${uniqueIdName}" type="button">${cancelText}</button>`
             : '';
         
         let inputHtml = input === true ? `<div class="${window.classPrefix}Modal-confirmInput"><input type="text" class="${window.classPrefix}Form-control" id="input${uniqueIdName}" value="${inputValue}"></div>`: '';
 
-        // let showIcon = confirm()
         divEl.innerHTML = `
             <div class="${window.classPrefix}Modal-wrapper" data-modal="${uniqueIdName}" >
                 <div class="${window.classPrefix}Modal confirm">
@@ -146,7 +145,7 @@ export let SnModal = {
                         ${inputHtml}
                         <div class="${window.classPrefix}Modal-confirmBtns">
                             ${cancelTemp}
-                            <div class="${window.classPrefix}Btn ${okType}" id="ok${uniqueIdName}">${okText}</div>
+                            <button class="${window.classPrefix}Btn ${okClassNames}" id="ok${uniqueIdName}" type="button">${okText}</button>
                         </div>
                     </div>
                 </div>
