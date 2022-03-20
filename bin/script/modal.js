@@ -1,5 +1,3 @@
-import { SnUniqueId } from './conmon';
-
 let closeModal = (m) => {
     m.classList.remove('visible');
     document.body.style.overflow = 'auto';
@@ -126,7 +124,7 @@ export let SnModal = {
     }) {
         this.render();
 
-        let uniqueIdName = window.classPrefix + SnUniqueId();
+        let uniqueIdName = window.classPrefix + (document.querySelectorAll('.SnModal ').length + 1);
         let divEl = document.createElement('div');
 
         let cancelTemp = confirm
