@@ -108,6 +108,24 @@ block main
                         i.SnControl-prefix.icon-ticket
                         input(type="text" id="innerSize3").SnForm-control.SnControl.lg
                     .SnForm-help Help text
+        +codeBox(
+            'Outlined', 
+            'Label outlined.', 
+            '<form class="SnForm" action="" method="post" _lpchecked="1">\n    <div class="SnForm-item outlined">\n        <input class="SnForm-control sm" type="text" id="outlinedSize1" placeholder=" " autocomplete="off">\n        <label class="SnForm-label sm" for="outlinedSize1">Size1</label>\n        <div class="SnForm-help">Help text</div>\n    </div>\n    <div class="SnForm-item outlined required">\n        <input class="SnForm-control" type="text" id="outlinedSize2" placeholder=" " autocomplete="off">\n        <label class="SnForm-label" for="outlinedSize2">Size2</label>\n        <div class="SnForm-help">Help text</div>\n    </div>\n    <div class="SnForm-item outlined">\n        <input class="SnForm-control lg" type="text" id="outlinedSize3" placeholder=" " autocomplete="off">\n        <label class="SnForm-label lg" for="outlinedSize3">Size3</label>\n        <div class="SnForm-help">Help text</div>\n    </div>\n</form>'
+        )
+            form(action="" method="post").SnForm
+                .SnForm-item.outlined
+                    input(type="text" id="outlinedSize1" placeholder=" ").SnForm-control.sm
+                    label(for="outlinedSize1").SnForm-label.sm Size1
+                    .SnForm-help Help text
+                .SnForm-item.outlined.required
+                    input(type="text" id="outlinedSize2" placeholder=" ").SnForm-control
+                    label(for="outlinedSize2").SnForm-label Size2
+                    .SnForm-help Help text
+                .SnForm-item.outlined
+                    input(type="text" id="outlinedSize3" placeholder=" ").SnForm-control.lg
+                    label(for="outlinedSize3").SnForm-label.lg Size3
+                    .SnForm-help Help text
     h2 API
     .SnTable-wrapper
         table.SnTable.DocApiTable

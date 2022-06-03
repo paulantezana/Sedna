@@ -14,41 +14,47 @@ block main
         pre.language-scss
             code.
                 :root{
-                    --snColor1Lighter4: #e6f7ff;
-                    --snColor1Lighter3: #bae7ff;
-                    --snColor1Lighter2: #91d5ff;
-                    --snColor1Lighter: #69c0ff;
-                    --snColor1Light: #40a9ff;
-                    --snColor1: #1890ff;
-                    --snColor1Dark: #096dd9;
-                    --snColor1Darker: #0050b3;
-                    --snColor1Darker2: #003a8c;
-                    --snColor1Darker3: #002766;
+                    --snColor1Lighter4: #E9F3F7;
+                    --snColor1Lighter3: #D8E4EB;
+                    --snColor1Lighter2: #A9CADE;
+                    --snColor1Lighter: #7DB0D1;
+                    --snColor1Light: #5695C4;
+                    --snColor1: #3379B7;
+                    --snColor1Dark: #215991;
+                    --snColor1Darker: #133C6B;
+                    --snColor1Darker2: #092345;
+                    --snColor1Darker3: #040E1F;
                     --snColor1Inverse: #ffffff;
 
-                    --snColor2Lighter: #ffd685;
-                    --snColor2Light: #ffc757;
-                    --snColor2: #faad14;
-                    --snColor2Dark: #ffa600;
-                    --snColor2Darker: #eb9c00;
+                    --snColor2Lighter4: #fffde6;
+                    --snColor2Lighter3: #fff7b0;
+                    --snColor2Lighter2: #ffef87;
+                    --snColor2Lighter: #ffe45e;
+                    --snColor2Light: #fcd535;
+                    --snColor2: #f0b90b;
+                    --snColor2Dark: #c99400;
+                    --snColor2Darker: #a37200;
+                    --snColor2Darker2: #7d5300;
+                    --snColor2Darker3: #573700;
                     --snColor2Inverse: #ffffff;
 
-                    --snErrorLight: #ff4d4f;
-                    --snError: #f5222d;
-                    --snErrorDark: #cf1322;
+                    --snErrorLight: #de575b;
+                    --snError: #d02f39;
+                    --snErrorDark: #ab1f2d;
                     --snErrorInverse: white;
 
-                    --snSuccessLight: #73d13d;
-                    --snSuccess: #52c41a;
-                    --snSuccessDark: #389e0d;
+                    --snSuccessLight: #82c280;
+                    --snSuccess: #5ab45a;
+                    --snSuccessDark: #408f43;
                     --snSuccessInverse: white;
 
-                    --snWarningLight: #ffec3d;
-                    --snWarning: #fadb14;
-                    --snWarningDark: #d4b106;
+                    --snWarningLight: #fccb7c;
+                    --snWarning: #f0ad4e;
+                    --snWarningDark: #c98838;
                     --snWarningInverse: #3d2501;
 
                     --snColorBg: #eff3f6;
+                    --snControlColorBg: #eff3f6;
                     --snColorBgAlt: #ffffff;
                     --snColorHover: #0000000d;
 
@@ -56,12 +62,14 @@ block main
                     --snColorTextAlt: #ababab;
 
                     --snColorBorder: #dfe2e2;
+                    --snControlColorBorder: #dfe2e2;
+                    --snControlColorPlaceholder: #ababab;
 
-                    --snColorDarkSmoother: #4f7087;
-                    --snColorDarkSmooth: #3c5567;
-                    --snColorDark: #2a3b47;
-                    --snColorDarker: #22303a;
-                    --snColorDarkest: #1a252d;
+                    --snColorDarkSmoother: #374047;
+                    --snColorDarkSmooth: #2C343A;
+                    --snColorDark: #242B31;
+                    --snColorDarker: #1B2126;
+                    --snColorDarkest: #15191C;
                     --snColorDarkInverse: #b6bcc0;
                 }
     section.SnMb-16
@@ -77,18 +85,18 @@ block main
                 $breakpoints : (
                     s : 0,
                     m : 640px,
-                    l : 1024px,
+                    l : 850px,
                     lg : 1024px,
                     xl : 1440px
-                );
+                ) !default;
                 $sizes: map-keys($breakpoints);
 
                 $cssCore: false !default;
                 $classPrefix: 'Sn' !default;
 
-                $controlHeight: 34px;
-                $controlHeightSm: 26px;
-                $controlHeightLg: 42px;
+                $controlHeight: 32px;
+                $controlHeightSm: 24px;
+                $controlHeightLg: 38px;
 
                 $borderRadiusBase: 4px;
 

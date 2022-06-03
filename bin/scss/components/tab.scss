@@ -1,33 +1,36 @@
 @mixin SnTab {
     .#{$classPrefix}Tab {
-      &-header {
-        margin: 0 0 16px 0;
-        border-bottom: 1px solid var(--snColorBorder);
-        display: flex;
-      }
-    
-      &-title {
-        padding: 12px 16px;
-        cursor: pointer;
-        margin: 0 32px 0 0;
-        white-space: nowrap;
-        &:last-child {
-          margin: 0;
+        &-header {
+            margin: 0 0 16px 0;
+            border-bottom: 1px solid var(--snColorBorder);
+            display: flex;
+            overflow-x: auto;
         }
-        &:hover {
-          color: var(--snColor1);
+
+        &-title {
+            padding: 12px 12px;
+            cursor: pointer;
+            white-space: nowrap;
+
+            &:last-child {
+                margin: 0;
+            }
+
+            &:hover {
+                color: var(--snColor1);
+            }
+
+            &.is-active {
+                box-shadow: 0 -2px var(--snColor1) inset;
+            }
         }
-        &.is-active {
-          box-shadow: 0 2px var(--snColor1);
-        }
-      }
     }
-    
+
     .#{$classPrefix}Tab-content {
         display: none;
+
         &.is-active {
             display: block;
         }
     }
 }
-

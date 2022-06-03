@@ -1,5 +1,6 @@
 @mixin SnBtnStnd {
   line-height: $controlHeight;
+  height: $controlHeight;
   position: relative;
   display: inline-block;
   font-weight: 400;
@@ -27,18 +28,18 @@
       padding-left: 11px + 24;
       &::before {
         border: 2px solid var(--snColorText);
-        left: 9px;
+        left: 8px;
       }
       &.sm {
         padding-left: 24px;
         &::before {
-          left: 5px;
+          left: 4px;
         }
       }
       &.lg {
-        padding-left: 13px + 24;
+        padding-left: 11px + 24;
         &::before {
-          left: 13px;
+          left: 11px;
         }
       }
       &:not(.disabled),
@@ -54,12 +55,12 @@
       & > * {
         border-radius: 0;
         &:last-child {
-          border-top-right-radius: 4px;
-          border-bottom-right-radius: 4px;
+          border-top-right-radius: $borderRadiusBase;
+          border-bottom-right-radius: $borderRadiusBase;
         }
         &:first-child {
-          border-top-left-radius: 4px;
-          border-bottom-left-radius: 4px;
+          border-top-left-radius: $borderRadiusBase;
+          border-bottom-left-radius: $borderRadiusBase;
         }
       }
     }
@@ -84,13 +85,13 @@
       // justify-content: center;
       // align-items: center;
 
-      width: calc(#{$controlHeight} + 2px);
+      width: $controlHeight;
       &.sm {
         padding: 0 5px;
-        width: calc(#{$controlHeightSm} + 2px);
+        width: $controlHeightSm;
       }
       &.lg {
-        width: calc(#{$controlHeightLg} + 2px);
+        width: $controlHeightLg;
       }
       &.loading {
         padding-left: 0;
@@ -104,9 +105,11 @@
     }
     &.sm {
       line-height: $controlHeightSm;
+      height: $controlHeightSm;
     }
     &.lg {
       line-height: $controlHeightLg;
+      height: $controlHeightLg;
     }
     &.primary {
       color: var(--snColor1Inverse);
@@ -195,16 +198,13 @@
       }
     }
     &.radio {
-      border-radius: calc((#{$controlHeight} + 2px) / 2);
+      border-radius: $controlHeight / 2;
       &.sm {
-        border-radius: calc((#{$controlHeightSm} + 2px) / 2);
+        border-radius: $controlHeightSm / 2;
       }
       &.lg {
-        border-radius: calc((#{$controlHeightLg} + 2px) / 2);
+        border-radius: $controlHeightLg / 2;
       }
-      // &.icon {
-        
-      // }
     }
     &.disabled:active
     &.disabled:focus,
