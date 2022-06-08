@@ -31,7 +31,10 @@
     &::placeholder {
         color: var(--snControlColorPlaceholder);
     }
-
+    &.disabled {
+        pointer-events: none;
+    }
+    &.disabled,
     &:disabled {
         border-color: var(--snColorBg);
     }
@@ -40,7 +43,6 @@
 @mixin SnForm {
     .#{$classPrefix}Form {
         &.horizontal {
-
             // maxWidth: 600px;
             @include from(m) {
                 .#{$classPrefix}Form-item {
@@ -54,7 +56,7 @@
                         padding: 0;
 
                         &::after {
-                            content: ':';
+                            content: ":";
                             position: relative;
                             top: -0.5px;
                             margin: 0 8px 0 2px;
@@ -177,11 +179,13 @@
                     }
 
                     &-control {
-                        &:focus+.SnForm-label,
-                        &:not(:placeholder-shown)+.SnForm-label {
-                            top: 0;
-                            transform: translateY(-50%) scale(.9);
+                        &:focus + .SnForm-label{
                             color: var(--snColor1);
+                        }
+                        &:focus + .SnForm-label,
+                        &:not(:placeholder-shown) + .SnForm-label {
+                            top: 0;
+                            transform: translateY(-50%) scale(0.9);
                             background: linear-gradient(transparent 50%, var(--snControlColorBg) 50%);
                             font-size: 0.9rem;
                         }
