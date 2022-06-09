@@ -183,6 +183,7 @@ export let SnModal = {
         content = '',
         okText = 'OK',
         onOk = () => { },
+        ...rest
     }) {
         this.confirm({
             confirm: false,
@@ -191,6 +192,7 @@ export let SnModal = {
             content,
             okText,
             onOk,
+            ...rest
         });
     },
 
@@ -199,6 +201,7 @@ export let SnModal = {
         content = '',
         okText = 'OK',
         onOk = () => { },
+        ...rest
     }) {
         this.confirm({
             confirm: false,
@@ -207,6 +210,7 @@ export let SnModal = {
             content,
             okText,
             onOk,
+            ...rest
         });
     },
 
@@ -215,6 +219,7 @@ export let SnModal = {
         content = '',
         okText = 'OK',
         onOk = () => { },
+        ...rest
     }) {
         this.confirm({
             confirm: false,
@@ -223,6 +228,7 @@ export let SnModal = {
             content,
             okText,
             onOk,
+            ...rest
         });
     },
 
@@ -231,6 +237,7 @@ export let SnModal = {
         content = '',
         okText = 'OK',
         onOk = () => { },
+        ...rest
     }) {
         this.confirm({
             confirm: false,
@@ -239,6 +246,7 @@ export let SnModal = {
             content,
             okText,
             onOk,
+            ...rest
         });
     }
 };
