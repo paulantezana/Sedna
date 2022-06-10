@@ -1,120 +1,134 @@
 @mixin SnModal {
-  .#{$classPrefix}Modal-wrapper,
-  [data-modal] {
-    box-sizing: border-box;
-  }
 
-  .#{$classPrefix}Modal-wrapper {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.45);
-
-    z-index: 1000;
-    visibility: hidden;
-    opacity: 0;
-    transition: 0.35s ease-in-out;
-    pointer-events: none;
-    overflow-y: auto;
-  }
-
-  .#{$classPrefix}Modal-wrapper.visible {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-  }
-
-  .#{$classPrefix}Modal {
-    position: relative;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    background-color: var(--snColorBgAlt);
-    border-radius: 4px;
-    margin: 100px auto 50px;
-
-    // More
-    width: 100%;
-    max-width: 520px;
-
-    &.confirm{
-      max-width: 416px;
+    .#{$classPrefix}Modal-wrapper,
+    [data-modal] {
+        box-sizing: border-box;
     }
 
-    &-close {
-      width: 52px;
-      height: 52px;
-      position: absolute;
-      right: 0;
-      top: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      opacity: 0.5;
-      transition: opacity 0.4s;
-      svg {
-        color: var(--snColorText);
-      }
-      &:hover {
+    .#{$classPrefix}Modal-wrapper {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.45);
+
+        z-index: 1000;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.35s ease-in-out;
+        pointer-events: none;
+        overflow-y: auto;
+    }
+
+    .#{$classPrefix}Modal-wrapper.visible {
         opacity: 1;
-      }
+        visibility: visible;
+        pointer-events: auto;
     }
-    &-header {
-      padding: 16px 24px;
-      color: var(--snColorText);
-      // font-weight: bold;
-      box-shadow: 0 1px var(--snColorBorder);
-      border-radius: 4px 4px 0 0;
-    }
-    &-body {
-      padding: 24px;
-      &.confirm{
-        padding: 32px 32px 24px;
-      }
-    }
-  }
 
-  .#{$classPrefix}Modal {
-    $iconSize: 22px;
-    &-confirmIcon{
-      float: left;
-      margin-right: 16px;
-      font-size: $iconSize;
-      &.warning{
-        color: var(--snWarning);
-      }
-      &.error{
-        color: var(--snError);
-      }
-      &.success{
-        color: var(--snSuccess);
-      }
-      &.info{
-        color: var(--snColor1);
-      }
-      &.question{
-        color: var(--snWarning);
-      }
+    .#{$classPrefix}Modal {
+        position: relative;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        background-color: var(--snColorBgAlt);
+        border-radius: 4px;
+        margin: 100px auto 50px;
+
+        // More
+        width: 100%;
+        max-width: 520px;
+
+        &.confirm {
+            max-width: 416px;
+        }
+
+        &-close {
+            width: 52px;
+            height: 52px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0.5;
+            transition: opacity 0.4s;
+
+            svg {
+                color: var(--snColorText);
+            }
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        &-header {
+            padding: 16px 24px;
+            color: var(--snColorText);
+            // font-weight: bold;
+            box-shadow: 0 1px var(--snColorBorder);
+            border-radius: 4px 4px 0 0;
+        }
+
+        &-body {
+            padding: 24px;
+
+            &.confirm {
+                padding: 32px 32px 24px;
+            }
+        }
     }
-    &-confirmTile{
-      font-weight: 500;
-      font-size: 16px;
-      line-height: $iconSize;
+
+    .#{$classPrefix}Modal {
+        &-confirmIcon {
+            float: left;
+            margin-right: 16px;
+            font-size: 32px;
+
+            &.warning {
+                color: var(--snWarning);
+            }
+
+            &.error {
+                color: var(--snError);
+            }
+
+            &.success {
+                color: var(--snSuccess);
+            }
+
+            &.info {
+                color: var(--snColor1);
+            }
+
+            &.question {
+                color: var(--snWarning);
+            }
+        }
+
+        &-confirmTile {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        &-confirmInput,
+        &-confirmContent {
+            margin-top: 8px;
+            margin-left: 50px;
+        }
+
+        &-confirmBtns {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 24px;
+
+            &>* {
+                margin-left: 8px;
+            }
+        }
     }
-    &-confirmInput,
-    &-confirmContent{
-      margin-top: 8px;
-      margin-left: 38px;
-    }
-    &-confirmBtns{
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      margin-top: 24px;
-      & > * {
-        margin-left: 8px;
-      }
-    }
-  }
 }

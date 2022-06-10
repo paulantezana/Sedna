@@ -139,8 +139,8 @@
       }
       &:focus,
       &:active {
-        background-color: #25a135;
-        border-color: #25a135;
+        background-color: var(--snSuccessDark);
+        border-color: var(--snSuccessDark);
       }
       &.loading::before {
         border: 2px solid var(--snSuccessInverse);
@@ -156,8 +156,8 @@
       }
       &:focus,
       &:active {
-        background-color: #ffa600;
-        border-color: #ffa600;
+        background-color: var(--snWarningDark);
+        border-color: var(--snWarningDark);
       }
       &.loading::before {
         border: 2px solid var(--snWarningInverse);
