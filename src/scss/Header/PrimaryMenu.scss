@@ -65,7 +65,7 @@
     // Active
     li.is-active {
       & > a {
-        color: var(--snColor1);
+        color: var(--color1-6);
       }
     }
 
@@ -75,7 +75,7 @@
         line-height: $headerHeight;
         height: $headerHeight;
         &:hover {
-          color: var(--snColor1);
+          color: var(--color1-6);
         }
       }
       &.is-active {
@@ -88,7 +88,7 @@
         //   transform: translateX(-50%);
         //   width: 14px;
         //   height: 5px;
-        //   border-bottom: 5px solid var(--snColor1);
+        //   border-bottom: 5px solid var(--color1-6);
         //   border-right: 7px solid transparent;
         //   border-left: 7px solid transparent;
         // }
@@ -103,7 +103,7 @@
       padding-bottom: 0.5rem;
       right: 0;
 
-      border-top: 2px solid var(--snColor1);
+      border-top: 2px solid var(--color1-6);
       border-bottom-right-radius: 5px;
       border-bottom-left-radius: 5px;
       box-shadow: 0 8px 20px rgba(55, 125, 255, 0.075);
@@ -111,7 +111,7 @@
       a {
         &:hover {
           background: var(--snColorHover);
-          color: var(--snColor1);
+          color: var(--color1-6);
         }
       }
     }

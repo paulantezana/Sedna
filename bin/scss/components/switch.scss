@@ -1,11 +1,11 @@
 @mixin SnSwitch() {
     input[type="checkbox"],
     input[type="radio"] {
-        --active: var(--snColor1);
-        --active-inner: var(--snColor1Inverse);
+        --active: var(--color1-6);
+        --active-inner: var(--color1-i);
         --focus: 2px rgba(39, 94, 254, 0.3);
         --border: var(--snColorBorder);
-        --border-hover: var(--snColor1);
+        --border-hover: var(--color1-6);
         --background: transparent;
         --disabled: var(--snColorBgAlt);
         --disabled-inner: va(--snColorBg);

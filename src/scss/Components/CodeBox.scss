@@ -71,7 +71,7 @@
         line-height: 2.25rem;
         &:hover {
           background: var(--snColorHover);
-          color: var(--snColor1);
+          color: var(--color1-6);
         }
       }
     }
@@ -122,8 +122,8 @@
     background: var(--snColorBg) !important;
     & > * {
       min-height: 100px;
-      background: var(--snColor1);
-      color: var(--snColor1Inverse);
+      background: var(--color1-6);
+      color: var(--color1-i);
       font-weight: bold;
       display: grid;
       align-content: center;

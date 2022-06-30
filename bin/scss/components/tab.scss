@@ -17,11 +17,11 @@
             }
 
             &:hover {
-                color: var(--snColor1);
+                color: var(--color1-6);
             }
 
             &.is-active {
-                box-shadow: 0 -2px var(--snColor1) inset;
+                box-shadow: 0 -2px var(--color1-6) inset;
             }
         }
     }

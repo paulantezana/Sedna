@@ -214,7 +214,7 @@ export let SnModal = {
         });
     },
 
-    error({
+    danger({
         title = '',
         content = '',
         okText = 'OK',
@@ -223,7 +223,7 @@ export let SnModal = {
     }) {
         this.confirm({
             confirm: false,
-            type: 'error',
+            type: 'danger',
             title,
             content,
             okText,

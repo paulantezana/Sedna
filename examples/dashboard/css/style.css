@@ -131,12 +131,12 @@ body {
   margin: 0;
   padding: 0;
   height: calc(100vh - 88px);
-  background: var(--snColorDarker);
+  background: var(--gray-11);
   overflow-y: auto;
 }
 .AsideMenu-container {
-  background: var(--snColorDarker);
-  color: var(--snColorDarkInverse);
+  background: var(--gray-11);
+  color: var(--gray-5);
 }
 .AsideMenu li {
   position: relative;
@@ -145,10 +145,10 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
-  background: var(--snColorDark);
+  background: var(--gray-10);
 }
 .AsideMenu a {
-  color: var(--snColorDarkInverse);
+  color: var(--gray-5);
   text-decoration: none;
   padding: 0 8px 0 20px;
   display: -webkit-box;
@@ -185,7 +185,7 @@ body {
   line-height: 3rem;
 }
 .AsideMenu > li > a:hover {
-  background: var(--snColor1);
+  background: var(--color1-6);
   color: white;
 }
 .AsideMenu ul a {
@@ -193,7 +193,7 @@ body {
   line-height: 1.5rem;
 }
 .AsideMenu ul a:hover {
-  color: var(--snColor1Lighter);
+  color: var(--color1-4);
 }
 
 @media screen and (max-width: 1024px) {
@@ -246,7 +246,7 @@ body {
     display: flex;
   }
   .SnAdminL1.AsideMenu-is-show .AsideMenu li:hover > a {
-    color: var(--snColor1Lighter);
+    color: var(--color1-4);
   }
   .SnAdminL1.AsideMenu-is-show .AsideMenu > li > a {
     -webkit-box-pack: center;
@@ -262,7 +262,7 @@ body {
     text-align: left;
     padding: 0 20px;
     width: 220px;
-    background: var(--snColor1);
+    background: var(--color1-6);
     display: none;
   }
   .SnAdminL1.AsideMenu-is-show .AsideMenu > li > a .toggle {
@@ -272,7 +272,7 @@ body {
     margin-right: 0;
   }
   .SnAdminL1.AsideMenu-is-show .AsideMenu > li:hover > a {
-    background: var(--snColor1);
+    background: var(--color1-6);
     color: white;
   }
   .SnAdminL1.AsideMenu-is-show .AsideMenu > li > ul {
@@ -307,7 +307,7 @@ body {
     display: flex;
   }
   .SnAdminL2:not(.AsideMenu-is-show) .AsideMenu li:hover > a {
-    color: var(--snColor1Lighter);
+    color: var(--color1-4);
   }
   .SnAdminL2:not(.AsideMenu-is-show) .AsideMenu > li > a {
     -webkit-box-pack: center;
@@ -323,7 +323,7 @@ body {
     text-align: left;
     padding: 0 20px;
     width: 220px;
-    background: var(--snColor1);
+    background: var(--color1-6);
     display: none;
   }
   .SnAdminL2:not(.AsideMenu-is-show) .AsideMenu > li > a .toggle {
@@ -333,7 +333,7 @@ body {
     margin-right: 0;
   }
   .SnAdminL2:not(.AsideMenu-is-show) .AsideMenu > li:hover > a {
-    background: var(--snColor1);
+    background: var(--color1-6);
     color: white;
   }
   .SnAdminL2:not(.AsideMenu-is-show) .AsideMenu > li > ul {
@@ -344,7 +344,7 @@ body {
 .AsideHeader {
   height: 56px;
   padding: 10px 20px;
-  border-bottom: 1px solid var(--snColorDark);
+  border-bottom: 1px solid var(--gray-10);
 }
 
 .AsideFooter {
@@ -363,7 +363,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: var(--snColorDarkInverse);
+  color: var(--gray-5);
   text-decoration: none;
 }
 .Branding-link img {

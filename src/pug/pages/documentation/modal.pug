@@ -89,7 +89,7 @@ block main
                             title: 'Are you sure delete this task?',
                             content: 'Some descriptions',
                             okText: 'Yes',
-                            okClassNames: 'error',
+                            okClassNames: 'danger',
                             cancelText: 'No',
                             onOk() {
                                 SnMessage.info({
@@ -110,7 +110,7 @@ block main
                             input: true,
                             inputValue: 'Cancel by mistake',
                             okText: 'Yes',
-                            okClassNames: 'error',
+                            okClassNames: 'danger',
                             cancelText: 'No',
                             onOk(message) {
                                 SnMessage.info({
@@ -145,7 +145,7 @@ block main
                             title: 'Are you sure delete this task?',
                             content: 'Some descriptions',
                             okText: 'Yes',
-                            okClassNames: 'error',
+                            okClassNames: 'danger',
                             cancelText: 'No',
                             onOk() {
                                 SnMessage.info({
@@ -165,7 +165,7 @@ block main
                             input: true,
                             inputValue: 'Cancel by mistake',
                             okText: 'Yes',
-                            okClassNames: 'error',
+                            okClassNames: 'danger',
                             cancelText: 'No',
                             onOk(message) {
                                 SnMessage.info({
@@ -182,7 +182,7 @@ block main
             .CodeBox-demo
                 .SnBtn(onclick="onConfirmInfo()") info
                 .SnBtn(onclick="onConfirmSuccess()") success
-                .SnBtn(onclick="onConfirmError()") error
+                .SnBtn(onclick="onConfirmError()") danger
                 .SnBtn(onclick="onConfirmWarning()") warning
             .CodeBox-meta
                 .CodeBox-title Information modal dialog
@@ -211,8 +211,8 @@ block main
                         });
                     }
                     let onConfirmError = ()=>{
-                        SnModal.error({
-                            title: 'This is an error message',
+                        SnModal.danger({
+                            title: 'This is an danger message',
                             content: 'some messages...some messages...',
                             onOk() {
                                 console.log('onOk')
@@ -243,8 +243,8 @@ block main
                                 console.log('onOk')
                             },
                         });
-                        SnModal.error({
-                            title: 'This is an error message',
+                        SnModal.danger({
+                            title: 'This is an danger message',
                             content: 'some messages...some messages...',
                             onOk() {
                                 console.log('onOk')

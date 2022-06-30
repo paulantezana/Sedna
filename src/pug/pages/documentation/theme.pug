@@ -14,63 +14,127 @@ block main
         pre.language-scss
             code.
                 :root{
-                    --snColor1Lighter4: #E9F3F7;
-                    --snColor1Lighter3: #D8E4EB;
-                    --snColor1Lighter2: #A9CADE;
-                    --snColor1Lighter: #7DB0D1;
-                    --snColor1Light: #5695C4;
-                    --snColor1: #3379B7;
-                    --snColor1Dark: #215991;
-                    --snColor1Darker: #133C6B;
-                    --snColor1Darker2: #092345;
-                    --snColor1Darker3: #040E1F;
-                    --snColor1Inverse: #ffffff;
+                    --gray-1: #FFFFFF;
+                    --gray-2: #FAFAFA;
+                    --gray-3: #F5F5F5;
+                    --gray-4: #F0F0F0;
+                    --gray-5: #D9D9D9;
+                    --gray-6: #BFBFBF;
+                    --gray-7: #8C8C8C;
+                    --gray-8: #595959;
+                    --gray-9: #434343;
+                    --gray-10: #262626;
+                    --gray-11: #1F1F1F;
+                    --gray-12: #141414;
+                    --gray-13: #000000;
 
-                    --snColor2Lighter4: #fffde6;
-                    --snColor2Lighter3: #fff7b0;
-                    --snColor2Lighter2: #ffef87;
-                    --snColor2Lighter: #ffe45e;
-                    --snColor2Light: #fcd535;
-                    --snColor2: #f0b90b;
-                    --snColor2Dark: #c99400;
-                    --snColor2Darker: #a37200;
-                    --snColor2Darker2: #7d5300;
-                    --snColor2Darker3: #573700;
-                    --snColor2Inverse: #ffffff;
+                    --blue-1: #E6F7FF;
+                    --blue-2: #BAE7FF;
+                    --blue-3: #91D5FF;
+                    --blue-4: #69C0FF;
+                    --blue-5: #40A9FF;
+                    --blue-6: #1890FF;
+                    --blue-7: #096DD9;
+                    --blue-8: #0050B3;
+                    --blue-9: #003A8C;
+                    --blue-10: #002766;
+                    --blue-i: var(--gray-1);
 
-                    --snErrorLight: #de575b;
-                    --snError: #d02f39;
-                    --snErrorDark: #ab1f2d;
-                    --snErrorInverse: white;
+                    --red-1: #FFF1F0;
+                    --red-2: #FFCCC7;
+                    --red-3: #FFA39E;
+                    --red-4: #FF7875;
+                    --red-5: #FF4D4F;
+                    --red-6: #F5222D;
+                    --red-7: #CF1322;
+                    --red-8: #A8071A;
+                    --red-9: #820014;
+                    --red-10: #5C0011;
+                    --red-i: var(--gray-1);
 
-                    --snSuccessLight: #82c280;
-                    --snSuccess: #5ab45a;
-                    --snSuccessDark: #408f43;
-                    --snSuccessInverse: white;
+                    --green-1: #F6FFED;
+                    --green-2: #D9F7BE;
+                    --green-3: #B7EB8F;
+                    --green-4: #95DE64;
+                    --green-5: #73D13D;
+                    --green-6: #52C41A;
+                    --green-7: #389E0D;
+                    --green-8: #237804;
+                    --green-9: #135200;
+                    --green-10: #092B00;
+                    --green-i: var(--gray-1);
 
-                    --snWarningLight: #fccb7c;
-                    --snWarning: #f0ad4e;
-                    --snWarningDark: #c98838;
-                    --snWarningInverse: #3d2501;
+                    --yellow-1: #FEFFE6;
+                    --yellow-2: #FFFFB8;
+                    --yellow-3: #FFFB8F;
+                    --yellow-4: #FFF566;
+                    --yellow-5: #FFEC3D;
+                    --yellow-6: #FADB14;
+                    --yellow-7: #D4B106;
+                    --yellow-8: #AD8B00;
+                    --yellow-9: #876800;
+                    --yellow-10: #614700;
+                    --yellow-i: #3d2501;
 
-                    --snColorBg: #eff3f6;
-                    --snControlColorBg: #eff3f6;
-                    --snColorBgAlt: #ffffff;
+                    --magenta-1: #FFF0F6;
+                    --magenta-2: #FFD6E7;
+                    --magenta-3: #FFADD2;
+                    --magenta-4: #FF85C0;
+                    --magenta-5: #F759AB;
+                    --magenta-6: #EB2F96;
+                    --magenta-7: #C41D7F;
+                    --magenta-8: #9E1068;
+                    --magenta-9: #780650;
+                    --magenta-10: #520339;
+                    --magenta-i: var(--gray-1);
+
+                    --purple-1: #F9F0FF;
+                    --purple-2: #EFDBFF;
+                    --purple-3: #D3ADF7;
+                    --purple-4: #B37FEB;
+                    --purple-5: #9254DE;
+                    --purple-6: #722ED1;
+                    --purple-7: #531DAB;
+                    --purple-8: #391085;
+                    --purple-9: #22075E;
+                    --purple-10: #120338;
+                    --purple-i: var(--gray-1);
+
+                    --color1-1: var(--blue-1);
+                    --color1-2: var(--blue-2);
+                    --color1-3: var(--blue-3);
+                    --color1-4: var(--blue-4);
+                    --color1-5: var(--blue-5);
+                    --color1-6: var(--blue-6);
+                    --color1-7: var(--blue-7);
+                    --color1-8: var(--blue-8);
+                    --color1-9: var(--blue-9);
+                    --color1-10: var(--blue-10);
+                    --color1-i: var(--blue-i);
+
+                    --color2-1: var(--yellow-1);
+                    --color2-2: var(--yellow-2);
+                    --color2-3: var(--yellow-3);
+                    --color2-4: var(--yellow-4);
+                    --color2-5: var(--yellow-5);
+                    --color2-6: var(--yellow-6);
+                    --color2-7: var(--yellow-7);
+                    --color2-8: var(--yellow-8);
+                    --color2-9: var(--yellow-9);
+                    --color2-10: var(--yellow-10);
+                    --color2-i: var(--yellow-i);
+
+                    --snColorBg: var(--gray-4);
+                    --snControlColorBg: var(--gray-4);
+                    --snColorBgAlt: var(--gray-1);
                     --snColorHover: #0000000d;
 
-                    --snColorText: #333333;
-                    --snColorTextAlt: #ababab;
+                    --snColorText: var(--gray-10);
+                    --snColorTextAlt: var(--gray-7);
 
-                    --snColorBorder: #dfe2e2;
-                    --snControlColorBorder: #dfe2e2;
-                    --snControlColorPlaceholder: #ababab;
-
-                    --snColorDarkSmoother: #374047;
-                    --snColorDarkSmooth: #2C343A;
-                    --snColorDark: #242B31;
-                    --snColorDarker: #1B2126;
-                    --snColorDarkest: #15191C;
-                    --snColorDarkInverse: #b6bcc0;
+                    --snColorBorder: var(--gray-5);
+                    --snControlColorBorder: var(--gray-5);
+                    --snControlColorPlaceholder: var(--gray-7);
                 }
     section.SnMb-16
         h2 Variables SCSS.

@@ -88,23 +88,23 @@
             font-size: 32px;
 
             &.warning {
-                color: var(--snWarning);
+                color: var(--yellow-6);
             }
 
-            &.error {
-                color: var(--snError);
+            &.danger {
+                color: var(--red-6);
             }
 
             &.success {
-                color: var(--snSuccess);
+                color: var(--green-6);
             }
 
             &.info {
-                color: var(--snColor1);
+                color: var(--color1-6);
             }
 
             &.question {
-                color: var(--snWarning);
+                color: var(--yellow-6);
             }
         }
 

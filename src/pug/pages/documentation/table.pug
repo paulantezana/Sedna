@@ -9,8 +9,8 @@ block main
     +codeBox(
         'Basic',
         'Simple table with actions.',
-        '<div class="SnTable-wrapper">\n    <table class="SnTable">\n        <thead>\n            <tr>\n                <th>Column 1</th>\n                <th>Column 2</th>\n                <th>Column 3</th>\n                <th style="width: 100px"></th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr>\n                <td>Row 1</td>\n                <td>Row 2</td>\n                <td>Row 3</td>\n                <td>\n                    <div class="SnTable-action">\n                        <div class="SnBtn">Update</div>\n                        <div class="SnBtn error" onclick="onConfirmDelete()">Delete</div>\n                    </div>\n                </td>\n            </tr>\n            <tr>\n                <td>Row 1</td>\n                <td>Row 2</td>\n                <td>Row 3</td>\n                <td>\n                    <div class="SnTable-action">\n                        <div class="SnBtn">Update</div>\n                        <div class="SnBtn error" onclick="onConfirmDelete()">Delete</div>\n                    </div>\n                </td>\n            </tr>\n            <tr>\n                <td>Row 1</td>\n                <td>Row 2</td>\n                <td>Row 3</td>\n                <td>\n                    <div class="SnTable-action">\n                        <div class="SnBtn">Update</div>\n                        <div class="SnBtn error" onclick="onConfirmDelete()">Delete</div>\n                    </div>\n                </td>\n            </tr>\n        </tbody>\n    </table>\n</div>',
-        "let onConfirmDelete = ()=>{\n    SnModal.confirm({\n        title: 'Are you sure delete this task?',\n        content: 'Some descriptions',\n        okText: 'Yes',\n        okType: 'error',\n        cancelText: 'No',\n        onOk() {\n            console.log('onOk')\n        },\n        onCancel() {\n            console.log('onCancel')\n        }\n    });\n}\n"
+        '<div class="SnTable-wrapper">\n    <table class="SnTable">\n        <thead>\n            <tr>\n                <th>Column 1</th>\n                <th>Column 2</th>\n                <th>Column 3</th>\n                <th style="width: 100px"></th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr>\n                <td>Row 1</td>\n                <td>Row 2</td>\n                <td>Row 3</td>\n                <td>\n                    <div class="SnTable-action">\n                        <div class="SnBtn">Update</div>\n                        <div class="SnBtn danger" onclick="onConfirmDelete()">Delete</div>\n                    </div>\n                </td>\n            </tr>\n            <tr>\n                <td>Row 1</td>\n                <td>Row 2</td>\n                <td>Row 3</td>\n                <td>\n                    <div class="SnTable-action">\n                        <div class="SnBtn">Update</div>\n                        <div class="SnBtn danger" onclick="onConfirmDelete()">Delete</div>\n                    </div>\n                </td>\n            </tr>\n            <tr>\n                <td>Row 1</td>\n                <td>Row 2</td>\n                <td>Row 3</td>\n                <td>\n                    <div class="SnTable-action">\n                        <div class="SnBtn">Update</div>\n                        <div class="SnBtn danger" onclick="onConfirmDelete()">Delete</div>\n                    </div>\n                </td>\n            </tr>\n        </tbody>\n    </table>\n</div>',
+        "let onConfirmDelete = ()=>{\n    SnModal.confirm({\n        title: 'Are you sure delete this task?',\n        content: 'Some descriptions',\n        okText: 'Yes',\n        okType: 'danger',\n        cancelText: 'No',\n        onOk() {\n            console.log('onOk')\n        },\n        onCancel() {\n            console.log('onCancel')\n        }\n    });\n}\n"
     )
         .SnTable-wrapper
             table.SnTable
@@ -28,7 +28,7 @@ block main
                         td 
                             .SnTable-action
                                 .SnBtn Update
-                                .SnBtn.error(onclick="onConfirmDelete()") Delete
+                                .SnBtn.danger(onclick="onConfirmDelete()") Delete
                     tr
                         td Row 1
                         td Row 2
@@ -36,7 +36,7 @@ block main
                         td 
                             .SnTable-action
                                 .SnBtn Update
-                                .SnBtn.error(onclick="onConfirmDelete()") Delete
+                                .SnBtn.danger(onclick="onConfirmDelete()") Delete
                     tr
                         td Row 1
                         td Row 2
@@ -44,14 +44,14 @@ block main
                         td 
                             .SnTable-action
                                 .SnBtn Update
-                                .SnBtn.error(onclick="onConfirmDelete()") Delete
+                                .SnBtn.danger(onclick="onConfirmDelete()") Delete
         script.
             let onConfirmDelete = ()=>{
                 SnModal.confirm({
                     title: 'Are you sure delete this task?',
                     content: 'Some descriptions',
                     okText: 'Yes',
-                    okType: 'error',
+                    okType: 'danger',
                     cancelText: 'No',
                     onOk() {
                         console.log('onOk')

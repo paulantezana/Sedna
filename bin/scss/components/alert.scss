@@ -13,22 +13,39 @@
             position: relative;
             top: 3px;
         }
+        &-close {
+            position: absolute;
+            width: 2rem;
+            height: 2rem;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+
+            // center
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            [class*="SnIcon-"]{
+                margin: 0;
+            }
+        }
     
         &.success{
-            background: var(--snSuccess);
-            color: var(--snSuccessInverse);
+            background: var(--green-6);
+            color: var(--green-i);
         }
         &.info{
-            background: var(--snColor1);
-            color: var(--snColor1Inverse);
+            background: var(--color1-6);
+            color: var(--color1-i);
         }
         &.warning{
-            background: var(--snWarning);
-            color: var(--snWarningInverse);
+            background: var(--yellow-6);
+            color: var(--yellow-i);
         }
-        &.error{
-            background: var(--snErrorLight);
-            color: var(--snErrorInverse);
+        &.danger{
+            background: var(--red-5);
+            color: var(--red-i);
         }
     }
 }

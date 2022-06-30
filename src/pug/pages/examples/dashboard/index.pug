@@ -1,0 +1,327 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Dashboard
+    //- link(rel='shortcut icon' href='/assets/images/logo.svg')
+    //- link(rel='stylesheet' href='/css/sedna.css')
+    //- link(rel='stylesheet' href='/css/style.css')
+    //- link(rel='stylesheet' href='/css/font/styles.css')
+    link(href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900' rel='stylesheet' type='text/css')
+body
+    #AdminLayout.AdminLayout.SnAdminL1
+        .AdminLayout-header
+            header.Header
+                .Header-left
+                    #AsideMenu-toggle
+                        i.icon-menu
+                .Header-right
+                    ul#HeaderMenu.HeaderMenu
+                        li
+                            a.Header-action(href='#')
+                                i.icon-bell-o
+                            ul
+                                li.HeaderMenu-header
+                                    div
+                                        | Notification 
+                                        span 5
+                                li.Notification
+                                    .Notification-avatar.SnAvatar
+                                        img(src='/assets/images/avatar.svg' alt='avatar')
+                                    .Notification-body
+                                        p.SnMb-2
+                                            strong User name
+                                            span  replied to your comment : &quot;Hello world &#x1F60D;&quot;
+                                        .Notification-time
+                                            span &#x1F4AC;
+                                            span Just Now
+                                li.Notification
+                                    .Notification-avatar.SnAvatar
+                                        img(src='/assets/images/avatar.svg' alt='avatar')
+                                    .Notification-body
+                                        p.SnMb-2
+                                            strong Current user
+                                            span Lorem ipsum, dolor sit amet.
+                                        .Notification-time
+                                            span &#x1F4AC;
+                                            span Just Now
+                                li.Notification
+                                    .Notification-avatar.SnAvatar
+                                        img(src='/assets/images/avatar.svg' alt='avatar')
+                                    .Notification-body
+                                        p.SnMb-2
+                                            strong Other user
+                                            span  replied to your comment
+                                        .Notification-time
+                                            span &#x1F4AC;
+                                            span Just Now
+                                li.HeaderMenu-footer
+                                    a(href='#') View all
+                        li
+                            .HeaderMenu-profile.Header-action
+                                .SnAvatar
+                                    img(src='/assets/images/avatar.svg' alt='avatar')
+                            ul
+                                li.User-item.SnPt-2.SnPb-2
+                                    a.SnAvatar(href='/')
+                                        img(src='/assets/images/avatar.svg' alt='avatar')
+                                    div
+                                        #userTitleInfo.User-title admin
+                                        #userDescriptionInfo.User-description contact@gamil.com
+                                li.divider
+                                li.SnPt-2
+                                    a(href='#')
+                                        i.icon-user-plus.SnMr-2
+                                        |  Perfil
+                                li
+                                    a(href='')
+                                        i.icon-question-circle.SnMr-2
+                                        |  Soporte
+                                li.SnPb-2
+                                    a(href='')
+                                        i.icon-cog.SnMr-2
+                                        |  Configurar empresa
+                                li.divider
+                                li.SnPt-2.SnPb-2
+                                    a(href='')
+                                        i.icon-power-off.SnMr-2
+                                        |  Cerrar sesi&oacute;n
+        .AdminLayout-main
+            .SnContent
+                .SnToolbar
+                    .SnToolbar-left
+                        i.icon-ellipsis-v.SnMr-2
+                        strong USERS
+                    .SnToolbar-right
+                        .SnBtn.jsUserAction(onclick='userToPrint()')
+                            i.icon-print
+                        .SnBtn.jsUserAction(onclick='userToExcel()')
+                            i.icon-file-text-o
+                        .SnBtn.jsUserAction(onclick='userList()')
+                            i.icon-refresh
+                        .SnBtn.primary.jsUserAction(onclick='userShowModalCreate()')
+                            i.icon-plus.SnMr-2
+                            |  New
+                .SnCard
+                    .SnCard-body
+                        .SnControl-wrapper.SnMb-5
+                            input#searchContent.SnForm-control.SnControl(type='text' placeholder='Search...')
+                            span.SnControl-suffix.icon-search
+                        .SnTable-wrapper
+                            table#userTable.SnTable
+                                thead
+                                    tr
+                                        th(style='width: 40px') Avatar
+                                        th Full name
+                                        th Phone
+                                        th Sate
+                                        th Profile
+                                        th Email
+                                        th(style='width: 50px')
+                                tbody
+                                    tr
+                                        td
+                                            .SnAvatar
+                                                img(src='/assets/images/avatar.svg' alt='avatar')
+                                        td name 1
+                                        td phone 1
+                                        td true
+                                        td admin
+                                        td email@gmail.com
+                                        td
+                                            .SnTable-action
+                                                .SnBtn.icon.jsUserOption(onclick='userShowModalUpdate(1)')
+                                                    i.icon-pencil-square-o
+                                    tr
+                                        td
+                                            .SnAvatar
+                                                img(src='/assets/images/avatar.svg' alt='avatar')
+                                        td name 1
+                                        td phone 1
+                                        td true
+                                        td admin
+                                        td email@gmail.com
+                                        td
+                                            .SnTable-action
+                                                .SnBtn.icon.jsUserOption(onclick='userShowModalUpdate(1)')
+                                                    i.icon-pencil-square-o
+                                    tr
+                                        td
+                                            .SnAvatar
+                                                img(src='/assets/images/avatar.svg' alt='avatar')
+                                        td name 1
+                                        td phone 1
+                                        td true
+                                        td admin
+                                        td email@gmail.com
+                                        td
+                                            .SnTable-action
+                                                .SnBtn.icon.jsUserOption(onclick='userShowModalUpdate(1)')
+                                                    i.icon-pencil-square-o
+                                    tr
+                                        td
+                                            .SnAvatar
+                                                img(src='/assets/images/avatar.svg' alt='avatar')
+                                        td name 1
+                                        td phone 1
+                                        td true
+                                        td admin
+                                        td email@gmail.com
+                                        td
+                                            .SnTable-action
+                                                .SnBtn.icon.jsUserOption(onclick='userShowModalUpdate(1)')
+                                                    i.icon-pencil-square-o
+                                    tr
+                                        td
+                                            .SnAvatar
+                                                img(src='/assets/images/avatar.svg' alt='avatar')
+                                        td name 1
+                                        td phone 1
+                                        td true
+                                        td admin
+                                        td email@gmail.com
+                                        td
+                                            .SnTable-action
+                                                .SnBtn.icon.jsUserOption(onclick='userShowModalUpdate(1)')
+                                                    i.icon-pencil-square-o
+                                    tr
+                                        td
+                                            .SnAvatar
+                                                img(src='/assets/images/avatar.svg' alt='avatar')
+                                        td name 1
+                                        td phone 1
+                                        td true
+                                        td admin
+                                        td email@gmail.com
+                                        td
+                                            .SnTable-action
+                                                .SnBtn.icon.jsUserOption(onclick='userShowModalUpdate(1)')
+                                                    i.icon-pencil-square-o
+                                    tr
+                                        td
+                                            .SnAvatar
+                                                img(src='/assets/images/avatar.svg' alt='avatar')
+                                        td name 1
+                                        td phone 1
+                                        td true
+                                        td admin
+                                        td email@gmail.com
+                                        td
+                                            .SnTable-action
+                                                .SnBtn.icon.jsUserOption(onclick='userShowModalUpdate(1)')
+                                                    i.icon-pencil-square-o
+                                    tr
+                                        td
+                                            .SnAvatar
+                                                img(src='/assets/images/avatar.svg' alt='avatar')
+                                        td name 1
+                                        td phone 1
+                                        td true
+                                        td admin
+                                        td email@gmail.com
+                                        td
+                                            .SnTable-action
+                                                .SnBtn.icon.jsUserOption(onclick='userShowModalUpdate(1)')
+                                                    i.icon-pencil-square-o
+                                    tr
+                                        td
+                                            .SnAvatar
+                                                img(src='/assets/images/avatar.svg' alt='avatar')
+                                        td name 1
+                                        td phone 1
+                                        td true
+                                        td admin
+                                        td email@gmail.com
+                                        td
+                                            .SnTable-action
+                                                .SnBtn.icon.jsUserOption(onclick='userShowModalUpdate(1)')
+                                                    i.icon-pencil-square-o
+            .SnModal-wrapper(data-modal='userModalForm')
+                .SnModal
+                    .SnModal-close(data-modalclose='userModalForm')
+                        i.icon-times
+                    .SnModal-header
+                        i.icon-files-o.SnMr-2
+                        |  Usuario
+                    .SnModal-body
+                        form#userForm.SnForm(action='' onsubmit='userSubmit()')
+                            input#userId.SnForm-control(type='hidden')
+                            .SnForm-item.required
+                                label.SnForm-label(for='userEmail') Email
+                                .SnControl-wrapper
+                                    i.icon-file-text-o.SnControl-prefix
+                                    input#userEmail.SnForm-control.SnControl(type='email' required='')
+                            .SnForm-item.required
+                                label.SnForm-label(for='userUserName') User name
+                                .SnControl-wrapper
+                                    i.icon-file-text-o.SnControl-prefix
+                                    input#userUserName.SnForm-control.SnControl(type='text' required='')
+                            .SnForm-item.required
+                                label.SnForm-label(for='userPassword') Password
+                                .SnControl-wrapper
+                                    i.icon-key.SnControl-prefix
+                                    input#userPassword.SnForm-control.SnControl(type='password' required='')
+                                    span.SnControl-suffix.icon-eye.togglePassword
+                            .SnForm-item.required
+                                label.SnForm-label(for='userPasswordConfirm') Password confirm
+                                .SnControl-wrapper
+                                    i.icon-key.SnControl-prefix
+                                    input#userPasswordConfirm.SnForm-control.SnControl(type='password' required='')
+                                    span.SnControl-suffix.icon-eye.togglePassword
+                            .SnForm-item
+                                .SnSwitch
+                                    input#userState.SnSwitch-control(type='checkbox')
+                                    label.SnSwitch-label(for='userState') State
+                            button#userFormSubmit.SnBtn.primary.block(type='submit') Save
+        .AdminLayout-aside
+            #AsideMenu-wrapper.AsideMenu-wrapper
+                .AsideMenu-container
+                    .AsideHeader
+                        .Branding
+                            a.Branding-link(href='/')
+                                img.Branding-img(src='/assets/images/logo.svg' alt='Logo')
+                                span.Branding-name Dashboard
+                    ul#AsideMenu.AsideMenu
+                        li.AsideMenu-divider App
+                        li
+                            a(href='#')
+                                i.icon-book
+                                span General 
+                            ul
+                                li
+                                    a(href='#') Starter
+                                li
+                                    a(href='#') Button
+                                li
+                                    a(href='#') Theme
+                                    ul
+                                        li
+                                            a(href='#') Dark
+                                        li
+                                            a(href='#') Light
+                        li.AsideMenu-divider Components
+                        li
+                            a(href='#')
+                                i.icon-clone
+                                span Modal 
+                        li
+                            a(href='#')
+                                i.icon-ticket
+                                span Alert 
+                        li
+                            a(href='#')
+                                i.icon-houzz
+                                span
+                                    | Message 
+                                    span.SnTag.success 5
+                        li
+                            a(href='#')
+                                i.icon-server
+                                span Freeze 
+                    .AsideFooter
+                        .SnSwitch
+                            input#themeMode.SnSwitch-control(type='checkbox')
+                            label.SnSwitch-label(for='themeMode')
+    //- script(src='js/sedna.js')
+    //- script(src='js/script.js')
+    //- script(src='js/theme.js')

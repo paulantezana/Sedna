@@ -2,32 +2,22 @@ export class Theme {
     constructor() {
         this.defaultThemes = {
             'darck': {
-                snColorBg: '#2A3B47',
-                snColorBgAlt: '#22323d',
-                snColorHover: '#0000000d',
+                snColorBg: 'var(--gray-9)',
+                snColorBgAlt: 'var(--gray-10)',
 
-                snColorText: '#cad8e2',
-                snColorTextAlt: '#94aab9',
+                snColorText: 'var(--gray-5)',
+                snColorTextAlt: 'var(--gray-7)',
 
-                snColorBorder: '#374b58',
-
-                snColorDark: '#2A3B47',
-                snColorDarkAlt: 'hsl(208, 29%, 10%)',
-                snColorDarkInverse: '#b6bcc0',
+                snColorBorder: 'var(--gray-8)',
             },
             'light': {
-                snColorBg: '#F6F8FA',
-                snColorBgAlt: '#FFFFFF',
-                snColorHover: '#0000000d',
+                snColorBg: 'var(--gray-4)',
+                snColorBgAlt: 'var(--gray-1)',
 
-                snColorText: '#333333',
-                snColorTextAlt: 'rgb(202, 202, 202)',
+                snColorText: 'var(--gray-10)',
+                snColorTextAlt: 'var(--gray-7)',
 
-                snColorBorder: '#DFE2E2',
-
-                snColorDark: '#2A3B47',
-                snColorDarkAlt: 'hsl(208, 29%, 10%)',
-                snColorDarkInverse: '#b6bcc0',
+                snColorBorder: 'var(--gray-5)',
             },
             'theme1': {
                 snColor1: '#FF4D4F',
@@ -144,5 +134,4 @@ export class Theme {
         }
         
     }
-
 }

@@ -26,7 +26,7 @@ function userDelete(userId, content = ''){
         title: '¿Estás seguro de eliminar este registro?',
         content: content,
         okText: 'Si',
-        okType: 'error',
+        okType: 'danger',
         cancelText: 'No',
         onOk() {
         }
