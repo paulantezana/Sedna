@@ -175,6 +175,7 @@ export let SnModal = {
                 this.scope.removeChild(divEl);
                 onOk(inputData ? inputData.value : '');
             });
+            btnOk.focus();
         }
     },
 

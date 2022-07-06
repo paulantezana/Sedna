@@ -16,7 +16,7 @@
     padding-bottom: 2rem;
     margin-top: auto;
     text-align: center;
-    background: var(--snColorBorder);
+    border-top: 1px solid var(--snColorBorder);
   }
 }
 
@@ -30,4 +30,4 @@
 
 @import "SiteTitle";
 
-// @import "./Examples/dashboard";
+@import "./Examples/dashboard";

@@ -32,8 +32,12 @@
     h1 {
       font-size: 3rem;
       font-weight: 100;
-      margin-bottom: 0;
+      margin-bottom: .5rem;
       line-height: 1em;
+      span{
+        color: var(--snColorTextAlt);
+        font-size: 1rem;
+      }
     }
     p {
       margin-bottom: 2rem;

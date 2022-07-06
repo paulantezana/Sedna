@@ -11,17 +11,17 @@ head
 body
     #AdminLayout.AdminLayout.SnAdminL1
         .AdminLayout-header
-            header.Header
-                .Header-left
-                    #AsideMenu-toggle
+            header.AdminHeader
+                .AdminHeader-left
+                    #AdminAsideMenu-toggle
                         i.icon-menu
-                .Header-right
-                    ul#HeaderMenu.HeaderMenu
+                .AdminHeader-right
+                    ul#AdminHeaderMenu.AdminHeaderMenu
                         li
-                            a.Header-action(href='#')
+                            a.AdminHeader-action(href='#')
                                 i.icon-bell-o
                             ul
-                                li.HeaderMenu-header
+                                li.AdminHeaderMenu-header
                                     div
                                         | Notification 
                                         span 5
@@ -55,10 +55,10 @@ body
                                         .Notification-time
                                             span &#x1F4AC;
                                             span Just Now
-                                li.HeaderMenu-footer
+                                li.AdminHeaderMenu-footer
                                     a(href='#') View all
                         li
-                            .HeaderMenu-profile.Header-action
+                            .AdminHeaderMenu-profile.Header-action
                                 .SnAvatar
                                     img(src='/assets/images/avatar.svg' alt='avatar')
                             ul
@@ -274,15 +274,15 @@ body
                                     label.SnSwitch-label(for='userState') State
                             button#userFormSubmit.SnBtn.primary.block(type='submit') Save
         .AdminLayout-aside
-            #AsideMenu-wrapper.AsideMenu-wrapper
-                .AsideMenu-container
-                    .AsideHeader
-                        .Branding
-                            a.Branding-link(href='/')
-                                img.Branding-img(src='/assets/images/logo.svg' alt='Logo')
-                                span.Branding-name Dashboard
-                    ul#AsideMenu.AsideMenu
-                        li.AsideMenu-divider App
+            #AdminAsideMenu-wrapper.AdminAsideMenu-wrapper
+                .AdminAsideMenu-container
+                    .AdminAsideHeader
+                        .AdminBranding
+                            a.AdminBranding-link(href='/')
+                                img.AdminBranding-img(src='/assets/images/logo.svg' alt='Logo')
+                                span.AdminBranding-name Dashboard
+                    ul#AdminAsideMenu.AdminAsideMenu
+                        li.AdminAsideMenu-divider App
                         li
                             a(href='#')
                                 i.icon-book
@@ -299,7 +299,7 @@ body
                                             a(href='#') Dark
                                         li
                                             a(href='#') Light
-                        li.AsideMenu-divider Components
+                        li.AdminAsideMenu-divider Components
                         li
                             a(href='#')
                                 i.icon-clone
@@ -318,7 +318,7 @@ body
                             a(href='#')
                                 i.icon-server
                                 span Freeze 
-                    .AsideFooter
+                    .AdminAsideFooter
                         .SnSwitch
                             input#themeMode.SnSwitch-control(type='checkbox')
                             label.SnSwitch-label(for='themeMode')

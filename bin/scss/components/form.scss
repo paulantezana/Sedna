@@ -28,6 +28,10 @@
         border-right-width: 1px !important;
     }
 
+    &:focus {
+        box-shadow: var(--color1-5) 0px 0px 0px 1px;
+    }
+
     &::placeholder {
         color: var(--snControlColorPlaceholder);
     }
@@ -93,6 +97,9 @@
             &.has-danger {
                 .SnForm-control {
                     border-color: var(--red-5);
+                    &:focus {
+                        box-shadow: var(--red-5) 0px 0px 0px 1px;
+                    }
                 }
 
                 .SnForm-help {
@@ -103,6 +110,9 @@
             &.has-success {
                 .SnForm-control {
                     border-color: var(--green-5);
+                    &:focus {
+                        box-shadow: var(--green-5) 0px 0px 0px 1px;
+                    }
                 }
 
                 .SnForm-help {

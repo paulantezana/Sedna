@@ -1,17 +1,7 @@
-$asideFooterHeight: 32px;
+$adminAsideFooterHeight: 32px;
 $asideWidth: 220px;
 $asideSmallWidth: 64px;
 $headerHeight: 56px;
-
-body {
-    font-family: "Roboto", Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 0.9rem;
-}
-
-[class*="icon-"]::before {
-    top: 2px;
-    position: relative;
-}
 
 // General Styles
 .AdminLayout {
@@ -50,7 +40,7 @@ body {
             line-height: inherit;
         }
     }
-    &.AsideMenu-is-show {
+    &.AdminAsideMenu-is-show {
         @include to(l) {
             .AdminLayout-aside {
                 left: 0;
@@ -64,7 +54,7 @@ body {
     @include from(l) {
         grid-template-columns: $asideWidth 1fr;
     }
-    &.AsideMenu-is-show {
+    &.AdminAsideMenu-is-show {
         @include from(l) {
             grid-template-columns: $asideSmallWidth 1fr;
         }
@@ -76,37 +66,37 @@ body {
     @include from(l) {
         grid-template-columns: $asideSmallWidth 1fr;
     }
-    &.AsideMenu-is-show {
+    &.AdminAsideMenu-is-show {
         @include from(l) {
             grid-template-columns: $asideWidth 1fr;
         }
     }
 }
 
-.SnContent {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    @include from(l) {
-        padding: 1rem;
-    }
-}
+// .SnContent {
+//     padding-top: 1rem;
+//     padding-bottom: 1rem;
+//     @include from(l) {
+//         padding: 1rem;
+//     }
+// }
 
-.SnContentAside {
-    display: grid;
-    grid-template-columns: 1fr;
-    @include from(l) {
-        grid-template-columns: 1fr 2fr;
-    }
-    height: calc(100vh - 60px);
-    padding: 1rem;
-    grid-gap: 1rem;
-}
+// .SnContentAside {
+//     display: grid;
+//     grid-template-columns: 1fr;
+//     @include from(l) {
+//         grid-template-columns: 1fr 2fr;
+//     }
+//     height: calc(100vh - 60px);
+//     padding: 1rem;
+//     grid-gap: 1rem;
+// }
 
-.AsideMenu {
+.AdminAsideMenu {
     list-style: none;
     margin: 0;
     padding: 0;
-    height: calc(100vh - #{$headerHeight + $asideFooterHeight});
+    height: calc(100vh - #{$headerHeight + $adminAsideFooterHeight});
     background: var(--gray-11);
     overflow-y: auto;
     &-container {
@@ -161,9 +151,9 @@ body {
 }
 
 // Menu Aside wrrapper
-.AsideMenu-is-show {
+.AdminAsideMenu-is-show {
     @include to(l) {
-        .AsideMenu {
+        .AdminAsideMenu {
             &-wrapper {
                 background: rgba(black, 0.5);
             }
@@ -175,7 +165,7 @@ body {
 }
 
 // Divider
-.AsideMenu {
+.AdminAsideMenu {
     &-divider {
         padding: 10px 20px;
         text-transform: uppercase;
@@ -185,7 +175,7 @@ body {
 }
 
 // Large
-.AsideMenu {
+.AdminAsideMenu {
     ul {
         display: none;
         &.is-show {
@@ -195,9 +185,9 @@ body {
 }
 
 // Small
-@mixin AsideMenuInSmall() {
+@mixin AdminAsideMenuInSmall() {
     @include from(l) {
-        .AsideMenu {
+        .AdminAsideMenu {
             overflow-y: initial;
             &-divider {
                 // border-bottom: 1px solid var(--gray-10);
@@ -267,29 +257,29 @@ body {
     }
 }
 
-.SnAdminL1.AsideMenu-is-show {
-    @include AsideMenuInSmall();
+.SnAdminL1.AdminAsideMenu-is-show {
+    @include AdminAsideMenuInSmall();
 }
-.SnAdminL2:not(.AsideMenu-is-show) {
-    @include AsideMenuInSmall();
+.SnAdminL2:not(.AdminAsideMenu-is-show) {
+    @include AdminAsideMenuInSmall();
 }
 
 // ----------------------------------------------------------------------------
 // Aside Header
-.AsideHeader {
+.AdminAsideHeader {
     height: $headerHeight;
     padding: 10px 20px;
     border-bottom: 1px solid var(--gray-10);
 }
 
 // ----------------------------------------------------------------------------
-.AsideFooter {
-    height: $asideFooterHeight;
+.AdminAsideFooter {
+    height: $adminAsideFooterHeight;
     padding: 0 14px 0 14px;
 }
 
-// Branding
-.Branding {
+// AdminBranding
+.AdminBranding {
     height: 100%;
     &-link {
         height: 100%;
@@ -308,14 +298,14 @@ body {
 }
 
 // Layout
-@mixin AsideHeaderInSmall() {
+@mixin AdminAsideHeaderInSmall() {
     @include from(l) {
-        .AsideHeader {
+        .AdminAsideHeader {
             padding: 0;
             display: flex;
             justify-content: center;
         }
-        .Branding {
+        .AdminBranding {
             &-img {
                 margin: 0;
             }
@@ -326,29 +316,29 @@ body {
     }
 }
 
-.SnAdminL1.AsideMenu-is-show {
-    @include AsideHeaderInSmall();
+.SnAdminL1.AdminAsideMenu-is-show {
+    @include AdminAsideHeaderInSmall();
 }
-.SnAdminL2:not(.AsideMenu-is-show) {
-    @include AsideHeaderInSmall();
-}
-
-.icon-down::before {
-    content: "\6b";
+.SnAdminL2:not(.AdminAsideMenu-is-show) {
+    @include AdminAsideHeaderInSmall();
 }
 
-.icon-up::before {
-    content: "\6e";
-}
+// .icon-down::before {
+//     content: "\6b";
+// }
 
-.Header {
+// .icon-up::before {
+//     content: "\6e";
+// }
+
+.AdminHeader {
     display: flex;
     justify-content: space-between;
     background: var(--snColorBgAlt);
     border-bottom: 1px solid var(--snColorBorder);
 }
 
-#AsideMenu-toggle {
+#AdminAsideMenu-toggle {
     padding: 0 16px;
     cursor: pointer;
     &:hover {
@@ -356,10 +346,10 @@ body {
     }
 }
 
-@include SnMenu(s, ".HeaderMenu");
+@include SnMenu(s, ".AdminHeaderMenu");
 
 // Estilos generales
-.HeaderMenu {
+.AdminHeaderMenu {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -370,7 +360,7 @@ body {
         &:hover {
             background: var(--snColorHover);
         }
-        .Header-action {
+        .AdminHeader-action {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -406,7 +396,7 @@ body {
 }
 
 // Profile Avatar
-.HeaderMenu {
+.AdminHeaderMenu {
     &-profile {
         text-transform: uppercase;
     }
@@ -426,7 +416,7 @@ body {
 }
 
 // Estilos en el escritorio
-.HeaderMenu {
+.AdminHeaderMenu {
     display: flex;
     a {
         color: var(--snColorText);
@@ -447,48 +437,48 @@ body {
     }
 }
 
-.User,
-.Notification {
-    &-item {
-        text-decoration: none;
-        color: var(--snColorText);
-        display: flex;
-        align-items: center;
+// .User,
+// .Notification {
+//     &-item {
+//         text-decoration: none;
+//         color: var(--snColorText);
+//         display: flex;
+//         align-items: center;
 
-        line-height: 1rem;
-        padding-top: 0.75rem;
-        padding-bottom: 0.75rem;
-        .SnAvatar {
-            margin-right: 16px;
-        }
-    }
-    &-description,
-    &-title {
-        margin: 0;
-    }
-    &-description {
-        color: var(--snColorTextAlt);
-    }
-}
+//         line-height: 1rem;
+//         padding-top: 0.75rem;
+//         padding-bottom: 0.75rem;
+//         .SnAvatar {
+//             margin-right: 16px;
+//         }
+//     }
+//     &-description,
+//     &-title {
+//         margin: 0;
+//     }
+//     &-description {
+//         color: var(--snColorTextAlt);
+//     }
+// }
 
-.Notification {
-    line-height: 1rem;
-    display: flex;
-    min-width: 300px;
-    padding: 0.6rem 1rem;
-    &-avatar {
-        margin-right: 1rem;
-        flex: 1 0 auto;
-    }
-    &-body {
-        p {
-            margin-top: 0;
-        }
-    }
-    &-time {
-        color: var(--snColorTextAlt);
-    }
-}
+// .Notification {
+//     line-height: 1rem;
+//     display: flex;
+//     min-width: 300px;
+//     padding: 0.6rem 1rem;
+//     &-avatar {
+//         margin-right: 1rem;
+//         flex: 1 0 auto;
+//     }
+//     &-body {
+//         p {
+//             margin-top: 0;
+//         }
+//     }
+//     &-time {
+//         color: var(--snColorTextAlt);
+//     }
+// }
 
 .SnToolbar {
     display: flex;
