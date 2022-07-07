@@ -144,7 +144,7 @@
         --snColorTextAlt: var(--gray-7);
 
         --snColorBorder: var(--gray-4);
-        --snControlColorBorder: var(--gray-4);
-        --snControlColorPlaceholder: var(--gray-7);
+        --snControlColorBorder: var(--snColorBorder);
+        --snControlColorPlaceholder: var(--snColorTextAlt);
     }
 }
