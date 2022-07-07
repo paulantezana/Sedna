@@ -1,13 +1,13 @@
 .HomeBanner {
-  // background: linear-gradient(-20deg, var(--snColor1Dark) 35%, transparent),
+  // background: linear-gradient(-20deg, var(--color1-7) 35%, transparent),
   //   linear-gradient(
   //     60deg,
-  //     var(--snColor1) 0%,
-  //     var(--snColor1Dark) 25%,
-  //     var(--snColor1) 25%,
-  //     var(--snColor1Dark) 50%,
-  //     var(--snColor1) 50%,
-  //     var(--snColor1Dark) 75%
+  //     var(--color1-6) 0%,
+  //     var(--color1-7) 25%,
+  //     var(--color1-6) 25%,
+  //     var(--color1-7) 50%,
+  //     var(--color1-6) 50%,
+  //     var(--color1-7) 75%
   //   );
   position: relative;
   // height: 500px;
@@ -25,15 +25,19 @@
     text-align: center;
     position: relative;
     z-index: 5;
-    // color: var(--snColor1Inverse);
+    // color: var(--color1-i);
     img{
       width: 100px;
     }
     h1 {
       font-size: 3rem;
       font-weight: 100;
-      margin-bottom: 0;
+      margin-bottom: .5rem;
       line-height: 1em;
+      span{
+        color: var(--snColorTextAlt);
+        font-size: 1rem;
+      }
     }
     p {
       margin-bottom: 2rem;

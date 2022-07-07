@@ -25,12 +25,13 @@ block main
                         })
         section.CodeBox
             .CodeBox-demo
+                .SnBtn(onclick="SnMessage.info({content: 'This is a info message'})") info
                 .SnBtn(onclick="SnMessage.success({content: 'This is a success message'})") success
-                .SnBtn(onclick="SnMessage.error({content: 'This is a error message'})") error
+                .SnBtn(onclick="SnMessage.danger({content: 'This is a danger message'})") danger
                 .SnBtn(onclick="SnMessage.warning({content: 'This is a warning message'})") warning
             .CodeBox-meta
                 .CodeBox-title Other types of message
-                .CodeBox-description Messages of success, error and warning types.
+                .CodeBox-description Messages of success, danger and warning types.
                 .CodeBox-actions
                     //- a(href="" target="_blanck" data-tooltip="Open in CodePen").CodeBox-action.icon-codepen.CodeBox-codepen
                     .CodeBox-action.icon-clipboard.CodeBox-copy(data-tooltip="Copy code")
@@ -38,11 +39,14 @@ block main
             .CodeBox-code
                 pre.language-js
                     code.
+                        SnMessage.info({
+                            content: 'This is a info message'
+                        });
                         SnMessage.success({
                             content: 'This is a success message'
                         });
-                        SnMessage.error({
-                            content: 'This is a error message'
+                        SnMessage.danger({
+                            content: 'This is a danger message'
                         });
                         SnMessage.warning({
                             content: 'This is a warning message'
@@ -68,7 +72,7 @@ block main
 
     H2 API
     h3 SnMessage
-    p info, success, error, warning
+    p info, success, danger, warning
     .SnTable-wrapper.SnMt-5
         table.SnTable.DocApiTable
             thead

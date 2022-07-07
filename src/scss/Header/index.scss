@@ -18,14 +18,14 @@ $headerHeight: 58px;
         margin-right: 8px;
     }
     &-name{
-        color: var(--snColor1);
+        color: var(--color1-6);
         font-family: 'Open Sans', sans-serif;
         font-weight: 400;
         font-size: 1.2rem;
         a:hover{
-            color: var(--snColor1);
+            color: var(--color1-6);
         }
     }
 }
 
-@import './PrimaryMenu';
+@import './SiteMenu';

@@ -10,13 +10,13 @@ block main
         +codeBox(
             'Basic',
             'Usage of basic Tag',
-            '<span class="SnTag">default</span>\n<span class="SnTag primary">primary</span>\n<span class="SnTag success">success</span>\n<span class="SnTag warning">warning</span>\n<span class="SnTag error">error</span>\n'
+            '<span class="SnTag">default</span>\n<span class="SnTag primary">primary</span>\n<span class="SnTag success">success</span>\n<span class="SnTag warning">warning</span>\n<span class="SnTag danger">danger</span>\n'
         )
             span.SnTag default
             span.SnTag.primary primary
             span.SnTag.success success
             span.SnTag.warning warning
-            span.SnTag.error error
+            span.SnTag.danger danger
     h2 API
     .SnTable-wrapper
         table.SnTable.DocApiTable
@@ -35,4 +35,4 @@ block main
                         code .primary
                         code .success
                         code .warning
-                        code .error
+                        code .danger

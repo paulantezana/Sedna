@@ -131,11 +131,11 @@ body{
   margin: 0;
   padding: 0;
   height: calc(100vh - #{$headerHeight + $asideFooterHeight});
-  background: var(--snColorDarker);
+  background: var(--gray-11);
   overflow-y: auto;
   &-container{
-    background: var(--snColorDarker);
-    color: var(--snColorDarkInverse);
+    background: var(--gray-11);
+    color: var(--gray-5);
   }
   li {
     position: relative;
@@ -144,10 +144,10 @@ body{
     list-style: none;
     margin: 0;
     padding: 0;
-    background: var(--snColorDark);
+    background: var(--gray-10);
   }
   a {
-    color: var(--snColorDarkInverse);
+    color: var(--gray-5);
     text-decoration: none;
     padding: 0 8px 0 20px;
     display: flex;
@@ -169,7 +169,7 @@ body{
   & > li > a {
     line-height: 3rem;
     &:hover {
-      background: var(--snColor1);
+      background: var(--color1-6);
       color: white;
     }
   }
@@ -178,7 +178,7 @@ body{
       padding: 8px 0  8px 50px;
       line-height: 1.5rem;
       &:hover{
-        color: var(--snColor1Lighter);
+        color: var(--color1-4);
       }
     }
   }
@@ -224,7 +224,7 @@ body{
     .AsideMenu {
       overflow-y: initial;
       &-divider {
-        // border-bottom: 1px solid var(--snColorDark);
+        // border-bottom: 1px solid var(--gray-10);
         padding: 0;
         font-size: 0;
       }
@@ -249,7 +249,7 @@ body{
             display: flex;
           }
           > a {
-            color: var(--snColor1Lighter);
+            color: var(--color1-4);
           }
         }
       }
@@ -267,7 +267,7 @@ body{
             text-align: left;
             padding: 0 20px;
             width: 220px;
-            background: var(--snColor1);
+            background: var(--color1-6);
             display: none;
           }
           .toggle {
@@ -279,7 +279,7 @@ body{
         }
         &:hover{
           > a {
-            background: var(--snColor1);
+            background: var(--color1-6);
             color: white;
           }
         }
@@ -303,7 +303,7 @@ body{
 .AsideHeader {
   height: $headerHeight;
   padding: 10px 20px;
-  border-bottom: 1px solid var(--snColorDark);
+  border-bottom: 1px solid var(--gray-10);
 }
 
 // ----------------------------------------------------------------------------
@@ -319,7 +319,7 @@ body{
     height: 100%;
     display: flex;
     align-items: center;
-    color: var(--snColorDarkInverse);
+    color: var(--gray-5);
     text-decoration: none;
     img {
       max-width: 28px;
@@ -380,94 +380,6 @@ body{
   cursor: pointer;
   &:hover{
       background: var(--snColorHover);
-  }
-}
-
-
-
-
-
-
-@mixin SnMenu($bp: l, $menu-class: '.SnMenu'){
-  #{$menu-class}{
-      @media print{ display: none; }
-      @include from($bp){  display: flex;  }
-  }
-
-  // Layout general en mobile
-  #{$menu-class}{
-      li ul{
-          display: none;
-          // opacity: 0;
-          // max-height: 0;
-          // overflow: hidden;
-      }
-  }
-
-  // Layout general en Desktop
-  #{$menu-class}{
-      li{
-          @include from($bp){  position: relative;  }
-      }
-      li ul{
-          @include from($bp){  position: absolute; z-index: 400  }
-      }
-      li{
-          @include from($bp){
-              &:hover{
-                  & > ul{
-                      display: block;
-                      // opacity: 1;
-                      // max-height: 1000px;
-                      // overflow: visible;
-                  }
-              }
-          }
-      }
-      & > li > ul > li ul{
-          @include from($bp){  right: 100%;  top: 0;  }
-      }
-  }
-
-  // Mostrar los submenus en mobil
-  // Agregar la calse desde javascript
-  #{$menu-class}{
-      .is-show{
-          display: block;
-          // max-height: 1000px;
-      }
-  }
-
-
-  // ------------------------
-  // MENU STYLES
-  #{$menu-class}{
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      li ul{ 
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-  }
-  #{$menu-class}{
-      a{
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          .toggle{
-              display: block;
-              padding: 0 8px;
-          }
-      }
-  }
-
-  // TOGGLE MENU IN MOBILE
-  #{$menu-class}-toggle{
-      @include from($bp){display: none}
-      @media print {  display: none;  }
-      cursor: pointer;
   }
 }
 

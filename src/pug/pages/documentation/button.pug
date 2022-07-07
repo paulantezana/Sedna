@@ -8,14 +8,14 @@ block main
     .SnMb-5.SnGrid.col-gap.row-gap.l-grid-2
         +codeBox(
             'Basic', 
-            'There are default button, primary button, success button, warning button, error button and white button in sedna', 
-            '<div class="SnBtn">Default</div>' + ' \n<div class="SnBtn primary">Primary</div> \n<div class="SnBtn success">Success</div> \n<div class="SnBtn warning">Warning</div> \n<div class="SnBtn error">Error</div> \n<div class="SnBtn white">White</div>'
+            'There are default button, primary button, success button, warning button, danger button and white button in sedna', 
+            '<div class="SnBtn">Default</div>' + ' \n<div class="SnBtn primary">Primary</div> \n<div class="SnBtn success">Success</div> \n<div class="SnBtn warning">Warning</div> \n<div class="SnBtn danger">Danger</div> \n<div class="SnBtn white">White</div>'
         )
             .SnBtn Default
             .SnBtn.primary Primary
             .SnBtn.success Success
             .SnBtn.warning Warning
-            .SnBtn.error Error
+            .SnBtn.danger Danger
             .SnBtn.white White
         +codeBox(
             'Size', 
@@ -36,25 +36,25 @@ block main
         +codeBox(
             'Loading', 
             'A loading indicator can be added to a button by setting the loading class on the Button.',
-            '<div class="SnBtn loading">Default</div>' + ' \n<div class="SnBtn primary loading">Primary</div> \n<div class="SnBtn success loading">Success</div> \n<div class="SnBtn warning loading">Warning</div> \n<div class="SnBtn error loading">Error</div> \n<div class="SnBtn white loading">White</div>'
+            '<div class="SnBtn loading">Default</div>' + ' \n<div class="SnBtn primary loading">Primary</div> \n<div class="SnBtn success loading">Success</div> \n<div class="SnBtn warning loading">Warning</div> \n<div class="SnBtn danger loading">Danger</div> \n<div class="SnBtn white loading">White</div>'
         )
             .SnBtn.loading Default
             .SnBtn.primary.loading Primary
             .SnBtn.success.loading Success
             .SnBtn.warning.loading Warning
-            .SnBtn.error.loading Error
+            .SnBtn.danger.loading Danger
             .SnBtn.white.loading White
             .SnBtn.primary.loading(disabled) White
         +codeBox(
             'Disabled', 
             'To mark a button as disabled, add the disabled class to the Button.', 
-            '<div class="SnBtn loading" disabled>Default</div>' + ' \n<div class="SnBtn primary loading" disabled>Primary</div> \n<div class="SnBtn success loading" disabled>Success</div> \n<div class="SnBtn warning loading" disabled>Warning</div> \n<div class="SnBtn error loading" disabled>Error</div> \n<div class="SnBtn white loading" disabled>White</div>'
+            '<div class="SnBtn loading" disabled>Default</div>' + ' \n<div class="SnBtn primary loading" disabled>Primary</div> \n<div class="SnBtn success loading" disabled>Success</div> \n<div class="SnBtn warning loading" disabled>Warning</div> \n<div class="SnBtn danger loading" disabled>Danger</div> \n<div class="SnBtn white loading" disabled>White</div>'
         )
             .SnBtn(disabled).loading Default
             .SnBtn.primary(disabled).loading Primary
             .SnBtn.success(disabled).loading Success
             .SnBtn.warning(disabled).loading Warning
-            .SnBtn.error(disabled).loading Error
+            .SnBtn.danger(disabled).loading Danger
             .SnBtn.white(disabled).loading White
             .SnBtn.primary(disabled).loading White
         +codeBox(
@@ -136,7 +136,7 @@ block main
                         code .primary 
                         code .success
                         code .warning 
-                        code .error 
+                        code .danger 
                         code .white 
                 tr
                     td Size

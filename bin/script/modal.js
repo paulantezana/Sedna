@@ -175,6 +175,7 @@ export let SnModal = {
                 this.scope.removeChild(divEl);
                 onOk(inputData ? inputData.value : '');
             });
+            btnOk.focus();
         }
     },
 
@@ -214,7 +215,7 @@ export let SnModal = {
         });
     },
 
-    error({
+    danger({
         title = '',
         content = '',
         okText = 'OK',
@@ -223,7 +224,7 @@ export let SnModal = {
     }) {
         this.confirm({
             confirm: false,
-            type: 'error',
+            type: 'danger',
             title,
             content,
             okText,

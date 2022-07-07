@@ -7,8 +7,8 @@ export let SnMessage = {
     success({ content = '', duration = 6000 }) {
         this.message(content, duration, 'success', 'success');
     },
-    error({ content = '', duration = 6000 }) {
-        this.message(content, duration, 'error', 'error');
+    danger({ content = '', duration = 6000 }) {
+        this.message(content, duration, 'danger', 'danger');
     },
     warning({ content = '', duration = 6000 }) {
         this.message(content, duration, 'warning', 'warning');
@@ -18,25 +18,47 @@ export let SnMessage = {
             time = 20000;
         }
         this.render();
+
+        // Create elements
         let messageEl = document.createElement('div');
+        let messageElClose = document.createElement('span');
+
+        // Append elements
         messageEl.classList.add(`${window.classPrefix}Message`, addClass);
         messageEl.innerHTML = `<span class="${window.classPrefix}Message-icon">${SnIcon[type]}</span>${message}`;
-
+        // --
+        messageElClose.innerHTML = 'x';
+        messageElClose.classList.add(`${window.classPrefix}Message-close`);
+        messageEl.appendChild(messageElClose);
+        // --
         this.scope.prepend(messageEl);
+
+        // Timers
         setTimeout(
             () => messageEl.classList.add('open')
         );
-        setTimeout(
+        let removeTimeOut = setTimeout(
             () => messageEl.classList.remove('open'),
             time
         );
-        setTimeout(
+        let removeTransitionOut = setTimeout(
             () => this.scope.removeChild(messageEl),
             time + this.transitionLength
         );
+
+        // Listeners
+        messageElClose.addEventListener('click', () => {
+            messageEl.classList.remove('open');
+            setTimeout(
+                () => this.scope.removeChild(messageEl),
+                this.transitionLength
+            );
+            clearTimeout(removeTimeOut);
+            clearTimeout(removeTransitionOut);
+        });
     },
-    render(){
-        if(this.scope === undefined){
+    render() {
+        if (this.scope === undefined) {
             this.scope = document.createElement('div');
             this.scope.classList.add(`${window.classPrefix}Message-gScope`);
             document.body.appendChild(this.scope);

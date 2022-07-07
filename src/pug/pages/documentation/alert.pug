@@ -12,7 +12,7 @@ block main
             [
                 {
                     languaje: 'html',
-                    code: '<div class="SnAlert"> <span class="SnIcon-question"></span>message in alert</div>\n<div class="SnAlert success"> <span class="SnIcon-success"></span>message in alert</div>\n<div class="SnAlert info"> <span class="SnIcon-info"></span>message in alert</div>\n<div class="SnAlert warning"> <span class="SnIcon-warning"></span>message in alert</div>\n<div class="SnAlert error"> <span class="SnIcon-error"></span>message in alert</div>'
+                    code: '<div class="SnAlert"> <span class="SnIcon-question"></span>message in alert</div>\n<div class="SnAlert success"> <span class="SnIcon-success"></span>message in alert</div>\n<div class="SnAlert info"> <span class="SnIcon-info"></span>message in alert</div>\n<div class="SnAlert warning"> <span class="SnIcon-warning"></span>message in alert</div>\n<div class="SnAlert danger"> <span class="SnIcon-danger"></span>message in alert</div>'
                 }
             ]
         )
@@ -28,9 +28,44 @@ block main
             .SnAlert.warning 
                 span.SnIcon-warning
                 | message in alert
-            .SnAlert.error 
-                span.SnIcon-error
+            .SnAlert.danger 
+                span.SnIcon-danger
                 | message in alert
+        +codeBox2(
+            'Close',
+            'Close icon',
+            [
+                {
+                    languaje: 'html',
+                    code: '<div class="SnAlert">\n    <span class="SnIcon-question"></span>message in alert\n    <div class="SnAlert-close"><i class="SnIcon-close"></i></div>\n</div>\n<div class="SnAlert success">\n    <span class="SnIcon-success"></span>message in alert\n    <div class="SnAlert-close"><i class="SnIcon-close"></i></div>\n</div>\n<div class="SnAlert info">\n    <span class="SnIcon-info"></span>message in alert\n    <div class="SnAlert-close"><i class="SnIcon-close"></i></div>\n</div>\n<div class="SnAlert warning">\n    <span class="SnIcon-warning"></span>message in alert\n    <div class="SnAlert-close"><i class="SnIcon-close"></i></div>\n</div>\n<div class="SnAlert danger">\n    <span class="SnIcon-danger"></span>message in alert\n    <div class="SnAlert-close"><i class="SnIcon-close"></i></div>\n</div>'
+                }
+            ]
+        )
+            .SnAlert 
+                span.SnIcon-question
+                | message in alert
+                .SnAlert-close
+                    i.SnIcon-close
+            .SnAlert.success 
+                span.SnIcon-success
+                | message in alert
+                .SnAlert-close
+                    i.SnIcon-close
+            .SnAlert.info 
+                span.SnIcon-info
+                | message in alert
+                .SnAlert-close
+                    i.SnIcon-close
+            .SnAlert.warning 
+                span.SnIcon-warning
+                | message in alert
+                .SnAlert-close
+                    i.SnIcon-close
+            .SnAlert.danger 
+                span.SnIcon-danger
+                | message in alert
+                .SnAlert-close
+                    i.SnIcon-close
     h2 API
     .SnTable-wrapper
         table.SnTable.DocApiTable
@@ -49,4 +84,4 @@ block main
                         code .success
                         code .info
                         code .warning
-                        code .error
+                        code .danger

@@ -1,16 +1,16 @@
 -
   let menu = {
-    'Documentation': '/documentation/starter.html',
-    'Examples': '/examples',
+    'Documentación': '/documentation/starter.html',
+    'Ejemplos': '/examples',
   };
 
-#PrimaryMenu-toggle.icon-menu
-nav(itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation").PrimaryMenu-wrapper#PrimaryMenu-wrapper
-  .PrimaryMenu-content
-    ul.PrimaryMenu.SnMenu#PrimaryMenu
+#SiteMenu-toggle.icon-menu
+nav(itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation").SiteMenu-wrapper#SiteMenu-wrapper
+  .SiteMenu-content
+    ul.SiteMenu.SnMenu#SiteMenu
       each val, key in menu
         - var target = val === 'https://paulantezana.com' ? '"_blank"' : ''
         li(itemprop="url")
           a(href=val target=target itemprop="name" title= "Link to " + key)= key
-    div.SnMl-2
-      input#themeMode.SnSwitch(type = "checkbox")
+    div(style="display: flex;")
+      input#gSchemeChecked.SnSwitch(type = "checkbox" title= "Cambiar tema")

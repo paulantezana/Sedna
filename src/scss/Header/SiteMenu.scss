@@ -1,27 +1,32 @@
 // Estilos generales
-.PrimaryMenu {
+.SiteMenu {
   @extend %SnList;
   a {
-    font-family: "Open Sans", sans-serif;
+    // font-family: "Open Sans", sans-serif;
     display: block;
     padding: 0 12px;
-    line-height: 2.25rem;
-    height: 2.25rem;
+
     font-weight: 400;
+    color: var(--snColorText);
     &.is-toggle {
       display: flex;
       justify-content: space-between;
       padding-right: 0;
     }
-    [class*="icon-"]:before{
-        position: relative;
-        top: 2px;
-    }
+    [class*="icon-"]:before {
+      position: relative;
+      top: 2px;
+    }  
+  }
+
+  // All sublevels
+  ul a {
+    line-height: $headerHeight;
   }
 }
 
 // Estilos en el menu mobile
-.PrimaryMenu {
+.SiteMenu {
   @include to(l) {
     &-wrapper {
       background: rgba(black, 0.5);
@@ -44,18 +49,25 @@
         background: var(--snColorHover);
       }
     }
+
+    // Level 1
+    & > li {
+      & > a {
+        line-height: $headerHeight;
+      }
+    }
   }
 }
 
 // Cuando se a
-.PrimaryMenu-is-show {
-  .PrimaryMenu-wrapper {
+.SiteMenu-is-show {
+  .SiteMenu-wrapper {
     left: 0;
   }
 }
 
 // Estilos en el escritorio
-.PrimaryMenu {
+.SiteMenu {
   @include from(l) {
     &-content {
       display: flex;
@@ -63,35 +75,23 @@
     }
 
     // Active
-    li.is-active {
-      & > a {
-        color: var(--snColor1);
-      }
-    }
+    // li.is-active {
+    //   & > a {
+    //     color: var(--snColor1);
+    //   }
+    // }
 
     // Level 1
     & > li {
       & > a {
-        line-height: $headerHeight;
-        height: $headerHeight;
+        line-height: var(--siteHeaderHeight);
+        height: var(--siteHeaderHeight);
         &:hover {
           color: var(--snColor1);
         }
       }
       &.is-active {
         position: relative;
-        // &::before {
-        //   content: "";
-        //   position: absolute;
-        //   bottom: 0;
-        //   left: 50%;
-        //   transform: translateX(-50%);
-        //   width: 14px;
-        //   height: 5px;
-        //   border-bottom: 5px solid var(--snColor1);
-        //   border-right: 7px solid transparent;
-        //   border-left: 7px solid transparent;
-        // }
       }
     }
 
@@ -103,11 +103,8 @@
       padding-bottom: 0.5rem;
       right: 0;
 
-      border-top: 2px solid var(--snColor1);
-      border-bottom-right-radius: 5px;
-      border-bottom-left-radius: 5px;
+      border-radius: 0.25rem;
       box-shadow: 0 8px 20px rgba(55, 125, 255, 0.075);
-
       a {
         &:hover {
           background: var(--snColorHover);
@@ -118,8 +115,17 @@
   }
 }
 
+// Site Menu footer
+.SiteMenu {
+  &-footer {
+    a {
+      color: var(--snColor1Inverse);
+    }
+  }
+}
+
 // Primary Menu - toggle
-#PrimaryMenu-toggle {
+#SiteMenu-toggle {
   font-size: 1.4rem;
   cursor: pointer;
   @include from(l) {

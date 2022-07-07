@@ -70,14 +70,14 @@
       display: block;
     }
     &:hover {
-      color: var(--snColor1);
-      border-color: var(--snColor1);
+      color: var(--color1-6);
+      border-color: var(--color1-6);
     }
     &:focus,
     &:active {
       outline: 0;
-      color: var(--snColor1Dark);
-      border-color: var(--snColor1Dark);
+      color: var(--color1-6);
+      border-color: var(--color1-6);
     }
     &.icon {
       padding: 0 9px;
@@ -112,76 +112,76 @@
       height: $controlHeightLg;
     }
     &.primary {
-      color: var(--snColor1Inverse);
-      background-color: var(--snColor1);
-      border-color: var(--snColor1);
+      color: var(--color1-i);
+      background-color: var(--color1-6);
+      border-color: var(--color1-6);
 
       &:hover {
-        background-color: var(--snColor1Light);
-        border-color: var(--snColor1Light);
+        background-color: var(--color1-5);
+        border-color: var(--color1-5);
       }
       &:focus,
       &:active {
-        background-color: var(--snColor1Dark);
-        border-color: var(--snColor1Dark);
+        background-color: var(--color1-6);
+        border-color: var(--color1-6);
       }
       &.loading::before {
-        border: 2px solid var(--snColor1Inverse);
+        border: 2px solid var(--color1-i);
       }
     }
     &.success {
-      color: var(--snSuccessInverse);
-      background-color: var(--snSuccessLight);
-      border-color: var(--snSuccessLight);
+      color: var(--green-i);
+      background-color: var(--green-5);
+      border-color: var(--green-5);
       &:hover {
-        background-color: var(--snSuccess);
-        border-color: var(--snSuccess);
+        background-color: var(--green-6);
+        border-color: var(--green-6);
       }
       &:focus,
       &:active {
-        background-color: var(--snSuccessDark);
-        border-color: var(--snSuccessDark);
+        background-color: var(--green-7);
+        border-color: var(--green-7);
       }
       &.loading::before {
-        border: 2px solid var(--snSuccessInverse);
+        border: 2px solid var(--green-i);
       }
     }
     &.warning {
-      color: var(--snWarningInverse);
-      background-color: var(--snWarningLight);
-      border-color: var(--snWarningLight);
+      color: var(--yellow-i);
+      background-color: var(--yellow-5);
+      border-color: var(--yellow-5);
       &:hover {
-        background-color: var(--snWarning);
-        border-color: var(--snWarning);
+        background-color: var(--yellow-6);
+        border-color: var(--yellow-6);
       }
       &:focus,
       &:active {
-        background-color: var(--snWarningDark);
-        border-color: var(--snWarningDark);
+        background-color: var(--yellow-7);
+        border-color: var(--yellow-7);
       }
       &.loading::before {
-        border: 2px solid var(--snWarningInverse);
+        border: 2px solid var(--yellow-i);
       }
     }
-    &.error {
-      color: var(--snErrorInverse);
-      background-color: var(--snErrorLight);
-      border-color: var(--snErrorLight);
+    &.danger {
+      color: var(--red-i);
+      background-color: var(--red-5);
+      border-color: var(--red-5);
       &:hover {
-        background-color: var(--snError);
-        border-color: var(--snError);
+        background-color: var(--red-6);
+        border-color: var(--red-6);
       }
       &:focus,
       &:active {
-        background-color: var(--snErrorDark);
-        border-color: var(--snErrorDark);
+        background-color: var(--red-7);
+        border-color: var(--red-7);
       }
       &.loading::before {
-        border: 2px solid var(--snErrorInverse);
+        border: 2px solid var(--red-i);
       }
     }
     &.white {
-      color: var(--snColor1Dark);
+      color: var(--color1-6);
       background: white;
       border-color: white;
       &:hover {
@@ -194,7 +194,7 @@
         border-color: white;
       }
       &.loading::before {
-        border: 2px solid var(--snColor1Dark);
+        border: 2px solid var(--color1-6);
       }
     }
     &.radio {

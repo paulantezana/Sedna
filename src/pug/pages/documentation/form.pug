@@ -30,10 +30,10 @@ block main
             form(action="" method="post").SnForm.horizontal
                 .SnForm-item.required
                     label(for="fullName").SnForm-label Full Name
-                    input#fullName(type="text" name="fullName").SnForm-control
+                    input#fullName(type="text" name="fullName" placeholder="fullName").SnForm-control
                 .SnForm-item
                     label(for="adress").SnForm-label Adress
-                    input#adress(type="text" name="adress").SnForm-control
+                    input#adress(type="text" name="adress" placeholder="adress").SnForm-control
                 .SnForm-item
                     label(for="gender").SnForm-label Gender
                     select#gender(name="gender").SnForm-control
@@ -45,10 +45,10 @@ block main
         +codeBox(
             'Help', 
             'Form validate.', 
-            '<form class="SnForm" action="" method="post">\n    <div class="SnForm-item required has-error">\n        <label class="SnForm-label" for="item1">Item1</label>\n        <input class="SnForm-control" id="item1" type="text" name="item1">\n        <div class="SnForm-help">Help text</div>\n    </div>\n    <div class="SnForm-item has-success">\n        <label class="SnForm-label" for="item2">Item2</label>\n        <input class="SnForm-control" id="item2" type="text" name="item2">\n        <div class="SnForm-help">Help text</div>\n    </div>\n    <div class="SnForm-item">\n        <label class="SnForm-label" for="item3">Item3</label>\n        <select class="SnForm-control" id="item3" name="item3">\n            <option value="man">Man</option>\n            <option value="woman">Woman</option>\n        </select>\n        <div class="SnForm-help">Help text</div>\n    </div>\n    <div class="SnForm-item">\n        <label class="SnForm-label" for="item4">Item4</label>\n        <textarea class="SnForm-control" id="item4" name="item4" cols="3" rows="5"></textarea>\n        <div class="SnForm-help">Help text</div>\n    </div>\n</form>'
+            '<form class="SnForm" action="" method="post">\n    <div class="SnForm-item required has-danger">\n        <label class="SnForm-label" for="item1">Item1</label>\n        <input class="SnForm-control" id="item1" type="text" name="item1">\n        <div class="SnForm-help">Help text</div>\n    </div>\n    <div class="SnForm-item has-success">\n        <label class="SnForm-label" for="item2">Item2</label>\n        <input class="SnForm-control" id="item2" type="text" name="item2">\n        <div class="SnForm-help">Help text</div>\n    </div>\n    <div class="SnForm-item">\n        <label class="SnForm-label" for="item3">Item3</label>\n        <select class="SnForm-control" id="item3" name="item3">\n            <option value="man">Man</option>\n            <option value="woman">Woman</option>\n        </select>\n        <div class="SnForm-help">Help text</div>\n    </div>\n    <div class="SnForm-item">\n        <label class="SnForm-label" for="item4">Item4</label>\n        <textarea class="SnForm-control" id="item4" name="item4" cols="3" rows="5"></textarea>\n        <div class="SnForm-help">Help text</div>\n    </div>\n</form>'
         )
             form(action="" method="post").SnForm
-                .SnForm-item.required.has-error
+                .SnForm-item.required.has-danger
                     label(for="item1").SnForm-label Item1
                     input#item1(type="text" name="item1").SnForm-control
                     .SnForm-help Help text
@@ -147,7 +147,7 @@ block main
                     td
                         code .SnForm-item
                         code .has-success
-                        code .has-error
+                        code .has-danger
                         code .required
                 tr
                     td Control

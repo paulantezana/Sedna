@@ -1,14 +1,18 @@
 import './scss/app.scss';
 import './prism/prism';
 
-import { Theme } from './script/theme';
+import * as all from './script/colorScheme';
 
 // Primary Menu
 SnMenu({
-    menuId: 'PrimaryMenu',
-    toggleButtonID: 'PrimaryMenu-toggle',
-    toggleClass: 'PrimaryMenu-is-show',
-    menuCloseID: 'PrimaryMenu-wrapper',
+    menuId: "SiteMenu",
+    toggleButtonID: "SiteMenu-toggle",
+    toggleClass: "SiteMenu-is-show",
+    contextId: "Site",
+    parentClose: true,
+    menuCloseID: "SiteMenu-wrapper",
+    iconClassDown: 'fas fa-chevron-down',
+    iconClassUp: 'fas fa-chevron-up',
 });
 
 // Aside menu
@@ -18,8 +22,6 @@ SnMenu({
     toggleClass: 'AsideMenu-is-show',
     menuCloseID: 'AsideMenu-close',
 });
-
-new Theme();
 
 let codeBox = document.querySelectorAll('.CodeBox');
 if (codeBox) {

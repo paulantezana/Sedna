@@ -16,7 +16,7 @@
     padding-bottom: 2rem;
     margin-top: auto;
     text-align: center;
-    background: var(--snColorBorder);
+    border-top: 1px solid var(--snColorBorder);
   }
 }
 
@@ -29,3 +29,5 @@
 @import "Home/HomeSocial";
 
 @import "SiteTitle";
+
+@import "./Examples/dashboard";

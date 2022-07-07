@@ -1,9 +1,23 @@
-const SnActiveMenu = (links = []) => {
+const SnActiveParentMenu = (linkElement, menuId) => {
+    const parentNode = linkElement.parentElement;
+    if (parentNode.tagName === 'UL' && parentNode.id !== menuId) {
+        parentNode.classList.add('is-show');
+    }
+
+    // Recursive
+    if (parentNode !== null && parentNode.id !== menuId) {
+        SnActiveParentMenu(parentNode, menuId);
+    }
+}
+
+const SnActiveMenu = (links, menuId = '') => {
     if (links) {
         links.map(link => {
             const url = document.location.href;
-            if (url.indexOf(link.href) != -1)
+            if (link.href === url) {
                 link.parentNode.classList.add('is-active');
+                SnActiveParentMenu(link, menuId);
+            }
         });
     }
     return links;
@@ -40,7 +54,7 @@ const SnMenu = ({
 
                     // Creando un nuevo elemento e insertando justo despues del enlace
                     let iconToggleEle = document.createElement('i');
-                    iconClassDown.split(' ').forEach(iClass=>{
+                    iconClassDown.split(' ').forEach(iClass => {
                         iconToggleEle.classList.add(iClass);
                     });
 
@@ -51,19 +65,19 @@ const SnMenu = ({
                     let toggleItem = false;
                     iconToggleEle.addEventListener('click', e => {
                         e.preventDefault();
-                        if(toggleItem){
-                            iconClassUp.split(' ').forEach(iClass=>{
+                        if (toggleItem) {
+                            iconClassUp.split(' ').forEach(iClass => {
                                 iconToggleEle.classList.remove(iClass); // add Icon up
                             });
-                            iconClassDown.split(' ').forEach(iClass=>{
+                            iconClassDown.split(' ').forEach(iClass => {
                                 iconToggleEle.classList.add(iClass);
                             });
                             toggleItem = false;
                         } else {
-                            iconClassDown.split(' ').forEach(iClass=>{
+                            iconClassDown.split(' ').forEach(iClass => {
                                 iconToggleEle.classList.remove(iClass);
                             });
-                            iconClassUp.split(' ').forEach(iClass=>{
+                            iconClassUp.split(' ').forEach(iClass => {
                                 iconToggleEle.classList.add(iClass); // add Icon up
                             });
                             toggleItem = true;
@@ -126,7 +140,7 @@ const SnMenu = ({
         },
         setActive() {
             if (this.menu)
-                SnActiveMenu([...this.menu.querySelectorAll('a')]);
+                SnActiveMenu([...this.menu.querySelectorAll('a')], menuId);
         }
     }
 

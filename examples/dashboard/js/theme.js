@@ -2,14 +2,14 @@
     document.addEventListener('DOMContentLoaded',() => {
         const defaultThemes = {
             darck: {
-                snColorBg: 'var(--snColorDark)',
-                snColorBgAlt: 'var(--snColorDarker)',
-                snColorHover: 'var(--snColorDarkest)',
+                snColorBg: 'var(--gray-10)',
+                snColorBgAlt: 'var(--gray-11)',
+                snColorHover: 'var(--gray-12)',
 
-                snColorText: 'var(--snColorDarkInverse)',
+                snColorText: 'var(--gray-5)',
                 snColorTextAlt: '#94aab9',
 
-                snColorBorder: 'var(--snColorDark)',
+                snColorBorder: 'var(--gray-10)',
             },
             light: {
                 snColorBg: '#EFF3F6',

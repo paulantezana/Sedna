@@ -2,7 +2,7 @@ Sedna UI es una libreria de componentes para crear sitios web responsive y mobil
 
 ### Instalar desde npm
 ```
-npm install --save-dev sedna
+npm install --save sedna
 ```
 ### Descargar el proyecto
 https://github.com/paulantezana/sedna/archive/master.zip

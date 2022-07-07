@@ -21,10 +21,10 @@ $asideMenuWidth: 220px;
             border-radius: 16px;
         }
         &.is-active{
-            background: var(--snColor1);
+            background: var(--color1-6);
             border-radius: 16px;
             a {
-                color: var(--snColor1Inverse);
+                color: var(--color1-i);
             }
         }
     }
