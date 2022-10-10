@@ -9,14 +9,15 @@ block main
         +codeBox(
             'Icons svg', 
             'set of icons used in sedna notifications',
-            '<div class="SnIcon-info"></div>\n<div class="SnIcon-question"></div>\n<div class="SnIcon-success"></div>\n<div class="SnIcon-danger"></div>'
+            '<div class="SnIcon-info"></div>\n<div class="SnIcon-question"></div>\n<div class="SnIcon-success"></div>\n<div class="SnIcon-danger"></div>\n<div class="SnIcon-close"></div>'
         )
-            .SnGrid.col-gap.s-grid-5(style="width: 100%")
+            .SnGrid.col-gap.s-grid-6(style="width: 100%")
                 .SnIcon-info
                 .SnIcon-question
                 .SnIcon-success
                 .SnIcon-warning
                 .SnIcon-danger
+                .SnIcon-close
             style(type="text/css").
                 .CodeBox [class*="SnIcon-"] {
                     font-size: 1.3rem;

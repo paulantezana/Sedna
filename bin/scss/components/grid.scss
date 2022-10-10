@@ -1,14 +1,14 @@
 @mixin gridColumnWidth($i) {
     $n : #{$i - 1};
     $column-width : calc((100% - var(--gap) * #{$n}) / #{$i});
-    grid-template-columns : repeat($i, $column-width);
+    grid-template-columns: repeat($i, $column-width);
 }
 
-@mixin SnGrid(){
+@mixin SnGrid() {
     .#{$classPrefix}Grid {
-        display               : grid;
-        grid-template-columns : 100%;
-        
+        display: grid;
+        grid-template-columns: 100%;
+
         @for $i from 0 through 4 {
             &.gap-#{$i} {
                 --gap: #{$lUnit * $i};
@@ -20,47 +20,50 @@
             grid-row-gap: var(--gap);
         }
 
-        &.col-gap{
+        &.col-gap {
             grid-column-gap: var(--gap);
         }
 
         // Define columnas en containers e items por breakpoint
-        @each $size, $screen-size in $breakpoints {
+        @each $size,
+        $screen-size in $breakpoints {
+
             // Styles by breakpoint
             @include from($size) {
                 @for $i from 1 through $maxGridColumns {
+
                     // One column
-                    @if $i == 1 {
+                    @if $i ==1 {
                         &.#{$size}-grid-1 {
-                            grid-template-columns : 100%;
+                            grid-template-columns: 100%;
                         }
                     }
 
                     // More columns
-                    @if $i > 1 {
+                    @if $i >1 {
                         &.#{$size}-grid-#{$i} {
                             @include gridColumnWidth($i);
                         }
                     }
 
                     // col en los items
-                    > .#{$size}-col-#{$i} {
-                        grid-column-end : span $i;
+                    >.#{$size}-col-#{$i} {
+                        grid-column-end: span $i;
                     }
 
                     // row en los items
-                    > .#{$size}-row-#{$i} {
-                        grid-row-end : span $i;
+                    >.#{$size}-row-#{$i} {
+                        grid-row-end: span $i;
                     }
 
                     // Inicio de columna en items
-                    > .#{$size}-x-#{$i} {
-                        grid-column-start : $i;
+                    >.#{$size}-x-#{$i} {
+                        grid-column-start: $i;
                     }
 
                     // Inicio de fila en items
-                    > .#{$size}-y-#{$i} {
-                        grid-row-start : $i;
+                    >.#{$size}-y-#{$i} {
+                        grid-row-start: $i;
                     }
                 }
             }

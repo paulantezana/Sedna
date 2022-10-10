@@ -1,9 +1,11 @@
+@use "sass:math";
+
 @mixin SnLoadingTemplate($size) {
     position: relative;
     &::before {
       content: "";
       position: absolute;
-      top: calc(50% - #{$size / 2});
+      top: calc(50% - #{math.div($size, 2)});
       left: 15px;
       display: block;
       border: 2px solid var(--color1-6);

@@ -1,17 +1,21 @@
 @mixin SnPadding {
-  $spacer: .25rem;
-  @for $i from 2 through 5 {
-    .#{$classPrefix}Pt-#{$i}{
-      padding-top: $spacer * $i;
+    $spacer: .25rem;
+
+    @for $i from 2 through 5 {
+        .#{$classPrefix}Pt-#{$i} {
+            padding-top: $spacer * $i;
+        }
+
+        .#{$classPrefix}Pr-#{$i} {
+            padding-right: $spacer * $i;
+        }
+
+        .#{$classPrefix}Pb-#{$i} {
+            padding-bottom: $spacer * $i;
+        }
+
+        .#{$classPrefix}Pl-#{$i} {
+            padding-left: $spacer * $i;
+        }
     }
-    .#{$classPrefix}Pr-#{$i}{
-      padding-right: $spacer * $i;
-    }
-    .#{$classPrefix}Pb-#{$i}{
-      padding-bottom: $spacer * $i;
-    }
-    .#{$classPrefix}Pl-#{$i}{
-      padding-left: $spacer * $i;
-    }
-  }
 }

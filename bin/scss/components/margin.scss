@@ -1,16 +1,20 @@
 @mixin SnMargin {
     $spacer: .25rem;
+
     @for $i from 1 through 5 {
-        .#{$classPrefix}Mt-#{$i}{
+        .#{$classPrefix}Mt-#{$i} {
             margin-top: $spacer * $i;
         }
-        .#{$classPrefix}Mr-#{$i}{
+
+        .#{$classPrefix}Mr-#{$i} {
             margin-right: $spacer * $i;
         }
-        .#{$classPrefix}Mb-#{$i}{
+
+        .#{$classPrefix}Mb-#{$i} {
             margin-bottom: $spacer * $i;
         }
-        .#{$classPrefix}Ml-#{$i}{
+
+        .#{$classPrefix}Ml-#{$i} {
             margin-left: $spacer * $i;
         }
     }

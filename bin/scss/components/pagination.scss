@@ -1,45 +1,51 @@
-@mixin SnPagination(){
-  .#{$classPrefix}Pagination{
-    margin-top: .5rem;
-    margin-bottom: .5rem;
-    display: flex;
-    flex-wrap: wrap;
-    @extend %SnList;
-    &-link{
-      @include SnBtnStnd();
-      margin-right: 4px;
-      margin-bottom: 6px;
-    }
-    &-item{
-      &.disabled{
-        .SnPagination-link{
-          opacity: 0.6;
-          box-shadow: none;
-          pointer-events: none;
-          cursor: auto;
+@mixin SnPagination() {
+    .#{$classPrefix}Pagination {
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+        display: flex;
+        flex-wrap: wrap;
+        @extend %SnList;
+
+        &-link {
+            @include SnBtnStnd();
+            margin-right: 4px;
+            margin-bottom: 6px;
         }
-      }
-      &.active{
-        .SnPagination-link{
-          color: var(--color1-i);
-          background-color: var(--color1-6);
-          border-color: var(--color1-6);
-          text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
-          box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
-          &:hover {
-            background-color: var(--color1-5);
-            border-color: var(--color1-5);
-          }
-          &:focus,
-          &:active {
-            background-color: var(--color1-7);
-            border-color: var(--color1-7);
-          }
-          &.loading::before {
-            border: 2px solid var(--color1-i);
-          }
+
+        &-item {
+            &.disabled {
+                .SnPagination-link {
+                    opacity: 0.6;
+                    box-shadow: none;
+                    pointer-events: none;
+                    cursor: auto;
+                }
+            }
+
+            &.active {
+                .SnPagination-link {
+                    color: var(--color1-i);
+                    background-color: var(--color1-6);
+                    border-color: var(--color1-6);
+                    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+                    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+
+                    &:hover {
+                        background-color: var(--color1-5);
+                        border-color: var(--color1-5);
+                    }
+
+                    &:focus,
+                    &:active {
+                        background-color: var(--color1-7);
+                        border-color: var(--color1-7);
+                    }
+
+                    &.loading::before {
+                        border: 2px solid var(--color1-i);
+                    }
+                }
+            }
         }
-      }
     }
-  }
 }

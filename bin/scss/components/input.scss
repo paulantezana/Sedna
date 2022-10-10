@@ -3,12 +3,15 @@
         &:not(:first-child) {
             padding-left: 36px;
         }
+
         &:not(:last-child) {
             padding-right: 36px;
         }
+
         &-wrapper {
             position: relative;
         }
+
         &-prefix,
         &-suffix {
             position: absolute;
@@ -17,34 +20,44 @@
             cursor: pointer;
             color: var(--snColorTextAlt);
         }
+
         &-prefix {
             left: 12px;
         }
+
         &-suffix {
             right: 12px;
         }
+
         &-group {
             display: flex;
             justify-content: center;
-            & > div:not(.#{$classPrefix}Btn) {
+
+            &>div:not(.#{$classPrefix}Btn) {
                 flex: 1 1 auto;
             }
-            & > * {
+
+            &>* {
                 border-radius: 0;
+
                 .#{$classPrefix}Form-control {
                     border-radius: 0;
                 }
+
                 &:last-child {
                     border-top-right-radius: $borderRadiusBase;
                     border-bottom-right-radius: $borderRadiusBase;
+
                     .#{$classPrefix}Form-control {
                         border-top-right-radius: $borderRadiusBase;
                         border-bottom-right-radius: $borderRadiusBase;
                     }
                 }
+
                 &:first-child {
                     border-top-left-radius: $borderRadiusBase;
                     border-bottom-left-radius: $borderRadiusBase;
+
                     .#{$classPrefix}Form-control {
                         border-top-left-radius: $borderRadiusBase;
                         border-bottom-left-radius: $borderRadiusBase;

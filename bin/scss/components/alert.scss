@@ -1,18 +1,19 @@
 @mixin SnAlert {
-    .#{$classPrefix}Alert{
+    .#{$classPrefix}Alert {
         margin: 0;
-        color: rgba(0,0,0,0.65);
+        color: rgba(0, 0, 0, 0.65);
         line-height: 1.5;
         list-style: none;
         position: relative;
         padding: 8px 15px;
         border-radius: 4px;
-        
-        [class*='SnIcon-']{
+
+        [class*='SnIcon-'] {
             margin-right: 8px;
             position: relative;
             top: 3px;
         }
+
         &-close {
             position: absolute;
             width: 2rem;
@@ -26,24 +27,27 @@
             align-items: center;
             justify-content: center;
 
-            [class*="SnIcon-"]{
+            [class*="SnIcon-"] {
                 margin: 0;
             }
         }
-    
-        &.success{
+
+        &.success {
             background: var(--green-6);
             color: var(--green-i);
         }
-        &.info{
+
+        &.info {
             background: var(--color1-6);
             color: var(--color1-i);
         }
-        &.warning{
+
+        &.warning {
             background: var(--yellow-6);
             color: var(--yellow-i);
         }
-        &.danger{
+
+        &.danger {
             background: var(--red-5);
             color: var(--red-i);
         }

@@ -52,11 +52,16 @@ module.exports = {
         filename: 'assets/script/[name].js'
     },
     devServer: {
-        contentBase: path.join(__dirname, "docs"),
+        static: {
+            directory: path.join(__dirname, 'docs'),
+        },
         compress: true,
-        port: 3001,
+        port: 9000,
+        // contentBase: path.join(__dirname, "docs"),
+        // compress: true,
+        // port: 3001,
         open: true,
-        stats: 'errors-only',
+        // stats: 'errors-only',
     },
     module: {
         rules: [
@@ -79,7 +84,8 @@ module.exports = {
                     {
                         loader: 'sass-loader',
                         options: {
-                            sourceMap: true
+                            sourceMap: true,
+                            implementation: require("sass"),
                         }
                     }
                 ],

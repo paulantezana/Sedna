@@ -1,4 +1,5 @@
 @mixin SnSwitch() {
+
     input[type="checkbox"],
     input[type="radio"] {
         --active: var(--color1-6);
@@ -21,6 +22,7 @@
         border: 1px solid var(--bc, var(--border));
         background: var(--b, var(--background));
         transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+
         &:after {
             content: "";
             display: block;
@@ -29,6 +31,7 @@
             position: absolute;
             transition: transform var(--d-t, 0.3s) var(--d-t-e, ease), opacity var(--d-o, 0.2s);
         }
+
         &:checked {
             --b: var(--active);
             --bc: var(--active);
@@ -36,18 +39,22 @@
             --d-t: 0.6s;
             --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
         }
+
         &:disabled {
             --b: var(--disabled);
             cursor: not-allowed;
             opacity: 0.9;
+
             &:checked {
                 --b: var(--disabled-inner);
                 --bc: var(--border);
             }
-            & + label {
+
+            &+label {
                 cursor: not-allowed;
             }
         }
+
         &:hover {
             &:not(:checked) {
                 &:not(:disabled) {
@@ -55,19 +62,24 @@
                 }
             }
         }
+
         &:focus {
             box-shadow: 0 0 0 var(--focus);
         }
+
         &:not(.#{$classPrefix}Switch) {
             width: 21px;
+
             &:after {
                 opacity: var(--o, 0);
             }
+
             &:checked {
                 --o: 1;
             }
         }
-        & + label {
+
+        &+label {
             font-size: 14px;
             line-height: 21px;
             display: inline-block;
@@ -76,9 +88,11 @@
             margin-left: 4px;
         }
     }
+
     input[type="checkbox"] {
         &:not(.#{$classPrefix}Switch) {
             border-radius: 7px;
+
             &:after {
                 width: 5px;
                 height: 9px;
@@ -89,13 +103,16 @@
                 top: 4px;
                 transform: rotate(var(--r, 20deg));
             }
+
             &:checked {
                 --r: 43deg;
             }
         }
+
         &.#{$classPrefix}Switch {
             width: 38px;
             border-radius: 11px;
+
             &:after {
                 left: 2px;
                 top: 2px;
@@ -105,10 +122,12 @@
                 background: var(--ab, var(--border));
                 transform: translateX(var(--x, 0));
             }
+
             &:checked {
                 --ab: var(--active-inner);
                 --x: 17px;
             }
+
             &:disabled {
                 &:not(:checked) {
                     &:after {
@@ -118,8 +137,10 @@
             }
         }
     }
+
     input[type="radio"] {
         border-radius: 50%;
+
         &:after {
             width: 19px;
             height: 19px;
@@ -128,6 +149,7 @@
             opacity: 0;
             transform: scale(var(--s, 0.7));
         }
+
         &:checked {
             --s: 0.5;
         }

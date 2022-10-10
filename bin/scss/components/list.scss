@@ -1,9 +1,10 @@
 @mixin SnList {
-    .#{$classPrefix}List{
+    .#{$classPrefix}List {
         list-style: none;
         // margin: 0;
         padding: 0;
-        li{
+
+        li {
             line-height: 1.7rem;
         }
     }

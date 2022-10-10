@@ -1,223 +1,267 @@
+@use "sass:math";
+
 @mixin SnBtnStnd {
-  line-height: $controlHeight;
-  height: $controlHeight;
-  position: relative;
-  display: inline-block;
-  font-weight: 400;
-  white-space: nowrap;
-  text-align: center;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-  user-select: none;
-  touch-action: manipulation;
-  padding: 0 15px;
-  font-size: 14px;
-  border-radius: $borderRadiusBase;
-  color: var(--snColorText);
-  border: 1px solid var(--snColorBorder);
-  text-decoration: none;
-  background: transparent;
+    line-height: $controlHeight;
+    height: $controlHeight;
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    white-space: nowrap;
+    text-align: center;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    user-select: none;
+    touch-action: manipulation;
+    padding: 0 15px;
+    font-size: 14px;
+    border-radius: $borderRadiusBase;
+    color: var(--snColorText);
+    border: 1px solid var(--snColorBorder);
+    text-decoration: none;
+    background: transparent;
 }
 
 @mixin SnBtn {
-  .#{$classPrefix}Btn {
-    @include SnBtnStnd;
-    &.loading {
-      @include SnLoadingTemplate(1em);
-      padding-left: 11px + 24;
-      &::before {
-        border: 2px solid var(--snColorText);
-        left: 8px;
-      }
-      &.sm {
-        padding-left: 24px;
-        &::before {
-          left: 4px;
-        }
-      }
-      &.lg {
-        padding-left: 11px + 24;
-        &::before {
-          left: 11px;
-        }
-      }
-      &:not(.disabled),
-      &:not([disabled]) {
-        pointer-events: none;
-      }
-    }
-    &-group {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      & > * {
-        border-radius: 0;
-        &:last-child {
-          border-top-right-radius: $borderRadiusBase;
-          border-bottom-right-radius: $borderRadiusBase;
-        }
-        &:first-child {
-          border-top-left-radius: $borderRadiusBase;
-          border-bottom-left-radius: $borderRadiusBase;
-        }
-      }
-    }
+    .#{$classPrefix}Btn {
+        @include SnBtnStnd;
 
-    &.block {
-      width: 100%;
-      display: block;
-    }
-    &:hover {
-      color: var(--color1-6);
-      border-color: var(--color1-6);
-    }
-    &:focus,
-    &:active {
-      outline: 0;
-      color: var(--color1-6);
-      border-color: var(--color1-6);
-    }
-    &.icon {
-      padding: 0 9px;
-      // display: inline-flex;
-      // justify-content: center;
-      // align-items: center;
+        &.loading {
+            @include SnLoadingTemplate(1em);
+            padding-left: 11px + 24;
 
-      width: $controlHeight;
-      &.sm {
-        padding: 0 5px;
-        width: $controlHeightSm;
-      }
-      &.lg {
-        width: $controlHeightLg;
-      }
-      &.loading {
-        padding-left: 0;
-        // &::before {
-        //   left: 9px;
-        // }
-        & > * {
-          opacity: 0;
+            &::before {
+                border: 2px solid var(--snColorText);
+                left: 8px;
+            }
+
+            &.sm {
+                padding-left: 24px;
+
+                &::before {
+                    left: 4px;
+                }
+            }
+
+            &.lg {
+                padding-left: 11px + 24;
+
+                &::before {
+                    left: 11px;
+                }
+            }
+
+            &:not(.disabled),
+            &:not([disabled]) {
+                pointer-events: none;
+            }
         }
-      }
-    }
-    &.sm {
-      line-height: $controlHeightSm;
-      height: $controlHeightSm;
-    }
-    &.lg {
-      line-height: $controlHeightLg;
-      height: $controlHeightLg;
-    }
-    &.primary {
-      color: var(--color1-i);
-      background-color: var(--color1-6);
-      border-color: var(--color1-6);
 
-      &:hover {
-        background-color: var(--color1-5);
-        border-color: var(--color1-5);
-      }
-      &:focus,
-      &:active {
-        background-color: var(--color1-6);
-        border-color: var(--color1-6);
-      }
-      &.loading::before {
-        border: 2px solid var(--color1-i);
-      }
+        &-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+            &>* {
+                border-radius: 0;
+
+                &:last-child {
+                    border-top-right-radius: $borderRadiusBase;
+                    border-bottom-right-radius: $borderRadiusBase;
+                }
+
+                &:first-child {
+                    border-top-left-radius: $borderRadiusBase;
+                    border-bottom-left-radius: $borderRadiusBase;
+                }
+            }
+        }
+
+        &.block {
+            width: 100%;
+            display: block;
+        }
+
+        &:hover {
+            color: var(--color1-6);
+            border-color: var(--color1-6);
+        }
+
+        &:focus,
+        &:active {
+            outline: 0;
+            color: var(--color1-6);
+            border-color: var(--color1-6);
+        }
+
+        &.icon {
+            padding: 0 9px;
+            // display: inline-flex;
+            // justify-content: center;
+            // align-items: center;
+
+            width: $controlHeight;
+
+            &.sm {
+                padding: 0 5px;
+                width: $controlHeightSm;
+            }
+
+            &.lg {
+                width: $controlHeightLg;
+            }
+
+            &.loading {
+                padding-left: 0;
+
+                // &::before {
+                //   left: 9px;
+                // }
+                &>* {
+                    opacity: 0;
+                }
+            }
+        }
+
+        &.sm {
+            line-height: $controlHeightSm;
+            height: $controlHeightSm;
+        }
+
+        &.lg {
+            line-height: $controlHeightLg;
+            height: $controlHeightLg;
+        }
+
+        &.primary {
+            color: var(--color1-i);
+            background-color: var(--color1-6);
+            border-color: var(--color1-6);
+
+            &:hover {
+                background-color: var(--color1-5);
+                border-color: var(--color1-5);
+            }
+
+            &:focus,
+            &:active {
+                background-color: var(--color1-6);
+                border-color: var(--color1-6);
+            }
+
+            &.loading::before {
+                border: 2px solid var(--color1-i);
+            }
+        }
+
+        &.success {
+            color: var(--green-i);
+            background-color: var(--green-5);
+            border-color: var(--green-5);
+
+            &:hover {
+                background-color: var(--green-6);
+                border-color: var(--green-6);
+            }
+
+            &:focus,
+            &:active {
+                background-color: var(--green-7);
+                border-color: var(--green-7);
+            }
+
+            &.loading::before {
+                border: 2px solid var(--green-i);
+            }
+        }
+
+        &.warning {
+            color: var(--yellow-i);
+            background-color: var(--yellow-5);
+            border-color: var(--yellow-5);
+
+            &:hover {
+                background-color: var(--yellow-6);
+                border-color: var(--yellow-6);
+            }
+
+            &:focus,
+            &:active {
+                background-color: var(--yellow-7);
+                border-color: var(--yellow-7);
+            }
+
+            &.loading::before {
+                border: 2px solid var(--yellow-i);
+            }
+        }
+
+        &.danger {
+            color: var(--red-i);
+            background-color: var(--red-5);
+            border-color: var(--red-5);
+
+            &:hover {
+                background-color: var(--red-6);
+                border-color: var(--red-6);
+            }
+
+            &:focus,
+            &:active {
+                background-color: var(--red-7);
+                border-color: var(--red-7);
+            }
+
+            &.loading::before {
+                border: 2px solid var(--red-i);
+            }
+        }
+
+        &.white {
+            color: var(--color1-6);
+            background: white;
+            border-color: white;
+
+            &:hover {
+                background-color: white;
+                border-color: white;
+            }
+
+            &:focus,
+            &:active {
+                background-color: white;
+                border-color: white;
+            }
+
+            &.loading::before {
+                border: 2px solid var(--color1-6);
+            }
+        }
+
+        &.radio {
+            border-radius: math.div($controlHeight, 2);
+
+            &.sm {
+                border-radius: math.div($controlHeightSm, 2);
+            }
+
+            &.lg {
+                border-radius: math.div($controlHeightLg, 2);
+            }
+        }
+
+        &.disabled:active &.disabled:focus,
+        &.disabled:hover,
+        &.disabled,
+        &[disabled]:active,
+        &[disabled]:focus,
+        &[disabled]:hover,
+        &[disabled] {
+            opacity: 0.6;
+            touch-action: none;
+            pointer-events: none;
+            // cursor: not-allowed;
+        }
     }
-    &.success {
-      color: var(--green-i);
-      background-color: var(--green-5);
-      border-color: var(--green-5);
-      &:hover {
-        background-color: var(--green-6);
-        border-color: var(--green-6);
-      }
-      &:focus,
-      &:active {
-        background-color: var(--green-7);
-        border-color: var(--green-7);
-      }
-      &.loading::before {
-        border: 2px solid var(--green-i);
-      }
-    }
-    &.warning {
-      color: var(--yellow-i);
-      background-color: var(--yellow-5);
-      border-color: var(--yellow-5);
-      &:hover {
-        background-color: var(--yellow-6);
-        border-color: var(--yellow-6);
-      }
-      &:focus,
-      &:active {
-        background-color: var(--yellow-7);
-        border-color: var(--yellow-7);
-      }
-      &.loading::before {
-        border: 2px solid var(--yellow-i);
-      }
-    }
-    &.danger {
-      color: var(--red-i);
-      background-color: var(--red-5);
-      border-color: var(--red-5);
-      &:hover {
-        background-color: var(--red-6);
-        border-color: var(--red-6);
-      }
-      &:focus,
-      &:active {
-        background-color: var(--red-7);
-        border-color: var(--red-7);
-      }
-      &.loading::before {
-        border: 2px solid var(--red-i);
-      }
-    }
-    &.white {
-      color: var(--color1-6);
-      background: white;
-      border-color: white;
-      &:hover {
-        background-color: white;
-        border-color: white;
-      }
-      &:focus,
-      &:active {
-        background-color: white;
-        border-color: white;
-      }
-      &.loading::before {
-        border: 2px solid var(--color1-6);
-      }
-    }
-    &.radio {
-      border-radius: $controlHeight / 2;
-      &.sm {
-        border-radius: $controlHeightSm / 2;
-      }
-      &.lg {
-        border-radius: $controlHeightLg / 2;
-      }
-    }
-    &.disabled:active
-    &.disabled:focus,
-    &.disabled:hover,
-    &.disabled,
-    &[disabled]:active,
-    &[disabled]:focus,
-    &[disabled]:hover,
-    &[disabled] {
-      opacity: 0.6;
-      touch-action: none;
-      pointer-events: none;
-      // cursor: not-allowed;
-    }
-  }
 }

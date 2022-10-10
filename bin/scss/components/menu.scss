@@ -1,12 +1,17 @@
-@mixin SnMenu($bp: l, $menu-class: '.SnMenu'){
-    #{$menu-class}{
-        @media print{ display: none; }
-        @include from($bp){  display: flex;  }
+@mixin SnMenu($bp: l, $menu-class: '.SnMenu') {
+    #{$menu-class} {
+        @media print {
+            display: none;
+        }
+
+        @include from($bp) {
+            display: flex;
+        }
     }
 
     // Layout general en mobile
-    #{$menu-class}{
-        li ul{
+    #{$menu-class} {
+        li ul {
             display: none;
             // opacity: 0;
             // max-height: 0;
@@ -15,17 +20,24 @@
     }
 
     // Layout general en Desktop
-    #{$menu-class}{
-        li{
-            @include from($bp){  position: relative;  }
+    #{$menu-class} {
+        li {
+            @include from($bp) {
+                position: relative;
+            }
         }
-        li ul{
-            @include from($bp){  position: absolute; z-index: 400  }
+
+        li ul {
+            @include from($bp) {
+                position: absolute;
+                z-index: 400
+            }
         }
-        li{
-            @include from($bp){
-                &:hover{
-                    & > ul{
+
+        li {
+            @include from($bp) {
+                &:hover {
+                    &>ul {
                         display: block;
                         // opacity: 1;
                         // max-height: 1000px;
@@ -34,15 +46,19 @@
                 }
             }
         }
-        & > li > ul > li ul{
-            @include from($bp){  right: 100%;  top: 0;  }
+
+        &>li>ul>li ul {
+            @include from($bp) {
+                right: 100%;
+                top: 0;
+            }
         }
     }
 
     // Mostrar los submenus en mobil
     // Agregar la calse desde javascript
-    #{$menu-class}{
-        .is-show{
+    #{$menu-class} {
+        .is-show {
             display: block;
             // max-height: 1000px;
         }
@@ -51,16 +67,21 @@
 
     // ------------------------
     // MENU STYLES
-    #{$menu-class}{
+    #{$menu-class} {
         @extend %SnList;
-        li ul{  @extend %SnList;  }
+
+        li ul {
+            @extend %SnList;
+        }
     }
-    #{$menu-class}{
-        a{
+
+    #{$menu-class} {
+        a {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            .toggle{
+
+            .toggle {
                 display: block;
                 padding: 0 8px;
             }
@@ -68,9 +89,15 @@
     }
 
     // TOGGLE MENU IN MOBILE
-    #{$menu-class}-toggle{
-        @include from($bp){display: none}
-        @media print {  display: none;  }
+    #{$menu-class}-toggle {
+        @include from($bp) {
+            display: none
+        }
+
+        @media print {
+            display: none;
+        }
+
         cursor: pointer;
     }
 }

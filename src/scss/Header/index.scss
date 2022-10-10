@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $headerHeight: 58px;
 .Header{
     display: flex;
@@ -14,7 +16,7 @@ $headerHeight: 58px;
         align-items: center;
     }
     &-logo{
-        height: $headerHeight / 2;
+        height: math.div($headerHeight, 2);
         margin-right: 8px;
     }
     &-name{

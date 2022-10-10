@@ -1,33 +1,37 @@
-@mixin SnDivider(){
-  .#{$classPrefix}Divider{
-    margin-top: 16px;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    &-innerText {
-      display: inline-block;
-      padding: 0 10px;
-      font-weight: 500;
+@mixin SnDivider() {
+    .#{$classPrefix}Divider {
+        margin-top: 16px;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+
+        &-innerText {
+            display: inline-block;
+            padding: 0 10px;
+            font-weight: 500;
+        }
+
+        &::after,
+        &::before {
+            top: 0;
+            position: relative;
+            border-top: 1px solid var(--snColorBorder);
+            content: '';
+            flex: 1 1 auto;
+        }
+
+        &.textLeft {
+            &::before {
+                width: 5%;
+                flex: inherit;
+            }
+        }
+
+        &.textRight {
+            &::after {
+                width: 5%;
+                flex: inherit;
+            }
+        }
     }
-    &::after,
-    &::before{
-      top: 0;
-      position: relative;
-      border-top: 1px solid var(--snColorBorder);
-      content: '';
-      flex: 1 1 auto;
-    }
-    &.textLeft{
-      &::before{
-        width: 5%;
-        flex: inherit;
-      }
-    }
-    &.textRight{
-      &::after{
-        width: 5%;
-        flex: inherit;
-      }
-    }
-  }
 }

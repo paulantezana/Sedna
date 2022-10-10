@@ -1,49 +1,60 @@
 @mixin SnControlGroup($otherClass: '') {
-    .#{$classPrefix}ControlGroup{
+    .#{$classPrefix}ControlGroup {
         display: flex;
-        &-prepend{
+
+        &-prepend {
             display: flex;
-            .#{$classPrefix}Btn{
+
+            .#{$classPrefix}Btn {
                 display: block;
                 border-radius: 0;
+
                 &:first-child {
                     border-top-left-radius: $borderRadiusBase;
                     border-bottom-left-radius: $borderRadiusBase;
                 }
             }
         }
-        &-input{
+
+        &-input {
             flex: 1 1 auto;
-            &:not(:first-child){
-                .#{$classPrefix}Form-control{
+
+            &:not(:first-child) {
+                .#{$classPrefix}Form-control {
                     border-top-left-radius: 0;
                     border-bottom-left-radius: 0;
                 }
-                @if $otherClass != '' {
-                    #{$otherClass}{
+
+                @if $otherClass !='' {
+                    #{$otherClass} {
                         border-top-left-radius: 0;
                         border-bottom-left-radius: 0;
                     }
                 }
             }
-            &:not(:last-child){
-                .#{$classPrefix}Form-control{
+
+            &:not(:last-child) {
+                .#{$classPrefix}Form-control {
                     border-top-right-radius: 0;
                     border-bottom-right-radius: 0;
                 }
-                @if $otherClass != '' {
-                    #{$otherClass}{
+
+                @if $otherClass !='' {
+                    #{$otherClass} {
                         border-top-right-radius: 0;
                         border-bottom-right-radius: 0;
                     }
                 }
             }
         }
-        &-append{
+
+        &-append {
             display: flex;
-            .#{$classPrefix}Btn{
+
+            .#{$classPrefix}Btn {
                 display: block;
                 border-radius: 0;
+
                 &:last-child {
                     border-top-right-radius: $borderRadiusBase;
                     border-bottom-right-radius: $borderRadiusBase;

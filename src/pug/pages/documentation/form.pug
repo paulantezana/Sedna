@@ -109,6 +109,42 @@ block main
                         input(type="text" id="innerSize3").SnForm-control.SnControl.lg
                     .SnForm-help Help text
         +codeBox(
+            'Inner', 
+            'Label inner.', 
+            '<form class="SnForm" action="" method="post">\n    <div class="SnForm-item inner"><label class="SnForm-label" for="size1">Size1</label>\n        <input class="SnForm-control sm" id="size1" type="text" name="size1">\n        <div class="SnForm-help">Help text</div>\n    </div>\n    <div class="SnForm-item inner"><label class="SnForm-label" for="size2">Size2</label>\n        <input class="SnForm-control" id="size2" type="text" name="size2">\n        <div class="SnForm-help">Help text</div>\n    </div>\n    <div class="SnForm-item inner"><label class="SnForm-label" for="size3">Size3</label>\n        <input class="SnForm-control lg" id="size3" type="text" name="size3">\n        <div class="SnForm-help">Help text</div>\n    </div>\n</form>'
+        )
+            form(action="" method="post").SnForm
+                .SnForm-item.inner.required
+                    label(for="innerSizeLabel1").SnForm-label Label description
+                    .SnControlGroup
+                        .SnControl-wrapper.SnControlGroup-input
+                            i.SnControl-prefix.icon-ticket
+                            input(type="text" id="innerSizeLabel1").SnForm-control.SnControl.sm
+                        .SnControlGroup-append
+                            .SnBtn.icon.iconCenter.primary
+                                i.icon-search
+                    .SnForm-help Help text
+                .SnForm-item.inner.required
+                    label(for="innerSizeLabel2").SnForm-label Label description
+                    .SnControlGroup
+                        .SnControl-wrapper.SnControlGroup-input
+                            i.SnControl-prefix.icon-ticket
+                            input(type="text" id="innerSizeLabel2").SnForm-control.SnControl
+                        .SnControlGroup-append
+                            .SnBtn.icon.iconCenter.primary
+                                i.icon-search
+                    .SnForm-help Help text
+                .SnForm-item.inner.required
+                    label(for="innerSizeLabel3").SnForm-label Label description
+                    .SnControlGroup
+                        .SnControl-wrapper.SnControlGroup-input
+                            i.SnControl-prefix.icon-ticket
+                            input(type="text" id="innerSizeLabel3").SnForm-control.SnControl.lg
+                        .SnControlGroup-append
+                            .SnBtn.icon.iconCenter.primary
+                                i.icon-search
+                    .SnForm-help Help text
+        +codeBox(
             'Outlined', 
             'Label outlined.', 
             '<form class="SnForm" action="" method="post" _lpchecked="1">\n    <div class="SnForm-item outlined">\n        <input class="SnForm-control sm" type="text" id="outlinedSize1" placeholder=" " autocomplete="off">\n        <label class="SnForm-label sm" for="outlinedSize1">Size1</label>\n        <div class="SnForm-help">Help text</div>\n    </div>\n    <div class="SnForm-item outlined required">\n        <input class="SnForm-control" type="text" id="outlinedSize2" placeholder=" " autocomplete="off">\n        <label class="SnForm-label" for="outlinedSize2">Size2</label>\n        <div class="SnForm-help">Help text</div>\n    </div>\n    <div class="SnForm-item outlined">\n        <input class="SnForm-control lg" type="text" id="outlinedSize3" placeholder=" " autocomplete="off">\n        <label class="SnForm-label lg" for="outlinedSize3">Size3</label>\n        <div class="SnForm-help">Help text</div>\n    </div>\n</form>'
