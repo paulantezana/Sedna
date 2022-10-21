@@ -11,7 +11,8 @@
         border-spacing: 0;
 
         thead,
-        tbody {
+        tbody,
+        tfoot {
             display: table-row-group;
             vertical-align: middle;
             border-color: inherit;
@@ -22,6 +23,7 @@
             border-bottom: 1px solid var(--snColorBorder);
         }
 
+        tfoot td,
         th {
             padding: 6px 4px 4px;
         }
@@ -45,6 +47,14 @@
                 td {
                     border-bottom: 0;
                 }
+            }
+        }
+
+        tfoot {
+            font-weight: bold;
+
+            tr:first-child td {
+                border-top: 1px solid var(--snColorBorder);
             }
         }
 
