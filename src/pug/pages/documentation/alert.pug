@@ -17,20 +17,30 @@ block main
             ]
         )
             .SnAlert 
-                span.SnIcon-question
-                | message in alert
+                span.SnIcon-question.SnAlert-icon
+                .SnAlert-content
+                    strong This is super informative
+                    div You can tell by how pretty the alert is
             .SnAlert.success 
-                span.SnIcon-success
-                | message in alert
+                span.SnIcon-success.SnAlert-icon
+                .SnAlert-content
+                    strong This is super informative
+                    div You can tell by how pretty the alert is
             .SnAlert.info 
-                span.SnIcon-info
-                | message in alert
+                span.SnIcon-info.SnAlert-icon
+                .SnAlert-content
+                    strong This is super informative
+                    div You can tell by how pretty the alert is
             .SnAlert.warning 
-                span.SnIcon-warning
-                | message in alert
+                span.SnIcon-warning.SnAlert-icon
+                .SnAlert-content
+                    strong This is super informative
+                    div You can tell by how pretty the alert is
             .SnAlert.danger 
-                span.SnIcon-danger
-                | message in alert
+                span.SnIcon-danger.SnAlert-icon
+                .SnAlert-content
+                    strong This is super informative
+                    div You can tell by how pretty the alert is
         +codeBox2(
             'Close',
             'Close icon',
@@ -41,28 +51,28 @@ block main
                 }
             ]
         )
-            .SnAlert 
-                span.SnIcon-question
-                | message in alert
+            .SnAlert
+                span.SnIcon-question.SnAlert-icon
+                .SnAlert-content message in alert
                 .SnAlert-close
                     i.SnIcon-close
             .SnAlert.success 
-                span.SnIcon-success
-                | message in alert
+                span.SnIcon-success.SnAlert-icon
+                .SnAlert-content message in alert
                 .SnAlert-close
                     i.SnIcon-close
             .SnAlert.info 
-                span.SnIcon-info
+                span.SnIcon-info.SnAlert-icon
                 | message in alert
                 .SnAlert-close
                     i.SnIcon-close
             .SnAlert.warning 
-                span.SnIcon-warning
+                span.SnIcon-warning.SnAlert-icon
                 | message in alert
                 .SnAlert-close
                     i.SnIcon-close
             .SnAlert.danger 
-                span.SnIcon-danger
+                span.SnIcon-danger.SnAlert-icon
                 | message in alert
                 .SnAlert-close
                     i.SnIcon-close
