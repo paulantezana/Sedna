@@ -2,10 +2,15 @@
 @import 'scss/base/all';
 @import 'scss/components/all';
 @import 'scss/layout/all';
+@import 'scss/theme/all';
 
 @if $cssCore == true {
     // Base
     @include SnBase();
+
+    // Themes
+    @include SnThemeLight();
+    @include SnThemeDarck();
 
     // Components
     @include SnMenu();

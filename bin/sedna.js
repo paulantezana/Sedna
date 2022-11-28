@@ -8,6 +8,7 @@ import { SnModal } from './script/modal';
 import { SnTab } from './script/tab';
 import { SnTooltip } from './script/tooltip';
 import { SnTree } from './script/tree';
+import { SnTheme } from './script/theme';
 
 export {
     SnCollapse,
@@ -22,4 +23,5 @@ export {
     SnTooltip,
     SnTree,
     SnUniqueId,
+    SnTheme,
 };

@@ -2,7 +2,7 @@
     .#{$classPrefix}Card {
         display: flex;
         flex-direction: column;
-        background: var(--snColorBgAlt);
+        background: var(--panel-background-alt);
         border: 1px solid var(--snColorBorder);
         color: var(--snColorText);
 

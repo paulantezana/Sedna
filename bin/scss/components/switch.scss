@@ -1,15 +1,10 @@
+// Reference
+// https://codepen.io/aaroniker/pen/ZEYoxEY
+
 @mixin SnSwitch() {
 
-    input[type="checkbox"],
-    input[type="radio"] {
-        --active: var(--color1-6);
-        --active-inner: var(--color1-i);
-        --focus: 2px rgba(39, 94, 254, 0.3);
-        --border: var(--snColorBorder);
-        --border-hover: var(--color1-6);
-        --background: transparent;
-        --disabled: var(--snColorBgAlt);
-        --disabled-inner: va(--snColorBg);
+    input[type='checkbox'],
+    input[type='radio'] {
         -webkit-appearance: none;
         -moz-appearance: none;
         height: 21px;
@@ -19,35 +14,35 @@
         position: relative;
         margin: 0;
         cursor: pointer;
-        border: 1px solid var(--bc, var(--border));
-        background: var(--b, var(--background));
-        transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+        border: 1px solid var(--bc, var(--control-border));
+        background: var(--b, var(--control-background));
+        transition: background .3s, border-color .3s, box-shadow .2s;
 
         &:after {
-            content: "";
+            content: '';
             display: block;
             left: 0;
             top: 0;
             position: absolute;
-            transition: transform var(--d-t, 0.3s) var(--d-t-e, ease), opacity var(--d-o, 0.2s);
+            transition: transform var(--d-t, .3s) var(--d-t-e, ease), opacity var(--d-o, .2s);
         }
 
         &:checked {
-            --b: var(--active);
-            --bc: var(--active);
-            --d-o: 0.3s;
-            --d-t: 0.6s;
-            --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
+            --b: var(--control-active);
+            --bc: var(--control-active);
+            --d-o: .3s;
+            --d-t: .6s;
+            --d-t-e: cubic-bezier(.2, .85, .32, 1.2);
         }
 
         &:disabled {
-            --b: var(--disabled);
+            --b: var(--control-disabled);
             cursor: not-allowed;
-            opacity: 0.9;
+            opacity: .9;
 
             &:checked {
-                --b: var(--disabled-inner);
-                --bc: var(--border);
+                --b: var(--control-disabled-inner);
+                --bc: var(--control-border);
             }
 
             &+label {
@@ -58,16 +53,16 @@
         &:hover {
             &:not(:checked) {
                 &:not(:disabled) {
-                    --bc: var(--border-hover);
+                    --bc: var(--control-border-hover);
                 }
             }
         }
 
         &:focus {
-            box-shadow: 0 0 0 var(--focus);
+            box-shadow: 0 0 0 var(--control-focus-shadow);
         }
 
-        &:not(.#{$classPrefix}Switch) {
+        &:not(.switch) {
             width: 21px;
 
             &:after {
@@ -89,14 +84,14 @@
         }
     }
 
-    input[type="checkbox"] {
-        &:not(.#{$classPrefix}Switch) {
+    input[type='checkbox'] {
+        &:not(.switch) {
             border-radius: 7px;
 
             &:after {
                 width: 5px;
                 height: 9px;
-                border: 2px solid var(--active-inner);
+                border: 2px solid var(--control-active-inner);
                 border-top: 0;
                 border-left: 0;
                 left: 7px;
@@ -109,7 +104,7 @@
             }
         }
 
-        &.#{$classPrefix}Switch {
+        &.switch {
             width: 38px;
             border-radius: 11px;
 
@@ -119,39 +114,39 @@
                 border-radius: 50%;
                 width: 15px;
                 height: 15px;
-                background: var(--ab, var(--border));
+                background: var(--ab, var(--control-border));
                 transform: translateX(var(--x, 0));
             }
 
             &:checked {
-                --ab: var(--active-inner);
+                --ab: var(--control-active-inner);
                 --x: 17px;
             }
 
             &:disabled {
                 &:not(:checked) {
                     &:after {
-                        opacity: 0.6;
+                        opacity: .6;
                     }
                 }
             }
         }
     }
 
-    input[type="radio"] {
+    input[type='radio'] {
         border-radius: 50%;
 
         &:after {
             width: 19px;
             height: 19px;
             border-radius: 50%;
-            background: var(--active-inner);
+            background: var(--control-active-inner);
             opacity: 0;
-            transform: scale(var(--s, 0.7));
+            transform: scale(var(--s, .7));
         }
 
         &:checked {
-            --s: 0.5;
+            --s: .5;
         }
     }
 }

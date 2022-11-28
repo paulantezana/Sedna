@@ -16,14 +16,14 @@
     &-sidebar{
         @include from(l){
             // padding: 1rem;
-            // background: var(--snColorBgAlt);
+            // background: var(--panel-background-alt);
             // border-right: 1px solid var(--snColorBorder);
         }
     }
     &-content{
         @include from(l){
             // padding: 1rem;
-            // background: var(--snColorBgAlt);
+            // background: var(--panel-background-alt);
         }
     }
 }

@@ -12,5 +12,11 @@ nav(itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigatio
         - var target = val === 'https://paulantezana.com' ? '"_blank"' : ''
         li(itemprop="url")
           a(href=val target=target itemprop="name" title= "Link to " + key)= key
-    div(style="display: flex;")
-      input#gSchemeChecked.SnSwitch(type = "checkbox" title= "Cambiar tema")
+    div
+      .SnBtn-group
+        input#snThemeLight(type="radio", name="snTheme" value="light").hidden
+        label(for="snThemeLight").SnBtn Light
+        input#snThemeDarck(type="radio", name="snTheme" value="darck").hidden
+        label(for="snThemeDarck").SnBtn Darck
+        input#snThemeSystem(type="radio", name="snTheme" value="system").hidden
+        label(for="snThemeSystem").SnBtn System

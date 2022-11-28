@@ -39,7 +39,7 @@
     }
     &-content {
       width: 220px;
-      background: var(--snColorBg);
+      background: var(--panel-background);
       height: 100vh;
     }
     a {
@@ -97,7 +97,7 @@
 
     // Sub menu
     li ul {
-      background: var(--snColorBgAlt);
+      background: var(--panel-background-alt);
       min-width: 230px;
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;

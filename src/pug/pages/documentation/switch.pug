@@ -8,18 +8,55 @@ append config
 block main
     .SnGrid.col-gap.row-gap.l-grid-2
         +codeBox(
-            'checkbox',
-            'Switch checkbox example',
-            '<div class="SnSwitch">\n    <input class="SnSwitch-control" id="example" type="checkbox">\n    <label class="SnSwitch-label" for="example"></label>\n</div>\n'
-        )
-            input#example(type="checkbox")
-
-        +codeBox(
-            'radio',
-            'Switch radio example',
+            'Active',
+            'Control radio checkbox active',
             '<div style="display: flex;">\n    <div class="SnSwitch">\n        <input class="SnSwitch-control" id="radio1" type="radio" name="example1">\n        <label class="SnSwitch-label" for="radio1"></label>\n    </div>\n    <div class="SnSwitch">\n        <input class="SnSwitch-control" id="radio2" type="radio" name="example1">\n        <label class="SnSwitch-label" for="radio2"></label>\n    </div>\n    <div class="SnSwitch">\n        <input class="SnSwitch-control" id="radio3" type="radio" name="example1">\n        <label class="SnSwitch-label" for="radio3"></label>\n    </div>\n</div>\n'
         )
-            div(style="display: flex;")
-                input#radio1(type="radio" name="example1")
-                input#radio2(type="radio" name="example1")
-                input#radio3(type="radio" name="example1")
+            ul.SnList
+                li
+                    input#c1(type='checkbox')
+                    label(for='c1') Checkbox
+                li
+                    input#c2(type='checkbox' checked='')
+                    label(for='c2') Checkbox
+                li
+                    input#r1(type='radio' name='radio' value='1')
+                    label(for='r1') Radio
+                li
+                    input#r2(type='radio' name='radio' value='2' checked='')
+                    label(for='r2') Radio
+                li
+                    input#s1.switch(type='checkbox')
+                    label(for='s1') Switch
+                li
+                    input#s2.switch(type='checkbox' checked='')
+                    label(for='s2') Switch
+        +codeBox(
+            'disabled',
+            'Control radio checkbox disabled',
+            '<div style="display: flex;">\n    <div class="SnSwitch">\n        <input class="SnSwitch-control" id="radio1" type="radio" name="example1">\n        <label class="SnSwitch-label" for="radio1"></label>\n    </div>\n    <div class="SnSwitch">\n        <input class="SnSwitch-control" id="radio2" type="radio" name="example1">\n        <label class="SnSwitch-label" for="radio2"></label>\n    </div>\n    <div class="SnSwitch">\n        <input class="SnSwitch-control" id="radio3" type="radio" name="example1">\n        <label class="SnSwitch-label" for="radio3"></label>\n    </div>\n</div>\n'
+        )
+            ul.SnList
+                li
+                    input#c1d(type='checkbox' disabled)
+                    label(for='c1d') Checkbox
+                li
+                    input#c2d(type='checkbox' checked disabled)
+                    label(for='c2d') Checkbox
+                li
+                    input#r1d(type='radio' name='radiod' value='1' disabled)
+                    label(for='r1d') Radio
+                li
+                    input#r2d(type='radio' name='radiod' value='2' checked disabled)
+                    label(for='r2d') Radio
+                li
+                    input#s1d.switch(type='checkbox' disabled)
+                    label(for='s1d') Switch
+                li
+                    input#s2d.switch(type='checkbox' checked disabled)
+                    label(for='s2d') Switch
+        +codeBox(
+            'Radio button',
+            'Radio button',
+            '<div style="display: flex;">\n    <div class="SnSwitch">\n        <input class="SnSwitch-control" id="radio1" type="radio" name="example1">\n        <label class="SnSwitch-label" for="radio1"></label>\n    </div>\n    <div class="SnSwitch">\n        <input class="SnSwitch-control" id="radio2" type="radio" name="example1">\n        <label class="SnSwitch-label" for="radio2"></label>\n    </div>\n    <div class="SnSwitch">\n        <input class="SnSwitch-control" id="radio3" type="radio" name="example1">\n        <label class="SnSwitch-label" for="radio3"></label>\n    </div>\n</div>\n'
+        )

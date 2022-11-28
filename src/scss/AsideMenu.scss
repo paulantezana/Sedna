@@ -42,7 +42,7 @@ $asideMenuWidth: 220px;
             left: -#{$asideMenuWidth};
             transition: left .4s;
             height: 100vh;
-            background: var(--snColorBg);
+            background: var(--panel-background);
             z-index: 100;
             width: $asideMenuWidth;
         }
@@ -64,10 +64,10 @@ $asideMenuWidth: 220px;
     transform: translateY(-50%);
     height: 2rem;
     width: 1.5rem;
-    background: var(--snColorBg);
+    background: var(--panel-background);
     cursor: pointer;
     border: 1px solid var(--snColorBorder);
-    border-left: var(--snColorBg);
+    border-left: var(--panel-background);
     border-radius: 0 10px 10px 0;
     
     font-size: 1.4rem;

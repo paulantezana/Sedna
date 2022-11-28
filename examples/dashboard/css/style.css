@@ -425,7 +425,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background: var(--snColorBgAlt);
+  background: var(--panel-background-alt);
   border-bottom: 1px solid var(--snColorBorder);
 }
 
@@ -604,7 +604,7 @@ body {
 }
 .HeaderMenu li ul {
   position: absolute;
-  background: var(--snColorBgAlt);
+  background: var(--panel-background-alt);
   z-index: 100;
   -webkit-box-shadow: 0 2px 16px -2px rgba(0, 0, 0, 0.1);
           box-shadow: 0 2px 16px -2px rgba(0, 0, 0, 0.1);

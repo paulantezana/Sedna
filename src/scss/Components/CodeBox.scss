@@ -2,7 +2,7 @@
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.14);
   border: 0;
   border-radius: 4px;
-  background: var(--snColorBgAlt);
+  background: var(--panel-background-alt);
   &-demo {
     padding: 42px 24px 50px;
   }
@@ -29,7 +29,7 @@
     top: -10px;
     margin-left: 16px;
     padding: 1px 8px;
-    background: var(--snColorBgAlt);
+    background: var(--panel-background-alt);
     border-radius: 2px 2px 0 0;
     font-weight: 500;
   }
@@ -88,7 +88,7 @@
           top: 0;
         }
         width: 220px;
-        background: var(--snColorBg);
+        background: var(--panel-background);
         height: 100vh;
       }
     }
@@ -119,7 +119,7 @@
 // GRID
 .CodeBox-demo{
   .DocGrid{
-    background: var(--snColorBg) !important;
+    background: var(--panel-background) !important;
     & > * {
       min-height: 100px;
       background: var(--color1-6);

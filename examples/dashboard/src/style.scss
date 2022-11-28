@@ -371,7 +371,7 @@ body{
 .Header{
   display: flex;
   justify-content: space-between;
-  background: var(--snColorBgAlt);
+  background: var(--panel-background-alt);
   border-bottom: 1px solid var(--snColorBorder);
 }
 
@@ -466,7 +466,7 @@ body{
   li{
       ul{
           position: absolute;
-          background: var(--snColorBgAlt);
+          background: var(--panel-background-alt);
           z-index: 100;
           box-shadow: 0 2px 16px -2px rgba(#000000, 0.10);
           border-radius: 0.25rem;

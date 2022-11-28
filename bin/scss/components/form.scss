@@ -5,8 +5,8 @@
 }
 
 @mixin FormControl {
-    border: 1px solid var(--snControlColorBorder);
-    background: var(--snControlColorBg);
+    border: 1px solid var(--control-border);
+    background: var(--control-background);
     box-shadow: none;
     padding: 6px 11px;
     font-size: 14px;
@@ -35,16 +35,13 @@
     }
 
     &::placeholder {
-        color: var(--snControlColorPlaceholder);
-    }
-
-    &.disabled {
-        pointer-events: none;
+        color: var(--control-placeholder-color);
     }
 
     &.disabled,
     &:disabled {
-        border-color: var(--snColorBg);
+        border-color: var(--control-disabled-inner);
+        cursor: not-allowed;
     }
 }
 
@@ -195,7 +192,7 @@
                         // Colors and styles
                         transition: 0.1s top ease-out;
                         pointer-events: none;
-                        color: var(--snControlColorPlaceholder);
+                        color: var(--control-placeholder-color);
 
                         &.sm {
                             top: math.div($controlHeightSm, 2);
@@ -215,7 +212,7 @@
                         &:not(:placeholder-shown)+.SnForm-label {
                             top: 0;
                             transform: translateY(-50%) scale(0.9);
-                            background: linear-gradient(transparent 50%, var(--snControlColorBg) 50%);
+                            background: linear-gradient(transparent 50%, var(--control-background) 50%);
                             font-size: 0.9rem;
                         }
                     }
