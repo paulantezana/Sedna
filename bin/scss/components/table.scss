@@ -5,7 +5,7 @@
 
     .#{$classPrefix}Table {
         width: 100%;
-        border: 1px solid var(--snColorBorder);
+        border: 1px solid var(--border-color);
         border-radius: $borderRadiusBase;
         border-collapse: separate;
         border-spacing: 0;
@@ -20,7 +20,7 @@
 
         td,
         th {
-            border-bottom: 1px solid var(--snColorBorder);
+            border-bottom: 1px solid var(--border-color);
         }
 
         tfoot td,
@@ -40,7 +40,7 @@
             border-color: inherit;
 
             &:hover {
-                background: var(--snColorHover);
+                background: var(--hover-background);
             }
 
             &:last-child {
@@ -54,7 +54,7 @@
             font-weight: bold;
 
             tr:first-child td {
-                border-top: 1px solid var(--snColorBorder);
+                border-top: 1px solid var(--border-color);
             }
         }
 

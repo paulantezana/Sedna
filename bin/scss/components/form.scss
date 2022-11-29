@@ -10,7 +10,7 @@
     box-shadow: none;
     padding: 6px 11px;
     font-size: 14px;
-    color: var(--snColorText);
+    color: var(--text-color);
     border-radius: 4px;
     line-height: 1.5em;
     display: inline-block;
@@ -91,7 +91,7 @@
             }
 
             .SnForm-help {
-                color: var(--snColorTextAlt);
+                color: var(--text-color-alt);
                 font-size: 13px;
                 margin-top: 4px;
             }
@@ -225,7 +225,7 @@
             margin: 0;
             padding: 0 0 8px;
             line-height: 1.5;
-            color: var(--snColorText);
+            color: var(--text-color);
         }
 
         &-control {

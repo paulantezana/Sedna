@@ -21,8 +21,8 @@
 
 @mixin SnBtnStndStates {
     --btn-background-color: transparent;
-    --btn-border-color: var(--snColorBorder);
-    --btn-color: var(--snColorText);
+    --btn-border-color: var(--border-color);
+    --btn-color: var(--text-color);
 
     --btn-hover-background-color: transparent;
     --btn-hover-border-color: var(--color1-6);
@@ -32,7 +32,7 @@
     --btn-focus-border-color: var(--color1-6);
     --btn-focus-color: var(--color1-6);
 
-    --btn-loading-border-color: var(--snColorText);
+    --btn-loading-border-color: var(--text-color);
 
     --btn-focus-shadow: var(--control-focus-shadow);
 

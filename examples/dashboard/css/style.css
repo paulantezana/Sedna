@@ -426,7 +426,7 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   background: var(--panel-background-alt);
-  border-bottom: 1px solid var(--snColorBorder);
+  border-bottom: 1px solid var(--border-color);
 }
 
 #AsideMenu-toggle {
@@ -434,7 +434,7 @@ body {
   cursor: pointer;
 }
 #AsideMenu-toggle:hover {
-  background: var(--snColorHover);
+  background: var(--hover-background);
 }
 
 @media print {
@@ -533,7 +533,7 @@ body {
   cursor: pointer;
 }
 .HeaderMenu li:hover {
-  background: var(--snColorHover);
+  background: var(--hover-background);
 }
 .HeaderMenu li .Header-action {
   display: -webkit-box;
@@ -551,7 +551,7 @@ body {
   font-size: 1.2rem;
 }
 .HeaderMenu li.divider {
-  border-bottom: 1px solid var(--snColorBorder);
+  border-bottom: 1px solid var(--border-color);
 }
 .HeaderMenu a {
   text-decoration: none;
@@ -581,13 +581,13 @@ body {
   line-height: 1rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--snColorBorder);
+  border-bottom: 1px solid var(--border-color);
 }
 .HeaderMenu-header:hover {
   background: none;
 }
 .HeaderMenu-footer {
-  border-top: 1px solid var(--snColorBorder);
+  border-top: 1px solid var(--border-color);
   text-align: center;
 }
 
@@ -597,10 +597,10 @@ body {
   display: flex;
 }
 .HeaderMenu a {
-  color: var(--snColorText);
+  color: var(--text-color);
 }
 .HeaderMenu a:hover {
-  color: var(--snColorText);
+  color: var(--text-color);
 }
 .HeaderMenu li ul {
   position: absolute;
@@ -616,7 +616,7 @@ body {
 .User-item,
 .Notification-item {
   text-decoration: none;
-  color: var(--snColorText);
+  color: var(--text-color);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -638,7 +638,7 @@ body {
 }
 .User-description,
 .Notification-description {
-  color: var(--snColorTextAlt);
+  color: var(--text-color-alt);
 }
 
 .Notification {
@@ -659,7 +659,7 @@ body {
   margin-top: 0;
 }
 .Notification-time {
-  color: var(--snColorTextAlt);
+  color: var(--text-color-alt);
 }
 
 .SnToolbar {

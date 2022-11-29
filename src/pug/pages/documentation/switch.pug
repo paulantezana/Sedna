@@ -60,3 +60,10 @@ block main
             'Radio button',
             '<div style="display: flex;">\n    <div class="SnSwitch">\n        <input class="SnSwitch-control" id="radio1" type="radio" name="example1">\n        <label class="SnSwitch-label" for="radio1"></label>\n    </div>\n    <div class="SnSwitch">\n        <input class="SnSwitch-control" id="radio2" type="radio" name="example1">\n        <label class="SnSwitch-label" for="radio2"></label>\n    </div>\n    <div class="SnSwitch">\n        <input class="SnSwitch-control" id="radio3" type="radio" name="example1">\n        <label class="SnSwitch-label" for="radio3"></label>\n    </div>\n</div>\n'
         )
+            .SnBtn-group 
+                input#radio1(type="radio", name="radioimp").hidden
+                label(for="radio1").SnBtn Left
+                input#radio2(type="radio", name="radioimp" checked).hidden
+                label(for="radio2").SnBtn Center
+                input#radio3(type="radio", name="radioimp").hidden
+                label(for="radio3").SnBtn Right

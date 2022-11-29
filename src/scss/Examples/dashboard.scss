@@ -335,14 +335,14 @@ $headerHeight: 56px;
     display: flex;
     justify-content: space-between;
     background: var(--panel-background-alt);
-    border-bottom: 1px solid var(--snColorBorder);
+    border-bottom: 1px solid var(--border-color);
 }
 
 #AdminAsideMenu-toggle {
     padding: 0 16px;
     cursor: pointer;
     &:hover {
-        background: var(--snColorHover);
+        background: var(--hover-background);
     }
 }
 
@@ -358,7 +358,7 @@ $headerHeight: 56px;
         padding-left: 12px;
         cursor: pointer;
         &:hover {
-            background: var(--snColorHover);
+            background: var(--hover-background);
         }
         .AdminHeader-action {
             display: flex;
@@ -370,7 +370,7 @@ $headerHeight: 56px;
             }
         }
         &.divider {
-            border-bottom: 1px solid var(--snColorBorder);
+            border-bottom: 1px solid var(--border-color);
         }
     }
     a {
@@ -404,13 +404,13 @@ $headerHeight: 56px;
         line-height: 1rem;
         padding-top: 0.75rem;
         padding-bottom: 0.75rem;
-        border-bottom: 1px solid var(--snColorBorder);
+        border-bottom: 1px solid var(--border-color);
         &:hover {
             background: none;
         }
     }
     &-footer {
-        border-top: 1px solid var(--snColorBorder);
+        border-top: 1px solid var(--border-color);
         text-align: center;
     }
 }
@@ -419,9 +419,9 @@ $headerHeight: 56px;
 .AdminHeaderMenu {
     display: flex;
     a {
-        color: var(--snColorText);
+        color: var(--text-color);
         &:hover {
-            color: var(--snColorText);
+            color: var(--text-color);
         }
     }
     li {
@@ -441,7 +441,7 @@ $headerHeight: 56px;
 // .Notification {
 //     &-item {
 //         text-decoration: none;
-//         color: var(--snColorText);
+//         color: var(--text-color);
 //         display: flex;
 //         align-items: center;
 
@@ -457,7 +457,7 @@ $headerHeight: 56px;
 //         margin: 0;
 //     }
 //     &-description {
-//         color: var(--snColorTextAlt);
+//         color: var(--text-color-alt);
 //     }
 // }
 
@@ -476,7 +476,7 @@ $headerHeight: 56px;
 //         }
 //     }
 //     &-time {
-//         color: var(--snColorTextAlt);
+//         color: var(--text-color-alt);
 //     }
 // }
 

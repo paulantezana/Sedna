@@ -34,13 +34,13 @@
     font-weight: 500;
   }
   &-description {
-    border-top: 1px solid var(--snColorBorder);
+    border-top: 1px solid var(--border-color);
     padding: 18px 24px 12px;
   }
   &-actions {
     padding: 4px 0;
     text-align: center;
-    border-top: 1px dashed var(--snColorBorder);
+    border-top: 1px dashed var(--border-color);
     opacity: 0.7;
 
     display: flex;
@@ -62,7 +62,7 @@
     }
     #TopMenuDemo-context {
       height: 400px;
-      border: 1px solid var(--snColorBorder);
+      border: 1px solid var(--border-color);
     }
 
     .TopMenuDemo {
@@ -70,7 +70,7 @@
         padding: 0 12px;
         line-height: 2.25rem;
         &:hover {
-          background: var(--snColorHover);
+          background: var(--hover-background);
           color: var(--color1-6);
         }
       }
@@ -103,7 +103,7 @@
       @include from(l) {
         li ul {
           min-width: 200px;
-          border: 1px solid var(--snColorBorder);
+          border: 1px solid var(--border-color);
         }
       }
     }

@@ -116,11 +116,11 @@
         --color2-i: var(--yellow-i);
 
         // Global
-        --snColorText: var(--gray-10);
-        --snColorTextAlt: var(--gray-7);
+        --text-color: var(--gray-10);
+        --text-color-alt: var(--gray-7);
 
-        --snColorBorder: var(--gray-4);
-        --snColorHover: hsla(0, 0%, 0%, 0.051);
+        --border-color: var(--gray-4);
+        --hover-background: hsla(0, 0%, 0%, 0.051);
 
         // Elevations
         // Overlays
@@ -129,7 +129,7 @@
         --panel-background: var(--gray-2);
         --panel-background-alt: var(--gray-1);
 
-        --control-placeholder-color: var(--snColorTextAlt);
+        --control-placeholder-color: var(--text-color-alt);
 
         // Controls
         --control-active: var(--color1-5);

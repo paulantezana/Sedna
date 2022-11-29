@@ -372,14 +372,14 @@ body{
   display: flex;
   justify-content: space-between;
   background: var(--panel-background-alt);
-  border-bottom: 1px solid var(--snColorBorder);
+  border-bottom: 1px solid var(--border-color);
 }
 
 #AsideMenu-toggle{
   padding: 0 16px;
   cursor: pointer;
   &:hover{
-      background: var(--snColorHover);
+      background: var(--hover-background);
   }
 }
 
@@ -397,7 +397,7 @@ body{
       padding-left: 12px;
       cursor: pointer;
       &:hover{
-          background: var(--snColorHover);
+          background: var(--hover-background);
       }
       .Header-action{
           display: flex;
@@ -409,7 +409,7 @@ body{
           }
       }
       &.divider{
-          border-bottom: 1px solid var(--snColorBorder);
+          border-bottom: 1px solid var(--border-color);
       }
   }
   a {
@@ -443,13 +443,13 @@ body{
     line-height: 1rem;
     padding-top: .75rem;
     padding-bottom: .75rem;
-    border-bottom: 1px solid var(--snColorBorder);
+    border-bottom: 1px solid var(--border-color);
     &:hover{
       background: none;
     }
   }
   &-footer{
-    border-top: 1px solid var(--snColorBorder);
+    border-top: 1px solid var(--border-color);
     text-align: center;
   }
 }
@@ -458,9 +458,9 @@ body{
 .HeaderMenu {
   display: flex;
   a {
-      color: var(--snColorText);
+      color: var(--text-color);
       &:hover{
-          color: var(--snColorText);
+          color: var(--text-color);
       }
   }
   li{
@@ -482,7 +482,7 @@ body{
 .Notification {
   &-item{
     text-decoration: none;
-    color: var(--snColorText);
+    color: var(--text-color);
     display: flex;
     align-items: center;
 
@@ -498,7 +498,7 @@ body{
     margin: 0;
   }
   &-description{
-    color: var(--snColorTextAlt);
+    color: var(--text-color-alt);
   }
 }
 
@@ -515,7 +515,7 @@ body{
     p{ margin-top: 0; }
   }
   &-time{
-    color: var(--snColorTextAlt);
+    color: var(--text-color-alt);
   }
 }
 

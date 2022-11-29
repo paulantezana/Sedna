@@ -56,7 +56,7 @@
             transition: opacity 0.4s;
 
             svg {
-                color: var(--snColorText);
+                color: var(--text-color);
             }
 
             &:hover {
@@ -66,9 +66,9 @@
 
         &-header {
             padding: 16px 24px;
-            color: var(--snColorText);
+            color: var(--text-color);
             // font-weight: bold;
-            box-shadow: 0 1px var(--snColorBorder);
+            box-shadow: 0 1px var(--border-color);
             border-radius: 4px 4px 0 0;
         }
 

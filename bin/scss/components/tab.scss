@@ -2,7 +2,7 @@
     .#{$classPrefix}Tab {
         &-header {
             margin: 0 0 16px 0;
-            border-bottom: 1px solid var(--snColorBorder);
+            border-bottom: 1px solid var(--border-color);
             display: flex;
             overflow-x: auto;
         }
