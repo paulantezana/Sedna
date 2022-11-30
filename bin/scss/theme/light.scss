@@ -15,10 +15,6 @@
         --gray-12: #181A1B;
         --gray-13: #000000;
 
-        // BBC1E1
-        // F6F8FF
-        // E1E6F9  
-
         --blue-1: #CCD5D9;
         --blue-2: #A3BECC;
         --blue-3: #7AA6BF;
@@ -29,7 +25,7 @@
         --blue-8: #05264D;
         --blue-9: #001126;
         --blue-10: #000000;
-        --blue-i: var(--gray-1);
+        --blue-i: #ffffff;
 
         --red-1: #FFF1F0;
         --red-2: #FFCCC7;
@@ -41,7 +37,7 @@
         --red-8: #A8071A;
         --red-9: #820014;
         --red-10: #5C0011;
-        --red-i: var(--gray-1);
+        --red-i: #ffffff;
 
         --green-1: #E1EDD5;
         --green-2: #C1E0A6;
@@ -53,7 +49,7 @@
         --green-8: #1A6100;
         --green-9: #0E3B00;
         --green-10: #041400;
-        --green-i: var(--gray-1);
+        --green-i: #ffffff;
 
         --yellow-1: #FFFDE6;
         --yellow-2: #FFF4A3;
@@ -77,7 +73,7 @@
         --magenta-8: #9E1068;
         --magenta-9: #780650;
         --magenta-10: #520339;
-        --magenta-i: var(--gray-1);
+        --magenta-i: #ffffff;
 
         --purple-1: #F9F0FF;
         --purple-2: #EFDBFF;
@@ -89,7 +85,7 @@
         --purple-8: #391085;
         --purple-9: #22075E;
         --purple-10: #120338;
-        --purple-i: var(--gray-1);
+        --purple-i: #ffffff;
 
         --color1-1: var(--blue-1);
         --color1-2: var(--blue-2);
@@ -137,7 +133,7 @@
         --control-focus-shadow: 2px rgba(24, 93, 154, .3);
         --control-border: var(--gray-5);
         --control-border-hover: var(--color1-6);
-        --control-background: var(--gray-1);
+        --control-background: var(--gray-2);
         --control-disabled: var(--gray-2);
         --control-disabled-inner: var(--gray-3);
 

@@ -15,10 +15,6 @@
         --gray-2: #181A1B;
         --gray-1: #000000;
 
-        // BBC1E1
-        // F6F8FF
-        // E1E6F9  
-
         --blue-10: #CCD5D9;
         --blue-9: #A3BECC;
         --blue-8: #7AA6BF;
@@ -29,7 +25,7 @@
         --blue-3: #05264D;
         --blue-2: #001126;
         --blue-1: #000000;
-        --blue-i: var(--gray-1);
+        --blue-i: #ffffff;
 
         --red-10: #FFF1F0;
         --red-9: #FFCCC7;
@@ -41,7 +37,7 @@
         --red-3: #A8071A;
         --red-2: #820014;
         --red-1: #5C0011;
-        --red-i: var(--gray-1);
+        --red-i: #ffffff;
 
         --green-10: #E1EDD5;
         --green-9: #C1E0A6;
@@ -53,7 +49,7 @@
         --green-3: #1A6100;
         --green-2: #0E3B00;
         --green-1: #041400;
-        --green-i: var(--gray-1);
+        --green-i: #ffffff;
 
         --yellow-10: #FFFDE6;
         --yellow-9: #FFF4A3;
@@ -77,7 +73,7 @@
         --magenta-3: #9E1068;
         --magenta-2: #780650;
         --magenta-1: #520339;
-        --magenta-i: var(--gray-1);
+        --magenta-i: #ffffff;
 
         --purple-10: #F9F0FF;
         --purple-9: #EFDBFF;
@@ -89,7 +85,7 @@
         --purple-3: #391085;
         --purple-2: #22075E;
         --purple-1: #120338;
-        --purple-i: var(--gray-1);
+        --purple-i: #ffffff;
 
         --color1-1: var(--blue-1);
         --color1-2: var(--blue-2);
@@ -131,11 +127,11 @@
 
         // Controls
         --control-active: var(--color1-5);
-        --control-active-inner: var(--gray-1);
+        --control-active-inner: var(--gray-2);
         --control-focus-shadow: 2px rgba(24, 93, 154, .3);
         --control-border: var(--gray-5);
         --control-border-hover: var(--color1-6);
-        --control-background: var(--gray-1);
+        --control-background: var(--gray-2);
         --control-disabled: var(--gray-2);
         --control-disabled-inner: var(--gray-3);
         --control-placeholder-color: var(--text-color-alt);
