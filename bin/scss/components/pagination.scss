@@ -8,6 +8,8 @@
 
         &-link {
             @include SnBtnStnd();
+            @include SnBtnStndStates;
+
             margin-right: 4px;
             margin-bottom: 6px;
         }
@@ -24,26 +26,20 @@
 
             &.active {
                 .SnPagination-link {
-                    color: var(--color1-i);
-                    background-color: var(--color1-6);
-                    border-color: var(--color1-6);
-                    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
-                    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+                    --btn-color: var(--color1-i);
+                    --btn-background-color: var(--color1-6);
+                    --btn-border-color: var(--color1-6);
 
-                    &:hover {
-                        background-color: var(--color1-5);
-                        border-color: var(--color1-5);
-                    }
+                    --btn-hover-background-color: var(--color1-5);
+                    --btn-hover-border-color: var(--color1-5);
+                    --btn-hover-color: var(--color1-i);
 
-                    &:focus,
-                    &:active {
-                        background-color: var(--color1-7);
-                        border-color: var(--color1-7);
-                    }
+                    --btn-focus-background-color: var(--color1-6);
+                    --btn-focus-border-color: var(--color1-6);
+                    --btn-focus-color: var(--color1-i);
 
-                    &.loading::before {
-                        border: 2px solid var(--color1-i);
-                    }
+                    --btn-loading-border-color: var(--color1-i);
+                    --btn-focus-shadow: var(--control-focus-shadow-primary);
                 }
             }
         }

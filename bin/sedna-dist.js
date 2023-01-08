@@ -1,5 +1,5 @@
 import { SnCollapse } from './script/collapse';
-import { SnIcon, SnUniqueId } from './script/conmon';
+import { SnIcon, SnUniqueId, SnLoadingState } from './script/conmon';
 import { SnInput } from './script/form';
 import { SnFreeze } from './script/freeze';
 import { SnMenu, SnActiveMenu } from './script/menu';
@@ -9,6 +9,8 @@ import { SnTab } from './script/tab';
 import { SnTree } from './script/tree';
 import { SnAlert } from './script/alert';
 import { SnTheme } from './script/theme'
+import SnTable from './script/table';
+import SnDropdown from './script/dropdown';
 
 window.SnCollapse = SnCollapse;
 window.SnIcon = SnIcon;
@@ -22,7 +24,10 @@ window.SnTab = SnTab;
 window.SnTree = SnTree;
 window.SnAlert = SnAlert;
 window.SnUniqueId = SnUniqueId;
+window.SnLoadingState = SnLoadingState;
 window.SnTheme = SnTheme;
+window.SnTable = SnTable;
+window.SnDropdown = SnDropdown;
 
 // Init Components
 document.addEventListener("DOMContentLoaded", () => {
@@ -33,4 +38,5 @@ document.addEventListener("DOMContentLoaded", () => {
     SnIcon.render();
     SnAlert.init();
     SnTheme.init();
+    SnDropdown();
 });
