@@ -95,41 +95,9 @@ class SnTable {
     //  T A B L E     Z O N E
     //  ========================================================================================
     getData() {
-        const isPromise = (p) => {
-            if (typeof p === 'object' && typeof p.then === 'function') {
-                return true;
-            }
-
-            return false;
-        }
-
-        // Set array data
-        if (Array.isArray(this.options.data)) {
-            this.result = this.options.data;
-            this._renderTableBody();
-            return;
-        }
-
-        if (typeof this.options.data !== 'function') {
-            alert('SnTable data type not suport');
-            return;
-        }
-
-        // if (!isPromise(this.options.data)) {
-        //     console.log('NANIiii!!!!!!!!!!')
-        //     this.result = this.options.data({
-        //         filter: [...this.filters, this.columnFilters],
-        //         sorter: this.columnSorters,
-        //         limit: this.limit,
-        //         page: this.page,
-        //     });
-        //     this._renderTableBody();
-        //     return;
-        // }
-
         SnFreeze.freeze({ selector: `#${this.options.elementId}` });
         SnLoadingState(true, 'jsAction');
-        console.log('ASINCRONO!!!!!!!!!!');
+
         this.options.data({
             filter: [...this.filters, this.columnFilters],
             sorter: this.columnSorters,
@@ -139,6 +107,9 @@ class SnTable {
             .then((result) => {
                 this.result = result;
                 this._renderTableBody();
+            })
+            .catch((err)=>{
+                console.error('SnTable fetch error ', err);
             })
             .finally((e) => {
                 SnFreeze.unFreeze(`#${this.options.elementId}`);
@@ -560,7 +531,8 @@ class SnTable {
     _renderActionMenu(id, positionOrElement, toggle, params = []) {
         let actionHtml = '';
         this._getTableActions().forEach(act => {
-            actionHtml += `<li class="SnList-item jsAction" onclick="${this.options.entity}${act.event_name}(${params.join(',')})">
+            const eventName = (act?.event_name_prefix?.length > 1 ? act.event_name_prefix : this.options.entity) + act.event_name;
+            actionHtml += `<li class="SnList-item jsAction" onclick="${eventName}('${this.options.entity}','${act.screen_id_controller}', [${params.join(',')}])">
                                     <i class="${act.icon} SnMr-2"></i>${act.title}
                                 </li>`;
         });
