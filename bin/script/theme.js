@@ -3,7 +3,7 @@ export const SnTheme = {
     init() {
         // Root Element
         const rootElement = document.documentElement;
-        
+
         // Load saved scheme
         const snSchemeSaved = sessionStorage.getItem('sn-scheme');
         if (snSchemeSaved) {
@@ -30,7 +30,7 @@ export const SnTheme = {
         document.documentElement.classList.remove('SnTheme-darck');
         document.documentElement.classList.remove('SnTheme-light');
         const radioElements = document.getElementsByName('snTheme');
-        
+
         // Set current theme name
         if(themeName === 'light'){
             document.documentElement.classList.add('SnTheme-light');

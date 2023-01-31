@@ -40,6 +40,7 @@
     @include SnDivider();
     @include SnEmpty();
     @include SnControlGroup();
+    @include SnDropdown();
 
     // Layout
     @include SnContainer();
