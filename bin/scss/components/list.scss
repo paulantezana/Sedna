@@ -1,11 +1,52 @@
 @mixin SnList {
     .#{$classPrefix}List {
-        list-style: none;
-        // margin: 0;
-        padding: 0;
-
-        li {
+        @extend %SnList;
+    
+        &-item {
             line-height: 1.7rem;
+        }
+    
+        &.shadow{
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+    
+        &.menu {
+            background: var(--panel-background-alt);
+            padding: 4px 0;
+            text-align: left;
+            background-clip: padding-box;
+            border-radius: 4px;
+            outline: none;
+            min-width: 200px;
+            border: 1px solid var(--border-color);
+    
+            .#{$classPrefix}List {
+                &-item {
+                    margin: 0;
+                    padding: 5px 12px;
+                    font-weight: normal;
+                    line-height: 22px;
+                    display: block;
+                    white-space: nowrap;
+                    cursor: pointer;
+    
+                    &:hover {
+                        background: var(--hover-background);
+                    }
+    
+                    &.disabled {
+                        opacity: 0.6;
+                        touch-action: none;
+                        pointer-events: none;
+                    }
+                }
+    
+                &-item,
+                &-item a {
+                    text-decoration: none;
+                    color: var(--text-color);
+                }
+            }
         }
     }
 }

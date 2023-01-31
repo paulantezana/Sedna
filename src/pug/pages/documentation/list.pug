@@ -12,10 +12,25 @@ block main
             '<ul class="SnList">\n    <li>item 1</li>\n    <li>item 2</li>\n    <li>item 3</li>\n    <li>item 4</li>\n</ul>'
         )
             ul.SnList
-                li item 1
-                li item 2
-                li item 3
-                li item 4
+                li.SnList-item item 1
+                li.SnList-item item 2
+                li.SnList-item item 3
+                li.SnList-item item 4
+        +codeBox(
+            'Menu',
+            'Simple Menu List.',
+            '<ul class="SnList">\n    <li>item 1</li>\n    <li>item 2</li>\n    <li>item 3</li>\n    <li>item 4</li>\n</ul>'
+        )
+            ul.SnList.menu
+                li.SnList-item item 1
+                li.SnList-item item 2
+                li.SnList-item
+                    i.SnIcon-success.SnMr-2
+                    | item 3
+                li.SnList-item
+                    i.SnIcon-success.SnMr-2
+                    | item 4
+                li.SnList-item.disabled item 5 disabled
     h2 API
     .SnTable-wrapper
         table.SnTable.DocApiTable
