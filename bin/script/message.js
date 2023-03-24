@@ -25,7 +25,7 @@ export let SnMessage = {
 
         // Append elements
         messageEl.classList.add(`${window.classPrefix}Message`, addClass);
-        messageEl.innerHTML = `<span class="${window.classPrefix}Message-icon">${SnIcon[type]}</span>${message}`;
+        messageEl.innerHTML = `<span class="${window.classPrefix}Message-icon">${SnIcon[type]}</span><span class="${window.classPrefix}Message-content">${message}</span>`;
         // --
         messageElClose.innerHTML = 'x';
         messageElClose.classList.add(`${window.classPrefix}Message-close`);

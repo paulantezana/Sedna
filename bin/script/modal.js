@@ -124,7 +124,7 @@ export let SnModal = {
     }) {
         this.render();
 
-        let uniqueIdName = window.classPrefix + 'ConfirmModal' + (document.querySelectorAll(`.${window.classPrefix}Modal`).length + 1);
+        let uniqueIdName = window.classPrefix + 'ConfirmModal' + (document.querySelectorAll(`.${window.classPrefix}Modal.confirm`).length + 1);
         let divEl = document.createElement('div');
 
         let cancelTemp = confirm

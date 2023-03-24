@@ -6,7 +6,6 @@ class SnTable {
         this.columnSorters = {};
         this.columnFilters = {};
         this.selectRows = [];
-        this.selectSingleRow = true;
         this.rowKey = 'id';
         this.result = {};
         this.filters = [];
@@ -20,10 +19,11 @@ class SnTable {
         this.options.entity ??= SnUniqueId();
         this.options.elementId ??= '';
         this.options.selectable ??= true;
-        this.options.filterEnabled ??= true;
         this.options.columns ??= [];
         this.options.filters ??= [];
         this.options.tableHeadTopHtml ??= '';
+        this.options.filterEnabled ??= true;
+        this.options.selectableRadio ??= true;
 
         // -------------------------------------------------------------------------------
         // Init data ---------------------------------------------------------------------
@@ -182,7 +182,7 @@ class SnTable {
 
         entityTableHead.innerHTML = `${this.options.tableHeadTopHtml}
                                     <tr>
-                                        ${this.options.selectable ? (this.selectSingleRow ? '<th class="not-print"></th>' : `<th class="not-print"><input type="checkbox" id="${this.options.entity}TableSelectHead"></th>`) : ''}
+                                        ${this.options.selectable ? (this.options.selectableRadio ? '<th class="not-print"></th>' : `<th class="not-print"><input type="checkbox" id="${this.options.entity}TableSelectHead"></th>`) : ''}
                                         ${tableHeadHtml}
                                     </tr>`;
 
@@ -297,14 +297,14 @@ class SnTable {
                     const selectId = item.dataset.id;
                     if (item.checked) {
                         if (this.selectRows.indexOf(selectId) === -1) {
-                            if (this.selectSingleRow) {
+                            if (this.options.selectableRadio) {
                                 this.selectRows = [selectId];
                             } else {
                                 this.selectRows.push(selectId);
                             }
                         }
                     } else {
-                        this.selectRows = this.selectSingleRow ? [] : this.selectRows.filter(i => i != selectId);
+                        this.selectRows = this.options.selectableRadio ? [] : this.selectRows.filter(i => i != selectId);
                     }
                     this._reRenderSelectRowChecked();
                 });
@@ -530,9 +530,9 @@ class SnTable {
     //  P O R T A L
     _renderActionMenu(id, positionOrElement, toggle, params = []) {
         let actionHtml = '';
-        this._getTableActions().forEach(act => {
+        this._getTableActions().forEach((act, idx) => {
             const eventName = (act?.event_name_prefix?.length > 1 ? act.event_name_prefix : this.options.entity) + act.event_name;
-            actionHtml += `<li class="SnList-item jsAction" onclick="${eventName}('${this.options.entity}','${act.screen_id_controller}', [${params.join(',')}])">
+            actionHtml += `<li class="SnList-item jsAction" key="${act.id || idx}" onclick="${eventName}('${this.options.entity}','${act.screen_id_controller}', [${params.join(',')}])">
                                     <i class="${act.icon} SnMr-2"></i>${act.title}
                                 </li>`;
         });

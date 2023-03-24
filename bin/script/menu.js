@@ -1,22 +1,38 @@
-const SnActiveParentMenu = (linkElement, menuId) => {
+const SnActiveParentMenu = (linkElement, menuId, iconClassUp, iconClassDown) => {
     const parentNode = linkElement.parentElement;
     if (parentNode.tagName === 'UL' && parentNode.id !== menuId) {
+        // Open container
         parentNode.classList.add('is-show');
+
+        // Set icon open
+        let iconPrevious = parentNode?.previousElementSibling?.querySelector('.toggle');
+        if (iconPrevious) {
+
+            // Remove class down
+            iconClassDown.split(' ').forEach(iClass => {
+                iconPrevious.classList.remove(iClass);
+            });
+
+            // Add class up
+            iconClassUp.split(' ').forEach(iClass => {
+                iconPrevious.classList.add(iClass);
+            });
+        }
     }
 
     // Recursive
     if (parentNode !== null && parentNode.id !== menuId) {
-        SnActiveParentMenu(parentNode, menuId);
+        SnActiveParentMenu(parentNode, menuId, iconClassUp, iconClassDown);
     }
 }
 
-const SnActiveMenu = (links, menuId = '') => {
+const SnActiveMenu = (links, menuId = '', iconClassUp = '', iconClassDown = '') => {
     if (links) {
-        links.map(link => {
+        links.forEach(link => {
             const url = document.location.href;
-            if (link.href === url) {
+            if (link.href === url && link.href !== '#') {
                 link.parentNode.classList.add('is-active');
-                SnActiveParentMenu(link, menuId);
+                SnActiveParentMenu(link, menuId, iconClassUp, iconClassDown);
             }
         });
     }
@@ -62,17 +78,18 @@ const SnMenu = ({
                     toggle.appendChild(iconToggleEle);
                     toggle.classList.add('is-toggle');
 
-                    let toggleItem = false;
                     iconToggleEle.addEventListener('click', e => {
                         e.preventDefault();
-                        if (toggleItem) {
+
+                        let isShow = content.classList.contains('is-show') ?? false;
+
+                        if (isShow) {
                             iconClassUp.split(' ').forEach(iClass => {
                                 iconToggleEle.classList.remove(iClass); // add Icon up
                             });
                             iconClassDown.split(' ').forEach(iClass => {
                                 iconToggleEle.classList.add(iClass);
                             });
-                            toggleItem = false;
                         } else {
                             iconClassDown.split(' ').forEach(iClass => {
                                 iconToggleEle.classList.remove(iClass);
@@ -80,7 +97,6 @@ const SnMenu = ({
                             iconClassUp.split(' ').forEach(iClass => {
                                 iconToggleEle.classList.add(iClass); // add Icon up
                             });
-                            toggleItem = true;
                         }
 
                         content.classList.toggle('is-show'); // add class show menu
@@ -140,7 +156,7 @@ const SnMenu = ({
         },
         setActive() {
             if (this.menu)
-                SnActiveMenu([...this.menu.querySelectorAll('a')], menuId);
+                SnActiveMenu([...this.menu.querySelectorAll('a')], menuId, iconClassUp, iconClassDown);
         }
     }
 
