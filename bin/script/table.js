@@ -106,6 +106,7 @@ class SnTable {
         })
             .then((result) => {
                 this.result = result;
+                this.selectRows = [];
                 this._renderTableBody();
             })
             .catch((err)=>{
@@ -852,7 +853,7 @@ class SnTable {
 
             // After
             text += `<div class="SnDropdown">
-                        <div class="SnDropdown-toggle SnBtn sm radio jsAction SnMr-2"><i class="SnMr-2">${SnIcon.plus}</i>Añadir filtro</div>
+                        <div class="SnDropdown-toggle SnBtn sm radio jsAction SnMr-2"><i class="SnMr-2" style="display: inline-flex;">${SnIcon.plus}</i>Añadir filtro</div>
                         <ul class="SnDropdown-list jsFilter${this.options.entity}" style="left: 0; min-width: auto">
                             <li class="SnDropdown-item" data-type="1" data-parentid="${cf.id}">Si</li>
                             <li class="SnDropdown-item" data-type="2" data-parentid="${cf.id}">Si no</li>

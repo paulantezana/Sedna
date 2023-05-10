@@ -23,4 +23,7 @@
         height: auto;
         display: inline-block;
     }
+    svg[class*="sni-"]{
+        transform: translateY(3px);
+    }
 }
