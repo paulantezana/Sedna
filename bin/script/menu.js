@@ -29,8 +29,12 @@ const SnActiveParentMenu = (linkElement, menuId, iconClassUp, iconClassDown) => 
 const SnActiveMenu = (links, menuId = '', iconClassUp = '', iconClassDown = '') => {
     if (links) {
         links.forEach(link => {
-            const url = document.location.href;
-            if (link.href === url && link.href !== '#') {
+            let currentUrl = document.location.href;
+            if (currentUrl.endsWith("#")) {
+                currentUrl = currentUrl.slice(0, -1);
+            }
+
+            if (link.href === currentUrl && link.href !== '#') {
                 link.parentNode.classList.add('is-active');
                 SnActiveParentMenu(link, menuId, iconClassUp, iconClassDown);
             }
