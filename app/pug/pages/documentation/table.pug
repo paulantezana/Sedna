@@ -107,9 +107,9 @@ block main
                         td Rol 3
                         td
     +codeBox(
-        'Footer',
-        'Simple table with actions and footer.',
-        '<div class="SnTable-wrapper">\n    <table class="SnTable">\n        <thead>\n            <tr>\n                <th>Column 1</th>\n                <th>Column 2</th>\n                <th>Column 3</th>\n                <th style="width: 100px"></th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr>\n                <td>Row 1</td>\n                <td>Row 2</td>\n                <td>Row 3</td>\n                <td>\n                    <div class="SnTable-action">\n                        <div class="SnBtn">Update</div>\n                        <div class="SnBtn danger" onclick="onConfirmDelete()">Delete</div>\n                    </div>\n                </td>\n            </tr>\n            <tr>\n                <td>Row 1</td>\n                <td>Row 2</td>\n                <td>Row 3</td>\n                <td>\n                    <div class="SnTable-action">\n                        <div class="SnBtn">Update</div>\n                        <div class="SnBtn danger" onclick="onConfirmDelete()">Delete</div>\n                    </div>\n                </td>\n            </tr>\n            <tr>\n                <td>Row 1</td>\n                <td>Row 2</td>\n                <td>Row 3</td>\n                <td>\n                    <div class="SnTable-action">\n                        <div class="SnBtn">Update</div>\n                        <div class="SnBtn danger" onclick="onConfirmDelete()">Delete</div>\n                    </div>\n                </td>\n            </tr>\n        </tbody>\n        <tfoot>\n            <tr>\n                <td>Rol 1</td>\n                <td>Rol 2</td>\n                <td>Rol 3</td>\n                <td> </td>\n            </tr>\n        </tfoot>\n    </table>\n</div>',
+        'Dynamic table',
+        'Advanced table.',
+        '<div class="dataTable></div>',
         "let onConfirmDelete = ()=>{\n    SnModal.confirm({\n        title: 'Are you sure delete this task?',\n        content: 'Some descriptions',\n        okText: 'Yes',\n        okType: 'danger',\n        cancelText: 'No',\n        onOk() {\n            console.log('onOk')\n        },\n        onCancel() {\n            console.log('onCancel')\n        }\n    });\n}\n"
     )
         div#dataTable

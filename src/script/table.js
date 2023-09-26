@@ -107,9 +107,11 @@ class SnTable {
             .then((result) => {
                 this.result = result;
                 this.selectRows = [];
+
                 this._renderTableBody();
+                this._renderFilterDescriptions();
             })
-            .catch((err)=>{
+            .catch((err) => {
                 console.error('SnTable fetch error ', err);
             })
             .finally((e) => {
@@ -123,9 +125,39 @@ class SnTable {
 
         // Render table base
         tableEle.innerHTML = `<div id="${this.options.entity}DataSet" class="SnDataSet">
-                                    <div class="SnDataSet-filter SnDataSetFilter show" id="${this.options.entity}SnDataSetFilter">
-                                        <div class="SnDataSetFilter-close"></div>
-                                        <div id="${this.options.entity}FilterWrapper"></div>
+                                    <div class="SnDataSet-toolbar" id="${this.options.entity}DataSetToolbar">
+                                        <div class="SnDataSet-toolbar-left">
+                                            <div id="${this.options.entity}FilterDescription"></div>
+                                        </div>
+                                        <div class="SnDataSet-toolbar-right">
+                                            <div class="SnBtn sm radio jsAction" data-modaltrigger="${this.options.entity}ModalFilter" id="${this.options.entity}ModalFilterToggle">${SnIcon.filter}</div>
+                                            <div class="SnModal-wrapper" data-modal="${this.options.entity}ModalFilter" data-maskclose="false">
+                                                <div class="SnModal" style="max-width: 90vw;">
+                                                    <div class="SnModal-close" data-modalclose="${this.options.entity}ModalFilter" id="${this.options.entity}ModalFilterClose"><i>${SnIcon.close}</i></div>
+                                                    <div class="SnModal-header">Filtro</div>
+                                                    <div class="SnModal-body">
+                                                        <div id="${this.options.entity}FilterWrapper"></div>
+                                                        <button class="SnBtn radio block primary SnMt-3" id="${this.options.entity}FilterAply"><i class="SnMr-2">${SnIcon.filter}</i>Aplicar filtro</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="SnDropdown">
+                                                <div class="SnDropdown-toggle SnBtn sm radio jsAction SnMl-2"><i>${SnIcon.column}</i></div>
+                                                <div class="SnDropdown-list SnTableColumnFilter no-closable">
+                                                    <div class="SnForm-item inner">
+                                                        <label for="headerCompany" class="SnForm-label">Buscar columna</label>
+                                                        <input type="search" class="SnForm-control sm" id="${this.options.entity}SearchCols">
+                                                    </div>
+                                                    <ul class="SnList SnTableColumnFilter-list" id="${this.options.entity}ListCols">
+                                                        ${this.options.columns.map(col => `<li><input type="checkbox" class="js${this.options.entity}ToggleCols" data-key="${col.id}" ${col.visible === true ? 'checked' : ''}><span class="SnMl-2">${col.title}</span></li>`).join('')}
+                                                    </ul>
+                                                    <div class="SnTableColumnFilter-footer">
+                                                        <button class="SnBtn radio" id="${this.options.entity}HideAllCols">Ocultar todo</button>
+                                                        <button class="SnBtn radio SnMl-3" id="${this.options.entity}ShowAllCols">Mostrar todo</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="SnDataSet-table">
                                         <div class="SnTable-wrapper">
@@ -162,6 +194,56 @@ class SnTable {
         }
 
         this._renderTableHead();
+
+        // Toolbar listener
+        const filterToggle = document.getElementById(`${this.options.entity}ModalFilterToggle`);
+        filterToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            SnModal.open(`${this.options.entity}ModalFilter`);
+        });
+
+        const filterClose = document.getElementById(`${this.options.entity}ModalFilterClose`);
+        filterClose.addEventListener('click', (e) => {
+            e.preventDefault();
+            SnModal.close(`${this.options.entity}ModalFilter`);
+        });
+
+        const filterAply = document.getElementById(`${this.options.entity}FilterAply`);
+        filterAply.addEventListener('click', e => {
+            e.preventDefault();
+            this.getData();
+            SnModal.close(`${this.options.entity}ModalFilter`);
+        });
+
+        // ===================================================================================================
+        // S H O W   A N D   H I D E   C O L U M N S
+        // ===================================================================================================
+        const searchCols = document.getElementById(`${this.options.entity}SearchCols`);
+        searchCols.addEventListener('input', e => {
+            this._reRenderColumnFilter(false, searchCols.value);
+        });
+
+        const toggleCols = document.querySelectorAll(`.js${this.options.entity}ToggleCols`);
+        toggleCols.forEach(checkbox => {
+            checkbox.addEventListener('change', e => {
+                this.options.columns = this.options.columns.map(item => ({ ...item, visible: (item.id === checkbox.dataset.key ? checkbox.checked : item.visible) }));
+                this._reRenderColumnFilter(true);
+            });
+        });
+
+        // hide all
+        const hideAllCols = document.getElementById(`${this.options.entity}HideAllCols`);
+        hideAllCols.addEventListener('click', e => {
+            this.options.columns = this.options.columns.map(item => ({ ...item, visible: false }));
+            this._reRenderColumnFilter(true);
+        });
+
+        // show all
+        const showAllCols = document.getElementById(`${this.options.entity}ShowAllCols`);
+        showAllCols.addEventListener('click', e => {
+            this.options.columns = this.options.columns.map(item => ({ ...item, visible: true }));
+            this._reRenderColumnFilter(true);
+        });
     }
 
     _renderTableHead() {
@@ -674,7 +756,7 @@ class SnTable {
             this.columnFilters.eval = this.columnFilters.eval.map(item => item.field === fieldName ? ({ ...item, value1: fieldValue }) : item)
         } else {
             this.columnFilters.eval.push({
-                id: SnUniqueId(),
+                id: this.columnFilters.eval.length + 1,
                 logicalOperator: 'and',
                 prefix: 'DONDE',
                 operator: 'contiene',
@@ -687,6 +769,8 @@ class SnTable {
 
         this.page = 1;
         this.getData();
+
+        this._renderFilterDescriptions();
     }
 
     toggleFilterPanel(show = null) {
@@ -863,24 +947,6 @@ class SnTable {
                     </div>`;
         });
 
-        text += `<button class="SnBtn sm radio primary jsAction" id="${this.options.entity}FilterAply"><i class="SnMr-2">${SnIcon.filter}</i>Aplicar filtro</button>`;
-        text += `<div class="SnDropdown">
-                    <div class="SnDropdown-toggle SnBtn sm radio jsAction SnMl-2"><i>${SnIcon.column}</i></div>
-                    <div class="SnDropdown-list SnTableColumnFilter no-closable">
-                        <div class="SnForm-item inner">
-                            <label for="headerCompany" class="SnForm-label">Buscar columna</label>
-                            <input type="search" class="SnForm-control sm" id="${this.options.entity}SearchCols">
-                        </div>
-                        <ul class="SnList SnTableColumnFilter-list" id="${this.options.entity}ListCols">
-                            ${this.options.columns.map(col => `<li><input type="checkbox" class="js${this.options.entity}ToggleCols" data-key="${col.id}" ${col.visible === true ? 'checked' : ''}><span class="SnMl-2">${col.title}</span></li>`).join('')}
-                        </ul>
-                        <div class="SnTableColumnFilter-footer">
-                            <button class="SnBtn radio" id="${this.options.entity}HideAllCols">Ocultar todo</button>
-                            <button class="SnBtn radio SnMl-3" id="${this.options.entity}ShowAllCols">Mostrar todo</button>
-                        </div>
-                    </div>
-                </div>`;
-
         // text += `<button class="SnBtn sm radio jsAction SnMl-2" id="${this.options.entity}FilterCopy"><i class="fa-solid fa-copy"></i></button>`;
 
         // Draw content
@@ -946,40 +1012,44 @@ class SnTable {
                 this.updateCustomFilter('value2', item.value, item.dataset.id, item.dataset.parentid);
             });
         });
+    }
 
-        const filterAply = document.getElementById(`${this.options.entity}FilterAply`);
-        filterAply.addEventListener('click', e => {
-            this.getData();
+    _renderFilterDescriptions() {
+        const filterDescription = document.getElementById(`${this.options.entity}FilterDescription`);
+        const allFilters = [...this.filters, this.columnFilters];
+        const allFilterLenght = allFilters.reduce((prev, current) => (current.eval.length > 0) ? (prev + 1) : prev, 0);
+
+        let text = '';
+        allFilters.forEach((cf, inx) => {
+            if (allFilterLenght.length > 1) {
+                if (cf.logicalOperator.toUpperCase() === 'OR' && cf.prefix.toUpperCase() === 'DONDE') {
+                    text += inx == 0 ? '<div>Ya sea<div>' : '<div>O<div>';
+                } else if (cf.logicalOperator.toUpperCase() === 'OR' && cf.prefix.toUpperCase() === 'DONDE NO') {
+                    text += '<div>Ni tampoco<div>';
+                }
+            }
+
+            // Content
+            cf.eval.forEach(ev => {
+                const colfield = this.options.columns.find(item => item.field === ev.field);
+                let textContent = `${cf.prefix} ${colfield.title} ${ev.operator} ${ev.value1}${ev.value2?.length > 0 ? (' y ' + ev.value2) : ''}`.toLowerCase();
+                textContent = textContent.charAt(0).toUpperCase() + textContent.slice(1);
+
+                text += `<span class="SnTag SnMr-2">${textContent}<span class="SnBtn radio icon SnMl-2 jsFilterDescriptionClear${this.options.entity}" data-fieldx="${cf.id}" data-fieldy="${ev.id}"><i>${SnIcon.close}</i></span></span>`
+            })
         });
 
-        // ===================================================================================================
-        // S H O W   A N D   H I D E   C O L U M N S
-        // ===================================================================================================
-        const searchCols = document.getElementById(`${this.options.entity}SearchCols`);
-        searchCols.addEventListener('input', e => {
-            this._reRenderColumnFilter(false, searchCols.value);
-        });
+        filterDescription.innerHTML = text;
 
-        const toggleCols = document.querySelectorAll(`.js${this.options.entity}ToggleCols`);
-        toggleCols.forEach(checkbox => {
-            checkbox.addEventListener('change', e => {
-                this.options.columns = this.options.columns.map(item => ({ ...item, visible: (item.id === checkbox.dataset.key ? checkbox.checked : item.visible) }));
-                this._reRenderColumnFilter(true);
+        // Filter description clear
+        let filterDescriptionClear = document.querySelectorAll(`.jsFilterDescriptionClear${this.options.entity}`);
+        filterDescriptionClear.forEach(item => {
+            const itemDataset = item.dataset;
+
+            item.addEventListener('click', e => {
+                e.preventDefault();
+                console.log(itemDataset);
             });
-        });
-
-        // hide all
-        const hideAllCols = document.getElementById(`${this.options.entity}HideAllCols`);
-        hideAllCols.addEventListener('click', e => {
-            this.options.columns = this.options.columns.map(item => ({ ...item, visible: false }));
-            this._reRenderColumnFilter(true);
-        });
-
-        // show all
-        const showAllCols = document.getElementById(`${this.options.entity}ShowAllCols`);
-        showAllCols.addEventListener('click', e => {
-            this.options.columns = this.options.columns.map(item => ({ ...item, visible: true }));
-            this._reRenderColumnFilter(true);
         });
     }
 

@@ -8,7 +8,6 @@ import { SnModal } from './script/modal';
 import { SnTab } from './script/tab';
 import { SnTree } from './script/tree';
 import { SnAlert } from './script/alert';
-import { SnTheme } from './script/theme'
 import SnTable from './script/table';
 import SnDropdown from './script/dropdown';
 
@@ -25,7 +24,6 @@ window.SnTree = SnTree;
 window.SnAlert = SnAlert;
 window.SnUniqueId = SnUniqueId;
 window.SnLoadingState = SnLoadingState;
-window.SnTheme = SnTheme;
 window.SnTable = SnTable;
 window.SnDropdown = SnDropdown;
 
@@ -37,6 +35,5 @@ document.addEventListener("DOMContentLoaded", () => {
     SnCollapse.init();
     SnIcon.render();
     SnAlert.init();
-    SnTheme.init();
     SnDropdown();
 });

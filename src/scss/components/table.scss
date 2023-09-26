@@ -75,10 +75,38 @@
         }
     }
 
+    // ===================================================================
+    // DATASET
+    .#{$classPrefix}DataSet {
+        &-toolbar {
+            margin-bottom: .5rem;
+
+            @include from(l) {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .#{$classPrefix}Tag {
+                padding: .2rem;
+
+                background: var(--border-color);
+
+                .#{$classPrefix}Btn {
+                    line-height: math.div($controlHeightSm, 1.2);
+                    height: math.div($controlHeightSm, 1.2);
+                    width: math.div($controlHeightSm, 1.2);
+                    border-radius: math.div($controlHeightSm, 1.2);
+                    padding: 0;
+                }
+            }
+        }
+    }
+
     .MultiFilter {
         display: flex;
         flex-wrap: wrap;
         margin-left: 4px;
+
         &-item {
             margin-right: 0.5rem;
             display: flex;
@@ -88,16 +116,20 @@
 
     .SnTableColumnFilter {
         padding: 0.5rem !important;
+
         .SnForm-item {
             margin-bottom: 0;
         }
+
         &-footer {
             display: flex;
         }
+
         &-list {
             max-height: 300px;
             overflow: auto;
             margin: 0.5rem 0;
+
             li {
                 line-height: 1.5rem;
             }
