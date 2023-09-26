@@ -1,2 +1,39 @@
-$cssCore: true;
-@import "../bin/sedna.scss";
+@forward './scss/base/base.scss';
+
+@forward './scss/theme/darck.scss';
+@forward './scss/theme/light.scss';
+
+@forward './scss/components/alert.scss';
+@forward './scss/components/avatar.scss';
+@forward './scss/components/button.scss';
+@forward './scss/components/card.scss';
+@forward './scss/components/collapse.scss';
+@forward './scss/components/control-group.scss';
+@forward './scss/components/divider.scss';
+@forward './scss/components/dropdown.scss';
+@forward './scss/components/empty.scss';
+@forward './scss/components/form.scss';
+@forward './scss/components/freeze.scss';
+@forward './scss/components/input.scss';
+@forward './scss/components/list.scss';
+@forward './scss/components/loading.scss';
+@forward './scss/components/margin.scss';
+@forward './scss/components/menu.scss';
+@forward './scss/components/message.scss';
+@forward './scss/components/modal.scss';
+@forward './scss/components/padding.scss';
+@forward './scss/components/switch.scss';
+@forward './scss/components/tab.scss';
+@forward './scss/components/table.scss';
+@forward './scss/components/tag.scss';
+@forward './scss/components/tools.scss';
+@forward './scss/components/video.scss';
+@forward './scss/components/pagination.scss';
+@forward './scss/components/tooltip.scss';
+@forward './scss/components/tools.scss';
+
+@forward './scss/utils/grid.scss';
+@forward './scss/utils/mediaQueries.scss' show to, from, fromTo, toPx;
+
+@forward './scss/layout/container.scss';
+

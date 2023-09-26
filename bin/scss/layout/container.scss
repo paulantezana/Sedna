@@ -1,5 +1,0 @@
-@mixin SnContainer {
-    .#{$classPrefix}Container{
-        @extend %SnContainer;
-    }
-}

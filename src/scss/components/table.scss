@@ -1,0 +1,158 @@
+@use '../variables.scss' as var;
+@use '../utils/mediaQueries.scss' as media;
+
+@mixin SnTable {
+    .#{var.$classPrefix}Table-wrapper {
+        overflow-y: auto;
+    }
+
+    .#{var.$classPrefix}Table {
+        width: 100%;
+        border: 1px solid var(--border-color);
+        border-radius: var.$borderRadiusBase;
+        border-collapse: separate;
+        border-spacing: 0;
+
+        thead,
+        tbody,
+        tfoot {
+            display: table-row-group;
+            vertical-align: middle;
+            border-color: inherit;
+        }
+
+        td,
+        th {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        tfoot td,
+        th {
+            padding: 6px 4px 4px;
+        }
+
+        td {
+            padding: 4px 4px;
+            text-align: left;
+            line-height: 1em;
+        }
+
+        tr {
+            display: table-row;
+            vertical-align: inherit;
+            border-color: inherit;
+
+            &:hover {
+                background: var(--hover-background);
+            }
+
+            &:last-child {
+                td {
+                    border-bottom: 0;
+                }
+            }
+        }
+
+        tfoot {
+            font-weight: bold;
+
+            tr:first-child td {
+                border-top: 1px solid var(--border-color);
+            }
+        }
+
+        &-action {
+            display: flex;
+            align-items: center;
+
+            &>* {
+                margin-right: 4px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    .MultiFilter {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 4px;
+        &-item {
+            margin-right: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .SnTableColumnFilter {
+        padding: 0.5rem !important;
+        .SnForm-item {
+            margin-bottom: 0;
+        }
+        &-footer {
+            display: flex;
+        }
+        &-list {
+            max-height: 300px;
+            overflow: auto;
+            margin: 0.5rem 0;
+            li {
+                line-height: 1.5rem;
+            }
+        }
+    }
+
+
+    .SnDataSetPagination {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include media.from(m) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        &-center {
+            margin-top: 6px;
+        }
+
+        &-right,
+        &-left {
+            span {
+                color: var(--color1-7);
+            }
+        }
+    }
+
+    .SnDataSetFilter {
+        margin-bottom: 1rem;
+        display: none;
+
+        &.show {
+            display: block;
+        }
+    }
+
+    .SnTableSorterCol {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-label {
+            white-space: nowrap;
+        }
+
+        &-sort {
+            margin-left: 4px;
+            opacity: .3;
+            cursor: pointer;
+
+            &.sort {
+                opacity: 1;
+            }
+        }
+    }
+}

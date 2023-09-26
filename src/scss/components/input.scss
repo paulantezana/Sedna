@@ -1,0 +1,71 @@
+@use '../variables.scss' as var;
+
+@mixin SnControl() {
+    .#{var.$classPrefix}Control {
+        &:not(:first-child) {
+            padding-left: 36px;
+        }
+
+        &:not(:last-child) {
+            padding-right: 36px;
+        }
+
+        &-wrapper {
+            position: relative;
+        }
+
+        &-prefix,
+        &-suffix {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: var(--text-color-alt);
+        }
+
+        &-prefix {
+            left: 12px;
+        }
+
+        &-suffix {
+            right: 12px;
+        }
+
+        &-group {
+            display: flex;
+            justify-content: center;
+
+            &>div:not(.#{var.$classPrefix}Btn) {
+                flex: 1 1 auto;
+            }
+
+            &>* {
+                border-radius: 0;
+
+                .#{var.$classPrefix}Form-control {
+                    border-radius: 0;
+                }
+
+                &:last-child {
+                    border-top-right-radius: var.$borderRadiusBase;
+                    border-bottom-right-radius: var.$borderRadiusBase;
+
+                    .#{var.$classPrefix}Form-control {
+                        border-top-right-radius: var.$borderRadiusBase;
+                        border-bottom-right-radius: var.$borderRadiusBase;
+                    }
+                }
+
+                &:first-child {
+                    border-top-left-radius: var.$borderRadiusBase;
+                    border-bottom-left-radius: var.$borderRadiusBase;
+
+                    .#{var.$classPrefix}Form-control {
+                        border-top-left-radius: var.$borderRadiusBase;
+                        border-bottom-left-radius: var.$borderRadiusBase;
+                    }
+                }
+            }
+        }
+    }
+}

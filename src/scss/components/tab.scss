@@ -1,0 +1,38 @@
+@use '../variables.scss' as var;
+
+@mixin SnTab {
+    .#{var.$classPrefix}Tab {
+        &-header {
+            margin: 0 0 16px 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            overflow-x: auto;
+        }
+
+        &-title {
+            padding: 12px 12px;
+            cursor: pointer;
+            white-space: nowrap;
+
+            &:last-child {
+                margin: 0;
+            }
+
+            &:hover {
+                color: var(--color1-6);
+            }
+
+            &.is-active {
+                box-shadow: 0 -2px var(--color1-6) inset;
+            }
+        }
+    }
+
+    .#{var.$classPrefix}Tab-content {
+        display: none;
+
+        &.is-active {
+            display: block;
+        }
+    }
+}

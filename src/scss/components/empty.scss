@@ -1,0 +1,12 @@
+@use '../variables.scss' as var;
+
+@mixin SnEmpty() {
+    .#{var.$classPrefix}Empty {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        color: var(--text-color-alt);
+    }
+}

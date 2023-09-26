@@ -1,5 +1,0 @@
-@mixin SnLoading {
-    .#{$classPrefix}Loading {
-        @include SnLoadingTemplate(32px);
-    }
-}

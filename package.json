@@ -23,7 +23,7 @@
     "url": "https://github.com/paulantezana/sedna/issues"
   },
   "homepage": "https://sedna.paulantezana.com",
-  "style": "bin/sedna.scss",
+  "style": "src/sedna.scss",
   "browserslist": [
     "last 1 version",
     "> 1%",

@@ -30,7 +30,7 @@ const getFilesInFolder = (base = '.', scanSubDirectories = false, regularExpress
     return files;
 };
 
-let pugPages = getFilesInFolder('./src/pug/pages', true, /\.(pug)$/);
+let pugPages = getFilesInFolder('./app/pug/pages', true, /\.(pug)$/);
 pugPages = pugPages.map(item => {
     return new HtmlWebpackPlugin({
         filename: item.fileName.replace('.pug', '.html'),
@@ -44,8 +44,8 @@ pugPages = pugPages.map(item => {
 
 module.exports = {
     entry: {
-        sedna: './src/sedna.js',
-        app: ['babel-polyfill', './src/app.js'],
+        sedna: './app/sedna.js',
+        app: ['babel-polyfill', './app/app.js'],
     },
     output: {
         path: path.resolve(__dirname, "docs"),

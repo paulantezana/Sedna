@@ -1,0 +1,23 @@
+@use '../variables.scss' as var;
+
+@mixin SnPadding {
+    $spacer: .25rem;
+
+    @for $i from 2 through 5 {
+        .#{var.$classPrefix}Pt-#{$i} {
+            padding-top: $spacer * $i;
+        }
+
+        .#{var.$classPrefix}Pr-#{$i} {
+            padding-right: $spacer * $i;
+        }
+
+        .#{var.$classPrefix}Pb-#{$i} {
+            padding-bottom: $spacer * $i;
+        }
+
+        .#{var.$classPrefix}Pl-#{$i} {
+            padding-left: $spacer * $i;
+        }
+    }
+}

@@ -1,0 +1,509 @@
+@use '../../../src/scss/variables.scss' as var;
+@use '../../../src/scss/utils/mediaQueries.scss' as media;
+
+$adminAsideFooterHeight: 32px;
+$asideWidth: 220px;
+$asideSmallWidth: 64px;
+$headerHeight: 56px;
+
+// General Styles
+.AdminLayout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "layoutHeader"
+        "layoutMain"
+        "layoutAside";
+    @include media.from(l) {
+        grid-template-columns: 220px 1fr;
+        grid-template-areas:
+            "layoutAside layoutHeader"
+            "layoutAside layoutMain";
+    }
+    &-header {
+        line-height: $headerHeight;
+        grid-area: layoutHeader;
+    }
+    &-main {
+        height: calc(100vh - #{$headerHeight + 1});
+        overflow-y: auto;
+        grid-area: layoutMain;
+    }
+    &-aside {
+        @include media.to(l) {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            z-index: 110;
+            width: 100%;
+        }
+        min-height: 100vh;
+        grid-area: layoutAside;
+        i {
+            line-height: inherit;
+        }
+    }
+    &.AdminAsideMenu-is-show {
+        @include media.to(l) {
+            .AdminLayout-aside {
+                left: 0;
+            }
+        }
+    }
+}
+
+// Layout 1
+.SnAdminL1 {
+    @include media.from(l) {
+        grid-template-columns: $asideWidth 1fr;
+    }
+    &.AdminAsideMenu-is-show {
+        @include media.from(l) {
+            grid-template-columns: $asideSmallWidth 1fr;
+        }
+    }
+}
+
+// Layout 2
+.SnAdminL2 {
+    @include media.from(l) {
+        grid-template-columns: $asideSmallWidth 1fr;
+    }
+    &.AdminAsideMenu-is-show {
+        @include media.from(l) {
+            grid-template-columns: $asideWidth 1fr;
+        }
+    }
+}
+
+// .SnContent {
+//     padding-top: 1rem;
+//     padding-bottom: 1rem;
+//     @include from(l) {
+//         padding: 1rem;
+//     }
+// }
+
+// .SnContentAside {
+//     display: grid;
+//     grid-template-columns: 1fr;
+//     @include from(l) {
+//         grid-template-columns: 1fr 2fr;
+//     }
+//     height: calc(100vh - 60px);
+//     padding: 1rem;
+//     grid-gap: 1rem;
+// }
+
+.AdminAsideMenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: calc(100vh - #{$headerHeight + $adminAsideFooterHeight});
+    background: var(--gray-11);
+    overflow-y: auto;
+    &-container {
+        background: var(--gray-11);
+        color: var(--gray-5);
+    }
+    li {
+        position: relative;
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        background: var(--gray-10);
+    }
+    a {
+        color: var(--gray-5);
+        text-decoration: none;
+        padding: 0 8px 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        [class*="icon-"] {
+            margin-right: 16px;
+        }
+        > span {
+            flex: 1 1 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .toggle {
+            margin: 0 0 0 8px;
+        }
+    }
+    & > li > a {
+        line-height: 3rem;
+        &:hover {
+            background: var(--color1-6);
+            color: white;
+        }
+    }
+    ul {
+        a {
+            padding: 8px 0 8px 50px;
+            line-height: 1.5rem;
+            &:hover {
+                color: var(--color1-4);
+            }
+        }
+    }
+}
+
+// Menu Aside wrrapper
+.AdminAsideMenu-is-show {
+    @include media.to(l) {
+        .AdminAsideMenu {
+            &-wrapper {
+                background: rgba(black, 0.5);
+            }
+            &-container {
+                width: $asideWidth;
+            }
+        }
+    }
+}
+
+// Divider
+.AdminAsideMenu {
+    &-divider {
+        padding: 10px 20px;
+        text-transform: uppercase;
+        font-size: 11px;
+        font-weight: 700;
+    }
+}
+
+// Large
+.AdminAsideMenu {
+    ul {
+        display: none;
+        &.is-show {
+            display: block;
+        }
+    }
+}
+
+// Small
+@mixin AdminAsideMenuInSmall() {
+    @include media.from(l) {
+        .AdminAsideMenu {
+            overflow-y: initial;
+            &-divider {
+                // border-bottom: 1px solid var(--gray-10);
+                padding: 0;
+                font-size: 0;
+            }
+
+            // All Levels
+            li {
+                ul {
+                    position: absolute;
+                    top: 0;
+                    left: 100%;
+                    width: 220px;
+                    display: none;
+                    a {
+                        padding: 8px 20px;
+                    }
+                }
+                &:hover {
+                    > ul {
+                        display: block;
+                    }
+                    > a span {
+                        display: flex;
+                    }
+                    > a {
+                        color: var(--color1-4);
+                    }
+                }
+            }
+
+            // Fisrt level
+            > li {
+                > a {
+                    justify-content: center;
+                    padding-left: 0;
+                    padding-right: 0;
+                    > span {
+                        position: absolute;
+                        left: 100%;
+                        top: 0;
+                        text-align: left;
+                        padding: 0 20px;
+                        width: 220px;
+                        background: var(--color1-6);
+                        display: none;
+                    }
+                    .toggle {
+                        display: none;
+                    }
+                    [class*="icon-"] {
+                        margin-right: 0;
+                    }
+                }
+                &:hover {
+                    > a {
+                        background: var(--color1-6);
+                        color: white;
+                    }
+                }
+                > ul {
+                    top: 100%;
+                }
+            }
+        }
+    }
+}
+
+.SnAdminL1.AdminAsideMenu-is-show {
+    @include AdminAsideMenuInSmall();
+}
+.SnAdminL2:not(.AdminAsideMenu-is-show) {
+    @include AdminAsideMenuInSmall();
+}
+
+// ----------------------------------------------------------------------------
+// Aside Header
+.AdminAsideHeader {
+    height: $headerHeight;
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--gray-10);
+}
+
+// ----------------------------------------------------------------------------
+.AdminAsideFooter {
+    height: $adminAsideFooterHeight;
+    padding: 0 14px 0 14px;
+}
+
+// AdminBranding
+.AdminBranding {
+    height: 100%;
+    &-link {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        color: var(--gray-5);
+        text-decoration: none;
+        img {
+            max-width: 28px;
+            margin-right: 16px;
+        }
+    }
+    &-name {
+        font-weight: 500;
+    }
+}
+
+// Layout
+@mixin AdminAsideHeaderInSmall() {
+    @include media.from(l) {
+        .AdminAsideHeader {
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .AdminBranding {
+            &-img {
+                margin: 0;
+            }
+            &-name {
+                display: none;
+            }
+        }
+    }
+}
+
+.SnAdminL1.AdminAsideMenu-is-show {
+    @include AdminAsideHeaderInSmall();
+}
+.SnAdminL2:not(.AdminAsideMenu-is-show) {
+    @include AdminAsideHeaderInSmall();
+}
+
+// .icon-down::before {
+//     content: "\6b";
+// }
+
+// .icon-up::before {
+//     content: "\6e";
+// }
+
+.AdminHeader {
+    display: flex;
+    justify-content: space-between;
+    background: var(--panel-background-alt);
+    border-bottom: 1px solid var(--border-color);
+}
+
+#AdminAsideMenu-toggle {
+    padding: 0 16px;
+    cursor: pointer;
+    &:hover {
+        background: var(--hover-background);
+    }
+}
+
+@include SnMenu(s, ".AdminHeaderMenu");
+
+// Estilos generales
+.AdminHeaderMenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+        padding-right: 12px;
+        padding-left: 12px;
+        cursor: pointer;
+        &:hover {
+            background: var(--hover-background);
+        }
+        .AdminHeader-action {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: $headerHeight;
+            [class*="icon-"] {
+                font-size: 1.2rem;
+            }
+        }
+        &.divider {
+            border-bottom: 1px solid var(--border-color);
+        }
+    }
+    a {
+        text-decoration: none;
+        line-height: 34px;
+        height: 34px;
+        display: block;
+        white-space: nowrap;
+        &.is-toggle {
+            display: flex;
+            justify-content: space-between;
+            padding-right: 0;
+        }
+    }
+    li {
+        &:hover {
+            & > ul {
+                max-height: 1000px;
+                overflow: visible;
+            }
+        }
+    }
+}
+
+// Profile Avatar
+.AdminHeaderMenu {
+    &-profile {
+        text-transform: uppercase;
+    }
+    &-header {
+        line-height: 1rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid var(--border-color);
+        &:hover {
+            background: none;
+        }
+    }
+    &-footer {
+        border-top: 1px solid var(--border-color);
+        text-align: center;
+    }
+}
+
+// Estilos en el escritorio
+.AdminHeaderMenu {
+    display: flex;
+    a {
+        color: var(--text-color);
+        &:hover {
+            color: var(--text-color);
+        }
+    }
+    li {
+        ul {
+            position: absolute;
+            background: var(--panel-background-alt);
+            z-index: 100;
+            box-shadow: 0 2px 16px -2px rgba(#000000, 0.1);
+            border-radius: 0.25rem;
+            min-width: 150px;
+            right: 0;
+        }
+    }
+}
+
+// .User,
+// .Notification {
+//     &-item {
+//         text-decoration: none;
+//         color: var(--text-color);
+//         display: flex;
+//         align-items: center;
+
+//         line-height: 1rem;
+//         padding-top: 0.75rem;
+//         padding-bottom: 0.75rem;
+//         .SnAvatar {
+//             margin-right: 16px;
+//         }
+//     }
+//     &-description,
+//     &-title {
+//         margin: 0;
+//     }
+//     &-description {
+//         color: var(--text-color-alt);
+//     }
+// }
+
+// .Notification {
+//     line-height: 1rem;
+//     display: flex;
+//     min-width: 300px;
+//     padding: 0.6rem 1rem;
+//     &-avatar {
+//         margin-right: 1rem;
+//         flex: 1 0 auto;
+//     }
+//     &-body {
+//         p {
+//             margin-top: 0;
+//         }
+//     }
+//     &-time {
+//         color: var(--text-color-alt);
+//     }
+// }
+
+.SnToolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+    padding: 0.8rem 0;
+    @include media.to(l) {
+        padding: 0 1rem;
+    }
+    @include media.to(m) {
+        flex-direction: column;
+    }
+    &-left {
+        @include media.to(m) {
+            margin-bottom: 16px;
+        }
+    }
+    &-right {
+        @include media.to(m) {
+            margin-bottom: 8px;
+        }
+    }
+}
