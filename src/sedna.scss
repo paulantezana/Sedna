@@ -1,7 +1,6 @@
-@forward './scss/base/base.scss';
-
-@forward './scss/theme/darck.scss';
-@forward './scss/theme/light.scss';
+@use './scss/base/base.scss' as base;
+@use './scss/theme/darck.scss' as darck;
+@use './scss/theme/light.scss' as light;
 
 @forward './scss/components/alert.scss';
 @forward './scss/components/avatar.scss';
@@ -37,3 +36,8 @@
 
 @forward './scss/layout/container.scss';
 
+@mixin core(){
+    @include darck.SnThemeDarck();
+    @include light.SnThemeLight();
+    @include base.SnBase();
+}

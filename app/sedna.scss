@@ -1,11 +1,6 @@
 @use '../src/sedna.scss' as sedna;
 
-// Base
-@include sedna.SnBase();
-
-// Themes
-@include sedna.SnThemeLight();
-@include sedna.SnThemeDarck();
+@include sedna.core();
 
 // Components
 @include sedna.SnMenu();
