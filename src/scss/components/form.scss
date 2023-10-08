@@ -248,4 +248,8 @@
         font-size: inherit;
         height: auto;
     }
+
+    select.#{var.$classPrefix}Form-control{
+        padding: 0px 4px;
+    }
 }

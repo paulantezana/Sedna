@@ -84,6 +84,21 @@ block main
                     label(for="size3").SnForm-label Size3
                     input#size3(type="text" name="size3").SnForm-control.lg
                     .SnForm-help Help text
+                .SnForm-item
+                    label(for="size4").SnForm-label Size4
+                    select#size4(type="text" name="size4").SnForm-control.sm
+                        option(value="1" select) Option 1
+                    .SnForm-help Help text
+                .SnForm-item
+                    label(for="size5").SnForm-label Size5
+                    select#size5(type="text" name="size5").SnForm-control
+                        option(value="1" select) Option 1
+                    .SnForm-help Help text
+                .SnForm-item
+                    label(for="size6").SnForm-label Size6
+                    select#size6(type="text" name="size6").SnForm-control.lg
+                        option(value="1" select) Option 1
+                    .SnForm-help Help text
         +codeBox(
             'Inner', 
             'Label inner.', 
@@ -107,6 +122,27 @@ block main
                     .SnControl-wrapper
                         i.SnControl-prefix.icon-ticket
                         input(type="text" id="innerSize3").SnForm-control.SnControl.lg
+                    .SnForm-help Help text
+                .SnForm-item.inner
+                    label(for="innerSize4").SnForm-label Size4
+                    .SnControl-wrapper
+                        i.SnControl-prefix.icon-ticket
+                        select(type="text" id="innerSize4").SnForm-control.SnControl.sm
+                            option(value="1" select) Option 1
+                    .SnForm-help Help text
+                .SnForm-item.inner
+                    label(for="innerSize5").SnForm-label Size5
+                    .SnControl-wrapper
+                        i.SnControl-prefix.icon-ticket
+                        select(type="text" id="innerSize5").SnForm-control.SnControl
+                            option(value="1" select) Option 1
+                    .SnForm-help Help text
+                .SnForm-item.inner
+                    label(for="innerSize6").SnForm-label Size6
+                    .SnControl-wrapper
+                        i.SnControl-prefix.icon-ticket
+                        select(type="text" id="innerSize6").SnForm-control.SnControl.lg
+                            option(value="1" select) Option 1
                     .SnForm-help Help text
         +codeBox(
             'Inner', 
