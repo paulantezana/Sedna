@@ -2,6 +2,7 @@
 @use './scss/theme/darck.scss' as darck;
 @use './scss/theme/light.scss' as light;
 
+@forward './scss/variables.scss';
 @forward './scss/components/alert.scss';
 @forward './scss/components/avatar.scss';
 @forward './scss/components/button.scss';

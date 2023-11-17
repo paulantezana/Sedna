@@ -8,6 +8,7 @@ import { SnModal } from './script/modal';
 import { SnTab } from './script/tab';
 import { SnTree } from './script/tree';
 import { SnAlert } from './script/alert';
+import SnFilter from './script/filter';
 import SnTable from './script/table';
 import SnDropdown from './script/dropdown';
 
@@ -25,6 +26,7 @@ window.SnAlert = SnAlert;
 window.SnUniqueId = SnUniqueId;
 window.SnLoadingState = SnLoadingState;
 window.SnTable = SnTable;
+window.SnFilter = SnFilter;
 window.SnDropdown = SnDropdown;
 
 // Init Components

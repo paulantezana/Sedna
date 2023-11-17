@@ -9,6 +9,7 @@ import { SnTab } from './script/tab';
 import { SnTooltip } from './script/tooltip';
 import { SnTree } from './script/tree';
 import { SnTheme } from './script/theme';
+import SnFilter from './script/filter';
 import SnTable from './script/table';
 import SnDropdown from './script/dropdown';
 
@@ -26,6 +27,7 @@ export {
     SnTree,
     SnUniqueId,
     SnTheme,
+    SnFilter,
     SnTable,
     SnDropdown,
 };
