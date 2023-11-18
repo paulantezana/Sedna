@@ -21,7 +21,7 @@ class SnFilter {
         this._render();
     }
 
-    addFilter(optionId, parentId) {
+    addFilter(optionId, parentId, preserveParentId = false, fieldOptions = {}) {
         const firstColumn = this.options.columns.find(item => item.filterable);
         if (firstColumn === undefined) {
             SnMessage.warning({ content: 'No hay columnas configuradas para filtrar.' });
@@ -40,12 +40,13 @@ class SnFilter {
                     field: firstColumn.field,
                     type: firstColumn.type || 'text',
                     value1: '',
-                    value2: ''
+                    value2: '',
+                    ...fieldOptions
                 };
 
                 if (indexMatch === -1) {
                     this.filters.push({
-                        id: this.filters.length + 1,
+                        id: preserveParentId ? parentId : this.filters.length + 1,
                         logicalOperator: 'AND',
                         prefix: optionId === '1' ? 'DONDE' : 'DONDE NO',
                         eval: [newfilter]
@@ -64,10 +65,11 @@ class SnFilter {
                     field: firstColumn.field,
                     type: firstColumn.type || 'text',
                     value1: '',
-                    value2: ''
+                    value2: '',
+                    ...fieldOptions
                 };
                 this.filters.push({
-                    id: SnUniqueId(),
+                    id: preserveParentId ? parentId : this.filters.length + 1,
                     logicalOperator: 'OR',
                     prefix: optionId == '3' ? 'DONDE' : 'DONDE NO',
                     eval: [filterEval]
@@ -91,6 +93,45 @@ class SnFilter {
         this.filters[indexParent].eval = this.filters[indexParent].eval.filter(item => item.id != id);
         if (this.filters[indexParent].eval.length === 0 && indexParent > 0) {
             this.filters.splice(indexParent, 1);
+        }
+
+        this._render();
+    }
+
+    setCustomFilterGroup(parentId, fieldName, value1, value2 = '') {
+        const indexMatch = this.filters.findIndex(item => item.id === parentId);
+        const columnMatch = this.filters[indexMatch]?.eval?.find(item => item.field === fieldName);
+
+        if (value1.trim() === '') {
+            if (columnMatch !== undefined) {
+                this.removeFilter(columnMatch.id, parentId);
+                return;
+            }
+            return;
+        }
+
+        const newfilter = {
+            id: SnUniqueId(),
+            logicalOperator: 'AND',
+            prefix: 'DONDE',
+            operator: 'contiene',
+            field: fieldName,
+            type: 'text',
+            value1: value1,
+            value2: value2,
+        };
+
+        if (columnMatch !== undefined) {
+            this.filters[indexMatch].eval = this.filters[indexMatch].eval.map(item => item.field === fieldName ? ({ ...item, value1: value1, value2: value2 }) : item);
+        } else if (indexMatch !== -1) {
+            this.filters[indexMatch].eval = [...this.filters[indexMatch].eval, newfilter];
+        } else {
+            this.filters.push({
+                id: parentId,
+                logicalOperator: 'AND',
+                prefix: 'DONDE',
+                eval: [newfilter]
+            });
         }
 
         this._render();

@@ -80,7 +80,7 @@
     // DATASET
     .#{var.$classPrefix}DataSet {
         &-toolbar {
-            margin-bottom: .5rem;
+            // margin-bottom: .5rem;
 
             @include media.from(l) {
                 display: flex;
@@ -89,8 +89,8 @@
 
             .#{var.$classPrefix}Tag {
                 padding: .2rem;
-
                 background: var(--border-color);
+                cursor: pointer;
 
                 .#{var.$classPrefix}Btn {
                     line-height: math.div(var.$controlHeightSm, 1.2);

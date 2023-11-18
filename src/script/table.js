@@ -4,11 +4,10 @@ class SnTable {
         // Init vars ---------------------------------------------------------------------
         this.options = options;
         this.columnSorters = {};
-        this.columnFilters = {};
         this.selectRows = [];
         this.rowKey = 'id';
         this.result = {};
-        this.filters = [];
+        this.filter = null;
         this.limit = 20;
         this.page = 1;
         this.summaryFields = [];
@@ -24,23 +23,6 @@ class SnTable {
         this.options.tableHeadTopHtml ??= '';
         this.options.filterEnabled ??= true;
         this.options.selectableRadio ??= true;
-
-        // -------------------------------------------------------------------------------
-        // Init data ---------------------------------------------------------------------
-        if (this.options.filters.length > 0) {
-            this.filters = this.options.filters;
-        } else {
-            this.filters = [{ id: SnUniqueId(), logicalOperator: 'or', prefix: 'DONDE', eval: [] }];
-            this.options.filters = this.filters;
-        }
-
-        // Column filter
-        this.columnFilters = {
-            id: SnUniqueId(),
-            logicalOperator: 'and',
-            prefix: 'DONDE',
-            eval: []
-        };
 
         // Default Sorter
         if (this.rowKey.length > 0) {
@@ -99,7 +81,7 @@ class SnTable {
         SnLoadingState(true, 'jsAction');
 
         this.options.data({
-            filter: [...this.filters, this.columnFilters],
+            filter: this.filter?.filters ?? [],
             sorter: this.columnSorters,
             limit: this.limit,
             page: this.page,
@@ -126,11 +108,9 @@ class SnTable {
         // Render table base
         tableEle.innerHTML = `<div id="${this.options.entity}DataSet" class="SnDataSet">
                                     <div class="SnDataSet-toolbar" id="${this.options.entity}DataSetToolbar">
-                                        <div class="SnDataSet-toolbar-left">
-                                            <div id="${this.options.entity}FilterDescription"></div>
-                                        </div>
+                                        <div class="SnDataSet-toolbar-left" id="${this.options.entity}FilterDescription"></div>
                                         <div class="SnDataSet-toolbar-right">
-                                            <div class="SnBtn sm radio jsAction" data-modaltrigger="${this.options.entity}ModalFilter" id="${this.options.entity}ModalFilterToggle">${SnIcon.filter}</div>
+                                            <div class="SnBtn sm radio jsAction SnMb-2" data-modaltrigger="${this.options.entity}ModalFilter" id="${this.options.entity}ModalFilterToggle">${SnIcon.filter}</div>
                                             <div class="SnModal-wrapper" data-modal="${this.options.entity}ModalFilter" data-maskclose="false">
                                                 <div class="SnModal" style="max-width: 90vw;">
                                                     <div class="SnModal-close" data-modalclose="${this.options.entity}ModalFilter" id="${this.options.entity}ModalFilterClose"><i>${SnIcon.close}</i></div>
@@ -142,7 +122,7 @@ class SnTable {
                                                 </div>
                                             </div>
                                             <div class="SnDropdown">
-                                                <div class="SnDropdown-toggle SnBtn sm radio jsAction SnMl-2"><i>${SnIcon.column}</i></div>
+                                                <div class="SnDropdown-toggle SnBtn sm radio jsAction SnMl-2 SnMb-2"><i>${SnIcon.column}</i></div>
                                                 <div class="SnDropdown-list SnTableColumnFilter no-closable">
                                                     <div class="SnForm-item inner">
                                                         <label for="headerCompany" class="SnForm-label">Buscar columna</label>
@@ -190,9 +170,12 @@ class SnTable {
 
         // Render filter
         if (this.options.filterEnabled) {
-            new SnFilter({ ...this.options, elementId: `${this.options.entity}FilterWrapper` })
-            //
-            // this.renderCustomFilter();
+            this.filter = new SnFilter({
+                entity: this.options.entity,
+                columns: this.options.columns,
+                filters: this.options.filters,
+                elementId: `${this.options.entity}FilterWrapper`
+            });
         }
 
         this._renderTableHead();
@@ -261,7 +244,7 @@ class SnTable {
                                                             <i>${SnIcon.sortUp}</i>
                                                         </div>` : ''}
                                 </div>
-                                ${item.filterable ? `<input type="${(item.type === 'datetime-local' || item.type === 'date') ? item.type : 'search'}" class="jsFilterValue${this.options.entity} SnForm-control sm SnMt-1 SnMb-1 not-print" data-field="${item.field}">` : ''}
+                                ${item.filterable ? `<input type="${(item.type === 'datetime-local' || item.type === 'date') ? item.type : 'search'}" value="${this.getTableColumnFilterValue(item.field) ?? ''}" class="jsFilterValue${this.options.entity} SnForm-control sm SnMt-1 SnMb-1 not-print" data-field="${item.field}">` : ''}
                             </th>`;
         });
 
@@ -741,38 +724,17 @@ class SnTable {
     //  ========================================================================================
     //  C U S T O M      F I L T E R
     setTableColumnFilter(fieldName, fieldValue) {
-        let exist = this.columnFilters.eval.find(item => item.field === fieldName);
-
-        // Validate empty values
-        if (fieldValue === "") {
-            if (exist != undefined) {
-                this.columnFilters.eval = this.columnFilters.eval.filter(item => item.field !== fieldName) // Delete empty value
-            }
-            this.page = 1;
-            this.getData();
-            return;
-        }
-
-        // Set new value
-        if (exist != undefined) {
-            this.columnFilters.eval = this.columnFilters.eval.map(item => item.field === fieldName ? ({ ...item, value1: fieldValue }) : item)
-        } else {
-            this.columnFilters.eval.push({
-                id: this.columnFilters.eval.length + 1,
-                logicalOperator: 'and',
-                prefix: 'DONDE',
-                operator: 'contiene',
-                field: fieldName,
-                type: 'text',
-                value1: fieldValue,
-                value2: '',
-            });
-        }
-
+        this.filter.setCustomFilterGroup(0, fieldName, fieldValue);
         this.page = 1;
         this.getData();
 
         this._renderFilterDescriptions();
+    }
+
+    getTableColumnFilterValue(fieldName) {
+        const indexMatch = this.filter.filters.findIndex(item => item.id === 0);
+        const columnMatch = this.filter.filters[indexMatch]?.eval?.find(item => item.field === fieldName);
+        return columnMatch?.value1;
     }
 
     toggleFilterPanel(show = null) {
@@ -788,11 +750,10 @@ class SnTable {
 
     _renderFilterDescriptions() {
         const filterDescription = document.getElementById(`${this.options.entity}FilterDescription`);
-        const allFilters = [...this.filters, this.columnFilters];
-        const allFilterLenght = allFilters.reduce((prev, current) => (current.eval.length > 0) ? (prev + 1) : prev, 0);
+        const allFilterLenght = this.filter.filters.reduce((prev, current) => (current.eval.length > 0) ? (prev + 1) : prev, 0);
 
         let text = '';
-        allFilters.forEach((cf, inx) => {
+        this.filter.filters.forEach((cf, inx) => {
             if (allFilterLenght.length > 1) {
                 if (cf.logicalOperator.toUpperCase() === 'OR' && cf.prefix.toUpperCase() === 'DONDE') {
                     text += inx == 0 ? '<div>Ya sea<div>' : '<div>O<div>';
@@ -804,23 +765,47 @@ class SnTable {
             // Content
             cf.eval.forEach(ev => {
                 const colfield = this.options.columns.find(item => item.field === ev.field);
-                let textContent = `${cf.prefix} ${colfield.title} ${ev.operator} ${ev.value1}${ev.value2?.length > 0 ? (' y ' + ev.value2) : ''}`.toLowerCase();
+                let textContent = `<span>${cf.prefix}</span> <span>${colfield.title}</span> <strong>${ev.operator}</strong> ${ev.value1}${ev.value2?.length > 0 ? (' y ' + ev.value2) : ''}`.toLowerCase();
                 textContent = textContent.charAt(0).toUpperCase() + textContent.slice(1);
 
-                text += `<span class="SnTag SnMr-2">${textContent}<span class="SnBtn radio icon SnMl-2 jsFilterDescriptionClear${this.options.entity}" data-fieldx="${cf.id}" data-fieldy="${ev.id}"><i>${SnIcon.close}</i></span></span>`
-            })
+                text += `<span class="SnTag SnMr-2 SnMb-2 jsFilterDescriptionTag${this.options.entity}">${textContent}<span class="SnBtn radio icon SnMl-2 jsFilterDescriptionRemove${this.options.entity}" title="Quitar filtro" data-parentid="${cf.id}" data-id="${ev.id}"><i>${SnIcon.close}</i></span></span>`
+            });
+
         });
+
+        if (text.length > 0) {
+            text = 'Filtro: ' + text;
+        }
 
         filterDescription.innerHTML = text;
 
-        // Filter description clear
-        let filterDescriptionClear = document.querySelectorAll(`.jsFilterDescriptionClear${this.options.entity}`);
-        filterDescriptionClear.forEach(item => {
+        // Filter description remove
+        let jsFilterDescriptionRemove = document.querySelectorAll(`.jsFilterDescriptionRemove${this.options.entity}`);
+        jsFilterDescriptionRemove.forEach(item => {
             const itemDataset = item.dataset;
+            const parentid = itemDataset.parentid;
+            const id = itemDataset.id;
 
             item.addEventListener('click', e => {
                 e.preventDefault();
-                console.log(itemDataset);
+                e.stopPropagation();
+
+                this.filter.removeFilter(id, parentid);
+                this.getData();
+
+                // Only in filter head
+                if (parentid == '0') {
+                    this._renderTableHead();
+                }
+            });
+        });
+
+        // Show modal
+        let jsFilterDescriptionTag = document.querySelectorAll(`.jsFilterDescriptionTag${this.options.entity}`);
+        jsFilterDescriptionTag.forEach(item => {
+            item.addEventListener('click', e => {
+                e.preventDefault();
+                SnModal.open(`${this.options.entity}ModalFilter`);
             });
         });
     }
