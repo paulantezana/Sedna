@@ -318,7 +318,7 @@ class SnTable {
             }
         }
 
-        // this._setResizeListener();
+        this._setResizeListener();
     }
 
     _renderTableBody() {
@@ -416,7 +416,8 @@ class SnTable {
     }
 
     _setResizeListener() {
-        const table = document.getElementById(`${this.options.entity}Table`);
+        const entityName = this.options.entity;
+        const table = document.getElementById(`${entityName}Table`);
 
         let row = table.getElementsByTagName('tr')[0],
             cols = row ? row.children : undefined;
@@ -434,9 +435,11 @@ class SnTable {
         }
 
         function setListeners(div) {
-            let pageX, curCol, nxtCol, curColWidth, nxtColWidth;
+            let pageX, curCol, nxtCol, curColWidth, nxtColWidth, tableWidth;
 
             div.addEventListener('mousedown', function (e) {
+
+                tableWidth = document.getElementById(`${entityName}Table`).offsetWidth;
                 curCol = e.target.parentElement;
                 nxtCol = curCol.nextElementSibling;
                 pageX = e.pageX;
@@ -444,12 +447,12 @@ class SnTable {
                 let padding = paddingDiff(curCol);
 
                 curColWidth = curCol.offsetWidth - padding;
-                if (nxtCol)
-                    nxtColWidth = nxtCol.offsetWidth - padding;
+                //  if (nxtCol)
+                //nxtColWidth = nxtCol.offsetWidth - padding;
             });
 
             div.addEventListener('mouseover', function (e) {
-                e.target.style.borderRight = '2px solid #0000ff';
+                e.target.style.borderRight = '2px solid var(--color1-6)';
             })
 
             div.addEventListener('mouseout', function (e) {
@@ -460,10 +463,11 @@ class SnTable {
                 if (curCol) {
                     let diffX = e.pageX - pageX;
 
-                    if (nxtCol)
-                        nxtCol.style.width = (nxtColWidth - (diffX)) + 'px';
+                    // if (nxtCol)
+                    //nxtCol.style.width = (nxtColWidth - (diffX)) + 'px';
 
                     curCol.style.width = (curColWidth + diffX) + 'px';
+                    document.getElementById(`${entityName}Table`).style.width = tableWidth + diffX + "px"
                 }
             });
 
@@ -484,7 +488,8 @@ class SnTable {
             div.style.position = 'absolute';
             div.style.cursor = 'col-resize';
             div.style.userSelect = 'none';
-            div.style.height = height + 'px';
+            // div.style.height = height + 'px';
+            div.style.height = '100%';
             return div;
         }
 
