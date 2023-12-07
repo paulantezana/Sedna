@@ -51,6 +51,7 @@ const SnMenu = ({
     menuCloseID = '',
     iconClassDown = 'icon-down',
     iconClassUp = 'icon-up',
+    iconDownUpToggle = false,
 }) => {
 
     let SnMenuApi = {
@@ -63,6 +64,28 @@ const SnMenu = ({
             if (!this.menu) {
                 console.warn(`Not found ${menuId}`);
                 return;
+            }
+
+            const toggleSubMenu = (content, iconToggleEle) => {
+                let isShow = content.classList.contains('is-show') ?? false;
+
+                if (isShow) {
+                    iconClassUp.split(' ').forEach(iClass => {
+                        iconToggleEle.classList.remove(iClass); // add Icon up
+                    });
+                    iconClassDown.split(' ').forEach(iClass => {
+                        iconToggleEle.classList.add(iClass);
+                    });
+                } else {
+                    iconClassDown.split(' ').forEach(iClass => {
+                        iconToggleEle.classList.remove(iClass);
+                    });
+                    iconClassUp.split(' ').forEach(iClass => {
+                        iconToggleEle.classList.add(iClass); // add Icon up
+                    });
+                }
+
+                content.classList.toggle('is-show'); // add class show menu
             }
 
             // Get all sub menu
@@ -82,29 +105,17 @@ const SnMenu = ({
                     toggle.appendChild(iconToggleEle);
                     toggle.classList.add('is-toggle');
 
-                    iconToggleEle.addEventListener('click', e => {
-                        e.preventDefault();
-
-                        let isShow = content.classList.contains('is-show') ?? false;
-
-                        if (isShow) {
-                            iconClassUp.split(' ').forEach(iClass => {
-                                iconToggleEle.classList.remove(iClass); // add Icon up
-                            });
-                            iconClassDown.split(' ').forEach(iClass => {
-                                iconToggleEle.classList.add(iClass);
-                            });
-                        } else {
-                            iconClassDown.split(' ').forEach(iClass => {
-                                iconToggleEle.classList.remove(iClass);
-                            });
-                            iconClassUp.split(' ').forEach(iClass => {
-                                iconToggleEle.classList.add(iClass); // add Icon up
-                            });
-                        }
-
-                        content.classList.toggle('is-show'); // add class show menu
-                    });
+                    if(iconDownUpToggle){
+                        iconToggleEle.addEventListener('click', e => {
+                            e.preventDefault();
+                            toggleSubMenu(content, iconToggleEle);
+                        });
+                    } else {
+                        toggle.addEventListener('click', e => {
+                            e.preventDefault();
+                            toggleSubMenu(content, iconToggleEle);
+                        });
+                    }
                 }
             }
 
