@@ -846,6 +846,36 @@ class SnTable {
     }
 
     _renderFilterDescriptions() {
+        const formatedValue = (value, type) => {
+            if(!['datetime-local', 'date'].includes(type)){
+                return value;
+            }
+            if((value || '').length === 0){
+                return value;
+            }
+
+            const months = [
+                'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
+                'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'
+            ];
+
+            const dateParts = value.split(" ");
+            const date = dateParts[0];
+            const time = dateParts[1];
+
+            const [year, month, day] = date.split("-");
+            const monthName = months[parseInt(month, 10) - 1];
+
+            let result = `${parseInt(day, 10)} de ${monthName} de ${year}`;
+
+            // if (time) {
+            //   const [hourPart, minutePart] = time.split(":");
+            //   result += ` a las ${hourPart}:${minutePart}`;
+            // }
+
+            return result;
+        }
+
         const filterDescription = document.getElementById(`${this.options.entity}FilterDescription`);
         const allFilterLenght = this.filter.filters.reduce((prev, current) => (current.eval.length > 0) ? (prev + 1) : prev, 0);
 
@@ -862,7 +892,7 @@ class SnTable {
             // Content
             cf.eval.forEach(ev => {
                 const colfield = this.options.columns.find(item => item.field === ev.field);
-                let textContent = `<span>${cf.prefix}</span> <span>${colfield.title}</span> <strong>${ev.operator}</strong> ${ev.value1}${ev.value2?.length > 0 ? (' y ' + ev.value2) : ''}`.toLowerCase();
+                let textContent = `<span>${cf.prefix}</span> <span>${colfield.title}</span> <strong>${ev.operator}</strong> ${formatedValue(ev.value1, colfield.type)}${ev.value2?.length > 0 ? (' y ' + formatedValue(ev.value2, colfield.type)) : ''}`.toLowerCase();
                 textContent = textContent.charAt(0).toUpperCase() + textContent.slice(1);
 
                 text += `<span class="SnTag SnMr-2 SnMb-2 jsFilterDescriptionTag${this.options.entity}">${textContent}<span class="SnBtn radio icon SnMl-2 jsFilterDescriptionRemove${this.options.entity}" title="Quitar filtro" data-parentid="${cf.id}" data-id="${ev.id}"><i>${SnIcon.close}</i></span></span>`
