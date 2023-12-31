@@ -12,31 +12,31 @@ block main
             [
                 {
                     languaje: 'html',
-                    code: '<div class="SnAlert"> <span class="SnIcon-question"></span>message in alert</div>\n<div class="SnAlert success"> <span class="SnIcon-success"></span>message in alert</div>\n<div class="SnAlert info"> <span class="SnIcon-info"></span>message in alert</div>\n<div class="SnAlert warning"> <span class="SnIcon-warning"></span>message in alert</div>\n<div class="SnAlert danger"> <span class="SnIcon-danger"></span>message in alert</div>'
+                    code: '<div class="SnAlert">\n    <span class="SnIcon-question SnAlert-icon"></span>\n    <div class="SnAlert-content">\n        <strong>This is super informative</strong>\n        <div>You can tell by how pretty the alert is</div>\n    </div>\n</div>\n<div class="SnAlert success">\n    <span class="SnIcon-success SnAlert-icon"></span>\n    <div class="SnAlert-content">\n        <strong>This is super informative</strong>\n        <div>You can tell by how pretty the alert is</div>\n    </div>\n</div>\n<div class="SnAlert info">\n    <span class="SnIcon-info SnAlert-icon"></span>\n    <div class="SnAlert-content">\n        <strong>This is super informative</strong>\n        <div>You can tell by how pretty the alert is</div>\n    </div>\n</div>\n<div class="SnAlert warning">\n    <span class="SnIcon-warning SnAlert-icon"></span>\n    <div class="SnAlert-content">\n        <strong>This is super informative</strong>\n        <div>You can tell by how pretty the alert is</div>\n    </div>\n</div>\n<div class="SnAlert danger">\n    <span class="SnIcon-danger SnAlert-icon"></span>\n    <div class="SnAlert-content">\n        <strong>This is super informative</strong>\n        <div>You can tell by how pretty the alert is.</div>\n    </div>\n</div>'
                 }
             ]
         )
-            .SnAlert 
+            .SnAlert
                 span.SnIcon-question.SnAlert-icon
                 .SnAlert-content
                     strong This is super informative
                     div You can tell by how pretty the alert is
-            .SnAlert.success 
+            .SnAlert.success
                 span.SnIcon-success.SnAlert-icon
                 .SnAlert-content
                     strong This is super informative
                     div You can tell by how pretty the alert is
-            .SnAlert.info 
+            .SnAlert.info
                 span.SnIcon-info.SnAlert-icon
                 .SnAlert-content
                     strong This is super informative
                     div You can tell by how pretty the alert is
-            .SnAlert.warning 
+            .SnAlert.warning
                 span.SnIcon-warning.SnAlert-icon
                 .SnAlert-content
                     strong This is super informative
                     div You can tell by how pretty the alert is
-            .SnAlert.danger 
+            .SnAlert.danger
                 span.SnIcon-danger.SnAlert-icon
                 .SnAlert-content
                     strong This is super informative
@@ -47,7 +47,7 @@ block main
             [
                 {
                     languaje: 'html',
-                    code: '<div class="SnAlert">\n    <span class="SnIcon-question"></span>message in alert\n    <div class="SnAlert-close"><i class="SnIcon-close"></i></div>\n</div>\n<div class="SnAlert success">\n    <span class="SnIcon-success"></span>message in alert\n    <div class="SnAlert-close"><i class="SnIcon-close"></i></div>\n</div>\n<div class="SnAlert info">\n    <span class="SnIcon-info"></span>message in alert\n    <div class="SnAlert-close"><i class="SnIcon-close"></i></div>\n</div>\n<div class="SnAlert warning">\n    <span class="SnIcon-warning"></span>message in alert\n    <div class="SnAlert-close"><i class="SnIcon-close"></i></div>\n</div>\n<div class="SnAlert danger">\n    <span class="SnIcon-danger"></span>message in alert\n    <div class="SnAlert-close"><i class="SnIcon-close"></i></div>\n</div>'
+                    code: '<div class="SnAlert">\n    <span class="SnIcon-question SnAlert-icon"></span>\n    <div class="SnAlert-content">message in alert</div>\n    <div class="SnAlert-close">\n        <i class="SnIcon-close"></i>\n    </div>\n</div>\n\n<div class="SnAlert success">\n    <span class="SnIcon-success SnAlert-icon"></span>\n    <div class="SnAlert-content">message in alert</div>\n    <div class="SnAlert-close">\n        <i class="SnIcon-close"></i>\n    </div>\n</div>\n\n<div class="SnAlert info">\n    <span class="SnIcon-info SnAlert-icon"></span>\n    <div class="SnAlert-content">message in alert</div>\n    <div class="SnAlert-close">\n        <i class="SnIcon-close"></i>\n    </div>\n</div>\n\n<div class="SnAlert warning">\n    <span class="SnIcon-warning SnAlert-icon"></span>\n    <div class="SnAlert-content">message in alert</div>\n    <div class="SnAlert-close">\n        <i class="SnIcon-close"></i>\n    </div>\n</div>\n\n<div class="SnAlert danger">\n    <span class="SnIcon-danger SnAlert-icon"></span>\n    <div class="SnAlert-content">message in alert</div>\n    <div class="SnAlert-close">\n        <i class="SnIcon-close"></i>\n    </div>\n</div>'
                 }
             ]
         )
@@ -56,22 +56,22 @@ block main
                 .SnAlert-content message in alert
                 .SnAlert-close
                     i.SnIcon-close
-            .SnAlert.success 
+            .SnAlert.success
                 span.SnIcon-success.SnAlert-icon
                 .SnAlert-content message in alert
                 .SnAlert-close
                     i.SnIcon-close
-            .SnAlert.info 
+            .SnAlert.info
                 span.SnIcon-info.SnAlert-icon
                 | message in alert
                 .SnAlert-close
                     i.SnIcon-close
-            .SnAlert.warning 
+            .SnAlert.warning
                 span.SnIcon-warning.SnAlert-icon
                 | message in alert
                 .SnAlert-close
                     i.SnIcon-close
-            .SnAlert.danger 
+            .SnAlert.danger
                 span.SnIcon-danger.SnAlert-icon
                 | message in alert
                 .SnAlert-close

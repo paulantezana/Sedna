@@ -10,7 +10,7 @@ block main
         +codeBox(
             'Active',
             'Control radio checkbox active',
-            '<div style="display: flex;">\n    <div class="SnSwitch">\n        <input class="SnSwitch-control" id="radio1" type="radio" name="example1">\n        <label class="SnSwitch-label" for="radio1"></label>\n    </div>\n    <div class="SnSwitch">\n        <input class="SnSwitch-control" id="radio2" type="radio" name="example1">\n        <label class="SnSwitch-label" for="radio2"></label>\n    </div>\n    <div class="SnSwitch">\n        <input class="SnSwitch-control" id="radio3" type="radio" name="example1">\n        <label class="SnSwitch-label" for="radio3"></label>\n    </div>\n</div>\n'
+            '<ul class="SnList">\n    <li>\n        <input type="checkbox" id="c1">\n        <label for="c1">Checkbox</label>\n    </li>\n    <li>\n        <input type="checkbox" id="c2" checked>\n        <label for="c2">Checkbox</label>\n    </li>\n    <li>\n        <input type="radio" id="r1" name="radio" value="1">\n        <label for="r1">Radio</label>\n    </li>\n    <li>\n        <input type="radio" id="r2" name="radio" value="2" checked>\n        <label for="r2">Radio</label>\n    </li>\n    <li>\n        <input type="checkbox" id="s1" class="switch">\n        <label for="s1">Switch</label>\n    </li>\n    <li>\n        <input type="checkbox" id="s2" class="switch" checked>\n        <label for="s2">Switch</label>\n    </li>\n</ul>'
         )
             ul.SnList
                 li
@@ -34,7 +34,7 @@ block main
         +codeBox(
             'disabled',
             'Control radio checkbox disabled',
-            '<div style="display: flex;">\n    <div class="SnSwitch">\n        <input class="SnSwitch-control" id="radio1" type="radio" name="example1">\n        <label class="SnSwitch-label" for="radio1"></label>\n    </div>\n    <div class="SnSwitch">\n        <input class="SnSwitch-control" id="radio2" type="radio" name="example1">\n        <label class="SnSwitch-label" for="radio2"></label>\n    </div>\n    <div class="SnSwitch">\n        <input class="SnSwitch-control" id="radio3" type="radio" name="example1">\n        <label class="SnSwitch-label" for="radio3"></label>\n    </div>\n</div>\n'
+            '<ul class="SnList">\n    <li>\n        <input type="checkbox" id="c1d" disabled>\n        <label for="c1d">Checkbox</label>\n    </li>\n    <li>\n        <input type="checkbox" id="c2d" checked disabled>\n        <label for="c2d">Checkbox</label>\n    </li>\n    <li>\n        <input type="radio" id="r1d" name="radiod" value="1" disabled>\n        <label for="r1d">Radio</label>\n    </li>\n    <li>\n        <input type="radio" id="r2d" name="radiod" value="2" checked disabled>\n        <label for="r2d">Radio</label>\n    </li>\n    <li>\n        <input type="checkbox" id="s1d" class="switch" disabled>\n        <label for="s1d">Switch</label>\n    </li>\n    <li>\n        <input type="checkbox" id="s2d" class="switch" checked disabled>\n        <label for="s2d">Switch</label>\n    </li>\n</ul>'
         )
             ul.SnList
                 li
@@ -58,9 +58,9 @@ block main
         +codeBox(
             'Radio button',
             'Radio button',
-            '<div style="display: flex;">\n    <div class="SnSwitch">\n        <input class="SnSwitch-control" id="radio1" type="radio" name="example1">\n        <label class="SnSwitch-label" for="radio1"></label>\n    </div>\n    <div class="SnSwitch">\n        <input class="SnSwitch-control" id="radio2" type="radio" name="example1">\n        <label class="SnSwitch-label" for="radio2"></label>\n    </div>\n    <div class="SnSwitch">\n        <input class="SnSwitch-control" id="radio3" type="radio" name="example1">\n        <label class="SnSwitch-label" for="radio3"></label>\n    </div>\n</div>\n'
+            '<div class="SnBtn-group">\n    <input type="radio" id="radio1" name="radioimp" class="hidden">\n    <label for="radio1" class="SnBtn">Left</label>\n    \n    <input type="radio" id="radio2" name="radioimp" checked class="hidden">\n    <label for="radio2" class="SnBtn">Center</label>\n    \n    <input type="radio" id="radio3" name="radioimp" class="hidden">\n    <label for="radio3" class="SnBtn">Right</label>\n</div>'
         )
-            .SnBtn-group 
+            .SnBtn-group
                 input#radio1(type="radio", name="radioimp").hidden
                 label(for="radio1").SnBtn Left
                 input#radio2(type="radio", name="radioimp" checked).hidden
