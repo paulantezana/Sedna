@@ -58,6 +58,13 @@ class SnTable {
         // Get values
         let items = Object.entries(row).filter(([key, value]) => this.options.paramKeys.includes(key));
 
+        // Order
+        items.sort((a,b)=> {
+            let positionA = this.options.paramKeys.indexOf(a[0]);
+            let positionB = this.options.paramKeys.indexOf(b[0]);
+            return positionA - positionB;
+        })
+
         // Set only values and is string in ""
         items = items.map(([key, val]) => (typeof val === 'string') ? `'${val}'` : val);
 
