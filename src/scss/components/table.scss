@@ -77,8 +77,8 @@
     }
 
     // ===================================================================
-    // DATASET
-    .#{var.$classPrefix}DataSet {
+    // D A T A   T A B L E
+    .#{var.$classPrefix}DataTable {
         &-toolbar {
             // margin-bottom: .5rem;
 
@@ -101,84 +101,53 @@
                 }
             }
         }
-    }
 
-    .MultiFilter {
-        display: flex;
-        flex-wrap: wrap;
-        margin-left: 4px;
-
-        &-item {
-            margin-right: 0.5rem;
+        &-pagination {
             display: flex;
+            flex-direction: column;
             align-items: center;
-        }
-    }
 
-    .SnTableColumnFilter {
-        padding: 0.5rem !important;
+            @include media.from(m) {
+                flex-direction: row;
+                justify-content: space-between;
+            }
 
-        .SnForm-item {
-            margin-bottom: 0;
-        }
+            &-center {
+                margin-top: 6px;
 
-        &-footer {
-            display: flex;
-        }
+                @include media.from(m) {
+                    margin-top: 0;
 
-        &-list {
-            max-height: 300px;
-            overflow: auto;
-            margin: 0.5rem 0;
+                    .SnPagination {
+                        margin-top: 0;
+                        margin-bottom: 0;
 
-            li {
-                line-height: 1.5rem;
+                        &-link {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+
+            &-right,
+            &-left {
+                span {
+                    color: var(--color1-7);
+                }
             }
         }
     }
 
-
-    .SnDataSetPagination {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        @include media.from(m) {
-            flex-direction: row;
-            justify-content: space-between;
-        }
-
-        &-center {
-            margin-top: 6px;
-        }
-
-        &-right,
-        &-left {
-            span {
-                color: var(--color1-7);
-            }
-        }
-    }
-
-    .SnDataSetFilter {
-        margin-bottom: 1rem;
-        display: none;
-
-        &.show {
-            display: block;
-        }
-    }
-
-    .SnTableSorterCol {
+    .#{var.$classPrefix}DataTableCaption {
         display: flex;
         align-items: center;
         justify-content: space-between;
 
-        &-label {
+        &-left {
             white-space: nowrap;
         }
 
-        &-sort {
+        &-right {
             margin-left: 4px;
             opacity: .3;
             cursor: pointer;

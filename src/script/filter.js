@@ -202,19 +202,19 @@ class SnFilter {
 
             // Content
             cf.eval.forEach(ev => {
-                text += `<div class="MultiFilter SnMb-2">
-                            <div class="MultiFilter-item"><button class="SnBtn radio icon jsFilterRowRemove${this.options.entity} jsAction" data-id="${ev.id}" data-parentid="${cf.id}"><i>${SnIcon.close}</i></button></div>
-                            <div class="MultiFilter-item">
+                text += `<div class="SnFilter SnMb-2">
+                            <div class="SnFilter-item"><button class="SnBtn radio icon jsFilterRowRemove${this.options.entity} jsAction" data-id="${ev.id}" data-parentid="${cf.id}"><i>${SnIcon.close}</i></button></div>
+                            <div class="SnFilter-item">
                                 <select class="SnForm-control jsFilterRowPrefix${this.options.entity}" data-id="${ev.id}" data-parentid="${cf.id}">
                                     ${prefixData.map(row => `<option value="${row.id}" ${ev.prefix === row.id ? 'selected' : ''}>${row.description}</option>`).join('')}
                                 </select>
                             </div>
-                            <div class="MultiFilter-item">
+                            <div class="SnFilter-item">
                                 <select class="SnForm-control jsFilterRowField${this.options.entity}" data-id="${ev.id}" data-parentid="${cf.id}">
                                     ${this.options.columns.map(row => row.filterable ? `<option value="${row.field}" ${ev.field === row.field ? 'selected' : ''} data-type="${row.type || 'text'}">${row.title}</option>` : '').join('')}
                                 </select>
                             </div>
-                            <div class="MultiFilter-item">
+                            <div class="SnFilter-item">
                                 <select class="SnForm-control jsFilterRowOperator${this.options.entity}" data-id="${ev.id}" data-parentid="${cf.id}">
                                     ${(ev.type === 'number' || ev.type === 'date' || ev.type === 'datetime-local')
                         ? (numericOperatorArray.map(opt => `<option value="${opt.id}" ${ev.operator === opt.id ? 'selected' : ''}>${opt.description}</option>`).join(''))
@@ -222,10 +222,10 @@ class SnFilter {
                     }
                                 </select>
                             </div>
-                            <div class="MultiFilter-item">
+                            <div class="SnFilter-item">
                                 <input type="${ev.type || 'text'}" class="SnForm-control jsFilterRowValue1${this.options.entity}" data-id="${ev.id}" data-parentid="${cf.id}" placeholder="Ingresa un valor" value="${ev.value1}">
                             </div>
-                            <div class="MultiFilter-item">
+                            <div class="SnFilter-item">
                                 ${ev.operator === 'se encuentra entre (incluye)' ? `<span class="SnMr-2">Y</span><input type="${ev.type || 'text'}" class="SnForm-control jsFilterRowValue2${this.options.entity}" data-id="${ev.id}" data-parentid="${cf.id}" placeholder="Ingresa un valor" value="${ev.value2}">` : ''}
                             </div>
                         </div>`;

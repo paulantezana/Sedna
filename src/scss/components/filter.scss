@@ -1,0 +1,17 @@
+// @use "sass:math";
+@use '../variables.scss' as var;
+// @use '../utils/mediaQueries.scss' as media;
+
+@mixin SnFilter {
+    .#{var.$classPrefix}Filter {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 4px;
+
+        &-item {
+            margin-right: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+    }
+}

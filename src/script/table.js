@@ -113,10 +113,10 @@ class SnTable {
         let tableEle = document.getElementById(this.options.elementId);
 
         // Render table base
-        tableEle.innerHTML = `<div id="${this.options.entity}DataSet" class="SnDataSet">
-                                    <div class="SnDataSet-toolbar" id="${this.options.entity}DataSetToolbar">
-                                        <div class="SnDataSet-toolbar-left" id="${this.options.entity}FilterDescription"></div>
-                                        <div class="SnDataSet-toolbar-right">
+        tableEle.innerHTML = `<div id="${this.options.entity}DataTable" class="SnDataTable">
+                                    <div class="SnDataTable-toolbar" id="${this.options.entity}DataTableToolbar">
+                                        <div class="SnDataTable-toolbar-left" id="${this.options.entity}FilterDescription"></div>
+                                        <div class="SnDataTable-toolbar-right">
                                             <div class="SnBtn sm radio jsAction SnMb-2" data-modaltrigger="${this.options.entity}ModalFilter" id="${this.options.entity}ModalFilterToggle">${SnIcon.filter}</div>
                                             <div class="SnModal-wrapper" data-modal="${this.options.entity}ModalFilter" data-maskclose="false">
                                                 <div class="SnModal" style="max-width: 90vw;">
@@ -146,7 +146,7 @@ class SnTable {
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="SnDataSet-table">
+                                    <div class="SnDataTable-table">
                                         <div class="SnTable-wrapper">
                                             <table class="SnTable" id="${this.options.entity}Table">
                                                 <thead id="${this.options.entity}TableHead"></thead>
@@ -156,7 +156,7 @@ class SnTable {
                                         </div>
                                         <div id="${this.options.entity}Pagination"></div>
                                     </div>
-                                    <div class="SnDataSet-detail" id="${this.options.entity}SnDataSetDetail">
+                                    <div class="SnDataTable-detail" id="${this.options.entity}SnDataTableDetail">
                                     </div>
                                 </div>`;
 
@@ -245,9 +245,9 @@ class SnTable {
         let tableHeadHtml = '';
         this._getVisibleColumns().forEach(item => {
             tableHeadHtml += `<th ${item.style != undefined ? `style="${item.style}"` : ''} title="${item.tooltip || item.title}">
-                                <div class="SnTableSorterCol">
-                                    <div class="SnTableSorterCol-label">${item.title}</div>
-                                    ${item.sortable ? `<div class="jsSorterCol${this.options.entity} SnTableSorterCol-sort not-print" data-field="${item.field}" data-order="" title="Ordenar">
+                                <div class="SnDataTableCaption">
+                                    <div class="SnDataTableCaption-left">${item.title}</div>
+                                    ${item.sortable ? `<div class="jsSorterCol${this.options.entity} SnDataTableCaption-right not-print" data-field="${item.field}" data-order="" title="Ordenar">
                                                             <i>${SnIcon.sortUp}</i>
                                                         </div>` : ''}
                                 </div>
@@ -595,12 +595,12 @@ class SnTable {
         }
 
         let tableFooter = `
-            <div class="SnDataSetPagination SnMt-3 SnMb-3">
-                <div class="SnDataSetPagination-left">Mostrando: <span>${result.data.length} de ${result.total}</span></div>
-                <div class="SnDataSetPagination-center">
+            <div class="SnDataTable-pagination SnMt-3">
+                <div class="SnDataTable-pagination-left">Mostrando: <span>${result.data.length} de ${result.total}</span></div>
+                <div class="SnDataTable-pagination-center">
                     ${paginationHtml}
                 </div>
-                <div class="SnDataSetPagination-right">
+                <div class="SnDataTable-pagination-right">
                     <select class="SnForm-control" id="${this.options.entity}Limit">` +
             [10, 20, 50, 100, 200, 300, 500, 1000].map(value => `<option value="${value}" ${value == result.limit ? 'selected' : ''}>${value}</option>`).join('') +
             `</select>
@@ -839,17 +839,6 @@ class SnTable {
         const indexMatch = this.filter.filters.findIndex(item => item.id === 0);
         const columnMatch = this.filter.filters[indexMatch]?.eval?.find(item => item.field === fieldName);
         return columnMatch?.value1;
-    }
-
-    toggleFilterPanel(show = null) {
-        const dataSetFilter = document.getElementById(`${this.options.entity}SnDataSetFilter`);
-        if (!dataSetFilter) return;
-
-        if (show === null) {
-            dataSetFilter.classList.toggle('show');
-            return;
-        }
-        dataSetFilter.classList.toggle('show', show);
     }
 
     _renderFilterDescriptions() {

@@ -33,7 +33,7 @@
         position: relative;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         background-color: var(--panel-background-alt);
-        border-radius: 4px;
+        border-radius: 8px;
         margin: 100px auto 50px;
 
         // More
@@ -69,14 +69,12 @@
         &-header {
             padding: 16px 24px;
             color: var(--text-color);
-            // font-weight: bold;
-            box-shadow: 0 1px var(--border-color);
+            font-size: 1rem;
             border-radius: 4px 4px 0 0;
         }
 
         &-body {
-            padding: 24px;
-
+            padding: 0 24px 24px 24px;
             &.confirm {
                 padding: 32px 32px 24px;
             }
