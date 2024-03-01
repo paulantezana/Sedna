@@ -157,4 +157,22 @@
             }
         }
     }
+
+    .#{var.$classPrefix}DataTableFilter {
+        padding: .5rem !important;
+
+        &-list {
+            max-height: 250px;
+            overflow: auto;
+
+            li {
+                padding: .15rem 0;
+            }
+        }
+
+        &-footer {
+            display: flex;
+            margin-top: .5rem;
+        }
+    }
 }

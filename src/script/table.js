@@ -130,15 +130,15 @@ class SnTable {
                                             </div>
                                             <div class="SnDropdown">
                                                 <div class="SnDropdown-toggle SnBtn sm radio jsAction SnMl-2 SnMb-2"><i>${SnIcon.column}</i></div>
-                                                <div class="SnDropdown-list SnTableColumnFilter no-closable">
+                                                <div class="SnDropdown-list SnDataTableFilter no-closable">
                                                     <div class="SnForm-item inner">
                                                         <label for="headerCompany" class="SnForm-label">Buscar columna</label>
                                                         <input type="search" class="SnForm-control sm" id="${this.options.entity}SearchCols">
                                                     </div>
-                                                    <ul class="SnList SnTableColumnFilter-list" id="${this.options.entity}ListCols">
+                                                    <ul class="SnList SnDataTableFilter-list" id="${this.options.entity}ListCols">
                                                         ${this.options.columns.map(col => `<li><input type="checkbox" class="js${this.options.entity}ToggleCols" data-key="${col.id}" ${col.visible === true ? 'checked' : ''}><span class="SnMl-2">${col.title}</span></li>`).join('')}
                                                     </ul>
-                                                    <div class="SnTableColumnFilter-footer">
+                                                    <div class="SnDataTableFilter-footer">
                                                         <button class="SnBtn radio" id="${this.options.entity}HideAllCols">Ocultar todo</button>
                                                         <button class="SnBtn radio SnMl-3" id="${this.options.entity}ShowAllCols">Mostrar todo</button>
                                                     </div>
