@@ -1,5 +1,5 @@
 import { SnCollapse } from './script/collapse';
-import { SnIcon, SnUniqueId } from './script/conmon';
+import { SnIcon, SnUniqueId, SnFormatNumber } from './script/conmon';
 import { SnInput } from './script/form';
 import { SnFreeze } from './script/freeze';
 import { SnMenu, SnActiveMenu } from './script/menu';
@@ -30,4 +30,5 @@ export {
     SnFilter,
     SnTable,
     SnDropdown,
+    SnFormatNumber,
 };

@@ -66,4 +66,14 @@ export const SnLoadingState = (state, className, idName = null) => {
     }
 }
 
+export const SnFormatNumber = (number, presition = 2) => {
+    if (isNaN(number)) {
+        return 0;
+    }
+
+    return parseFloat(number).toLocaleString('es-US', {
+        style: 'decimal', minimumFractionDigits: presition, maximumFractionDigits: presition
+    });
+}
+
 window.classPrefix = 'Sn';

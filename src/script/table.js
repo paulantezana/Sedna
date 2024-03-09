@@ -59,7 +59,7 @@ class SnTable {
         let items = Object.entries(row).filter(([key, value]) => this.options.paramKeys.includes(key));
 
         // Order
-        items.sort((a,b)=> {
+        items.sort((a, b) => {
             let positionA = this.options.paramKeys.indexOf(a[0]);
             let positionB = this.options.paramKeys.indexOf(b[0]);
             return positionA - positionB;
@@ -358,13 +358,21 @@ class SnTable {
         let entityTableBody = document.getElementById(`${this.options.entity}TableBody`);
         entityTableBody.innerHTML = tableBodyHtml;
 
+        // Render summary
+        this._renderSummary();
+
+        // Render pagination
+        this._renderPagination();
+
+        // Dispatch event
+        if (this.options.updated && typeof this.options.updated === "function") {
+            this.options.updated(this);
+        }
+
         // If not found data
         if (this.result.data.length === 0) {
             return;
         }
-
-        // Render summary
-        this._renderSummary();
 
         // Select listeners
         if (this.options.selectable) {
@@ -413,12 +421,6 @@ class SnTable {
                     this._renderActionMenu(id, { x: e.pageX, y: e.pageY }, false, params);
                 });
             });
-        }
-
-        this._renderPagination();
-
-        if (this.options.updated && typeof this.options.updated === "function") {
-            this.options.updated(this);
         }
     }
 
@@ -548,7 +550,7 @@ class SnTable {
 
         const summaryHtml = this._getVisibleColumns().map(col => {
             const colData = this.summaryFields.find(summary => summary.field === col.field);
-            return colData ? `<td>${calcValues(colData.values, colData.summaryOperator ?? 'sum').toFixed(2)}</td>` : '<td></td>';
+            return colData ? `<td>${SnFormatNumber(calcValues(colData.values, colData.summaryOperator ?? 'sum'))}</td>` : '<td></td>';
         }).join('');
 
         let entityTableFoot = document.getElementById(`${this.options.entity}TableFoot`);
@@ -843,10 +845,10 @@ class SnTable {
 
     _renderFilterDescriptions() {
         const formatedValue = (value, type) => {
-            if(!['datetime-local', 'date'].includes(type)){
+            if (!['datetime-local', 'date'].includes(type)) {
                 return value;
             }
-            if((value || '').length === 0){
+            if ((value || '').length === 0) {
                 return value;
             }
 

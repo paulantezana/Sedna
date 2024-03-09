@@ -1,5 +1,5 @@
 import { SnCollapse } from './script/collapse';
-import { SnIcon, SnUniqueId, SnLoadingState } from './script/conmon';
+import { SnIcon, SnUniqueId, SnLoadingState, SnFormatNumber } from './script/conmon';
 import { SnInput } from './script/form';
 import { SnFreeze } from './script/freeze';
 import { SnMenu, SnActiveMenu } from './script/menu';
@@ -25,6 +25,7 @@ window.SnTree = SnTree;
 window.SnAlert = SnAlert;
 window.SnUniqueId = SnUniqueId;
 window.SnLoadingState = SnLoadingState;
+window.SnFormatNumber = SnFormatNumber;
 window.SnTable = SnTable;
 window.SnFilter = SnFilter;
 window.SnDropdown = SnDropdown;
