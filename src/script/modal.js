@@ -115,6 +115,7 @@ export let SnModal = {
         content = '',
         input = false,
         inputValue = '',
+        inputType = 'text',
         okClassNames = 'primary',
         cancelClassNames = '',
         cancelText = 'Cancelar',
@@ -131,7 +132,7 @@ export let SnModal = {
             ? `<button class="${window.classPrefix}Btn ${cancelClassNames}" id="cancel${uniqueIdName}" type="button">${cancelText}</button>`
             : '';
 
-        let inputHtml = input === true ? `<div class="${window.classPrefix}Modal-confirmInput"><input type="text" class="${window.classPrefix}Form-control" id="input${uniqueIdName}" value="${inputValue}"></div>`: '';
+        let inputHtml = input === true ? `<div class="${window.classPrefix}Modal-confirmInput"><input type="${inputType}" class="${window.classPrefix}Form-control" id="input${uniqueIdName}" value="${inputValue}"></div>`: '';
 
         divEl.innerHTML = `
             <div class="${window.classPrefix}Modal-wrapper" data-modal="${uniqueIdName}" >
