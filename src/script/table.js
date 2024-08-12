@@ -23,6 +23,7 @@ class SnTable {
         this.options.tableHeadTopHtml ??= '';
         this.options.filterEnabled ??= true;
         this.options.selectableRadio ??= true;
+        this.options.toolbar ??= '';
 
         // Default Sorter
         if (this.rowKey.length > 0) {
@@ -116,7 +117,7 @@ class SnTable {
         tableEle.innerHTML = `<div id="${this.options.entity}DataTable" class="SnDataTable">
                                     <div class="SnDataTable-toolbar" id="${this.options.entity}DataTableToolbar">
                                         <div class="SnDataTable-toolbar-left" id="${this.options.entity}FilterDescription"></div>
-                                        <div class="SnDataTable-toolbar-right">
+                                        <div class="SnDataTable-toolbar-right">${this.options.toolbar}
                                             <div class="SnBtn sm radio jsAction SnMb-2" data-modaltrigger="${this.options.entity}ModalFilter" id="${this.options.entity}ModalFilterToggle">${SnIcon.filter}</div>
                                             <div class="SnModal-wrapper" data-modal="${this.options.entity}ModalFilter" data-maskclose="false">
                                                 <div class="SnModal" style="max-width: 90vw;">
