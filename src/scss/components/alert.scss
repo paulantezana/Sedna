@@ -43,23 +43,23 @@
         }
 
         &.success {
-            background: var(--green-1);
-            color: var(--green-7);
+            background: color-mix(in srgb, var(--sn-green) 20%, transparent);
+            color: color-mix(in srgb, var(--sn-green) 50%, var(--text-color));
         }
 
         &.info {
-            background: var(--color1-1);
-            color: var(--color1-7);
+            background: color-mix(in srgb, var(--sn-color-1) 20%, transparent);
+            color: color-mix(in srgb, var(--sn-color-1) 50%, var(--text-color));
         }
 
         &.warning {
-            background: var(--yellow-1);
-            color: var(--yellow-7);
+            background: color-mix(in srgb, var(--sn-yellow) 20%, transparent);
+            color: color-mix(in srgb, var(--sn-yellow) 50%, var(--text-color));
         }
 
         &.danger {
-            background: var(--red-1);
-            color: var(--red-7);
+            background: color-mix(in srgb, var(--sn-red) 20%, transparent);
+            color: color-mix(in srgb, var(--sn-red) 50%, var(--text-color));
         }
     }
 }

@@ -185,7 +185,7 @@ body {
   line-height: 3rem;
 }
 .AsideMenu > li > a:hover {
-  background: var(--color1-6);
+  background: var(--sn-color-1);
   color: white;
 }
 .AsideMenu ul a {
@@ -262,7 +262,7 @@ body {
     text-align: left;
     padding: 0 20px;
     width: 220px;
-    background: var(--color1-6);
+    background: var(--sn-color-1);
     display: none;
   }
   .SnAdminL1.AsideMenu-is-show .AsideMenu > li > a .toggle {
@@ -272,7 +272,7 @@ body {
     margin-right: 0;
   }
   .SnAdminL1.AsideMenu-is-show .AsideMenu > li:hover > a {
-    background: var(--color1-6);
+    background: var(--sn-color-1);
     color: white;
   }
   .SnAdminL1.AsideMenu-is-show .AsideMenu > li > ul {
@@ -323,7 +323,7 @@ body {
     text-align: left;
     padding: 0 20px;
     width: 220px;
-    background: var(--color1-6);
+    background: var(--sn-color-1);
     display: none;
   }
   .SnAdminL2:not(.AsideMenu-is-show) .AsideMenu > li > a .toggle {
@@ -333,7 +333,7 @@ body {
     margin-right: 0;
   }
   .SnAdminL2:not(.AsideMenu-is-show) .AsideMenu > li:hover > a {
-    background: var(--color1-6);
+    background: var(--sn-color-1);
     color: white;
   }
   .SnAdminL2:not(.AsideMenu-is-show) .AsideMenu > li > ul {

@@ -7,6 +7,16 @@
 
     input[type='checkbox'],
     input[type='radio'] {
+        --active: var(--sn-color-1);
+        --active-inner: #fff;
+        //   --focus: 2px rgba(39, 94, 254, .3);
+        --focus: 2px color-mix(in srgb, var(--sn-color-1) 30%, transparent);
+        ;
+        --border: #BBC1E1;
+        --border-hover: var(--sn-color-1);
+        --background: #fff;
+        --disabled: #F6F8FF;
+        --disabled-inner: #E1E6F9;
         -webkit-appearance: none;
         -moz-appearance: none;
         height: 21px;
@@ -16,8 +26,8 @@
         position: relative;
         margin: 0;
         cursor: pointer;
-        border: 1px solid var(--bc, var(--control-border));
-        background: var(--b, var(--control-background));
+        border: 1px solid var(--bc, var(--border));
+        background: var(--b, var(--background));
         transition: background .3s, border-color .3s, box-shadow .2s;
 
         &:after {
@@ -30,23 +40,21 @@
         }
 
         &:checked {
-            --b: var(--control-active);
-            --bc: var(--control-active);
+            --b: var(--active);
+            --bc: var(--active);
             --d-o: .3s;
             --d-t: .6s;
             --d-t-e: cubic-bezier(.2, .85, .32, 1.2);
-
-            
         }
 
         &:disabled {
-            --b: var(--control-disabled);
+            --b: var(--disabled);
             cursor: not-allowed;
             opacity: .9;
 
             &:checked {
-                --b: var(--control-disabled-inner);
-                --bc: var(--control-border);
+                --b: var(--disabled-inner);
+                --bc: var(--border);
             }
 
             &+label {
@@ -57,13 +65,13 @@
         &:hover {
             &:not(:checked) {
                 &:not(:disabled) {
-                    --bc: var(--control-border-hover);
+                    --bc: var(--border-hover);
                 }
             }
         }
 
         &:focus {
-            box-shadow: 0 0 0 var(--control-focus-shadow);
+            box-shadow: 0 0 0 var(--focus);
         }
 
         &:not(.switch) {
@@ -78,30 +86,13 @@
             }
         }
 
-        &+label:not(.#{var.$classPrefix}Btn) {
+        &+label {
             font-size: 14px;
             line-height: 21px;
             display: inline-block;
             vertical-align: top;
             cursor: pointer;
             margin-left: 4px;
-        }
-
-        &:checked+label.#{var.$classPrefix}Btn{
-            --btn-color: var(--color1-i);
-            --btn-background-color: var(--color1-6);
-            --btn-border-color: var(--color1-6);
-
-            --btn-hover-background-color: var(--color1-5);
-            --btn-hover-border-color: var(--color1-5);
-            --btn-hover-color: var(--color1-i);
-
-            --btn-focus-background-color: var(--color1-6);
-            --btn-focus-border-color: var(--color1-6);
-            --btn-focus-color: var(--color1-i);
-
-            --btn-loading-border-color: var(--color1-i);
-            --btn-focus-shadow: var(--control-focus-shadow-primary);
         }
     }
 
@@ -112,7 +103,7 @@
             &:after {
                 width: 5px;
                 height: 9px;
-                border: 2px solid var(--control-active-inner);
+                border: 2px solid var(--active-inner);
                 border-top: 0;
                 border-left: 0;
                 left: 7px;
@@ -135,12 +126,12 @@
                 border-radius: 50%;
                 width: 15px;
                 height: 15px;
-                background: var(--ab, var(--control-border));
+                background: var(--ab, var(--border));
                 transform: translateX(var(--x, 0));
             }
 
             &:checked {
-                --ab: var(--control-active-inner);
+                --ab: var(--active-inner);
                 --x: 17px;
             }
 
@@ -161,7 +152,7 @@
             width: 19px;
             height: 19px;
             border-radius: 50%;
-            background: var(--control-active-inner);
+            background: var(--active-inner);
             opacity: 0;
             transform: scale(var(--s, .7));
         }

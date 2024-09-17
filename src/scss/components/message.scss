@@ -76,22 +76,22 @@
         }
 
         &.info {
-            --snMessageColor: var(--color1-6);
+            --snMessageColor: var(--sn-color-1);
             --snMessageColorLight: var(--color1-1);
         }
 
         &.danger {
-            --snMessageColor: var(--red-6);
+            --snMessageColor: var(--sn-red);
             --snMessageColorLight: var(--red-1);
         }
 
         &.success {
-            --snMessageColor: var(--green-6);
+            --snMessageColor: var(--sn-green);
             --snMessageColorLight: var(--green-1);
         }
 
         &.warning {
-            --snMessageColor: var(--yellow-6);
+            --snMessageColor: var(--sn-yellow);
             --snMessageColorLight: var(--yellow-1);
         }
     }

@@ -10,22 +10,22 @@
         border-radius: 0.2em;
 
         &.primary {
-            background: var(--color1-6);
-            color: var(--color1-i);
+            background: var(--sn-color-1);
+            color: var(--sn-color-1-i);
         }
 
         &.success {
-            background: var(--green-6);
+            background: var(--sn-green);
             color: var(--green-i);
         }
 
         &.warning {
-            background: var(--yellow-6);
+            background: var(--sn-yellow);
             color: var(--yellow-i);
         }
 
         &.danger {
-            background: var(--red-6);
+            background: var(--sn-red);
             color: var(--red-i);
         }
     }

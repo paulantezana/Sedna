@@ -1,5 +1,5 @@
 .HomeIntro{
-    // background: var(--color1-6);
+    // background: var(--sn-color-1);
     padding: 4rem 0;
     &-item{
         display: flex;
@@ -9,7 +9,7 @@
     &-title{
         text-align: center;
         margin-bottom: 3rem;
-        color: var(--color1-i);
+        color: var(--sn-color-1-i);
     }
 }
 
@@ -27,7 +27,7 @@
         position: relative;
         box-shadow: 0 0 0 30px var(--panel-background),
                     0 0 0 31px var(--border-color);
-        background: var(--color1-6);
+        background: var(--sn-color-1);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -37,8 +37,8 @@
             bottom: 0;
             width: 14px;
             height: 18px;
-        
-            border-left: 14px solid var(--color1-i);
+
+            border-left: 14px solid var(--sn-color-1-i);
             border-top: 9px solid transparent;
             border-bottom: 9px solid transparent;
         }

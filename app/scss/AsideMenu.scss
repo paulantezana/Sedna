@@ -23,10 +23,10 @@ $asideMenuWidth: 220px;
             border-radius: 16px;
         }
         &.is-active{
-            background: var(--color1-6);
+            background: var(--sn-color-1);
             border-radius: 16px;
             a {
-                color: var(--color1-i);
+                color: var(--sn-color-1-i);
             }
         }
     }
@@ -71,7 +71,7 @@ $asideMenuWidth: 220px;
     border: 1px solid var(--border-color);
     border-left: var(--panel-background);
     border-radius: 0 10px 10px 0;
-    
+
     font-size: 1.4rem;
     @include sedna.from(l){
         display: none;

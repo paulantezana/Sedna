@@ -462,7 +462,7 @@ class SnTable {
             });
 
             div.addEventListener('mouseover', function (e) {
-                e.target.style.borderRight = '2px solid var(--color1-6)';
+                e.target.style.borderRight = '2px solid var(--sn-color-1)';
             })
 
             div.addEventListener('mouseout', function (e) {

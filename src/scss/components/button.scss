@@ -10,9 +10,7 @@
     font-weight: 400;
     white-space: nowrap;
     text-align: center;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
     user-select: none;
     touch-action: manipulation;
     padding: 0 15px;
@@ -22,29 +20,27 @@
 }
 
 @mixin SnBtnStndStates {
-    --btn-background-color: transparent;
-    --btn-border-color: var(--border-color);
+    --btn-bg: transparent;
+    --btn-boder: var(--border-color);
     --btn-color: var(--text-color);
 
-    --btn-hover-background-color: transparent;
-    --btn-hover-border-color: var(--color1-6);
-    --btn-hover-color: var(--color1-6);
+    --btn-hover-bg: transparent;
+    --btn-hover-boder: var(--sn-color-1);
+    --btn-hover-color: var(--sn-color-1);
 
-    --btn-focus-background-color: transparent;
-    --btn-focus-border-color: var(--color1-6);
-    --btn-focus-color: var(--color1-6);
+    --btn-focus-bg: transparent;
+    --btn-focus-boder: var(--sn-color-1);
+    --btn-focus-color: var(--sn-color-1);
 
-    --btn-loading-border-color: var(--text-color);
+    --btn-shadow-size: 2px;
 
-    --btn-focus-shadow: var(--control-focus-shadow);
-
-    background-color: var(--btn-background-color);
-    border: 1px solid var(--btn-border-color);
+    background-color: var(--btn-bg);
+    border: 1px solid var(--btn-boder);
     color: var(--btn-color);
 
     &:hover {
-        background-color: var(--btn-hover-background-color);
-        border-color: var(--btn-hover-border-color);
+        background-color: var(--btn-hover-bg);
+        border-color: var(--btn-hover-boder);
         color: var(--btn-hover-color);
     }
 
@@ -52,16 +48,16 @@
     &:active {
         outline: 0;
 
-        background-color: var(--btn-focus-background-color);
-        border-color: var(--btn-focus-border-color);
+        background-color: var(--btn-focus-bg);
+        border-color: var(--btn-focus-boder);
         color: var(--btn-focus-color);
 
-        box-shadow: 0 0 0 var(--btn-focus-shadow);
+        box-shadow: 0 0 0 var(--btn-shadow-size) color-mix(in srgb, var(--btn-bg) 30%, transparent);
     }
 
     &.loading {
         &::before {
-            border: 2px solid var(--btn-loading-border-color);
+            border: 2px solid var(--btn-color);
         }
     }
 }
@@ -169,88 +165,73 @@
         }
 
         &.primary {
-            --btn-color: var(--color1-i);
-            --btn-background-color: var(--color1-6);
-            --btn-border-color: var(--color1-6);
+            --btn-bg: var(--sn-color-1);
+            --btn-boder: var(--sn-color-1);
+            --btn-color: var(--sn-color-1-i);
 
-            --btn-hover-background-color: var(--color1-5);
-            --btn-hover-border-color: var(--color1-5);
-            --btn-hover-color: var(--color1-i);
+            --btn-hover-bg: color-mix(in srgb, var(--btn-bg) 90%, white);
+            --btn-hover-boder: color-mix(in srgb, var(--btn-bg) 90%, white);
+            --btn-hover-color: var(--sn-color-1-i);
 
-            --btn-focus-background-color: var(--color1-6);
-            --btn-focus-border-color: var(--color1-6);
-            --btn-focus-color: var(--color1-i);
-
-            --btn-loading-border-color: var(--color1-i);
-            --btn-focus-shadow: var(--control-focus-shadow-primary);
+            --btn-focus-bg: color-mix(in srgb, var(--btn-bg) 90%, black);
+            --btn-focus-boder: color-mix(in srgb, var(--btn-bg) 90%, black);
+            --btn-focus-color: var(--sn-color-1-i);
         }
 
         &.success {
-            --btn-color: var(--green-i);
-            --btn-background-color: var(--green-6);
-            --btn-border-color: var(--green-6);
+            --btn-bg: var(--sn-green);
+            --btn-boder: var(--sn-green);
+            --btn-color: var(--sn-green-i);
 
-            --btn-hover-background-color: var(--green-5);
-            --btn-hover-border-color: var(--green-5);
-            --btn-hover-color: var(--green-i);
+            --btn-hover-bg: color-mix(in srgb, var(--btn-bg) 90%, white);
+            --btn-hover-boder: color-mix(in srgb, var(--btn-bg) 90%, white);
+            --btn-hover-color: var(--sn-green-i);
 
-            --btn-focus-background-color: var(--green-6);
-            --btn-focus-border-color: var(--green-6);
-            --btn-focus-color: var(--green-i);
-
-            --btn-loading-border-color: var(--green-i);
-            --btn-focus-shadow: var(--control-focus-shadow-success);
+            --btn-focus-bg: color-mix(in srgb, var(--btn-bg) 90%, black);
+            --btn-focus-boder: color-mix(in srgb, var(--btn-bg) 90%, black);
+            --btn-focus-color: var(--sn-green-i);
         }
 
         &.warning {
-            --btn-color: var(--yellow-i);
-            --btn-background-color: var(--yellow-6);
-            --btn-border-color: var(--yellow-6);
+            --btn-bg: var(--sn-yellow);
+            --btn-boder: var(--sn-yellow);
+            --btn-color: var(--sn-yellow-i);
 
-            --btn-hover-background-color: var(--yellow-5);
-            --btn-hover-border-color: var(--yellow-5);
-            --btn-hover-color: var(--yellow-i);
+            --btn-hover-bg: color-mix(in srgb, var(--btn-bg) 90%, white);
+            --btn-hover-boder: color-mix(in srgb, var(--btn-bg) 90%, white);
+            --btn-hover-color: var(--sn-yellow-i);
 
-            --btn-focus-background-color: var(--yellow-6);
-            --btn-focus-border-color: var(--yellow-6);
-            --btn-focus-color: var(--yellow-i);
-
-            --btn-loading-border-color: var(--yellow-i);
-            --btn-focus-shadow: var(--control-focus-shadow-warning);
+            --btn-focus-bg: color-mix(in srgb, var(--btn-bg) 90%, black);
+            --btn-focus-boder: color-mix(in srgb, var(--btn-bg) 90%, black);
+            --btn-focus-color: var(--sn-yellow-i);
         }
 
         &.danger {
-            --btn-color: var(--red-i);
-            --btn-background-color: var(--red-6);
-            --btn-border-color: var(--red-6);
+            --btn-bg: var(--sn-red);
+            --btn-boder: var(--sn-red);
+            --btn-color: var(--sn-red-i);
 
-            --btn-hover-background-color: var(--red-5);
-            --btn-hover-border-color: var(--red-5);
-            --btn-hover-color: var(--red-i);
+            --btn-hover-bg: color-mix(in srgb, var(--btn-bg) 90%, white);
+            --btn-hover-boder: color-mix(in srgb, var(--btn-bg) 90%, white);
+            --btn-hover-color: var(--sn-red-i);
 
-            --btn-focus-background-color: var(--red-6);
-            --btn-focus-border-color: var(--red-6);
-            --btn-focus-color: var(--red-i);
-
-            --btn-loading-border-color: var(--red-i);
-            --btn-focus-shadow: var(--control-focus-shadow-danger);
+            --btn-focus-bg: color-mix(in srgb, var(--btn-bg) 90%, black);
+            --btn-focus-boder: color-mix(in srgb, var(--btn-bg) 90%, black);
+            --btn-focus-color: var(--sn-red-i);
         }
 
         &.white {
-            --btn-color: var(--color1-6);
-            --btn-background-color: var(--gray-1);
-            --btn-border-color: var(--gray-1);
+            --btn-bg: white;
+            --btn-boder: white;
+            --btn-color: var(--sn-color-1);
 
-            --btn-hover-background-color: var(--gray-1);
-            --btn-hover-border-color: var(--gray-1);
-            // --btn-hover-color: var(--color1-i);
+            --btn-hover-bg: white;
+            --btn-hover-boder: white;
+            --btn-hover-color: var(--sn-color-1);
 
-            --btn-focus-background-color: var(--gray-1);
-            --btn-focus-border-color: var(--gray-1);
-            // --btn-focus-color: var(--color1-i);
-
-            --btn-loading-border-color: var(--color1-6);
-            // --btn-focus-shadow: var(--control-focus-shadow-primary);
+            --btn-focus-bg: white;
+            --btn-focus-boder: white;
+            --btn-focus-color: var(--sn-color-1);
         }
 
         &.radio {
