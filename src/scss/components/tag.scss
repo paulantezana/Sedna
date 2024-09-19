@@ -16,17 +16,17 @@
 
         &.success {
             background: var(--sn-green);
-            color: var(--green-i);
+            color: var(--sn-green-i);
         }
 
         &.warning {
             background: var(--sn-yellow);
-            color: var(--yellow-i);
+            color: var(--sn-yellow-i);
         }
 
         &.danger {
             background: var(--sn-red);
-            color: var(--red-i);
+            color: var(--sn-red-i);
         }
     }
 }

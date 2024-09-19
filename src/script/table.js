@@ -24,9 +24,12 @@ class SnTable {
         this.options.filterEnabled ??= true;
         this.options.selectableRadio ??= true;
         this.options.toolbar ??= '';
+        this.options.sorter ??= {};
 
         // Default Sorter
-        if (this.rowKey.length > 0) {
+        if(!!this.options.sorter.field){
+            this.columnSorters = this.options.sorter;
+        } else if (this.rowKey.length > 0) {
             this.columnSorters = {
                 field: this.rowKey,
                 order: 'desc',

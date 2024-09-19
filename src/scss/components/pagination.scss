@@ -30,20 +30,17 @@
 
             &.active {
                 .SnPagination-link {
+                    --btn-bg: var(--sn-color-1);
+                    --btn-boder: var(--sn-color-1);
                     --btn-color: var(--sn-color-1-i);
-                    --btn-background-color: var(--sn-color-1);
-                    --btn-border-color: var(--sn-color-1);
 
-                    --btn-hover-background-color: color-mix(in srgb, var(--sn-color-1) 90%, white);
-                    --btn-hover-border-color: color-mix(in srgb, var(--sn-color-1) 90%, white);
+                    --btn-hover-bg: color-mix(in srgb, var(--btn-bg) 90%, white);
+                    --btn-hover-boder: color-mix(in srgb, var(--btn-bg) 90%, white);
                     --btn-hover-color: var(--sn-color-1-i);
 
-                    --btn-focus-background-color: var(--sn-color-1);
-                    --btn-focus-border-color: var(--sn-color-1);
+                    --btn-focus-bg: color-mix(in srgb, var(--btn-bg) 90%, black);
+                    --btn-focus-boder: color-mix(in srgb, var(--btn-bg) 90%, black);
                     --btn-focus-color: var(--sn-color-1-i);
-
-                    --btn-loading-border-color: var(--sn-color-1-i);
-                    --btn-focus-shadow: var(--control-focus-shadow-primary);
                 }
             }
         }
