@@ -120,7 +120,29 @@ block main
                     entity: 'user',
                     url: '',
                     toolbar: '<button>aditional buttion</button>',
-                    //- actions: appMenuActions,
+                    actions: [
+                        {
+                            "id": 43,
+                            "title": "Imprimir A4",
+                            "description": "Imprimir A4",
+                            "icon": "fas fa-print",
+                            "event_name": "PrintA4",
+                            "event_name_prefix": "",
+                            "parent_id": 0,
+                            "sort_order": 13,
+                            "position": "TABLE",
+                            "class_names": "radio",
+                            "type": "button",
+                            "keyboard_key": "",
+                            "state": 1,
+                            "updated_at": null,
+                            "created_at": null,
+                            "created_user": "",
+                            "updated_user": "",
+                            "screen_id_controller": "processSale",
+                            visible: () => false,
+                        }
+                    ],
                     columns: [
                         {
                             title: 'Fecha Registro',

@@ -10,23 +10,27 @@
         border-radius: 0.2em;
 
         &.primary {
-            background: var(--sn-color-1);
-            color: var(--sn-color-1-i);
+            background: color-mix(in srgb, var(--sn-color-1) 10%, transparent);
+            color: color-mix(in srgb, var(--sn-color-1) 60%, var(--text-color));
+            border: 1px solid color-mix(in srgb, var(--sn-color-1) 80%, var(--text-color));
         }
 
         &.success {
-            background: var(--sn-green);
-            color: var(--sn-green-i);
+            background: color-mix(in srgb, var(--sn-green) 10%, transparent);
+            color: color-mix(in srgb, var(--sn-green) 60%, var(--text-color));
+            border: 1px solid color-mix(in srgb, var(--sn-green) 80%, var(--text-color));
         }
 
         &.warning {
-            background: var(--sn-yellow);
-            color: var(--sn-yellow-i);
+            background: color-mix(in srgb, var(--sn-yellow) 10%, transparent);
+            color: color-mix(in srgb, var(--sn-yellow) 60%, var(--text-color));
+            border: 1px solid color-mix(in srgb, var(--sn-yellow) 80%, var(--text-color));
         }
 
         &.danger {
-            background: var(--sn-red);
-            color: var(--sn-red-i);
+            background: color-mix(in srgb, var(--sn-red) 10%, transparent);
+            color: color-mix(in srgb, var(--sn-red) 60%, var(--text-color));
+            border: 1px solid color-mix(in srgb, var(--sn-red) 80%, var(--text-color));
         }
     }
 }

@@ -11,6 +11,7 @@ import { SnAlert } from './script/alert';
 import SnFilter from './script/filter';
 import SnTable from './script/table';
 import SnDropdown from './script/dropdown';
+import SnPortal from './script/portal';
 
 window.SnCollapse = SnCollapse;
 window.SnIcon = SnIcon;
@@ -29,6 +30,7 @@ window.SnFormatNumber = SnFormatNumber;
 window.SnTable = SnTable;
 window.SnFilter = SnFilter;
 window.SnDropdown = SnDropdown;
+window.SnPortal = SnPortal;
 
 // Init Components
 document.addEventListener("DOMContentLoaded", () => {

@@ -12,6 +12,7 @@ import { SnTheme } from './script/theme';
 import SnFilter from './script/filter';
 import SnTable from './script/table';
 import SnDropdown from './script/dropdown';
+import SnPortal from './script/portal';
 
 export {
     SnCollapse,
@@ -31,4 +32,5 @@ export {
     SnTable,
     SnDropdown,
     SnFormatNumber,
+    SnPortal,
 };
