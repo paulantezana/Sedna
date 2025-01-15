@@ -1,36 +1,36 @@
-@use '../../src/sedna.scss' as sedna;
+// @use '../../src/sedna.scss' as sedna;
 
 
-// @import "../../src/sedna.scss";
-@import "_postConfig";
+// // @import "../../src/sedna.scss";
+// @use "_postConfig";
 
-@import "../prism/prism.scss";
+// @use "../prism/prism.scss";
 
-@import "base";
-@import "./Header/index";
-@import "./Components/CodeBox";
+// @use "base";
+// @use "./Header/index";
+// @use "./Components/CodeBox";
 
-.Site {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  &-footer {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    margin-top: auto;
-    text-align: center;
-    border-top: 1px solid var(--border-color);
-  }
-}
+// // .Site {
+// //   display: flex;
+// //   flex-direction: column;
+// //   height: 100vh;
+// //   &-footer {
+// //     padding-top: 2rem;
+// //     padding-bottom: 2rem;
+// //     margin-top: auto;
+// //     text-align: center;
+// //     border-top: 1px solid var(--border-color);
+// //   }
+// // }
 
-@import "Main";
-@import "AsideMenu";
-@import "Docs";
+// @use "Main";
+// @use "AsideMenu";
+// @use "Docs";
 
-@import "Home/HomeBanner";
-@import "Home/HomeIntro";
-@import "Home/HomeSocial";
+// @use "Home/HomeBanner";
+// @use "Home/HomeIntro";
+// @use "Home/HomeSocial";
 
-@import "SiteTitle";
+// @use "SiteTitle";
 
-// @import "./Examples/dashboard";
+// // @import "./Examples/dashboard";

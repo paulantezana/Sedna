@@ -65,10 +65,14 @@
 @mixin SnBtn {
     .#{var.$classPrefix}Btn {
         @include SnBtnStnd;
+        @include SnBtnStndStates;
 
         &.loading {
             @include load.SnLoadingTemplate(1em);
-            padding-left: 11px + 24;
+
+            & {
+                padding-left: 11px + 24;
+            }
 
             &::before {
                 left: 8px;
@@ -83,7 +87,7 @@
             }
 
             &.lg {
-                padding-left: 11px + 24;
+                // padding-left: 11px + 24;
 
                 &::before {
                     left: 11px;
@@ -95,8 +99,6 @@
                 pointer-events: none;
             }
         }
-
-        @include SnBtnStndStates;
 
         &-group {
             display: flex;

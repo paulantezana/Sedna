@@ -1,7 +1,11 @@
+@use "sass:map";
+@use "sass:meta";
+@use "sass:math";
+
 @use '../variables.scss' as var;
 
 @function isCoreBreakpoint($bp) {
-  @if map-get(var.$breakpoints, $bp) {
+  @if map.get(var.$breakpoints, $bp) {
     @return true
   }
 
@@ -11,7 +15,7 @@
 }
 
 @function isValidBreakpoint($bp) {
-  @if type-of($bp)==number and (unit($bp)=='px' or unit($bp)=='em' or unit($bp)=='rem') {
+  @if meta.type-of($bp)==number and (math.unit($bp)=='px' or math.unit($bp)=='em' or math.unit($bp)=='rem') {
     @return true
   }
 
@@ -21,20 +25,20 @@
 }
 
 @function getBp($bp) {
-  @return map-get(var.$breakpoints, $bp)
+  @return map.get(var.$breakpoints, $bp)
 }
 
 @function toPx($value) {
-  @if type-of($value)==number {
-    @if unit($value)=='em' {
+  @if meta.type-of($value)==number {
+    @if math.unit($value)=='em' {
       @return ($value / 1em) * 16px;
     }
 
-    @else if unit($value)=='rem' {
+    @else if math.unit($value)=='rem' {
       @return ($value / 1rem) * 16px
     }
 
-    @else if unit($value)=='px' {
+    @else if math.unit($value)=='px' {
       @return $value;
     }
 

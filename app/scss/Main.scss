@@ -1,32 +1,35 @@
-@use '../../src/scss/variables.scss' as var;
-@use '../../src/scss/utils/mediaQueries.scss' as media;
+// @use '../../src/scss/variables.scss' as var;
+// @use '../../src/scss/utils/mediaQueries.scss' as media;
 
-.Main{
-    $asideWidth: 220px;
-    $gridGap: 16px;
-    @include media.from(l){
-        display: grid;
-        grid-gap: $gridGap;
-        @include media.from(l){
-            grid-template-columns: $asideWidth calc(100vw - #{$asideWidth + $gridGap + 50});
-        }
-        @include media.from(var.$maxWidth){
-            grid-template-columns: $asideWidth calc(100vw - (100vw - #{var.$maxWidth - ($asideWidth + $gridGap)}));
-        }
-    }
-    padding-top: 24px;
-    padding-bottom: 24px;
-    &-sidebar{
-        @include media.from(l){
-            // padding: 1rem;
-            // background: var(--panel-background-alt);
-            // border-right: 1px solid var(--border-color);
-        }
-    }
-    &-content{
-        @include media.from(l){
-            // padding: 1rem;
-            // background: var(--panel-background-alt);
-        }
-    }
-}
+// .Main{
+//     $asideWidth: 220px;
+//     $gridGap: 16px;
+
+//     padding-top: 24px;
+//     padding-bottom: 24px;
+
+//     @include media.from(l){
+//         display: grid;
+//         grid-gap: $gridGap;
+//         @include media.from(l){
+//             grid-template-columns: $asideWidth calc(100vw - #{$asideWidth + $gridGap + 50});
+//         }
+//         @include media.from(var.$maxWidth){
+//             grid-template-columns: $asideWidth calc(100vw - (100vw - #{var.$maxWidth - ($asideWidth + $gridGap)}));
+//         }
+//     }
+
+//     &-sidebar{
+//         @include media.from(l){
+//             // padding: 1rem;
+//             // background: var(--panel-background-alt);
+//             // border-right: 1px solid var(--border-color);
+//         }
+//     }
+//     &-content{
+//         @include media.from(l){
+//             // padding: 1rem;
+//             // background: var(--panel-background-alt);
+//         }
+//     }
+// }

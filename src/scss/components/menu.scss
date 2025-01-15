@@ -94,6 +94,8 @@
 
     // TOGGLE MENU IN MOBILE
     #{$menu-class}-toggle {
+        cursor: pointer;
+
         @include media.from($bp) {
             display: none
         }
@@ -101,7 +103,5 @@
         @media print {
             display: none;
         }
-
-        cursor: pointer;
     }
 }

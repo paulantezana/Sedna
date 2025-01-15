@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $maxWidth           : 1200px !default;
 $lUnit              : .5rem !default;
 $gap                : $lUnit * 4 !default;  // 2rem
@@ -10,7 +12,7 @@ $breakpoints : (
     lg : 1024px,
     xl : 1440px
 ) !default;
-$sizes: map-keys($breakpoints);
+$sizes: map.keys($breakpoints);
 
 // $cssCore: false !default;
 $classPrefix: 'Sn' !default;

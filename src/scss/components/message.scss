@@ -31,6 +31,12 @@
         transform: scale(0.95) translateY(50px);
         transition: margin-top 0.7s, transform 0.7s, opacity 0.7s;
 
+        // Theme
+        --snMessageColor: #FFF;
+        --snMessageColorLight: #FFF;
+
+        border-top: 0.25rem solid var(--snMessageColor);
+
         &-icon {
             margin-right: 8px;
             padding: 0.5rem;
@@ -60,12 +66,6 @@
             transform: scale(1) translateY(0);
             opacity: 1;
         }
-
-        // Theme
-        --snMessageColor: #FFF;
-        --snMessageColorLight: #FFF;
-
-        border-top: 0.25rem solid var(--snMessageColor);
 
         &-icon {
             background: var(--snMessageColorLight);

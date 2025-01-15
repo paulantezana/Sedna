@@ -1,4 +1,6 @@
 @use '../../../src/scss/utils/mediaQueries.scss' as media;
+@use '../Shared/variables.scss' as lvar;
+@use '../../../src/scss/placeholder/list.scss';
 
 // Estilos generales
 .SiteMenu {
@@ -18,12 +20,12 @@
     [class*="icon-"]:before {
       position: relative;
       top: 2px;
-    }  
+    }
   }
 
   // All sublevels
   ul a {
-    line-height: $headerHeight;
+    line-height: lvar.$headerHeight;
   }
 }
 
@@ -55,7 +57,7 @@
     // Level 1
     & > li {
       & > a {
-        line-height: $headerHeight;
+        line-height: lvar.$headerHeight;
       }
     }
   }

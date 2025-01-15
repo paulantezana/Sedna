@@ -80,6 +80,10 @@
 
     .TopMenuDemo {
       @include sedna.to(l) {
+        width: 220px;
+        background: var(--panel-background);
+        height: 100vh;
+
         &-wrapper {
           background: rgba(black, 0.5);
           position: fixed;
@@ -89,9 +93,6 @@
           left: -100vw;
           top: 0;
         }
-        width: 220px;
-        background: var(--panel-background);
-        height: 100vh;
       }
     }
 
