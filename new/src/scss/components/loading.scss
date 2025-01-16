@@ -1,0 +1,8 @@
+@use '../variables.scss' as var;
+@use '../utils/loading.scss' as loading;
+
+@mixin SnLoading {
+    .#{var.$classPrefix}Loading {
+        @include loading.SnLoadingTemplate(32px);
+    }
+}

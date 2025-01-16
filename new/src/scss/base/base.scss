@@ -1,0 +1,29 @@
+@mixin SnBase() {
+    *,
+    *:before,
+    *:after {
+        box-sizing: border-box;
+    }
+
+    ::selection {
+        background: var(--sn-color-1);
+        color: var(--sn-color-1-i);
+    }
+
+    body {
+        margin: 0;
+        color: var(--text-color);
+        background: var(--panel-background);
+        font-family: sans-serif;
+    }
+
+    video,
+    img {
+        max-width: 100%;
+        height: auto;
+        display: inline-block;
+    }
+    svg[class*="sni-"]{
+        transform: translateY(3px);
+    }
+}

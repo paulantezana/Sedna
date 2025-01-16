@@ -1,0 +1,11 @@
+@use '../variables.scss' as var;
+
+@mixin SnCollapse() {
+    .#{var.$classPrefix}Collapse {
+        display: none;
+
+        &-expanded {
+            display: block;
+        }
+    }
+}

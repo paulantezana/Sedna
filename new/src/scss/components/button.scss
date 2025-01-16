@@ -1,0 +1,264 @@
+@use "sass:math";
+@use '../variables.scss' as var;
+@use '../utils/loading.scss' as load;
+
+@mixin SnBtnStnd {
+    line-height: var.$controlHeight;
+    height: var.$controlHeight;
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    white-space: nowrap;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    touch-action: manipulation;
+    padding: 0 15px;
+    font-size: 14px;
+    border-radius: var.$borderRadiusBase;
+    text-decoration: none;
+}
+
+@mixin SnBtnStndStates {
+    --btn-bg: transparent;
+    --btn-boder: var(--border-color);
+    --btn-color: var(--text-color);
+
+    --btn-hover-bg: transparent;
+    --btn-hover-boder: var(--sn-color-1);
+    --btn-hover-color: var(--sn-color-1);
+
+    --btn-focus-bg: transparent;
+    --btn-focus-boder: var(--sn-color-1);
+    --btn-focus-color: var(--sn-color-1);
+
+    --btn-shadow-size: 2px;
+
+    background-color: var(--btn-bg);
+    border: 1px solid var(--btn-boder);
+    color: var(--btn-color);
+
+    &:hover {
+        background-color: var(--btn-hover-bg);
+        border-color: var(--btn-hover-boder);
+        color: var(--btn-hover-color);
+    }
+
+    &:focus,
+    &:active {
+        outline: 0;
+
+        background-color: var(--btn-focus-bg);
+        border-color: var(--btn-focus-boder);
+        color: var(--btn-focus-color);
+
+        box-shadow: 0 0 0 var(--btn-shadow-size) color-mix(in srgb, var(--btn-bg) 30%, transparent);
+    }
+
+    &.loading {
+        &::before {
+            border: 2px solid var(--btn-color);
+        }
+    }
+}
+
+@mixin SnBtn {
+    .#{var.$classPrefix}Btn {
+        @include SnBtnStnd;
+        @include SnBtnStndStates;
+
+        &.loading {
+            @include load.SnLoadingTemplate(1em);
+
+            & {
+                padding-left: 11px + 24;
+            }
+
+            &::before {
+                left: 8px;
+            }
+
+            &.sm {
+                padding-left: 24px;
+
+                &::before {
+                    left: 4px;
+                }
+            }
+
+            &.lg {
+                // padding-left: 11px + 24;
+
+                &::before {
+                    left: 11px;
+                }
+            }
+
+            &:not(.disabled),
+            &:not([disabled]) {
+                pointer-events: none;
+            }
+        }
+
+        &-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+            &>.#{var.$classPrefix}Btn,
+            &>.#{var.$classPrefix}Form-control {
+                border-radius: 0;
+
+                &:last-child {
+                    border-top-right-radius: var.$borderRadiusBase;
+                    border-bottom-right-radius: var.$borderRadiusBase;
+                }
+
+                &:first-child {
+                    border-top-left-radius: var.$borderRadiusBase;
+                    border-bottom-left-radius: var.$borderRadiusBase;
+                }
+            }
+        }
+
+        &.block {
+            width: 100%;
+            display: block;
+        }
+
+        &.icon {
+            padding: 0 9px;
+            // display: inline-flex;
+            // justify-content: center;
+            // align-items: center;
+
+            width: var.$controlHeight;
+
+            &.sm {
+                padding: 0 5px;
+                width: var.$controlHeightSm;
+            }
+
+            &.lg {
+                width: var.$controlHeightLg;
+            }
+
+            &.loading {
+                padding-left: 0;
+
+                // &::before {
+                //   left: 9px;
+                // }
+                &>* {
+                    opacity: 0;
+                }
+            }
+        }
+
+        &.sm {
+            line-height: var.$controlHeightSm;
+            height: var.$controlHeightSm;
+        }
+
+        &.lg {
+            line-height: var.$controlHeightLg;
+            height: var.$controlHeightLg;
+        }
+
+        &.primary {
+            --btn-bg: var(--sn-color-1);
+            --btn-boder: var(--sn-color-1);
+            --btn-color: var(--sn-color-1-i);
+
+            --btn-hover-bg: color-mix(in srgb, var(--btn-bg) 90%, white);
+            --btn-hover-boder: color-mix(in srgb, var(--btn-bg) 90%, white);
+            --btn-hover-color: var(--sn-color-1-i);
+
+            --btn-focus-bg: color-mix(in srgb, var(--btn-bg) 90%, black);
+            --btn-focus-boder: color-mix(in srgb, var(--btn-bg) 90%, black);
+            --btn-focus-color: var(--sn-color-1-i);
+        }
+
+        &.success {
+            --btn-bg: var(--sn-green);
+            --btn-boder: var(--sn-green);
+            --btn-color: var(--sn-green-i);
+
+            --btn-hover-bg: color-mix(in srgb, var(--btn-bg) 90%, white);
+            --btn-hover-boder: color-mix(in srgb, var(--btn-bg) 90%, white);
+            --btn-hover-color: var(--sn-green-i);
+
+            --btn-focus-bg: color-mix(in srgb, var(--btn-bg) 90%, black);
+            --btn-focus-boder: color-mix(in srgb, var(--btn-bg) 90%, black);
+            --btn-focus-color: var(--sn-green-i);
+        }
+
+        &.warning {
+            --btn-bg: var(--sn-yellow);
+            --btn-boder: var(--sn-yellow);
+            --btn-color: var(--sn-yellow-i);
+
+            --btn-hover-bg: color-mix(in srgb, var(--btn-bg) 90%, white);
+            --btn-hover-boder: color-mix(in srgb, var(--btn-bg) 90%, white);
+            --btn-hover-color: var(--sn-yellow-i);
+
+            --btn-focus-bg: color-mix(in srgb, var(--btn-bg) 90%, black);
+            --btn-focus-boder: color-mix(in srgb, var(--btn-bg) 90%, black);
+            --btn-focus-color: var(--sn-yellow-i);
+        }
+
+        &.danger {
+            --btn-bg: var(--sn-red);
+            --btn-boder: var(--sn-red);
+            --btn-color: var(--sn-red-i);
+
+            --btn-hover-bg: color-mix(in srgb, var(--btn-bg) 90%, white);
+            --btn-hover-boder: color-mix(in srgb, var(--btn-bg) 90%, white);
+            --btn-hover-color: var(--sn-red-i);
+
+            --btn-focus-bg: color-mix(in srgb, var(--btn-bg) 90%, black);
+            --btn-focus-boder: color-mix(in srgb, var(--btn-bg) 90%, black);
+            --btn-focus-color: var(--sn-red-i);
+        }
+
+        &.white {
+            --btn-bg: white;
+            --btn-boder: white;
+            --btn-color: var(--sn-color-1);
+
+            --btn-hover-bg: white;
+            --btn-hover-boder: white;
+            --btn-hover-color: var(--sn-color-1);
+
+            --btn-focus-bg: white;
+            --btn-focus-boder: white;
+            --btn-focus-color: var(--sn-color-1);
+        }
+
+        &.radio {
+            border-radius: math.div(var.$controlHeight, 2);
+
+            &.sm {
+                border-radius: math.div(var.$controlHeightSm, 2);
+            }
+
+            &.lg {
+                border-radius: math.div(var.$controlHeightLg, 2);
+            }
+        }
+
+        &.disabled:active &.disabled:focus,
+        &.disabled:hover,
+        &.disabled,
+        &[disabled]:active,
+        &[disabled]:focus,
+        &[disabled]:hover,
+        &[disabled] {
+            opacity: 0.6;
+            touch-action: none;
+            pointer-events: none;
+            // cursor: not-allowed;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+@use '../variables.scss' as var;
+
+@mixin SnTag {
+    .#{var.$classPrefix}Tag {
+        font-size: 0.8rem;
+        line-height: 1rem;
+        height: auto;
+        padding: 0 0.3rem;
+        display: inline-block;
+        border-radius: 0.2em;
+
+        &.primary {
+            background: color-mix(in srgb, var(--sn-color-1) 10%, transparent);
+            color: color-mix(in srgb, var(--sn-color-1) 60%, var(--text-color));
+            border: 1px solid color-mix(in srgb, var(--sn-color-1) 80%, var(--text-color));
+        }
+
+        &.success {
+            background: color-mix(in srgb, var(--sn-green) 10%, transparent);
+            color: color-mix(in srgb, var(--sn-green) 60%, var(--text-color));
+            border: 1px solid color-mix(in srgb, var(--sn-green) 80%, var(--text-color));
+        }
+
+        &.warning {
+            background: color-mix(in srgb, var(--sn-yellow) 10%, transparent);
+            color: color-mix(in srgb, var(--sn-yellow) 60%, var(--text-color));
+            border: 1px solid color-mix(in srgb, var(--sn-yellow) 80%, var(--text-color));
+        }
+
+        &.danger {
+            background: color-mix(in srgb, var(--sn-red) 10%, transparent);
+            color: color-mix(in srgb, var(--sn-red) 60%, var(--text-color));
+            border: 1px solid color-mix(in srgb, var(--sn-red) 80%, var(--text-color));
+        }
+    }
+}

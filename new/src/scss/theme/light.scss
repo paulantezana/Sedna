@@ -1,0 +1,45 @@
+@use '../variables.scss' as var;
+
+@mixin SnThemeLight {
+    .#{var.$classPrefix}Theme-light {
+        --sn-color-1: #085DA9;
+        --sn-color-1-i: #feefff;
+
+        --sn-yellow: #FFBE01;
+        --sn-green: #46AE12;
+        --sn-red: #F5222D;
+        --sn-blue: #185D9A;
+
+        --sn-yellow-i: #3d2501;
+        --sn-green-i: #ebffe0;
+        --sn-red-i: #ffeeef;
+        --sn-blue-i: #e4f2ff;
+
+
+        // Global
+        --text-color: #394046;
+        --text-color-alt: #717f8d;
+
+        --border-color: #CDD2EC;
+        --hover-background: #0000000d;
+
+
+        // Panels
+        --panel-background: #F6F8FF;
+        --panel-background-alt: #ffffff;
+
+        --control-placeholder-color: var(--text-color-alt);
+
+        // Controls
+        --control-active: color-mix(in srgb, var(--sn-color-1) 90%, white);
+        --control-active-inner: #ffffff;
+
+        --control-focus-shadow: 2px color-mix(in srgb, var(--sn-color-1) 90%, white);
+
+        --control-border: #BBC1E1;
+        --control-border-hover: var(--sn-color-1);
+        --control-background: #F6F8FF;
+        --control-disabled: #F6F8FF;
+        --control-disabled-inner: #E1E6F9;
+    }
+}

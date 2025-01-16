@@ -1,0 +1,74 @@
+@use '../variables.scss' as var;
+@use './mediaQueries.scss' as media;
+
+@mixin gridColumnWidth($i) {
+  $n : #{$i - 1};
+  $column-width : calc((100% - var(--gap) * #{$n}) / #{$i});
+  grid-template-columns: repeat($i, $column-width);
+}
+
+@mixin SnGrid() {
+  .#{var.$classPrefix}Grid {
+    display: grid;
+    grid-template-columns: 100%;
+
+    @for $i from 0 through 4 {
+      &.gap-#{$i} {
+        --gap: var.$lUnit * $i;
+      }
+    }
+
+    // Add Gap
+    &.row-gap {
+      grid-row-gap: var(--gap);
+    }
+
+    &.col-gap {
+      grid-column-gap: var(--gap);
+    }
+
+    // Define columnas en containers e items por breakpoint
+    @each $size, $screen-size in var.$breakpoints {
+
+      // Styles by breakpoint
+      @include media.from($size) {
+        @for $i from 1 through var.$maxGridColumns {
+
+          // One column
+          @if $i ==1 {
+            &.#{$size}-grid-1 {
+              grid-template-columns: 100%;
+            }
+          }
+
+          // More columns
+          @if $i >1 {
+            &.#{$size}-grid-#{$i} {
+              @include gridColumnWidth($i);
+            }
+          }
+
+          // col en los items
+          >.#{$size}-col-#{$i} {
+            grid-column-end: span $i;
+          }
+
+          // row en los items
+          >.#{$size}-row-#{$i} {
+            grid-row-end: span $i;
+          }
+
+          // Inicio de columna en items
+          >.#{$size}-x-#{$i} {
+            grid-column-start: $i;
+          }
+
+          // Inicio de fila en items
+          >.#{$size}-y-#{$i} {
+            grid-row-start: $i;
+          }
+        }
+      }
+    }
+  }
+}

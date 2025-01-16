@@ -1,0 +1,29 @@
+@use "sass:math";
+
+@mixin SnLoadingTemplate($size) {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: calc(50% - #{math.div($size, 2)});
+      left: 15px;
+      display: block;
+      border: 2px solid var(--sn-color-1);
+      border-top-color: transparent !important;
+      border-radius: 50%;
+      width: $size;
+      height: $size;
+      animation: SnLoadingSpin 2s linear infinite;
+      pointer-events: none;
+      transition: opacity 0.4s;
+    }
+
+    @keyframes SnLoadingSpin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }

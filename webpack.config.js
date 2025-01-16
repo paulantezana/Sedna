@@ -90,27 +90,27 @@ module.exports = {
                     }
                 ],
             },
-            {
-                test: /\.pug$/,
-                use: [
-                    {
-                        loader: 'html-loader',
-                        options: {
-                            sources: {
-                                urlFilter: (attribute, value, resourcePath) => {
-                                    if (/^\/assets\//.test(value)) {
-                                        return false;
-                                    }
-                                    return true;
-                                },
-                            },
-                        },
-                    },
-                    {
-                        loader: 'pug-html-loader',
-                    }
-                ]
-            },
+            // {
+            //     test: /\.pug$/,
+            //     use: [
+            //         {
+            //             loader: 'html-loader',
+            //             options: {
+            //                 sources: {
+            //                     urlFilter: (attribute, value, resourcePath) => {
+            //                         if (/^\/assets\//.test(value)) {
+            //                             return false;
+            //                         }
+            //                         return true;
+            //                     },
+            //                 },
+            //             },
+            //         },
+            //         {
+            //             loader: 'pug-html-loader',
+            //         }
+            //     ]
+            // },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
@@ -118,11 +118,11 @@ module.exports = {
             },
         ]
     },
-    plugins: [
-        new MiniCssExtractPlugin({
-            filename: "assets/css/[name].css",
-            // chunkFilename: "[id].css"
-        }),
-        ...pugPages,
-    ]
+    // plugins: [
+    //     new MiniCssExtractPlugin({
+    //         filename: "assets/css/[name].css",
+    //         // chunkFilename: "[id].css"
+    //     }),
+    //     ...pugPages,
+    // ]
 };

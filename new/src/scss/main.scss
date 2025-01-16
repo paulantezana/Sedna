@@ -1,0 +1,46 @@
+@use './base/base.scss' as base;
+@use './theme/darck.scss' as darck;
+@use './theme/light.scss' as light;
+
+@forward './variables.scss';
+@forward './components/alert.scss';
+@forward './components/avatar.scss';
+@forward './components/button.scss';
+@forward './components/card.scss';
+@forward './components/collapse.scss';
+@forward './components/control-group.scss';
+@forward './components/divider.scss';
+@forward './components/dropdown.scss';
+@forward './components/filter.scss';
+@forward './components/empty.scss';
+@forward './components/form.scss';
+@forward './components/freeze.scss';
+@forward './components/input.scss';
+@forward './components/list.scss';
+@forward './components/loading.scss';
+@forward './components/margin.scss';
+@forward './components/menu.scss';
+@forward './components/message.scss';
+@forward './components/modal.scss';
+@forward './components/padding.scss';
+@forward './components/switch.scss';
+@forward './components/tab.scss';
+@forward './components/table.scss';
+@forward './components/tag.scss';
+@forward './components/tools.scss';
+@forward './components/video.scss';
+@forward './components/pagination.scss';
+@forward './components/portal.scss';
+@forward './components/tooltip.scss';
+@forward './components/tools.scss';
+
+@forward './utils/grid.scss';
+@forward './utils/mediaQueries.scss' show to, from, fromTo, toPx;
+
+@forward './layout/container.scss';
+
+@mixin core(){
+    @include darck.SnThemeDarck();
+    @include light.SnThemeLight();
+    @include base.SnBase();
+}

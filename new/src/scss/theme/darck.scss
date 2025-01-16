@@ -1,0 +1,45 @@
+@use '../variables.scss' as var;
+
+@mixin SnThemeDarck {
+    .#{var.$classPrefix}Theme-darck {
+        --sn-color-1: #085DA9;
+        --sn-color-1-i: #feefff;
+
+        --sn-yellow: #FFBE01;
+        --sn-green: #46AE12;
+        --sn-red: #F5222D;
+        --sn-blue: #185D9A;
+
+        --sn-yellow-i: #3d2501;
+        --sn-green-i: #ebffe0;
+        --sn-red-i: #ffeeef;
+        --sn-blue-i: #e4f2ff;
+
+
+        // Global
+        --text-color: #CCCCCC;
+        --text-color-alt: #999;
+
+        --border-color: #555;
+        --hover-background: hsla(0, 0%, 0%, 0.051);
+
+
+        // Panels
+        --panel-background: #333333;
+        --panel-background-alt: #444444;
+
+        --control-placeholder-color: var(--text-color-alt);
+
+        // Controls
+        --control-active: color-mix(in srgb, var(--sn-color-1) 90%, white);
+        --control-active-inner: #ffffff;
+
+        --control-focus-shadow: 2px color-mix(in srgb, var(--sn-color-1) 90%, white);
+
+        --control-border: #555;
+        --control-border-hover: var(--sn-color-1);
+        --control-background: #333;
+        --control-disabled: #F6F8FF;
+        --control-disabled-inner: #E1E6F9;
+    }
+}

@@ -1,0 +1,9 @@
+@use '../variables.scss' as var;
+
+@mixin SnPortal() {
+    .#{var.$classPrefix}Portal {
+        position: absolute;
+        min-width: 150px;
+        z-index: 10;
+    }
+}

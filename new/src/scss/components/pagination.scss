@@ -1,0 +1,48 @@
+@use '../variables.scss' as var;
+@use '../components/button.scss' as btn;
+@use '../placeholder/list.scss';
+
+@mixin SnPagination() {
+    .#{var.$classPrefix}Pagination {
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+        display: flex;
+        flex-wrap: wrap;
+        @extend %SnList;
+
+        &-link {
+            @include btn.SnBtnStnd();
+            @include btn.SnBtnStndStates;
+
+            margin-right: 4px;
+            margin-bottom: 6px;
+        }
+
+        &-item {
+            &.disabled {
+                .SnPagination-link {
+                    opacity: 0.6;
+                    box-shadow: none;
+                    pointer-events: none;
+                    cursor: auto;
+                }
+            }
+
+            &.active {
+                .SnPagination-link {
+                    --btn-bg: var(--sn-color-1);
+                    --btn-boder: var(--sn-color-1);
+                    --btn-color: var(--sn-color-1-i);
+
+                    --btn-hover-bg: color-mix(in srgb, var(--btn-bg) 90%, white);
+                    --btn-hover-boder: color-mix(in srgb, var(--btn-bg) 90%, white);
+                    --btn-hover-color: var(--sn-color-1-i);
+
+                    --btn-focus-bg: color-mix(in srgb, var(--btn-bg) 90%, black);
+                    --btn-focus-boder: color-mix(in srgb, var(--btn-bg) 90%, black);
+                    --btn-focus-color: var(--sn-color-1-i);
+                }
+            }
+        }
+    }
+}

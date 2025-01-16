@@ -1,0 +1,7 @@
+@use '../variables.scss' as var;
+
+@mixin SnContainer {
+    .#{var.$classPrefix}Container{
+        @extend %SnContainer;
+    }
+}

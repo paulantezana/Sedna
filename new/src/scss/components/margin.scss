@@ -1,0 +1,23 @@
+@use '../variables.scss' as var;
+
+@mixin SnMargin {
+    $spacer: .25rem;
+
+    @for $i from 1 through 5 {
+        .#{var.$classPrefix}Mt-#{$i} {
+            margin-top: $spacer * $i;
+        }
+
+        .#{var.$classPrefix}Mr-#{$i} {
+            margin-right: $spacer * $i;
+        }
+
+        .#{var.$classPrefix}Mb-#{$i} {
+            margin-bottom: $spacer * $i;
+        }
+
+        .#{var.$classPrefix}Ml-#{$i} {
+            margin-left: $spacer * $i;
+        }
+    }
+}

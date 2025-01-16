@@ -1,0 +1,65 @@
+@use '../variables.scss' as var;
+
+@mixin SnAlert {
+    .#{var.$classPrefix}Alert {
+        margin: 0;
+        color: rgba(0, 0, 0, 0.65);
+        line-height: 1.5;
+        list-style: none;
+        position: relative;
+        padding: 8px 15px;
+        border-radius: 4px;
+
+        // [class*='SnIcon-'] {
+        //     // margin-right: 8px;
+        //     // position: relative;
+        //     top: 3px;
+        // }
+
+        display: flex;
+        align-items: center;
+
+        &-icon{
+            margin-right: 14px;
+            font-size: 20px;
+        }
+
+        &-close {
+            position: absolute;
+            width: 2rem;
+            height: 2rem;
+            top: 10px;
+            right: 0;
+            cursor: pointer;
+
+            // center
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            [class*="SnIcon-"] {
+                margin: 0;
+            }
+        }
+
+        &.success {
+            background: color-mix(in srgb, var(--sn-green) 20%, transparent);
+            color: color-mix(in srgb, var(--sn-green) 50%, var(--text-color));
+        }
+
+        &.info {
+            background: color-mix(in srgb, var(--sn-color-1) 20%, transparent);
+            color: color-mix(in srgb, var(--sn-color-1) 50%, var(--text-color));
+        }
+
+        &.warning {
+            background: color-mix(in srgb, var(--sn-yellow) 20%, transparent);
+            color: color-mix(in srgb, var(--sn-yellow) 50%, var(--text-color));
+        }
+
+        &.danger {
+            background: color-mix(in srgb, var(--sn-red) 20%, transparent);
+            color: color-mix(in srgb, var(--sn-red) 50%, var(--text-color));
+        }
+    }
+}
