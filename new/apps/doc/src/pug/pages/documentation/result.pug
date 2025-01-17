@@ -1,0 +1,13 @@
+extends ../../config/template
+append config
+    -title = "Result"
+    -description = "Result."
+    -ogUrl = "/documentation/result.html"
+    -template = 2
+block main
+    .SnGrid.col-gap.row-gap.l-grid-2
+        +codeBox(
+            'Basic', 
+            '', 
+            ''
+        )

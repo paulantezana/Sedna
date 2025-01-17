@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html class="SnTheme-light" lang="en">
+  <head>
+    <title>Sedna CSS | Grids</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <meta name="description" content="24 Grids System.">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&amp;display=swap">
+    <link rel="shortcut icon" href="/assets/images/logo.svg">
+    <meta property="og:title" content="Sedna CSS | Grids">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="24 Grids System.">
+    <meta property="og:url" content="/documentation/grid.html">
+    <meta property="og:image" content="/assets/images/banner.jpg">
+    <meta property="og:site_name" content="Sedna">
+    <meta property="og:locale" content="es_PE">
+    <meta property="og:locale:alternate" content="es_CO">
+    <meta property="og:locale:alternate" content="es_MX">
+    <meta property="og:locale:alternate" content="es_DO">
+    <meta property="og:locale:alternate" content="es_BO">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Sedna CSS | Grids">
+    <meta property="twitter:site" content="@paulantezana">
+    <meta property="twitter:description" content="24 Grids System.">
+    <meta name="theme-color" content="#1890ff">
+    <link rel="stylesheet" href="/assets/fonts/styles.css">
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <div id="fb-root"></div>
+    <script>
+      //- window.fbAsyncInit = function() {
+      //-     FB.init({
+      //-         xfbml            : true,
+      //-         version          : 'v10.0'
+      //-     });
+      //- };
+      
+      //- (function(d, s, id) {
+      //-     var js, fjs = d.getElementsByTagName(s)[0];
+      //-     if (d.getElementById(id)) return;
+      //-     js = d.createElement(s); js.id = id;
+      //-     js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
+      //-     fjs.parentNode.insertBefore(js, fjs);
+      //- }(document, 'script', 'facebook-jssdk'));
+      
+    </script>
+    <div class="fb-customerchat" attribution="setup_tool" page_id="764145183607069" theme_color="#0A7CFF"></div>
+    <div class="Site" id="Site">
+      <div class="Site-header">
+        <header class="Header SnContainer" itemscope itemtype="http://schema.org/WPHeader">
+          <div class="Header-left">
+            <div class="Branding" itemscope itemtype="http://schema.org/Organization"><a class="Branding-link" href="/" itemprop="url"><img class="Branding-logo" alt="Logotipo de Sedna" itemprop="logo" src="/assets/images/logo.svg"><span class="Branding-name">Sedna CSS</span></a></div>
+          </div>
+          <div class="Header-right">
+            <div class="Header-nav">
+              <div class="icon-menu" id="SiteMenu-toggle"></div>
+              <nav class="SiteMenu-wrapper" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation" id="SiteMenu-wrapper">
+                <div class="SiteMenu-content">
+                  <ul class="SiteMenu SnMenu" id="SiteMenu">
+                    <li itemprop="url"><a href="/documentation/starter.html" target="" itemprop="name" title="Link to Documentación">Documentación</a></li>
+                    <li itemprop="url"><a href="/examples" target="" itemprop="name" title="Link to Ejemplos">Ejemplos</a></li>
+                  </ul>
+                  <div>
+                    <div class="SnBtn-group">
+                      <input class="hidden" id="snThemeLight" type="radio" name="snTheme" value="light">
+                      <label class="SnBtn" for="snThemeLight">Light</label>
+                      <input class="hidden" id="snThemeDarck" type="radio" name="snTheme" value="darck">
+                      <label class="SnBtn" for="snThemeDarck">Darck</label>
+                      <input class="hidden" id="snThemeSystem" type="radio" name="snTheme" value="system">
+                      <label class="SnBtn" for="snThemeSystem">System</label>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </header>
+      </div>
+      <div class="Site-main">
+        <main>
+          <div class="Main SnContainer">
+            <div class="Main-sidebar">
+              <aside class="AsideMenu-container" itemscope="itemscope" itemtype="http://schema.org/WPSideBar" role="complementary">
+                <div class="icon-right-open" id="AsideMenu-toggle" data-content="Filtros"></div>
+                <nav class="AsideMenu-nav" itemscope itemtype="http://schema.org/WPSideBar">
+                  <ul class="AsideMenu" id="AsideMenu">
+                    <li class="AsideMenu-header">General</li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/starter.html" itemprop="name" title="Link to Starter">Starter</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/button.html" itemprop="name" title="Link to Button">Button</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/icon.html" itemprop="name" title="Link to Icon">Icon</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/theme.html" itemprop="name" title="Link to Theme">Theme</a></li>
+                    <li class="AsideMenu-header">Layout</li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/grid.html" itemprop="name" title="Link to Grid">Grid</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/contain.html" itemprop="name" title="Link to Contain">Contain</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/spacing.html" itemprop="name" title="Link to Spacing">Spacing</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/mediaQuery.html" itemprop="name" title="Link to Media Query">Media Query</a></li>
+                    <li class="AsideMenu-header">Navigation</li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/menu.html" itemprop="name" title="Link to Menu">Menu</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/pagination.html" itemprop="name" title="Link to Pagination">Pagination</a></li>
+                    <li class="AsideMenu-header">Entry</li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/form.html" itemprop="name" title="Link to Form">Form</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/input.html" itemprop="name" title="Link to Input">Input</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/switch.html" itemprop="name" title="Link to Switch">Switch</a></li>
+                    <li class="AsideMenu-header">Display</li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/avatar.html" itemprop="name" title="Link to Avatar">Avatar</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/card.html" itemprop="name" title="Link to Card">Card</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/list.html" itemprop="name" title="Link to List">List</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/tooltip.html" itemprop="name" title="Link to Tooltip">Tooltip</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/tab.html" itemprop="name" title="Link to Tab">Tab</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/tag.html" itemprop="name" title="Link to Tag">Tag</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/table.html" itemprop="name" title="Link to Table">Table</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/filter.html" itemprop="name" title="Link to Filter">Filter</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/video.html" itemprop="name" title="Link to Video">Video</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/empty.html" itemprop="name" title="Link to Empty">Empty</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/result.html" itemprop="name" title="Link to Result">Result</a></li>
+                    <li class="AsideMenu-header">Feedback</li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/modal.html" itemprop="name" title="Link to Modal">Modal</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/alert.html" itemprop="name" title="Link to Alert">Alert</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/message.html" itemprop="name" title="Link to Message">Message</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/freeze.html" itemprop="name" title="Link to Freeze">Freeze</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/collapse.html" itemprop="name" title="Link to Collapse">Collapse</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/spin.html" itemprop="name" title="Link to Spin">Spin</a></li>
+                  </ul>
+                </nav>
+              </aside>
+            </div>
+            <div class="Main-content">
+              <div class="SiteTitle">
+                <div class="SiteTitle-content">
+                  <h1 class="SiteTitle-title">Grids</h1>
+                  <p class="SiteTitle-description">24 Grids System.</p>
+                </div>
+              </div>
+              <pre class="language-scss"><code>$breakpoints : (
+    s : 0,
+    m : 640px,
+    l : 850px,
+    lg : 1024px,
+    xl : 1440px
+);</code></pre>
+              <p>To define the columns use the <code>breakpoint-grid-number</code>nomenclature.</p>
+              <div class="SnGrid col-gap row-gap l-grid-2">
+                    <section class="CodeBox">
+                      <div class="CodeBox-demo">
+                        <div class="SnGrid col-gap s-grid-3 DocGrid">
+                          <div>1</div>
+                          <div>2</div>
+                          <div>3</div>
+                        </div>
+                      </div>
+                      <div class="CodeBox-meta">
+                        <div class="CodeBox-title">3 cols</div>
+                        <div class="CodeBox-description">Any direct child of .SnGrid is automatically an item in the layout. And it will automatically take a column from its container.</div>
+                        <div class="CodeBox-actions">
+                          <div class="CodeBox-action icon-clipboard CodeBox-copy" data-tooltip="Copy code"></div>
+                          <div class="CodeBox-action icon-code CodeBox-show" data-tooltip="Show or hide code"></div>
+                        </div>
+                      </div>
+                      <div class="CodeBox-code">
+                        <pre class="language-html"><code>&lt;div class=&quot;SnGrid col-gap s-grid-3&quot;&gt;
+    &lt;div&gt;1&lt;/div&gt;
+    &lt;div&gt;2&lt;/div&gt;
+    &lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                      </div>
+                    </section>
+                    <section class="CodeBox">
+                      <div class="CodeBox-demo">
+                        <div class="SnGrid col-gap s-grid-4 DocGrid">
+                          <div>1</div>
+                          <div class="s-col-3">2</div>
+                        </div>
+                      </div>
+                      <div class="CodeBox-meta">
+                        <div class="CodeBox-title">4 cols</div>
+                        <div class="CodeBox-description"></div>
+                        <div class="CodeBox-actions">
+                          <div class="CodeBox-action icon-clipboard CodeBox-copy" data-tooltip="Copy code"></div>
+                          <div class="CodeBox-action icon-code CodeBox-show" data-tooltip="Show or hide code"></div>
+                        </div>
+                      </div>
+                      <div class="CodeBox-code">
+                        <pre class="language-html"><code>&lt;div class=&quot;SnGrid col-gap s-grid-4&quot;&gt;
+    &lt;div&gt;1&lt;/div&gt;
+    &lt;div class=&quot;s-col-3&quot;&gt;2&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                      </div>
+                    </section>
+                    <section class="CodeBox">
+                      <div class="CodeBox-demo">
+                        <div class="SnGrid col-gap row-gap s-grid-2 m-grid-3 l-grid-4 lg-grid-5 xl-grid-6 DocGrid">
+                          <div>1</div>
+                          <div>2</div>
+                          <div>3</div>
+                          <div>4</div>
+                          <div>5</div>
+                          <div>6</div>
+                          <div>7</div>
+                        </div>
+                      </div>
+                      <div class="CodeBox-meta">
+                        <div class="CodeBox-title">Responsive 1 - 12</div>
+                        <div class="CodeBox-description"></div>
+                        <div class="CodeBox-actions">
+                          <div class="CodeBox-action icon-clipboard CodeBox-copy" data-tooltip="Copy code"></div>
+                          <div class="CodeBox-action icon-code CodeBox-show" data-tooltip="Show or hide code"></div>
+                        </div>
+                      </div>
+                      <div class="CodeBox-code">
+                        <pre class="language-html"><code>&lt;div class=&quot;SnGrid col-gap row-gap s-grid-2 m-grid-3 l-grid-4 lg-grid-5 xl-grid-6&quot;&gt;
+    &lt;div&gt;1&lt;/div&gt;
+    &lt;div&gt;2&lt;/div&gt;
+    &lt;div&gt;3&lt;/div&gt;
+    &lt;div&gt;4&lt;/div&gt;
+    &lt;div&gt;5&lt;/div&gt;
+    &lt;div&gt;6&lt;/div&gt;
+    &lt;div&gt;7&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                      </div>
+                    </section>
+                    <section class="CodeBox">
+                      <div class="CodeBox-demo">
+                        <div class="SnGrid col-gap row-gap s-grid-2 DocGrid">
+                          <div class="s-row-2">1</div>
+                          <div>2</div>
+                          <div>3</div>
+                        </div>
+                      </div>
+                      <div class="CodeBox-meta">
+                        <div class="CodeBox-title">row span</div>
+                        <div class="CodeBox-description"></div>
+                        <div class="CodeBox-actions">
+                          <div class="CodeBox-action icon-clipboard CodeBox-copy" data-tooltip="Copy code"></div>
+                          <div class="CodeBox-action icon-code CodeBox-show" data-tooltip="Show or hide code"></div>
+                        </div>
+                      </div>
+                      <div class="CodeBox-code">
+                        <pre class="language-html"><code>&lt;div class=&quot;SnGrid col-gap row-gap s-grid-2&quot;&gt;
+    &lt;div class=&quot;s-row-2&quot;&gt;1&lt;/div&gt;
+    &lt;div&gt;2&lt;/div&gt;
+    &lt;div&gt;3&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                      </div>
+                    </section>
+                    <section class="CodeBox">
+                      <div class="CodeBox-demo">
+                        <div class="SnGrid col-gap row-gap s-grid-4 DocGrid">
+                          <div class="s-row-2">1</div>
+                          <div>2</div>
+                          <div class="s-y-2 s-x-2 s-col-2">3</div>
+                          <div>4</div>
+                          <div class="s-row-2">5</div>
+                        </div>
+                      </div>
+                      <div class="CodeBox-meta">
+                        <div class="CodeBox-title">X - Y / col span - row span</div>
+                        <div class="CodeBox-description"></div>
+                        <div class="CodeBox-actions">
+                          <div class="CodeBox-action icon-clipboard CodeBox-copy" data-tooltip="Copy code"></div>
+                          <div class="CodeBox-action icon-code CodeBox-show" data-tooltip="Show or hide code"></div>
+                        </div>
+                      </div>
+                      <div class="CodeBox-code">
+                        <pre class="language-html"><code>&lt;div class=&quot;SnGrid col-gap row-gap s-grid-4&quot;&gt;
+    &lt;div class=&quot;s-row-2&quot;&gt;1&lt;/div&gt;
+    &lt;div&gt;2&lt;/div&gt;
+    &lt;div class=&quot;s-y-2 s-x-2 s-col-2&quot;&gt;3&lt;/div&gt;
+    &lt;div&gt;4&lt;/div&gt;
+    &lt;div class=&quot;s-row-2&quot;&gt;5&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                      </div>
+                    </section>
+                    <section class="CodeBox">
+                      <div class="CodeBox-demo">
+                        <div class="SnGrid col-gap row-gap l-grid-4 DocGrid">
+                          <div class="s-col-3 SnGrid col-gap row-gap s-grid-3 DocGrid">
+                            <div class="s-col-3">1</div>
+                            <div>2</div>
+                            <div>3</div>
+                            <div>4</div>
+                          </div>
+                          <div>5</div>
+                        </div>
+                      </div>
+                      <div class="CodeBox-meta">
+                        <div class="CodeBox-title">Inner</div>
+                        <div class="CodeBox-description"></div>
+                        <div class="CodeBox-actions">
+                          <div class="CodeBox-action icon-clipboard CodeBox-copy" data-tooltip="Copy code"></div>
+                          <div class="CodeBox-action icon-code CodeBox-show" data-tooltip="Show or hide code"></div>
+                        </div>
+                      </div>
+                      <div class="CodeBox-code">
+                        <pre class="language-html"><code>&lt;div class=&quot;SnGrid col-gap row-gap l-grid-4&quot;&gt;
+    &lt;div class=&quot;s-col-3 SnGrid col-gap row-gap s-grid-3&quot;&gt;
+        &lt;div class=&quot;s-col-3&quot;&gt;1&lt;/div&gt;
+        &lt;div&gt;2&lt;/div&gt;
+        &lt;div&gt;3&lt;/div&gt;
+        &lt;div&gt;4&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div&gt;5&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                      </div>
+                    </section>
+              </div>
+              <h2>API</h2>
+              <div class="SnTable-wrapper SnMt-5">
+                <table class="SnTable DocApiTable">
+                  <thead>
+                    <tr>
+                      <th>Property</th>
+                      <th>Class</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Gap</td>
+                      <td> <code>.col-gap</code><code>.row-gap</code></td>
+                    </tr>
+                    <tr>
+                      <td>Gap size</td>
+                      <td> <code>.gap-0</code><code>.gap-1</code><code>.gap-2</code><code>.gap-3</code></td>
+                    </tr>
+                    <tr>
+                      <td>Colums</td>
+                      <td> 
+                        <div><code>breakpoint-grid-number</code></div>
+                        <div><code>m-grid-1</code><code>m-grid-2</code><code>m-grid-3</code><code>m-grid-4</code><code>m-grid-5</code><code>m-grid-6</code><code>m-grid-7</code><code>m-grid-8</code><code>m-grid-9</code><code>m-grid-10</code><code>m-grid-11</code><code>m-grid-12</code>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Col span</td>
+                      <td> 
+                        <div>
+                          <coe>breakpoint-col-number</coe>
+                        </div>
+                        <div><code>m-grid-1</code><code>m-grid-2</code><code>m-grid-3</code><code>m-grid-4</code><code>m-grid-5</code><code>m-grid-6</code><code>m-grid-7</code><code>m-grid-8</code><code>m-grid-9</code><code>m-grid-10</code><code>m-grid-11</code><code>m-grid-12</code>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Row span</td>
+                      <td> 
+                        <div>
+                          <coe>breakpoint-row-number</coe>
+                        </div>
+                        <div><code>m-grid-1</code><code>m-grid-2</code><code>m-grid-3</code><code>m-grid-4</code><code>m-grid-5</code><code>m-grid-6</code><code>m-grid-7</code><code>m-grid-8</code><code>m-grid-9</code><code>m-grid-10</code><code>m-grid-11</code><code>m-grid-12</code>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Start X</td>
+                      <td> 
+                        <div>
+                          <coe>breakpoint-x-number</coe>
+                        </div>
+                        <div><code>m-grid-1</code><code>m-grid-2</code><code>m-grid-3</code><code>m-grid-4</code><code>m-grid-5</code><code>m-grid-6</code><code>m-grid-7</code><code>m-grid-8</code><code>m-grid-9</code><code>m-grid-10</code><code>m-grid-11</code><code>m-grid-12</code>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Start Y</td>
+                      <td> 
+                        <div>
+                          <coe>breakpoint-y-number</coe>
+                        </div>
+                        <div><code>m-grid-1</code><code>m-grid-2</code><code>m-grid-3</code><code>m-grid-4</code><code>m-grid-5</code><code>m-grid-6</code><code>m-grid-7</code><code>m-grid-8</code><code>m-grid-9</code><code>m-grid-10</code><code>m-grid-11</code><code>m-grid-12</code>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+      <div class="Site-footer">
+        <footer class="SnContainer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+          <p>Sedna CSS es una libreria Sass/Css minimalista.</p>
+          <div class="FooterSocial">
+            <div class="SnContainer">
+              <ul class="SnList">
+                <li><a class="icon-facebook" href="https://www.facebook.com/Paulantezana-764145183607069" target="_blanck">Facebook</a></li>
+                <li><a class="icon-twitter" href="https://twitter.com/paulantezana" target="_blanck">Twitter</a></li>
+                <li><a class="icon-youtube" href="https://www.youtube.com/channel/UCRuuk4yR_2a8dSTquSP_dFA" target="_blanck">YouTube</a></li>
+              </ul>
+            </div>
+          </div>
+          <p><a href="https://paulantezana.com" target="_blank" title="paulantezana">Paul Antezana </a><span>2019 - 2025</span></p>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+extends ../../config/template
+append config
+    -title = "List"
+    -description = "Simple List."
+    -ogUrl = "/documentation/list.html"
+    -template = 2
+block main
+    .SnGrid.col-gap.row-gap.l-grid-2
+        +codeBox(
+            'Basic',
+            'Simple List.',
+            '<ul class="SnList">\n    <li class="SnList-item">item 1</li>\n    <li class="SnList-item">item 2</li>\n    <li class="SnList-item">item 3</li>\n    <li class="SnList-item">item 4</li>\n</ul>'
+        )
+            ul.SnList
+                li.SnList-item item 1
+                li.SnList-item item 2
+                li.SnList-item item 3
+                li.SnList-item item 4
+        +codeBox(
+            'Menu',
+            'Simple menu.',
+            '<ul class="SnList menu">\n    <li class="SnList-item">menu 1</li>\n    <li class="SnList-item">menu 2</li>\n    <li class="SnList-item">menu 3</li>\n    <li class="SnList-item">menu 4</li>\n</ul>'
+        )
+            ul.SnList.menu
+                li.SnList-item menu 1
+                li.SnList-item menu 2
+                li.SnList-item menu 3
+                li.SnList-item menu 4
+    h2 API
+    .SnTable-wrapper
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Class
+            tbody
+                tr
+                    td List
+                    td
+                        code .SnList

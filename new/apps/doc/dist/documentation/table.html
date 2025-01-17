@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html class="SnTheme-light" lang="en">
+  <head>
+    <title>Sedna CSS | Table</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <meta name="description" content="A table displays rows of data.">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&amp;display=swap">
+    <link rel="shortcut icon" href="/assets/images/logo.svg">
+    <meta property="og:title" content="Sedna CSS | Table">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="A table displays rows of data.">
+    <meta property="og:url" content="/documentation/table.html">
+    <meta property="og:image" content="/assets/images/banner.jpg">
+    <meta property="og:site_name" content="Sedna">
+    <meta property="og:locale" content="es_PE">
+    <meta property="og:locale:alternate" content="es_CO">
+    <meta property="og:locale:alternate" content="es_MX">
+    <meta property="og:locale:alternate" content="es_DO">
+    <meta property="og:locale:alternate" content="es_BO">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Sedna CSS | Table">
+    <meta property="twitter:site" content="@paulantezana">
+    <meta property="twitter:description" content="A table displays rows of data.">
+    <meta name="theme-color" content="#1890ff">
+    <link rel="stylesheet" href="/assets/fonts/styles.css">
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <div id="fb-root"></div>
+    <script>
+      //- window.fbAsyncInit = function() {
+      //-     FB.init({
+      //-         xfbml            : true,
+      //-         version          : 'v10.0'
+      //-     });
+      //- };
+      
+      //- (function(d, s, id) {
+      //-     var js, fjs = d.getElementsByTagName(s)[0];
+      //-     if (d.getElementById(id)) return;
+      //-     js = d.createElement(s); js.id = id;
+      //-     js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
+      //-     fjs.parentNode.insertBefore(js, fjs);
+      //- }(document, 'script', 'facebook-jssdk'));
+      
+    </script>
+    <div class="fb-customerchat" attribution="setup_tool" page_id="764145183607069" theme_color="#0A7CFF"></div>
+    <div class="Site" id="Site">
+      <div class="Site-header">
+        <header class="Header SnContainer" itemscope itemtype="http://schema.org/WPHeader">
+          <div class="Header-left">
+            <div class="Branding" itemscope itemtype="http://schema.org/Organization"><a class="Branding-link" href="/" itemprop="url"><img class="Branding-logo" alt="Logotipo de Sedna" itemprop="logo" src="/assets/images/logo.svg"><span class="Branding-name">Sedna CSS</span></a></div>
+          </div>
+          <div class="Header-right">
+            <div class="Header-nav">
+              <div class="icon-menu" id="SiteMenu-toggle"></div>
+              <nav class="SiteMenu-wrapper" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation" id="SiteMenu-wrapper">
+                <div class="SiteMenu-content">
+                  <ul class="SiteMenu SnMenu" id="SiteMenu">
+                    <li itemprop="url"><a href="/documentation/starter.html" target="" itemprop="name" title="Link to Documentación">Documentación</a></li>
+                    <li itemprop="url"><a href="/examples" target="" itemprop="name" title="Link to Ejemplos">Ejemplos</a></li>
+                  </ul>
+                  <div>
+                    <div class="SnBtn-group">
+                      <input class="hidden" id="snThemeLight" type="radio" name="snTheme" value="light">
+                      <label class="SnBtn" for="snThemeLight">Light</label>
+                      <input class="hidden" id="snThemeDarck" type="radio" name="snTheme" value="darck">
+                      <label class="SnBtn" for="snThemeDarck">Darck</label>
+                      <input class="hidden" id="snThemeSystem" type="radio" name="snTheme" value="system">
+                      <label class="SnBtn" for="snThemeSystem">System</label>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </header>
+      </div>
+      <div class="Site-main">
+        <main>
+          <div class="Main SnContainer">
+            <div class="Main-sidebar">
+              <aside class="AsideMenu-container" itemscope="itemscope" itemtype="http://schema.org/WPSideBar" role="complementary">
+                <div class="icon-right-open" id="AsideMenu-toggle" data-content="Filtros"></div>
+                <nav class="AsideMenu-nav" itemscope itemtype="http://schema.org/WPSideBar">
+                  <ul class="AsideMenu" id="AsideMenu">
+                    <li class="AsideMenu-header">General</li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/starter.html" itemprop="name" title="Link to Starter">Starter</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/button.html" itemprop="name" title="Link to Button">Button</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/icon.html" itemprop="name" title="Link to Icon">Icon</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/theme.html" itemprop="name" title="Link to Theme">Theme</a></li>
+                    <li class="AsideMenu-header">Layout</li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/grid.html" itemprop="name" title="Link to Grid">Grid</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/contain.html" itemprop="name" title="Link to Contain">Contain</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/spacing.html" itemprop="name" title="Link to Spacing">Spacing</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/mediaQuery.html" itemprop="name" title="Link to Media Query">Media Query</a></li>
+                    <li class="AsideMenu-header">Navigation</li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/menu.html" itemprop="name" title="Link to Menu">Menu</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/pagination.html" itemprop="name" title="Link to Pagination">Pagination</a></li>
+                    <li class="AsideMenu-header">Entry</li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/form.html" itemprop="name" title="Link to Form">Form</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/input.html" itemprop="name" title="Link to Input">Input</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/switch.html" itemprop="name" title="Link to Switch">Switch</a></li>
+                    <li class="AsideMenu-header">Display</li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/avatar.html" itemprop="name" title="Link to Avatar">Avatar</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/card.html" itemprop="name" title="Link to Card">Card</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/list.html" itemprop="name" title="Link to List">List</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/tooltip.html" itemprop="name" title="Link to Tooltip">Tooltip</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/tab.html" itemprop="name" title="Link to Tab">Tab</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/tag.html" itemprop="name" title="Link to Tag">Tag</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/table.html" itemprop="name" title="Link to Table">Table</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/filter.html" itemprop="name" title="Link to Filter">Filter</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/video.html" itemprop="name" title="Link to Video">Video</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/empty.html" itemprop="name" title="Link to Empty">Empty</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/result.html" itemprop="name" title="Link to Result">Result</a></li>
+                    <li class="AsideMenu-header">Feedback</li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/modal.html" itemprop="name" title="Link to Modal">Modal</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/alert.html" itemprop="name" title="Link to Alert">Alert</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/message.html" itemprop="name" title="Link to Message">Message</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/freeze.html" itemprop="name" title="Link to Freeze">Freeze</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/collapse.html" itemprop="name" title="Link to Collapse">Collapse</a></li>
+                    <li class="AsideMenu-item" itemprop="url"><a href="/documentation/spin.html" itemprop="name" title="Link to Spin">Spin</a></li>
+                  </ul>
+                </nav>
+              </aside>
+            </div>
+            <div class="Main-content">
+              <div class="SiteTitle">
+                <div class="SiteTitle-content">
+                  <h1 class="SiteTitle-title">Table</h1>
+                  <p class="SiteTitle-description">A table displays rows of data.</p>
+                </div>
+              </div>
+                  <section class="CodeBox">
+                    <div class="CodeBox-demo">
+                      <div class="SnTable-wrapper">
+                        <table class="SnTable">
+                          <thead>
+                            <tr>
+                              <th>Column 1</th>
+                              <th>Column 2</th>
+                              <th>Column 3</th>
+                              <th style="width: 100px"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Row 1</td>
+                              <td>Row 2</td>
+                              <td>Row 3</td>
+                              <td>
+                                <div class="SnTable-action">
+                                  <div class="SnBtn">Update</div>
+                                  <div class="SnBtn danger" onclick="onConfirmDelete()">Delete</div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Row 1</td>
+                              <td>Row 2</td>
+                              <td>Row 3</td>
+                              <td>
+                                <div class="SnTable-action">
+                                  <div class="SnBtn">Update</div>
+                                  <div class="SnBtn danger" onclick="onConfirmDelete()">Delete</div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Row 1</td>
+                              <td>Row 2</td>
+                              <td>Row 3</td>
+                              <td>
+                                <div class="SnTable-action">
+                                  <div class="SnBtn">Update</div>
+                                  <div class="SnBtn danger" onclick="onConfirmDelete()">Delete</div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <script>
+                        let onConfirmDelete = ()=>{
+                            SnModal.confirm({
+                                title: 'Are you sure delete this task?',
+                                content: 'Some descriptions',
+                                okText: 'Yes',
+                                okType: 'danger',
+                                cancelText: 'No',
+                                onOk() {
+                                    console.log('onOk')
+                                },
+                                onCancel() {
+                                    console.log('onCancel')
+                                }
+                            });
+                        }
+                      </script>
+                    </div>
+                    <div class="CodeBox-meta">
+                      <div class="CodeBox-title">Basic</div>
+                      <div class="CodeBox-description">Simple table with actions.</div>
+                      <div class="CodeBox-actions">
+                        <div class="CodeBox-action icon-clipboard CodeBox-copy" data-tooltip="Copy code"></div>
+                        <div class="CodeBox-action icon-code CodeBox-show" data-tooltip="Show or hide code"></div>
+                      </div>
+                    </div>
+                    <div class="CodeBox-code">
+                      <pre class="language-html"><code>&lt;div class=&quot;SnTable-wrapper&quot;&gt;
+    &lt;table class=&quot;SnTable&quot;&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Column 1&lt;/th&gt;
+                &lt;th&gt;Column 2&lt;/th&gt;
+                &lt;th&gt;Column 3&lt;/th&gt;
+                &lt;th style=&quot;width: 100px&quot;&gt;&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Row 1&lt;/td&gt;
+                &lt;td&gt;Row 2&lt;/td&gt;
+                &lt;td&gt;Row 3&lt;/td&gt;
+                &lt;td&gt;
+                    &lt;div class=&quot;SnTable-action&quot;&gt;
+                        &lt;div class=&quot;SnBtn&quot;&gt;Update&lt;/div&gt;
+                        &lt;div class=&quot;SnBtn danger&quot; onclick=&quot;onConfirmDelete()&quot;&gt;Delete&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Row 1&lt;/td&gt;
+                &lt;td&gt;Row 2&lt;/td&gt;
+                &lt;td&gt;Row 3&lt;/td&gt;
+                &lt;td&gt;
+                    &lt;div class=&quot;SnTable-action&quot;&gt;
+                        &lt;div class=&quot;SnBtn&quot;&gt;Update&lt;/div&gt;
+                        &lt;div class=&quot;SnBtn danger&quot; onclick=&quot;onConfirmDelete()&quot;&gt;Delete&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Row 1&lt;/td&gt;
+                &lt;td&gt;Row 2&lt;/td&gt;
+                &lt;td&gt;Row 3&lt;/td&gt;
+                &lt;td&gt;
+                    &lt;div class=&quot;SnTable-action&quot;&gt;
+                        &lt;div class=&quot;SnBtn&quot;&gt;Update&lt;/div&gt;
+                        &lt;div class=&quot;SnBtn danger&quot; onclick=&quot;onConfirmDelete()&quot;&gt;Delete&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+                      <pre class="language-javascript"><code>let onConfirmDelete = ()=&gt;{
+    SnModal.confirm({
+        title: 'Are you sure delete this task?',
+        content: 'Some descriptions',
+        okText: 'Yes',
+        okType: 'danger',
+        cancelText: 'No',
+        onOk() {
+            console.log('onOk')
+        },
+        onCancel() {
+            console.log('onCancel')
+        }
+    });
+}
+</code></pre>
+                    </div>
+                  </section>
+                  <section class="CodeBox">
+                    <div class="CodeBox-demo">
+                      <div class="SnTable-wrapper">
+                        <table class="SnTable">
+                          <thead>
+                            <tr>
+                              <th>Column 1</th>
+                              <th>Column 2</th>
+                              <th>Column 3</th>
+                              <th style="width: 100px"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Row 1</td>
+                              <td>Row 2</td>
+                              <td>Row 3</td>
+                              <td>
+                                <div class="SnTable-action">
+                                  <div class="SnBtn">Update</div>
+                                  <div class="SnBtn danger" onclick="onConfirmDelete()">Delete</div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Row 1</td>
+                              <td>Row 2</td>
+                              <td>Row 3</td>
+                              <td>
+                                <div class="SnTable-action">
+                                  <div class="SnBtn">Update</div>
+                                  <div class="SnBtn danger" onclick="onConfirmDelete()">Delete</div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Row 1</td>
+                              <td>Row 2</td>
+                              <td>Row 3</td>
+                              <td>
+                                <div class="SnTable-action">
+                                  <div class="SnBtn">Update</div>
+                                  <div class="SnBtn danger" onclick="onConfirmDelete()">Delete</div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                          <tfoot>
+                            <tr>
+                              <td>Rol 1</td>
+                              <td>Rol 2</td>
+                              <td>Rol 3</td>
+                              <td></td>
+                            </tr>
+                          </tfoot>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="CodeBox-meta">
+                      <div class="CodeBox-title">Footer</div>
+                      <div class="CodeBox-description">Simple table with actions and footer.</div>
+                      <div class="CodeBox-actions">
+                        <div class="CodeBox-action icon-clipboard CodeBox-copy" data-tooltip="Copy code"></div>
+                        <div class="CodeBox-action icon-code CodeBox-show" data-tooltip="Show or hide code"></div>
+                      </div>
+                    </div>
+                    <div class="CodeBox-code">
+                      <pre class="language-html"><code>&lt;div class=&quot;SnTable-wrapper&quot;&gt;
+    &lt;table class=&quot;SnTable&quot;&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Column 1&lt;/th&gt;
+                &lt;th&gt;Column 2&lt;/th&gt;
+                &lt;th&gt;Column 3&lt;/th&gt;
+                &lt;th style=&quot;width: 100px&quot;&gt;&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Row 1&lt;/td&gt;
+                &lt;td&gt;Row 2&lt;/td&gt;
+                &lt;td&gt;Row 3&lt;/td&gt;
+                &lt;td&gt;
+                    &lt;div class=&quot;SnTable-action&quot;&gt;
+                        &lt;div class=&quot;SnBtn&quot;&gt;Update&lt;/div&gt;
+                        &lt;div class=&quot;SnBtn danger&quot; onclick=&quot;onConfirmDelete()&quot;&gt;Delete&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Row 1&lt;/td&gt;
+                &lt;td&gt;Row 2&lt;/td&gt;
+                &lt;td&gt;Row 3&lt;/td&gt;
+                &lt;td&gt;
+                    &lt;div class=&quot;SnTable-action&quot;&gt;
+                        &lt;div class=&quot;SnBtn&quot;&gt;Update&lt;/div&gt;
+                        &lt;div class=&quot;SnBtn danger&quot; onclick=&quot;onConfirmDelete()&quot;&gt;Delete&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Row 1&lt;/td&gt;
+                &lt;td&gt;Row 2&lt;/td&gt;
+                &lt;td&gt;Row 3&lt;/td&gt;
+                &lt;td&gt;
+                    &lt;div class=&quot;SnTable-action&quot;&gt;
+                        &lt;div class=&quot;SnBtn&quot;&gt;Update&lt;/div&gt;
+                        &lt;div class=&quot;SnBtn danger&quot; onclick=&quot;onConfirmDelete()&quot;&gt;Delete&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+        &lt;tfoot&gt;
+            &lt;tr&gt;
+                &lt;td&gt;Rol 1&lt;/td&gt;
+                &lt;td&gt;Rol 2&lt;/td&gt;
+                &lt;td&gt;Rol 3&lt;/td&gt;
+                &lt;td&gt; &lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tfoot&gt;
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+                      <pre class="language-javascript"><code>let onConfirmDelete = ()=&gt;{
+    SnModal.confirm({
+        title: 'Are you sure delete this task?',
+        content: 'Some descriptions',
+        okText: 'Yes',
+        okType: 'danger',
+        cancelText: 'No',
+        onOk() {
+            console.log('onOk')
+        },
+        onCancel() {
+            console.log('onCancel')
+        }
+    });
+}
+</code></pre>
+                    </div>
+                  </section>
+                  <section class="CodeBox">
+                    <div class="CodeBox-demo">
+                      <div id="dataTable"></div>
+                      <script>
+                        window.onload = function(e){
+                            new SnTable({
+                                elementId: 'dataTable',
+                                entity: 'user',
+                                url: '',
+                                toolbar: '<button>aditional buttion</button>',
+                                actions: [
+                                    {
+                                        "id": 43,
+                                        "title": "Imprimir A4",
+                                        "description": "Imprimir A4",
+                                        "icon": "fas fa-print",
+                                        "event_name": "PrintA4",
+                                        "event_name_prefix": "",
+                                        "parent_id": 0,
+                                        "sort_order": 13,
+                                        "position": "TABLE",
+                                        "class_names": "radio",
+                                        "type": "button",
+                                        "keyboard_key": "",
+                                        "state": 1,
+                                        "updated_at": null,
+                                        "created_at": null,
+                                        "created_user": "",
+                                        "updated_user": "",
+                                        "screen_id_controller": "processSale",
+                                        visible: () => false,
+                                    }
+                                ],
+                                columns: [
+                                    {
+                                        title: 'Fecha Registro',
+                                        field: 'register_datetime',
+                                        filterable: true,
+                                        sortable: true,
+                                        type: 'date',
+                                    },
+                                    {
+                                        title: 'Fecha Emisión',
+                                        field: 'date_of_issue',
+                                        filterable: true,
+                                        sortable: true,
+                                        type: 'date',
+                                    },
+                                    {
+                                        title: 'Fecha Vencimiento',
+                                        field: 'date_of_due',
+                                        filterable: true,
+                                        sortable: true,
+                                        visible: false,
+                                        type: 'date',
+                                    },
+                                    {
+                                        title: 'Tipo Doc.',
+                                        field: 'document_type_id_description',
+                                        filterable: true,
+                                        sortable: true,
+                                    },
+                                    {
+                                        title: 'Documento',
+                                        field: 'document',
+                                        filterable: true,
+                                        sortable: true,
+                                    },
+                                    {
+                                        title: 'RUC / DNI / ETC',
+                                        field: 'document_number',
+                                        filterable: true,
+                                        sortable: true,
+                                    },
+                                    {
+                                        title: 'Denominación',
+                                        field: 'social_reason',
+                                        filterable: true,
+                                        sortable: true,
+                                    },
+                                    {
+                                        title: 'Placa vehicular',
+                                        field: 'vehicle_plate',
+                                        filterable: true,
+                                        sortable: true,
+                                        visible: false,
+                                    },
+                                    {
+                                        title: 'Orden compra',
+                                        field: 'purchase_order',
+                                        filterable: true,
+                                        sortable: true,
+                                        visible: false,
+                                    },
+                                    {
+                                        title: 'Guia',
+                                        field: 'guide',
+                                        filterable: true,
+                                        sortable: true,
+                                        visible: false,
+                                    },
+                                    {
+                                        title: 'Observación',
+                                        field: 'observation',
+                                        filterable: true,
+                                        sortable: true,
+                                        visible: false,
+                                    },
+                                    {
+                                        title: 'Gratuita',
+                                        field: 'total_free',
+                                        summaryOperator: 'sum',
+                                        type: 'number',
+                                        filterable: true,
+                                        sortable: true,
+                                        customRender: (item) => {
+                                        return `${item.currency_id_symbol} ${item.total_free}`;
+                                        }
+                                    },
+                                    {
+                                        title: 'Exportacion',
+                                        field: 'total_exportation',
+                                        summaryOperator: 'sum',
+                                        type: 'number',
+                                        filterable: true,
+                                        sortable: true,
+                                        visible: false,
+                                        customRender: (item) => {
+                                        return `${item.currency_id_symbol} ${item.total_exportation}`;
+                                        }
+                                    },
+                                    {
+                                        title: 'Descuento',
+                                        field: 'total_discount',
+                                        summaryOperator: 'sum',
+                                        type: 'number',
+                                        filterable: true,
+                                        sortable: true,
+                                        visible: false,
+                                        customRender: (item) => {
+                                        return `${item.currency_id_symbol} ${item.total_discount}`;
+                                        }
+                                    },
+                                    {
+                                        title: 'Exonerado',
+                                        field: 'total_exonerated',
+                                        summaryOperator: 'sum',
+                                        type: 'number',
+                                        filterable: true,
+                                        sortable: true,
+                                        visible: false,
+                                        customRender: (item) => {
+                                        return `${item.currency_id_symbol} ${item.total_exonerated}`;
+                                        }
+                                    },
+                                    {
+                                        title: 'Inafecto',
+                                        field: 'total_unaffected',
+                                        summaryOperator: 'sum',
+                                        type: 'number',
+                                        filterable: true,
+                                        sortable: true,
+                                        visible: false,
+                                        customRender: (item) => {
+                                        return `${item.currency_id_symbol} ${item.total_unaffected}`;
+                                        }
+                                    },
+                                    {
+                                        title: 'Gravada',
+                                        field: 'total_taxed',
+                                        summaryOperator: 'sum',
+                                        type: 'number',
+                                        filterable: true,
+                                        sortable: true,
+                                        visible: false,
+                                        customRender: (item) => {
+                                        return `${item.currency_id_symbol} ${item.total_taxed}`;
+                                        }
+                                    },
+                                    {
+                                        title: 'Total IGV',
+                                        field: 'total_igv',
+                                        summaryOperator: 'sum',
+                                        type: 'number',
+                                        filterable: true,
+                                        sortable: true,
+                                        visible: false,
+                                        customRender: (item) => {
+                                        return `${item.currency_id_symbol} ${item.total_igv}`;
+                                        }
+                                    },
+                                    {
+                                        title: 'IGV factor',
+                                        field: 'tax_factor',
+                                        filterable: true,
+                                        sortable: true,
+                                        visible: false,
+                                        customRender: (item) => {
+                                        return `${parseFloat(item.tax_factor || 0).toFixed(2)}`;
+                                        }
+                                    },
+                                    {
+                                        title: 'Otros car.',
+                                        field: 'total_charge',
+                                        summaryOperator: 'sum',
+                                        type: 'number',
+                                        filterable: true,
+                                        sortable: true,
+                                        visible: false,
+                                        customRender: (item) => {
+                                        return `${item.currency_id_symbol} ${item.total_charge}`;
+                                        }
+                                    },
+                                    {
+                                        title: 'ICBPER',
+                                        field: 'total_plastic_bag_tax',
+                                        summaryOperator: 'sum',
+                                        type: 'number',
+                                        filterable: true,
+                                        sortable: true,
+                                        visible: false,
+                                        customRender: (item) => {
+                                        return `${item.currency_id_symbol} ${item.total_plastic_bag_tax}`;
+                                        }
+                                    },
+                                    {
+                                        title: 'Vuelto',
+                                        field: 'returned',
+                                        summaryOperator: 'sum',
+                                        type: 'number',
+                                        filterable: true,
+                                        sortable: true,
+                                        visible: false,
+                                        customRender: (item) => {
+                                        return `${item.currency_id_symbol} ${item.returned}`;
+                                        }
+                                    },
+                                    {
+                                        title: 'Total',
+                                        field: 'total',
+                                        type: 'number',
+                                        summaryOperator: 'sum',
+                                        filterable: true,
+                                        sortable: true,
+                                        customRender: (item) => {
+                                        return `${item.currency_id_symbol} ${item.total}`;
+                                        }
+                                    },
+                                    {
+                                        title: 'Correo',
+                                        field: 'email',
+                                        filterable: true,
+                                        sortable: true,
+                                        visible: false,
+                                    },
+                                    {
+                                        title: 'Celular',
+                                        field: 'phone',
+                                        filterable: true,
+                                        sortable: true,
+                                        visible: false,
+                                    },
+                                    {
+                                        title: 'Observación',
+                                        field: 'observation',
+                                        filterable: true,
+                                        sortable: true,
+                                    },
+                                    {
+                                        title: 'Usuario',
+                                        field: 'user_id_user_name',
+                                        filterable: true,
+                                        sortable: true,
+                                    },
+                                    {
+                                        title: 'Metodo',
+                                        field: 'summary_payment_method_id_description',
+                                        filterable: true,
+                                        sortable: true,
+                                        // customRender: (item) => {
+                                        //   return item.summary_payment_method_id_description;
+                                        //   // return `<span><span class="SnBadge ${item.payment_form_id == '1' ? 'success' : 'warning'} SnMr-1"></span>${item.payment_form_id_description}</span>`;
+                                        // }
+                                    },
+                                    {
+                                        title: 'Pago',
+                                        field: 'payment_form_id_description',
+                                        filterable: true,
+                                        sortable: true,
+                                        customRender: (item) => {
+                                        return `<span><span class="SnBadge ${item.payment_form_id == '1' ? 'success' : 'warning'} SnMr-1"></span>${item.payment_form_id_description}</span>`;
+                                        }
+                                    },
+                                    {
+                                        title: 'Estado',
+                                        field: 'sale_state_id_description',
+                                        filterable: true,
+                                        sortable: true,
+                                        customRender: (item) => {
+                                            let color = '';
+                                            switch (`${item.sale_state_id}`) {
+                                                case '1': // Anulado
+                                                    color = 'danger';
+                                                    break;
+                                                case '2': // Pendiente
+                                                    color = 'danger';
+                                                    break;
+                                                case '3': // Guardado
+                                                    color = 'primary';
+                                                    break;
+                                                case '4': // Emitido
+                                                    color = 'success';
+                                                    break;
+                                                case '6': // Excepcion de SUNAT
+                                                case '8': // Rechazado
+                                                    color = 'danger';
+                                                    break;
+                                                case '9': // Observaciones
+                                                    color = 'warning';
+                                                    break;
+                                                default:
+                                                    break;
+                                            }
+                                            return `<span class="SnTag ${color} SnMr-1">${item.sale_state_id_description}</span>`;
+                                        }
+                                    },
+                                ],
+                                data: async (content) => {
+                                    console.log(content, 'CONTENT_REQUEST');
+                                    const response = await fetch('https://assets.paulantezana.com/sale.php', {
+                                        method: 'GET',
+                                    });
+                                    const responseJson = await response.json();
+                                    return responseJson.result;
+                                },
+                                onSelectChange: (that) => {
+                        
+                                }
+                            })
+                        }
+                        
+                      </script>
+                    </div>
+                    <div class="CodeBox-meta">
+                      <div class="CodeBox-title">Dynamic table</div>
+                      <div class="CodeBox-description">Advanced table.</div>
+                      <div class="CodeBox-actions">
+                        <div class="CodeBox-action icon-clipboard CodeBox-copy" data-tooltip="Copy code"></div>
+                        <div class="CodeBox-action icon-code CodeBox-show" data-tooltip="Show or hide code"></div>
+                      </div>
+                    </div>
+                    <div class="CodeBox-code">
+                      <pre class="language-html"><code>&lt;div class=&quot;dataTable&gt;&lt;/div&gt;</code></pre>
+                      <pre class="language-javascript"><code>let onConfirmDelete = ()=&gt;{
+    SnModal.confirm({
+        title: 'Are you sure delete this task?',
+        content: 'Some descriptions',
+        okText: 'Yes',
+        okType: 'danger',
+        cancelText: 'No',
+        onOk() {
+            console.log('onOk')
+        },
+        onCancel() {
+            console.log('onCancel')
+        }
+    });
+}
+</code></pre>
+                    </div>
+                  </section>
+              <h2>API</h2>
+              <div class="SnTable-wrapper">
+                <table class="SnTable DocApiTable">
+                  <thead>
+                    <tr>
+                      <th>Property</th>
+                      <th>Class</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Table</td>
+                      <td><code>.SnTable</code></td>
+                    </tr>
+                    <tr>
+                      <td>Wrapper</td>
+                      <td><code>.SnTable-wrapper</code></td>
+                    </tr>
+                    <tr>
+                      <td>Actions</td>
+                      <td><code>.SnTable-action</code></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+      <div class="Site-footer">
+        <footer class="SnContainer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+          <p>Sedna CSS es una libreria Sass/Css minimalista.</p>
+          <div class="FooterSocial">
+            <div class="SnContainer">
+              <ul class="SnList">
+                <li><a class="icon-facebook" href="https://www.facebook.com/Paulantezana-764145183607069" target="_blanck">Facebook</a></li>
+                <li><a class="icon-twitter" href="https://twitter.com/paulantezana" target="_blanck">Twitter</a></li>
+                <li><a class="icon-youtube" href="https://www.youtube.com/channel/UCRuuk4yR_2a8dSTquSP_dFA" target="_blanck">YouTube</a></li>
+              </ul>
+            </div>
+          </div>
+          <p><a href="https://paulantezana.com" target="_blank" title="paulantezana">Paul Antezana </a><span>2019 - 2025</span></p>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

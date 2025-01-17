@@ -1,0 +1,33 @@
+extends ../../config/template
+append config
+    -title = "Examples"
+    -description = "Examples."
+    -ogUrl = "/index.html"
+    -template = 1
+
+block main
+    .SnContainer
+        section.SnMb-5
+            h1= title
+            p= description
+            .SnGrid.col-gap.m-grid-2.l-grid-3.lg-grid-4
+                a(href="https://ruc.paulantezana.com/" target="_blanck").SnCard.hoverable
+                    img(src="/assets/images/queryruc.jpg", alt="")
+                    .SnCard-body
+                        h2.SnCard-title Busca RUC
+                        p.SnCard-description Consulta ruc y dni perú
+                a(href="https://extremonet.paulantezana.com" target="_blanck").SnCard.hoverable
+                    img(src="/assets/images/servicio.jpg", alt="")
+                    .SnCard-body
+                        h2.SnCard-title Pago de servicio
+                        p.SnCard-description Sistema de pago de servicios
+                a(href="https://snfact.paulantezana.com" target="_blanck").SnCard.hoverable
+                    img(src="/assets/images/snfact.jpg", alt="")
+                    .SnCard-body
+                        h2.SnCard-title SnFact
+                        p.SnCard-description Facturacion electrónica
+                a(href="/examples/dashboard" target="_blanck").SnCard.hoverable
+                    img(src="/assets/images/dashboard.jpg", alt="")
+                    .SnCard-body
+                        h2.SnCard-title Dashboard responsive
+                        p.SnCard-description Simple dashboard

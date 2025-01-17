@@ -1,0 +1,73 @@
+block config
+    include config
+
+doctype html
+html(lang="en").SnTheme-light
+    head
+        title= titlePrefix + title
+        meta(charset="utf-8")
+        meta(name="viewport" content="initial-scale=1.0, width=device-width")
+        meta(name="description" content= description)
+        //- Estyles
+        link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400&display=swap")
+        link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap")
+        link(rel="shortcut icon" href="/assets/images/logo.svg")
+        //- Open Graph Protocol
+        meta(property="og:title" content= titlePrefix + title)
+        meta(property="og:type" content="website")
+        meta(property="og:description" content= description)
+        meta(property="og:url" content= ogUrl)
+        meta(property="og:image" content="/assets/images/banner.jpg")
+        meta(property="og:site_name" content="Sedna")
+        meta(property="og:locale" content="es_PE")
+        meta(property="og:locale:alternate" content="es_CO")
+        meta(property="og:locale:alternate" content="es_MX")
+        meta(property="og:locale:alternate" content="es_DO")
+        meta(property="og:locale:alternate" content="es_BO")
+        //- Twitter Cards
+        meta(property="twitter:card" content="summary_large_image")
+        meta(property="twitter:title" content= titlePrefix + title)
+        meta(property="twitter:site" content="@paulantezana")
+        meta(property="twitter:description" content=description)
+        meta(name="theme-color" content="#1890ff")
+
+
+        link(rel="stylesheet" href="/assets/fonts/styles.css")
+
+        include ../includes/codeBox
+    body(itemscope itemtype="http://schema.org/WebPage")
+        include ../includes/facebookchat
+        .Site#Site
+            .Site-header
+                include ../includes/header
+            .Site-main
+                if template === 1
+                    main
+                        block main
+                else if template === 2
+                    main
+                        .Main.SnContainer
+                            .Main-sidebar
+                                include ../includes/docsMenu
+                            .Main-content
+                                .SiteTitle
+                                    //- img.SiteTitle-bg(src="/assets/images/banner-bg.jpg" alt="")
+                                    .SiteTitle-content
+                                        h1.SiteTitle-title= title
+                                        p.SiteTitle-description= description
+                                block main
+                else if template === 3
+                    main
+                        .Main.SnContainer
+                            .Main-sidebar
+                                include ../includes/uiMenu
+                            .Main-content
+                                .SiteTitle
+                                    //- img.SiteTitle-bg(src="/assets/images/banner-bg.jpg" alt="")
+                                    .SiteTitle-content
+                                        h1.SiteTitle-title= title
+                                        p.SiteTitle-description= description
+                                block main
+                else
+            .Site-footer
+                include ../includes/footer

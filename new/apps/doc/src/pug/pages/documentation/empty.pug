@@ -1,0 +1,28 @@
+extends ../../config/template
+append config
+    -title = "Empty"
+    -description = "Empty state placeholder."
+    -ogUrl = "/documentation/empty.html"
+    -template = 2
+block main
+    .SnGrid.col-gap.row-gap.l-grid-2
+        +codeBox(
+            'Basic', 
+            'Simplest Usage.', 
+            '<div class="SnEmpty">\n    <img src="/assets/images/empty.svg" alt="empty">\n    <p>There is no data</p>\n</div>\n'
+        )
+            .SnEmpty
+                img(src="/assets/images/empty.svg", alt="empty")
+                p There is no data
+    h2 API
+    .SnTable-wrapper
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Class
+            tbody
+                tr
+                    td Empty
+                    td
+                        code .SnEmpty

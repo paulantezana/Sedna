@@ -1,0 +1,149 @@
+extends ../../config/template
+append config
+    -title = "Grids"
+    -description = "24 Grids System."
+    -ogUrl = "/documentation/grid.html"
+    -template = 2
+block main
+    pre.language-scss
+        code.
+            $breakpoints : (
+                s : 0,
+                m : 640px,
+                l : 850px,
+                lg : 1024px,
+                xl : 1440px
+            );
+    p To define the columns use the 
+        code breakpoint-grid-number
+        | nomenclature.
+    .SnGrid.col-gap.row-gap.l-grid-2
+        +codeBox(
+            '3 cols', 
+            'Any direct child of .SnGrid is automatically an item in the layout. And it will automatically take a column from its container.', 
+            '<div class="SnGrid col-gap s-grid-3">\n    <div>1</div>\n    <div>2</div>\n    <div>3</div>\n</div>'
+        )
+            .SnGrid.col-gap.s-grid-3.DocGrid
+                div 1
+                div 2
+                div 3
+        +codeBox(
+            '4 cols', 
+            '', 
+            '<div class="SnGrid col-gap s-grid-4">\n    <div>1</div>\n    <div class="s-col-3">2</div>\n</div>'
+        )
+            .SnGrid.col-gap.s-grid-4.DocGrid
+                div 1
+                div.s-col-3 2
+        +codeBox(
+            'Responsive 1 - 12', 
+            '',
+            '<div class="SnGrid col-gap row-gap s-grid-2 m-grid-3 l-grid-4 lg-grid-5 xl-grid-6">\n    <div>1</div>\n    <div>2</div>\n    <div>3</div>\n    <div>4</div>\n    <div>5</div>\n    <div>6</div>\n    <div>7</div>\n</div>\n'
+        )
+            .SnGrid.col-gap.row-gap.s-grid-2.m-grid-3.l-grid-4.lg-grid-5.xl-grid-6.DocGrid
+                div 1
+                div 2
+                div 3
+                div 4
+                div 5
+                div 6
+                div 7
+        +codeBox(
+            'row span', 
+            '',
+            '<div class="SnGrid col-gap row-gap s-grid-2">\n    <div class="s-row-2">1</div>\n    <div>2</div>\n    <div>3</div>\n</div>\n'
+        )
+            .SnGrid.col-gap.row-gap.s-grid-2.DocGrid
+                div.s-row-2 1
+                div 2
+                div 3
+        +codeBox(
+            'X - Y / col span - row span', 
+            '',
+            '<div class="SnGrid col-gap row-gap s-grid-4">\n    <div class="s-row-2">1</div>\n    <div>2</div>\n    <div class="s-y-2 s-x-2 s-col-2">3</div>\n    <div>4</div>\n    <div class="s-row-2">5</div>\n</div>\n'
+        )
+            .SnGrid.col-gap.row-gap.s-grid-4.DocGrid
+                div.s-row-2 1
+                div 2
+                div.s-y-2.s-x-2.s-col-2 3
+                div 4
+                div.s-row-2 5
+        +codeBox(
+            'Inner', 
+            '',
+            '<div class="SnGrid col-gap row-gap l-grid-4">\n    <div class="s-col-3 SnGrid col-gap row-gap s-grid-3">\n        <div class="s-col-3">1</div>\n        <div>2</div>\n        <div>3</div>\n        <div>4</div>\n    </div>\n    <div>5</div>\n</div>\n'
+        )
+            .SnGrid.col-gap.row-gap.l-grid-4.DocGrid
+                div.s-col-3.SnGrid.col-gap.row-gap.s-grid-3.DocGrid
+                    div.s-col-3 1
+                    div 2
+                    div 3
+                    div 4
+                div 5
+
+    h2 API
+    .SnTable-wrapper.SnMt-5
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Class
+            tbody
+                tr
+                    td Gap
+                    td 
+                        code .col-gap
+                        code .row-gap
+                tr
+                    td Gap size
+                    td 
+                        code .gap-0
+                        code .gap-1
+                        code .gap-2
+                        code .gap-3
+                tr
+                    td Colums
+                    td 
+                        div
+                            code breakpoint-grid-number
+                        div
+                            - let n = 1
+                            while n < 13
+                                code m-grid-#{n++}
+                tr
+                    td Col span
+                    td 
+                        div
+                            coe breakpoint-col-number
+                        div
+                            - let cols = 1
+                            while cols < 13
+                                code m-grid-#{cols++}
+                tr
+                    td Row span
+                    td 
+                        div
+                            coe breakpoint-row-number
+                        div
+                            - let rows = 1
+                            while rows < 13
+                                code m-grid-#{rows++}
+                tr
+                    td Start X
+                    td 
+                        div
+                            coe breakpoint-x-number
+                        div
+                            - let startx = 1
+                            while startx < 13
+                                code m-grid-#{startx++}
+                tr
+                    td Start Y
+                    td 
+                        div
+                            coe breakpoint-y-number
+                        div
+                            - let starty = 1
+                            while starty < 13
+                                code m-grid-#{starty++}
+                

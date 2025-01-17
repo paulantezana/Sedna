@@ -1,0 +1,38 @@
+extends ../../config/template
+append config
+    -title = "Tag"
+    -description = "Tag for categorizing or markup."
+    -ogUrl = "/documentation/tag.html"
+    -template = 2
+
+block main
+    .SnGrid.col-gap.row-gap.l-grid-2
+        +codeBox(
+            'Basic',
+            'Usage of basic Tag',
+            '<span class="SnTag">default</span>\n<span class="SnTag primary">primary</span>\n<span class="SnTag success">success</span>\n<span class="SnTag warning">warning</span>\n<span class="SnTag danger">danger</span>\n'
+        )
+            span.SnTag default
+            span.SnTag.primary primary
+            span.SnTag.success success
+            span.SnTag.warning warning
+            span.SnTag.danger danger
+    h2 API
+    .SnTable-wrapper
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Class
+            tbody
+                tr
+                    td Tag
+                    td
+                        code .SnTag
+                tr
+                    td Color
+                    td
+                        code .primary
+                        code .success
+                        code .warning
+                        code .danger

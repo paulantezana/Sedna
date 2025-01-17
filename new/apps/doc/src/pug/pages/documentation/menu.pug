@@ -1,0 +1,180 @@
+extends ../../config/template
+append config
+    -title = "Menu"
+    -description = "Menu list of Navigation."
+    -ogUrl = "/index.html"
+    -template = 2
+
+block main
+    section.CodeBox
+        .CodeBox-demo
+            #TopMenuDemo-context
+                #TopMenuDemo-toggle.SnBtn =
+                .TopMenuDemo-wrapper#TopMenuDemo-wrapper
+                    ul.SnMenu#TopMenuDemo.TopMenuDemo
+                        li: a(href="#") Menu 1
+                        li: a(href="#") Menu 2
+                        li
+                            a(href="#") Menu 3
+                            ul
+                                li: a(href="#") SubMenu 1
+                                li: a(href="#") SubMenu 2
+                                li: a(href="#") SubMenu 3
+                                li
+                                    a(href="#") SubMenu 4
+                                    ul
+                                        li: a(href="#") SubMenu 1
+                                        li: a(href="#") SubMenu 2
+                                        li: a(href="#") SubMenu 3
+                                        li: a(href="#") SubMenu 4
+                        li
+                            a(href="#") Menu 4
+                            ul
+                                li: a(href="#") SubMenu 1
+                                li
+                                    a(href="#") SubMenu 2
+                                    ul
+                                        li: a(href="#") SubMenu 1
+                                        li: a(href="#") SubMenu 2
+                                        li: a(href="#") SubMenu 3
+                                        li: a(href="#") SubMenu 4
+            script.
+                document.addEventListener("DOMContentLoaded", () => {
+                    SnMenu({
+                        menuId: 'TopMenuDemo',
+                        toggleButtonID: 'TopMenuDemo-toggle',
+                        toggleClass: 'TopMenuDemo-is-show',
+                        contextId: 'TopMenuDemo-context',
+                        menuCloseID: 'TopMenuDemo-wrapper',
+                    });
+                });
+        .CodeBox-meta
+            .CodeBox-title Top Navigation
+            .CodeBox-description Horizontal top navigation menu..
+            .CodeBox-actions
+                //- a(href="" target="_blanck" data-tooltip="Open in CodePen").CodeBox-action.icon-codepen.CodeBox-codepen
+                .CodeBox-action.icon-clipboard.CodeBox-copy(data-tooltip="Copy code")
+                .CodeBox-action.icon-code.CodeBox-show(data-tooltip="Show or hide code")
+        .CodeBox-code
+            h3 Javascript
+            pre.language-javascript
+                code.
+                    SnMenu({
+                        menuId: 'TopMenuDemo',
+                        toggleButtonID: 'TopMenuDemo-toggle',
+                        toggleClass: 'TopMenuDemo-is-show',
+                        contextId: 'TopMenuDemo-context',
+                        menuCloseID: 'TopMenuDemo-wrapper',
+                    });
+            h3 SCSS
+            pre.language-scss
+                code.
+                    #TopMenuDemo-context {
+                        height: 400px;
+                        border: 1px solid var(--border-color);
+                    }
+
+                    .TopMenuDemo {
+                        a {
+                        padding: 0 12px;
+                        line-height: 2.25rem;
+                            &:hover {
+                                background: var(--hover-background);
+                                color: var(--sn-color-1);
+                            }
+                        }
+                    }
+
+                    .TopMenuDemo {
+                        @include to(l) {
+                            &-wrapper {
+                                background: rgba(black, 0.5);
+                                position: fixed;
+                                width: 100vw;
+                                height: 100vh;
+                                z-index: 9999;
+                                left: -100vw;
+                                top: 0;
+                            }
+                            width: 220px;
+                            background: var(--panel-background);
+                            height: 100vh;
+                        }
+                    }
+
+                    .TopMenuDemo-is-show {
+                        .TopMenuDemo-wrapper {
+                            left: 0;
+                        }
+                    }
+
+                    .TopMenuDemo {
+                        @include from(l) {
+                            li ul {
+                                min-width: 200px;
+                                border: 1px solid var(--border-color);
+                            }
+                        }
+                    }
+
+                    #TopMenuDemo-toggle {
+                        @include from(l) {
+                            display: none;
+                        }
+                    }
+            h3 HTML
+            pre.language-html
+                code='<div id="TopMenuDemo-context">\n    <div class="SnBtn" id="TopMenuDemo-toggle">=</div>\n    <div class="TopMenuDemo-wrapper" id="TopMenuDemo-wrapper">\n        <ul class="SnMenu TopMenuDemo" id="TopMenuDemo">\n            <li><a href="#">Menu 1</a></li>\n            <li><a href="#">Menu 2</a></li>\n            <li><a href="#" class="is-toggle">Menu 3<i class="icon-down toggle"></i></a>\n                <ul>\n                    <li><a href="#">SubMenu 1</a></li>\n                    <li><a href="#">SubMenu 2</a></li>\n                    <li><a href="#">SubMenu 3</a></li>\n                    <li><a href="#" class="is-toggle">SubMenu 4<i class="icon-down toggle"></i></a>\n                        <ul>\n                            <li><a href="#">SubMenu 1</a></li>\n                            <li><a href="#">SubMenu 2</a></li>\n                            <li><a href="#">SubMenu 3</a></li>\n                            <li><a href="#">SubMenu 4</a></li>\n                        </ul>\n                    </li>\n                </ul>\n            </li>\n            <li> <a href="#" class="is-toggle">Menu 4<i class="icon-down toggle"></i></a>\n                <ul>\n                    <li><a href="#">SubMenu 1</a></li>\n                    <li><a href="#" class="is-toggle">SubMenu 2<i class="icon-down toggle"></i></a>\n                        <ul>\n                            <li><a href="#">SubMenu 1</a></li>\n                            <li><a href="#">SubMenu 2</a></li>\n                            <li><a href="#">SubMenu 3</a></li>\n                            <li><a href="#">SubMenu 4</a></li>\n                        </ul>\n                    </li>\n                </ul>\n            </li>\n        </ul>\n    </div>\n</div>'
+    h2 API
+    .SnTable-wrapper
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Propiedad
+                    th Descripción
+                    th Tipo
+                    th Default
+                    th Versión
+            tbody
+                tr
+                    td menuId
+                    td id del menu
+                    td string
+                    td SnMenu
+                    td
+                tr
+                    td toggleButtonID
+                    td botton que ocula y muestra el menu
+                    td string
+                    td SnMenu-toggle
+                    td
+                tr
+                    td contextId
+                    td Contexto donde trabaja el menu
+                    td string
+                    td Site
+                    td
+                tr
+                    td toggleClass
+                    td clase css que se agrega o quita al contexto para mostrar o ocular el menu.
+                    td string
+                    td SnMenu-is-show
+                    td
+                tr
+                    td menuCloseID
+                    td id of the element from where the menu will be closed
+                    td string
+                    td
+                    td
+                tr
+                    td iconClassDown
+                    td icon to open a submenu
+                    td string
+                    td icon-down
+                    td
+                tr
+                    td iconClassUp
+                    td icon to close a submenu
+                    td string
+                    td icon-up
+                    td

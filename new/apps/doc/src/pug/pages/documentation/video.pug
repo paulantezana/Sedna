@@ -1,0 +1,28 @@
+extends ../../config/template
+append config
+    -title = "Video"
+    -description = "Video responsive"
+    -ogUrl = "/documentation/video.html"
+    -template = 2
+block main
+    .SnGrid.col-gap.row-gap.l-grid-2
+        +codeBox(
+            'Basic',
+            '',
+            '<div class="SnVideo">\n    <iframe width="560" height="315" src="https://www.youtube.com/embed/AnWeSlwwaLs" frameborder="0"\n        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>\n</div>'
+        )
+            .SnVideo
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/AnWeSlwwaLs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    h2 API
+    .SnTable-wrapper
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Class
+            tbody
+                tr
+                    td Video
+                    td
+                        code .SnVideo

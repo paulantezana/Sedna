@@ -1,0 +1,44 @@
+extends ../../config/template
+append config
+    -title = "Filter"
+    -description = "A filter displays rows of data."
+    -ogUrl = "/documentation/filter.html"
+    -template = 2
+
+block main
+    +codeBox(
+        'Filter',
+        'Simple filter with actions.',
+        '',
+        ''
+    )
+        div#filterContent
+        script.
+            window.onload = function(e){
+                new SnFilter({
+                    elementId: 'filterContent',
+                    //- entity: 'sedna',
+                    //- url: '',
+                    onUpdated: (that)=> console.log(that, 'THAT'),
+                    columns: [
+                        {
+                            title: 'Email',
+                            field: 'email',
+                            filterable: true,
+                            sortable: true,
+                        },
+                        {
+                            title: 'Name',
+                            field: 'name',
+                            filterable: true,
+                            sortable: true,
+                        },
+                        {
+                            title: 'Phone',
+                            field: 'phone',
+                            filterable: true,
+                            sortable: true,
+                        },
+                    ]
+                })
+            }

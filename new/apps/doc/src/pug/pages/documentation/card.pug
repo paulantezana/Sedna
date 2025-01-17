@@ -1,0 +1,57 @@
+extends ../../config/template
+append config
+    -title = "Cards"
+    -description = "Simple rectangular container."
+    -ogUrl = "/documentation/card.html"
+    -template = 2
+block main
+    .SnGrid.col-gap.row-gap.l-grid-2
+        +codeBox(
+            'Basic', 
+            'A basic card containing a title, content and an extra corner content.', 
+            '<div class="SnCard">\n    <div class="SnCard-header">Card header</div>\n    <div class="SnCard-body">\n        <h2 class="SnCard-title">Card title</h2>\n        <p class="SnCard-description">Card content ...</p>\n    </div>\n</div>'
+        )
+            .SnCard
+                .SnCard-header Card header
+                .SnCard-body
+                    h2.SnCard-title Card title
+                    p.SnCard-description Card content ...
+        +codeBox(
+            'Hoverable',
+            'hover', 
+            '<div class="SnCard hoverable">\n    <div class="SnCard-header">Card header</div>\n    <div class="SnCard-body">\n        <h2 class="SnCard-title">Card title</h2>\n        <p class="SnCard-description">Card content ...</p>\n    </div>\n</div>'
+        )
+            .SnCard.hoverable
+                .SnCard-header Card header
+                .SnCard-body
+                    h2.SnCard-title Card title
+                    p.SnCard-description Card content ...
+    h2 API
+    .SnTable-wrapper
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Class
+            tbody
+                tr
+                    td Card
+                    td
+                        code .SnCard
+                        code .hoverable
+                tr
+                    td Header
+                    td
+                        code .SnCard-header
+                tr
+                    td Body
+                    td
+                        code .SnCard-body
+                tr
+                    td Title
+                    td
+                        code .SnCard-title
+                tr
+                    td Description
+                    td
+                        code .SnCard-description

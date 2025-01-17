@@ -1,0 +1,81 @@
+extends ../../config/template
+append config
+    -title = "Spacing"
+    -description = "Assign responsive-friendly margin or padding values to an element or a subset of its sides with shorthand classes. Includes support for individual properties, all properties, and vertical and horizontal properties."
+    -ogUrl = "/index.html"
+    -template = 2
+
+block main
+    +codeBox(
+        'Example',
+        '', 
+        '<div class="SnMt-3"></div>'
+    )
+        div Where property is one of:
+        ul
+            li
+                code M
+                | - for classes that set 
+                code margin
+            li
+                code P
+                | - for classes that set 
+                code padding
+        div Where sides is one of:
+        ul
+            li
+                code t
+                | - for classes that set 
+                code margin-top
+                | or 
+                code padding-top
+            li
+                code b
+                | - for classes that set 
+                code margin-bottom
+                | or 
+                code padding-bottom
+            li
+                code l
+                | - for classes that set 
+                code margin-left 
+                | or 
+                code padding-left
+            li
+                code r
+                | - for classes that set 
+                code margin-right
+                | or 
+                code padding-right
+        div Where size is one of:
+            ul
+                li
+                    code 1
+                    |  (by default) for classes that set the
+                    code margin 
+                    | or 
+                    code padding 
+                    | to
+                    code 0.5
+                    | from
+                    code 1
+                    | to
+                    code 5
+    h2 API
+    .SnTable-wrapper.SnMt-5
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Class
+            tbody
+                tr
+                    td Margin
+                    td 
+                        | Example
+                        code .SnMt-1
+                tr
+                    td Pading
+                    td 
+                        | Example
+                        code .SnPt-1

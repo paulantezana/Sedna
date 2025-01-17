@@ -1,0 +1,40 @@
+extends ../../config/template
+append config
+    -title = "Collapse"
+    -description = "A content area which can be collapsed and expanded."
+    -ogUrl = "/documentation/collapse.html"
+    -template = 2
+block main
+    .SnGrid.col-gap.row-gap.l-grid-2
+        +codeBox(
+            'Collapse', 
+            'By default, any number of panels can be expanded at a time. The first panel is expanded in this example.', 
+            '<div class="SnCard">\n    <div class="SnCard-header" data-collapsetrigger="collapseExample1">\n        Card header<i class="icon-angle-down"></i>\n    </div>\n    <div class="SnCard-body SnCollapse SnCollapse-expanded" data-collapse="collapseExample1">\n        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse provident nihil, omnis nesciunt aliquid\n            voluptatum eligendi accusantium hic et totam inventore consequatur sit, voluptas quam. Voluptatem\n            nesciunt dignissimos impedit facere!</p>\n    </div>\n</div>\n<div class="SnCard">\n    <div class="SnCard-header" data-collapsetrigger="collapseExample2">\n        Card header<i class="icon-angle-down"></i>\n    </div>\n    <div class="SnCard-body SnCollapse SnCollapse-expanded" data-collapse="collapseExample2">\n        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse provident nihil, omnis nesciunt aliquid\n            voluptatum eligendi accusantium hic et totam inventore consequatur sit, voluptas quam. Voluptatem\n            nesciunt dignissimos impedit facere!</p>\n    </div>\n</div>\n'
+        )
+            .SnCard
+                .SnCard-header(data-collapsetrigger="collapseExample1") Card header
+                    i.icon-angle-down
+                .SnCard-body(data-collapse="collapseExample1").SnCollapse
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse provident nihil, omnis nesciunt aliquid voluptatum eligendi accusantium hic et totam inventore consequatur sit, voluptas quam. Voluptatem nesciunt dignissimos impedit facere!
+            .SnCard
+                .SnCard-header(data-collapsetrigger="collapseExample2") Card header
+                    i.icon-angle-down
+                .SnCard-body(data-collapse="collapseExample2").SnCollapse
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse provident nihil, omnis nesciunt aliquid voluptatum eligendi accusantium hic et totam inventore consequatur sit, voluptas quam. Voluptatem nesciunt dignissimos impedit facere!
+    h2 API
+    .SnTable-wrapper
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Class
+            tbody
+                tr
+                    td Collapse
+                    td
+                        code .SnCollapse
+                        code data-collapse="collapseExample1")
+                tr
+                    td Target
+                    td
+                        code data-collapsetrigger="collapseExample1"

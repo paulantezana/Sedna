@@ -1,0 +1,40 @@
+extends ../../config/template
+append config
+    -title = "Icons"
+    -description = "Default icons supported by Sedna CSS."
+    -ogUrl = "/documentation/icon.html"
+    -template = 2
+block main
+    .SnGrid.col-gap.row-gap.l-grid-2
+        +codeBox(
+            'Icons svg', 
+            'set of icons used in sedna notifications',
+            '<div class="SnIcon-info"></div>\n<div class="SnIcon-question"></div>\n<div class="SnIcon-success"></div>\n<div class="SnIcon-danger"></div>\n<div class="SnIcon-close"></div>'
+        )
+            .SnGrid.col-gap.s-grid-6(style="width: 100%")
+                .SnIcon-info
+                .SnIcon-question
+                .SnIcon-success
+                .SnIcon-warning
+                .SnIcon-danger
+                .SnIcon-close
+            style(type="text/css").
+                .CodeBox [class*="SnIcon-"] {
+                    font-size: 1.3rem;
+                }
+    h2 API
+    .SnTable-wrapper
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Class
+            tbody
+                tr
+                    td Icon
+                    td
+                        code .SnIcon-info
+                        code .SnIcon-question
+                        code .SnIcon-success
+                        code .SnIcon-warning
+                        code .SnIcon-danger

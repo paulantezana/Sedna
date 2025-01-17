@@ -1,0 +1,26 @@
+extends ../../config/template
+append config
+    -title = "Container"
+    -description = "Containers are used to contain, pad, and (sometimes) center the content within them. While containers can be nested, most layouts do not require a nested container"
+    -ogUrl = "/documentation/contain.html"
+    -template = 2
+block main
+    .SnGrid.col-gap.row-gap.l-grid-2
+        +codeBox(
+            'Basic', 
+            'Containers are used to contain, pad, and (sometimes) center the content within them. While containers can be nested, most layouts do not require a nested container', 
+            '<div class="SnContainer">\n    <!-- Content here -->\n</div>'
+        )
+            code .SnContainer
+    h2 API
+    .SnTable-wrapper.SnMt-5
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Class
+            tbody
+                tr
+                    td Container
+                    td 
+                        code .SnContainer

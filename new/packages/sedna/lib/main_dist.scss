@@ -1,0 +1,35 @@
+@use './main.scss' as sedna;
+
+@include sedna.core();
+
+// Components
+@include sedna.SnMenu();
+@include sedna.SnBtn();
+@include sedna.SnAlert();
+@include sedna.SnAvatar();
+@include sedna.SnCard();
+@include sedna.SnForm();
+@include sedna.SnControl();
+@include sedna.SnGrid();
+@include sedna.SnList();
+@include sedna.SnLoading();
+@include sedna.SnMessage();
+@include sedna.SnMargin();
+@include sedna.SnModal();
+@include sedna.SnPadding();
+@include sedna.SnPagination();
+@include sedna.SnTable();
+@include sedna.SnVideo();
+@include sedna.SnSwitch();
+@include sedna.SnFreeze();
+@include sedna.SnTab();
+@include sedna.SnTag();
+@include sedna.SnHidden();
+@include sedna.SnTooltip();
+@include sedna.SnCollapse();
+@include sedna.SnDivider();
+@include sedna.SnEmpty();
+@include sedna.SnControlGroup();
+@include sedna.SnDropdown();
+@include sedna.SnFilter();
+@include sedna.SnPortal();

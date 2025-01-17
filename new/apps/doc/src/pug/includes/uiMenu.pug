@@ -1,0 +1,14 @@
+-
+  let sidebarNavigation = {
+    //- 'Menu': '/docs/menu.html',
+    //- 'Pagination': '/docs/pagination.html',
+  }
+
+aside(itemscope="itemscope" itemtype="http://schema.org/WPSideBar" role="complementary").AsideMenu-container
+  #AsideMenu-toggle(data-content="Filtros").icon-right
+  nav(itemscope itemtype="http://schema.org/WPSideBar").AsideMenu-nav
+    ul#AsideMenu.AsideMenu
+      li.AsideMenu-header Navigation
+      each val, key in sidebarNavigation
+        li.AsideMenu-item(itemprop="url")
+          a(href=val itemprop="name" title= "Link to " + key)= key

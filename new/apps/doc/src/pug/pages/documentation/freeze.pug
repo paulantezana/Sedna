@@ -1,0 +1,83 @@
+extends ../../config/template
+append config
+    -title = "Freeze"
+    -description = "Freeze."
+    -ogUrl = "/documentation/freeze.html"
+    -template = 2
+block main
+    .SnGrid.col-gap.row-gap.l-grid-2
+        +codeBox2(
+            'Freeze',
+            'Freeze',
+            [
+                {
+                    languaje: 'javascript',
+                    code: 'SnFreeze.freeze();\nSnFreeze.unFreeze();',
+                }
+            ]
+        )
+            .SnBtn.primary(onclick="startFreeze()") Freeze
+            script.
+                let startFreeze = () => {
+                    SnFreeze.freeze();
+                    setTimeout(() => {
+                        SnFreeze.unFreeze();
+                    }, 2000);
+                }
+
+        +codeBox2(
+            'Section Freeze',
+            'Freeze',
+            [
+                {
+                    languaje: 'javascript',
+                    code: 'SnFreeze.freeze({ selector: "#freezeSection" });\nSnFreeze.unFreeze("#freezeSection");',
+                }
+            ]
+        )
+            div(style="min-height: 100px")#freezeSection
+                p Freeze Section
+                .SnBtn.primary(onclick="startFreezeSection()") Freeze
+            script.
+                let startFreezeSection = () => {
+                    SnFreeze.freeze({ selector: "#freezeSection" });
+                    setTimeout(() => {
+                        SnFreeze.unFreeze("#freezeSection");
+                    }, 2000);
+                }
+    H2 API
+    h3 freeze
+    .SnTable-wrapper.SnMt-5
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Description
+                    th Type
+                    th Default
+            tbody
+                tr 
+                    td selector
+                    td Id html element selector
+                    td string
+                    td body
+                tr 
+                    td text
+                    td text content
+                    td string
+                    td -
+    h3 unFreeze
+    .SnTable-wrapper.SnMt-5
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Description
+                    th Type
+                    th Default
+            tbody
+                tr 
+                    td selector
+                    td Id html element selector
+                    td string
+                    td body

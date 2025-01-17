@@ -1,0 +1,163 @@
+extends ../../config/template
+append config
+    -title = "Buttons"
+    -description = "Use Sedna CSS custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more."
+    -ogUrl = "/documentation/button.html"
+    -template = 2
+block main
+    .SnMb-5.SnGrid.col-gap.row-gap.l-grid-2
+        +codeBox(
+            'Basic', 
+            'There are default button, primary button, success button, warning button, danger button and white button in sedna', 
+            '<div class="SnBtn">Default</div>' + ' \n<div class="SnBtn primary">Primary</div> \n<div class="SnBtn success">Success</div> \n<div class="SnBtn warning">Warning</div> \n<div class="SnBtn danger">Danger</div> \n<div class="SnBtn white">White</div>'
+        )
+            .SnBtn Default
+            .SnBtn.primary Primary
+            .SnBtn.success Success
+            .SnBtn.warning Warning
+            .SnBtn.danger Danger
+            .SnBtn.white White
+        +codeBox(
+            'Size', 
+            'Sedna supports a default button size as well as a large and small size.', 
+            '<div class="SnBtn sm">Small</div>' + ' \n<div class="SnBtn">Default</div> \n<div class="SnBtn lg">Large</div>'
+        )
+            .SnBtn.sm Small
+            .SnBtn Default
+            .SnBtn.lg Large
+        +codeBox(
+            'Block', 
+            'block class will make the button fit to its parent width.', 
+            '<div class="SnBtn block">Default</div>' + ' \n<div class="SnBtn primary block">Primary</div> \n<div class="SnBtn success block">Success</div>'
+        )
+            .SnBtn.block block
+            .SnBtn.block.primary block
+            .SnBtn.block.success block
+        +codeBox(
+            'Loading', 
+            'A loading indicator can be added to a button by setting the loading class on the Button.',
+            '<div class="SnBtn loading">Default</div>' + ' \n<div class="SnBtn primary loading">Primary</div> \n<div class="SnBtn success loading">Success</div> \n<div class="SnBtn warning loading">Warning</div> \n<div class="SnBtn danger loading">Danger</div> \n<div class="SnBtn white loading">White</div>'
+        )
+            .SnBtn.loading Default
+            .SnBtn.primary.loading Primary
+            .SnBtn.success.loading Success
+            .SnBtn.warning.loading Warning
+            .SnBtn.danger.loading Danger
+            .SnBtn.white.loading White
+        +codeBox(
+            'Disabled', 
+            'To mark a button as disabled, add the disabled class to the Button.', 
+            '<div class="SnBtn loading" disabled>Default</div>' + ' \n<div class="SnBtn primary loading" disabled>Primary</div> \n<div class="SnBtn success loading" disabled>Success</div> \n<div class="SnBtn warning loading" disabled>Warning</div> \n<div class="SnBtn danger loading" disabled>Danger</div> \n<div class="SnBtn white loading" disabled>White</div>'
+        )
+            .SnBtn(disabled).loading Default
+            .SnBtn.primary(disabled).loading Primary
+            .SnBtn.success(disabled).loading Success
+            .SnBtn.warning(disabled).loading Warning
+            .SnBtn.danger(disabled).loading Danger
+            .SnBtn.white(disabled).loading White
+        +codeBox(
+            'Group', 
+            'Buttons can be grouped by placing multiple Buttons.', 
+            '<div class="SnBtn-group">\n    <div class="SnBtn loading">Default</div>\n    <div class="SnBtn primary loading">Primary</div>\n</div>'
+        )
+            .SnBtn-group
+                .SnBtn.loading Default
+                .SnBtn.primary.loading Primary
+        +codeBox(
+            'Icon', 
+            'Buttons only with icons.', 
+            '<div class="SnBtn-group">\n    <div class="SnBtn icon"><i class="icon-clipboard"></i></div>\n    <div class="SnBtn icon"><i class="icon-facebook"></i></div>\n    <div class="SnBtn icon"><i class="icon-twitter"></i></div>\n    <div class="SnBtn primary icon"><i class="icon-code"></i></div>\n</div>\n'
+        )
+            .SnBtn-group
+                .SnBtn.icon
+                    i.icon-clipboard
+                .SnBtn.icon
+                    i.icon-facebook
+                .SnBtn.icon
+                    i.icon-twitter
+                .SnBtn.primary.icon
+                    i.icon-code
+                .SnBtn.icon.loading
+                    i.icon-code
+        +codeBox(
+            'Radio', 
+            'Buttons radio only with icons.', 
+            '<div class="SnBtn-group">\n    <div class="SnBtn icon"><i class="icon-clipboard"></i></div>\n    <div class="SnBtn icon"><i class="icon-facebook"></i></div>\n    <div class="SnBtn icon"><i class="icon-twitter"></i></div>\n    <div class="SnBtn primary icon"><i class="icon-code"></i></div>\n</div>\n'
+        )
+
+            div
+                .SnBtn.primary.icon.sm
+                    i.icon-twitter
+                .SnBtn.icon
+                    i.icon-twitter
+                .SnBtn.icon.lg
+                    i.icon-twitter
+            div
+                .SnBtn.primary.icon.loading.sm
+                    i.icon-twitter
+                .SnBtn.icon.loading
+                    i.icon-twitter
+                .SnBtn.icon.loading.lg
+                    i.icon-twitter
+            div
+                .SnBtn.primary.icon.loading.radio.sm
+                    i.icon-twitter
+                .SnBtn.icon.loading.radio
+                    i.icon-twitter
+                .SnBtn.icon.loading.radio.lg
+                    i.icon-twitter
+            div
+                .SnBtn.primary.loading.radio.sm
+                    i.icon-twitter.SnMr-2
+                    | twitter
+                .SnBtn.loading.radio
+                    i.icon-twitter.SnMr-2
+                    | twitter
+                .SnBtn.loading.radio.lg
+                    i.icon-twitter.SnMr-2
+                    | twitter
+    h2 API
+    .SnTable-wrapper
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Class
+            tbody
+                tr
+                    td Button
+                    td
+                        code .SnBtn 
+                tr
+                    td Color
+                    td
+                        code .primary 
+                        code .success
+                        code .warning 
+                        code .danger 
+                        code .white 
+                tr
+                    td Size
+                    td 
+                        code .sm 
+                        code .lg 
+                tr
+                    td Loading
+                    td
+                        code .loading
+                tr
+                    td Disabled
+                    td
+                        code .disabled
+                tr
+                    td Block
+                    td
+                        code .block
+                tr
+                    td Group
+                    td
+                        code .SnBtn-group
+                tr
+                    td Icon
+                    td
+                        code .icon

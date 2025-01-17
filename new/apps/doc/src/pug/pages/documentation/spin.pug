@@ -1,0 +1,20 @@
+extends ../../config/template
+append config
+    -title = "Spin"
+    -description = "Spin."
+    -ogUrl = "/index.html"
+    -template = 2
+
+block main
+    .SnGrid.col-gap.row-gap.l-grid-2
+        +codeBox2(
+            'Spin',
+            'Mixin',
+            [
+                {
+                    languaje: 'scss',
+                    code: '@include SnLoadingTemplate(1em);'
+                }
+            ]
+        )
+            p @include SnLoadingTemplate(1em);

@@ -1,0 +1,28 @@
+extends ../../config/template
+append config
+    -title = "Media Query"
+    -description = "Media query."
+    -ogUrl = "/index.html"
+    -template = 2
+block main
+    pre.language-scss
+        code.
+            $breakpoints : (
+                s : 0,
+                m : 640px,
+                l : 1024px,
+                lg : 1024px,
+                xl : 1440px
+            );
+    p Default break points
+
+    +codeBox2(
+        'Only SCSS',
+        'It is available only in the scss version',
+        [
+            {
+                languaje: 'scss',
+                code: '@include from(l){\n    // css styles\n}\n@include to(l){\n    // css styles\n}\n',
+            }
+        ]
+    )

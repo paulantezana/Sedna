@@ -1,0 +1,126 @@
+extends ../../config/template
+append config
+    -title = "Message"
+    -description = "Display global messages as feedback in response to user operations."
+    -ogUrl = "/index.html"
+    -template = 2
+
+block main
+    .SnGrid.col-gap.row-gap.l-grid-2
+        section.CodeBox
+            .CodeBox-demo
+                .SnBtn.primary(onclick="SnMessage.info({content: 'This is a normal message'})") Display normal message
+            .CodeBox-meta
+                .CodeBox-title Normal pront
+                .CodeBox-description Normal message for information.
+                .CodeBox-actions
+                    //- a(href="" target="_blanck" data-tooltip="Open in CodePen").CodeBox-action.icon-codepen.CodeBox-codepen
+                    .CodeBox-action.icon-clipboard.CodeBox-copy(data-tooltip="Copy code")
+                    .CodeBox-action.icon-code.CodeBox-show(data-tooltip="Show or hide code")
+            .CodeBox-code
+                pre.language-js
+                    code.
+                        SnMessage.info({
+                            content: 'This is a normal message'
+                        })
+        section.CodeBox
+            .CodeBox-demo
+                .SnBtn(onclick="SnMessage.info({content: 'This is a info message'})") info
+                .SnBtn(onclick="SnMessage.success({content: 'This is a success message'})") success
+                .SnBtn(onclick="SnMessage.danger({content: 'This is a danger message'})") danger
+                .SnBtn(onclick="SnMessage.warning({content: 'This is a warning message'})") warning
+            .CodeBox-meta
+                .CodeBox-title Other types of message
+                .CodeBox-description Messages of success, danger and warning types.
+                .CodeBox-actions
+                    //- a(href="" target="_blanck" data-tooltip="Open in CodePen").CodeBox-action.icon-codepen.CodeBox-codepen
+                    .CodeBox-action.icon-clipboard.CodeBox-copy(data-tooltip="Copy code")
+                    .CodeBox-action.icon-code.CodeBox-show(data-tooltip="Show or hide code")
+            .CodeBox-code
+                pre.language-js
+                    code.
+                        SnMessage.info({
+                            content: 'This is a info message'
+                        });
+                        SnMessage.success({
+                            content: 'This is a success message'
+                        });
+                        SnMessage.danger({
+                            content: 'This is a danger message'
+                        });
+                        SnMessage.warning({
+                            content: 'This is a warning message'
+                        });
+        section.CodeBox
+            .CodeBox-demo
+                .SnBtn.primary(onclick="SnMessage.info({content: 'This is a prompt message for success, and it will disappear in 10 seconds',duration: 10000})") Customized display duration
+            .CodeBox-meta
+                .CodeBox-title Customize duration
+                .CodeBox-description Customize message display duration from default 6s to 10s
+                .CodeBox-actions
+                    //- a(href="" target="_blanck" data-tooltip="Open in CodePen").CodeBox-action.icon-codepen.CodeBox-codepen
+                    .CodeBox-action.icon-clipboard.CodeBox-copy(data-tooltip="Copy code")
+                    .CodeBox-action.icon-code.CodeBox-show(data-tooltip="Show or hide code")
+            .CodeBox-code
+                pre.language-js
+                    code.
+                        SnMessage.info({
+                            content: 'This is a prompt message for success, and it will disappear in 10 seconds',
+                            duration: 10000,
+                        })
+
+
+    H2 API
+    h3 SnMessage
+    p info, success, danger, warning
+    .SnTable-wrapper.SnMt-5
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Description
+                    th Type
+                    th Default
+            tbody
+                tr 
+                    td content
+                    td Message text content
+                    td string
+                    td -
+                tr 
+                    td duration
+                    td time duration
+                    td integer
+                    td 6000
+    h3 Custom Message
+    pre
+        code= "SnMessage.message(message, time, addClass = 'default', type = 'question')"
+    .SnTable-wrapper.SnMt-5
+        table.SnTable.DocApiTable
+            thead
+                tr
+                    th Property
+                    th Description
+                    th Type
+                    th Default
+            tbody
+                tr 
+                    td message
+                    td Message text content
+                    td string
+                    td -
+                tr 
+                    td time
+                    td time duration
+                    td integer
+                    td 20000
+                tr 
+                    td addClass
+                    td custom class name
+                    td string
+                    td default
+                tr 
+                    td type
+                    td Sedna icon
+                    td string
+                    td question

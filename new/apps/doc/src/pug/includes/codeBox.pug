@@ -1,0 +1,38 @@
+mixin codeBox(codeTitle, codeDescription = '', codeHtml = '', codeJs = '', codeCss = '', codeCodPenLink = '')
+    section.CodeBox
+        .CodeBox-demo
+            if block
+                block
+        .CodeBox-meta
+            .CodeBox-title= codeTitle
+            .CodeBox-description= codeDescription
+            .CodeBox-actions
+                if codeCodPenLink != ''
+                    a(href= codeCodPenLink target="_blanck" data-tooltip="Open in CodePen").CodeBox-action.icon-codepen.CodeBox-codepen
+                .CodeBox-action.icon-clipboard.CodeBox-copy(data-tooltip="Copy code")
+                .CodeBox-action.icon-code.CodeBox-show(data-tooltip="Show or hide code")
+        .CodeBox-code
+            pre.language-html
+                code= codeHtml
+            if codeJs != ''
+                pre.language-javascript
+                    code= codeJs
+            if codeCss != ''
+                pre.language-css
+                    code= codeCss
+mixin codeBox2(codeTitle, codeDescription = '', codeExample = [], codPenLink = '')
+    section.CodeBox
+        .CodeBox-demo
+            if block
+                block
+        .CodeBox-meta
+            .CodeBox-title= codeTitle
+            .CodeBox-description= codeDescription
+            .CodeBox-actions
+                if codPenLink != ''
+                    a(href= codPenLink target="_blanck" data-tooltip="Open in CodePen").CodeBox-action.icon-codepen.CodeBox-codepen
+                .CodeBox-action.icon-clipboard.CodeBox-copy(data-tooltip="Copy code")
+                .CodeBox-action.icon-code.CodeBox-show(data-tooltip="Show or hide code")
+        .CodeBox-code
+            each codeExm in codeExample
+                pre(class="language-" + codeExm.languaje): code= codeExm.code
